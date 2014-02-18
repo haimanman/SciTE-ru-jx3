@@ -1,0 +1,15 @@
+1=@ECHO OFF\nTITLE %%~n0\nCHCP 1251>nul\nSETLOCAL enabledelayedexpansion\nCD /D "%%~dp0"\n
+forfolder=FOR /D %%%%i IN (%%windir%%\\*) DO @echo %%%%i\n
+forfiles=FOR /R %%windir%% %%%%i IN (*.dat) DO @echo %%%%i\n
+forfiles0=FOR %%%%i IN (%%windir%%\\*.dat) DO @echo %%%%i\n
+fornumbers=FOR /L %%%%i IN (1, 2, 13) DO @echo %%%%i\n
+forcontent=FOR /F "tokens=*" %%%%i IN (win.ini system.ini) DO @echo.%%%%i\n
+forstring=FOR /F "tokens=1-3 delims=." %%%%a IN ("%%date%%") DO @echo %%%%c\%%%%b\%%%%a\n
+forstring0=FOR %%%%i IN (%%path%%) DO @echo %%%%i\n
+foroutput=FOR /F "tokens=*" %%%%i IN ('dir %%windir%% /s /b') DO @echo %%%%i\n
+foroutputb=FOR /F "usebackq delims==" %%%%i IN (`set`) DO @echo %%%%i\n
+if=IF "%%*"=="" (\n\tGOTO :EOF\n) ELSE (\n\tECHO %%*\n)\n
+or=type %%windir%%\\system.ini || exit 1\n
+and=ping -n 1 ya.ru > nul && echo OK\n
+sleep=ping -n 5 -w 1000 127.0.0.1 > nul\n
+replace=SET out=%%in:find=rep%%

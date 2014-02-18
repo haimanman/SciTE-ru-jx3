@@ -1,0 +1,249 @@
+#HTML - XML Abbreviations
+
+#Author: P.Sorokin
+#Source: Alexey Rozenvaser (alexroz@softhome.net), mozers™, dB6
+#--------------------------------------------------------------
+
+1=<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n<html>\n<head>\n\t<meta http-equiv="content-type" content="text/html; charset=utf-8">\n\t<meta name="description" content="">\n\t<meta name="keywords" content="">\n\t<meta name="generator" content="SciTE">\n<title>|</title>\n<style type="text/css">\n\tbody,tr,td {font-family:Verdana; font-size:x-small;}\n\ta {color:#000080; text-decoration:none;}\n\ta:hover {color:red;}\n</style>\n<script type="text/javascript">\n</script>\n</head>\n<body>\n%SEL%\n</body>\n</html>\n
+#HTML Application
+hta=<html>\n<head>\n<meta http-equiv=content-type content="text-html; charset=utf-8">\n<meta http-equiv=MSThemeCompatible content=yes>\n<hta:application\n\tid=HTAApp\n\tapplicationName=My_Application\n\ticon=desk.cpl\n\tmaximizeButton=no\n\tborder=thin\n\tinnerBorder=no\n\tscroll=no\n\tselection=no\n\tcontextMenu=no\n\tsingleinstance=yes\n\tversion=1.0\n>\n<style type="text/css">\n\tbody, table {background-color:threedface; overflow:hidden; margin:2px;}\n\tbody, input, table, legend {font-family:MS Shell Dlg; font-size:8pt;}\n\tlegend, label {color:highlight;}\n\tlegend {font-weight:bold;}\n</style>\n<script type="text/javascript">\n\twindow.resizeTo(250, 80);\n\tdocument.title = HTAApp.applicationName.replace(/_/g,' ') + ' v.' + HTAApp.version;\n</script>\n</head>\n<body>\n\t<fieldset><legend>&nbsp;Params:&nbsp;</legend>\n\t\t<input id="chk" type=checkbox onClick="ibox.disabled=btn.disabled=!this.checked;">\n\t\t<label for="chk" hidefocus>Set value&nbsp;</label>\n\t\t&nbsp;<input id=ibox type=text value=#FF23DA disabled>\n\t\t<input id="btn" type=button onClick="alert(ibox.value); self.close();" value=OK disabled hidefocus>\n\t</fieldset>\n</body>\n</html>
+
+#HTML 5
+htm5=<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset="utf-8">\n\t<meta name="generator" content="SciTE">\n\t<link rel="stylesheet" href="style.css">\n\t<title>|</title>\n</head>\n<body>\n%SEL%|\n</body>\n</html>\n
+#HTML 4.01 Strict (строгий)
+htms=<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">\n<html>\n<head>\n\t<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n\t<meta name="generator" content="SciTE">\n\t<link rel="stylesheet" href="style.css" type="text/css">\n\t<title>|</title>\n</head>\n<body>\n%SEL%|\n</body>\n</html>\n
+#HTML 4.01 Transitional (переходный)
+htmt=<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n<html>\n<head>\n\t<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n\t<meta name="generator" content="SciTE">\n\t<link rel="stylesheet" href="style.css" type="text/css">\n\t<title>|</title>\n</head>\n<body>\n%SEL%|\n</body>\n</html>\n
+#HTML 4.01 Frameset (с фреймами)
+htmf=<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">\n<html>\n<head>\n\t<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n\t<meta name="generator" content="SciTE">\n\t<link rel="stylesheet" href="style.css" type="text/css">\n\t<title>|</title>\n</head>\n<frameset rows="20,*">\n<frame src="top.html">\n<frame src="bottom.html">\n</frameset>\n</html>\n
+
+#XHTML 1.0 Strict (строгий)
+xmls=<?xml version="1.0"?>\n<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n<html xmlns="http://www.w3.org/1999/xhtml">\n<head>\n\t<meta http-equiv="content-type" content="text/xml;charset=utf-8" />\n\t<meta name="generator" content="SciTE" />\n\t<link rel="stylesheet" href="style.css" type="text/css" />\n\t<title>|</title>\n</head>\n<body>\n%SEL%|\n</body>\n</html>\n
+#XHTML 1.0 Transitional (переходный)
+xmlt=<?xml version="1.0"?>\n<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n<html xmlns="http://www.w3.org/1999/xhtml">\n<head>\n\t<meta http-equiv="content-type" content="text/xml;charset=utf-8" />\n\t<meta name="generator" content="SciTE" />\n\t<link rel="stylesheet" href="style.css" type="text/css" />\n\t<title>|</title>\n</head>\n<body>\n%SEL%|\n</body>\n</html>\n
+#XHTML 1.0 Frameset (с фреймами)
+xmlf=<?xml version="1.0"?>\n<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">\n<html xmlns="http://www.w3.org/1999/xhtml">\n<head>\n\t<meta http-equiv="content-type" content="text/xml;charset=utf-8" />\n\t<meta name="generator" content="SciTE" />\n\t<link rel="stylesheet" href="style.css" type="text/css" />\n\t<title>|</title>\n</head>\n<frameset rows="20,*">\n<frame src="top.xml" />\n<frame src="bottom.xml" />\n</frameset>\n</html>\n
+#XHTML 1.1 DTD
+xmld=<?xml version="1.0"?>\n<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">\n<html xmlns="http://www.w3.org/1999/xhtml">\n<head>\n\t<meta http-equiv="content-type" content="text/xml;charset=utf-8" />\n\t<meta name="generator" content="SciTE" />\n\t<link rel="stylesheet" href="style.css" type="text/css" />\n\t<title>|</title>\n</head>\n<body>\n%SEL%|\n</body>\n</html>\n
+
+# Теги
+<a=<a href="|">%SEL%|</a>
+<ah=<a href="http://|">%SEL%|</a>
+<am=<a href="mailto:|">%SEL%|</a>
+<atb=<a target="_blank" href="%SEL%|">|</a>
+<ab=<abbr>%SEL%|</abbr>
+<ac=<acronym>%SEL%|</acronym>
+<ad=<address>%SEL%|</address>
+<ar=<area>|</area>
+<arc=<area shape="circle" coords="|" href="|" alt="|">|</area>
+<arp=<area shape="poly" coords="|" href="|" alt="|">|</area>
+<arr=<area shape="rect" coords="|" href="|" alt="">|</area>
+<b=<b>%SEL%|</b>
+<ba=<base href="|">\n
+<ba/=<base href="|" />\n
+<bdl=<bdo dir="ltr">%SEL%|</bdo>
+<bdr=<bdo dir="rtl">%SEL%|</bdo>
+<bi=<big>%SEL%|</big>
+<bl=<blockquote cite="|">%SEL%|</blockquote>\n
+<bo=<body>\n\t%SEL%|\n</body>\n
+</=<br>
+<//=<br />
+<bu=<button name="|" value="|" type="|">|</button>
+<ca=<caption>%SEL%|</caption>\n
+<ce=<center>|</center>
+<ci=<cite>%SEL%|</cite>
+<cod=<code>%SEL%|</code>
+<col=<col>
+<colg=<colgroup>\n\t%SEL%|\n</colgroup>
+<d=<div>\n\t%SEL%|\n</div>\n
+<di=<div id="|">\n\t%SEL%|\n</div>\n
+<dc=<div class="|">\n\t%SEL%|\n</div>\n
+<diw=<div id="wrap">\n\t%SEL%|\n</div>\n
+<dih=<div id="header">\n\t%SEL%|\n</div>\n
+<dic=<div id="content">\n\t%SEL%|\n</div>\n
+<dil=<div id="left">\n\t%SEL%|\n</div>\n
+<dir=<div id="right">\n\t%SEL%|\n</div>\n
+<dif=<div id="footer">\n\t%SEL%|\n</div>\n
+<dd=<dd>%SEL%|</dd>
+<de=<del>%SEL%|</del>
+<df=<dfn>%SEL%|</dfn>
+<dl=<dl>\n\t|\n</dl>\n
+<dt=<dt>%SEL%|</dt>
+<e=<em>%SEL%|</em>
+<em=<embed src="|">\n\t|\n</embed>\n
+<fi=<fieldset>\n\t<legend>|</legend>\n</fieldset>\n
+<fs=<fieldset>\n\t%SEL%|\n</fieldset>\n
+<f=<form method ="|" action="|" name="|">\n\t%SEL%|\n</form>\n
+<fg=<form method ="get" action="|" name="|">\n\t%SEL%|\n</form>\n
+<fp=<form method ="post" action="|" name="|">\n\t%SEL%|\n</form>\n
+<fpe=<form method="post" enctype="multipart/form-data" action="|" name="|">\n\t|\n</form>\n
+<h1=<h1>%SEL%|</h1>\n
+<h2=<h2>%SEL%|</h2>\n
+<h3=<h3>%SEL%|</h3>\n
+<h4=<h4>%SEL%|</h4>\n
+<h5=<h5>%SEL%|</h5>\n
+<h6=<h6>%SEL%|</h6>\n
+<he=<head>\n\t%SEL%|\n</head>\n
+<-=<hr>\n
+<-/=<hr />\n
+<ht=<html>\n\t%SEL%|\n</html>
+<i=<i>%SEL%|</i>
+<im=<img src="%SEL%|" alt="|">
+<im/=<img src="%SEL%|" alt="|" />
+<ins=<ins>%SEL%|</ins>
+<it=<input type="text" value="%SEL%|">
+<it/=<input type="text" value="%SEL%|" />
+<ip=<input type="password" value="%SEL%|">
+<ip/=<input type="password" value="%SEL%|" />
+<ic=<input type="checkbox" value="%SEL%|">
+<ic/=<input type="checkbox" value="%SEL%|" />
+<icc=<input type="checkbox" checked="checked" value="%SEL%|">
+<icc/=<input type="checkbox" checked="checked" value="%SEL%|" />
+<ir=<input type="radio" name="|" value="%SEL%|">
+<ir/=<input type="radio" name="|" value="%SEL%|" />
+<irc=<input type="radio" checked="checked" name="|" value="%SEL%|">
+<irc/=<input type="radio" checked="checked" name="|" value="%SEL%|" />
+<if=<input type="file">
+<if/=<input type="file" />
+<ib=<input type="button" value="%SEL%|">
+<ib/=<input type="button" value="%SEL%|" />
+<is=<input type="submit" value="%SEL%|">
+<is/=<input type="submit" value="%SEL%|" />
+<irs=<input type="reset" value="%SEL%|">
+<irs/=<input type="reset" value="%SEL%|" />
+<ii=<input type="image" src="%SEL%|">
+<ii/=<input type="image" src="%SEL%|" />
+<ih=<input type="hidden" value="%SEL%|">
+<ih/=<input type="hidden" value="%SEL%|" />
+<js=<script type="text/javascript">\n%SEL%|\n</script>\n
+<jss=<script type="text/javascript" src="%SEL%|.js"></script>\n
+<k=<kbd>%SEL%|</kbd>
+<l=<li>%SEL%|</li>
+<la=<li><a href="|">%SEL%|</a></li>
+<lb=<label>%SEL%|</label>
+<lf=<label for="%SEL%|">|</label>
+<le=<legend>%SEL%|</legend>\n
+<lfi=<link rel="shortcut icon" type="image/x-icon" href="|favicon.ico">\n
+<lfi/=<link rel="shortcut icon" type="image/x-icon" href="|favicon.ico" />\n
+<lcss=<link rel="stylesheet" type="text/css" href="%SEL%|.css">\n
+<lcss/=<link rel="stylesheet" type="text/css" href="%SEL%|.css" />\n
+<lpr=<link rel="stylesheet" type="text/css" href="|print.css" media="print">\n
+<lpr/=<link rel="stylesheet" type="text/css" href="|print.css" media="print" />\n
+<lrss=<link rel="alternate" type="application/rss+xml" title="RSS" href="|rss.xml">\n
+<lrss/=<link rel="alternate" type="application/rss+xml" title="RSS" href="|rss.xml" />\n
+<latom=<link rel="alternate" type="application/atom+xml" title="Atom" href="|atom.xml">\n
+<latom/=<link rel="alternate" type="application/atom+xml" title="Atom" href="|atom.xml" />\n
+<map=<map>\n%SEL%|\n</map>\n
+<met=<meta content="|">%SEL%|</meta>\n
+<mi=<meta http-equiv="imagetoolbar" content="no">\n
+<mi/=<meta http-equiv="imagetoolbar" content="no" />\n
+<mu=<meta http-equiv="content-type" content="text/html; charset=utf-8">\n
+<mu/=<meta http-equiv="content-type" content="text/html; charset=utf-8" />\n
+<mw=<meta http-equiv="content-type" content="text/html; charset=windows-1251">\n
+<mw/=<meta http-equiv="content-type" content="text/html; charset=windows-1251" />\n
+<ma=<meta name="author" content="%SEL%|">\n
+<ma/=<meta name="author" content="%SEL%|" />\n
+<mc=<meta name="copyright" content="%SEL%|">\n
+<mc/=<meta name="copyright" content="%SEL%|" />\n
+<md=<meta name="description" content="%SEL%|">\n
+<md/=<meta name="description" content="%SEL%|" />\n
+<mk=<meta name="keywords" content="%SEL%|">\n
+<mk/=<meta name="keywords" content="%SEL%|" />\n
+<mr=<meta name="robots" content="%SEL%|">\n
+<mr/=<meta name="robots" content="%SEL%|" />\n
+<mg=<meta name="generator" content="SciTE-RU">\n
+<mg/=<meta name="generator" content="SciTE-RU" />\n
+<mt=<meta name="title" content="%SEL%|">\n
+<mt/=<meta name="title" content="%SEL%|" />\n
+<m7=<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">\n
+<m7/=<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />\n
+<nos=<noscript>%SEL%|</noscript>\n
+<o=<ol>\n\t<li>%SEL%|</li>\n\n</ol>\n
+<ob=<object>%SEL%|</object>\n
+<op=<option value="|">%SEL%|</option>
+<opg=<optgroup label="%SEL%|">\n\t<option value=""></option>\n\n</optgroup>\n
+<p=<p>%SEL%|</p>\n
+<pa=<param name="|" value="|">
+<pa/=<param name="|" value="|" />
+<pr=<pre>\n%SEL%|\n</pre>\n
+<q=<q>%SEL%|</q>
+<s=<s>%SEL%|</s>
+<sa=<samp>%SEL%|</samp>
+<sc=<script type="text/javascript" src="|">%SEL%\n|</script>\n
+<se=<select>\n\t<option value="|">|</option>\n\n</select>\n
+<sm=<small>%SEL%|</small>
+<sp=<span>%SEL%|</span>
+<str=<strike>DEPRECATED%SEL%|</strike>
+<st=<strong>%SEL%|</strong>
+<sty=<style type="text/css">\n%SEL%|\n</style>\n
+<sub=<sub>%SEL%|</sub>
+<sup=<sup>%SEL%|</sup>
+<t=<table width="100%%" cellpadding="0" cellspacing="0" border="0">\n\t<tr>\n\t\t<td>|</td>\n\t</tr>\n</table>\n
+<td=<td>%SEL%|</td>
+<tr=<tr>\n\t%SEL%|\n</tr>
+<trd=<tr>\n\t<td>%SEL%|</td>\n\n</tr>
+<th=<th>%SEL%|</th>
+<trh=<tr>\n\t<th>%SEL%|</th>\n\n</tr>
+<ti=<title>%SEL%|</title>\n
+<ta=<textarea rows="|" cols="|">%SEL%|</textarea>\n
+<tb=<tbody>|</tbody>\n
+<the=<thead>%SEL%|</thead>\n
+<tf=<tfoot>%SEL%|</tfoot>\n
+<tt=<tt>%SEL%|</tt>
+<u=<ul>\n\t<li>|</li>\n\n</ul>\n
+<ua=<ul>\n\t<li><a href="|">%SEL%|</a></li>\n\n</ul>\n
+<ui=<ul id="%SEL%|">\n\t<li>|</li>\n\n</ul>\n
+<v=<var>%SEL%|</var>
+
+# Атрибуты тегов
+a-= alt="|"
+ak-= accesskey="|"
+c-= class="|"
+ch-= checked="checked"
+cs-= colspan="|"
+d-= disabled="disabled"
+e-= enctype="multipart/form-data"
+i-= id="|"
+h-= height="|"
+ml-= maxlength="|"
+l-= label="|"
+n-= name="|"
+pp-= pluginspage="http://|"
+ro-= readonly
+rs-= rowspan="|"
+s-= style="|"
+sp-= span="|"
+sr-= src="|"
+sz-= size="|"
+t-= title="|"
+ti-= tabindex="|"
+tp-= type="|"
+v-= value="|"
+w-= width="|"
+
+# Специальные символы HTML
+& =&nbsp;
+&¦=&brvbar;
+&s=&sect;
+&<<=&laquo;
+&0=&deg;
+&d=&divide;
+&t=&times;
+&+-=&plusmn;
+&.=&middot;
+&>>=&raquo;
+&"=&quot;
+&&=&amp;
+&<=&lt;
+&>=&gt;
+&-=&ndash;
+&--=&mdash;
+&c=&copy;
+(c)=&copy;
+&r=&reg;
+(r)=&reg;
+&tm=&trade;
+
+# Условные комментарии
+<cie=<!--[if IE]>|<![endif]-->
+<cnie=<!--[if !IE]><!-->|<!--<![endif]-->

@@ -1,0 +1,55 @@
+# Сокращения для PHP by visor {
+#
+inc=include "|";
+inco=include_once "|";
+php=<?php | ?>
+req=require "|";
+reqo=require_once "|";
+
+# Ветвления
+if=if (|)\n{\n\t%SEL%\n}
+els=else {\n\t%SEL%|\n}
+ife=if (|)\n{\n\t\n}\nelse\n{\n\t\n}
+ifif=if (|)\n{\n\t\n}\nelseif ()\n{\n\t\n}\nelse\n{\n\t\n}
+sw=switch (|) {\n\tcase:\n\t\t\n\t\tbreak;\n\tdefault:\n\t\tbreak;\n}
+
+# Циклы
+fri=for ($i = |; $i < ; $i++)\n{\n\t\n}
+for=for (|; ; )\n{\n\t\n}
+wh=while (|)\n{\n\t\n}
+dow=do\n{\n\t\n}\nwhile (|);
+fe=foreach (| as )\n{\n\t\n}
+each=each (| as )\n{\n\t\n}
+
+# Управление
+gl=global;
+st=static;
+br=break;
+co=continue;
+
+# Классы и Функции
+#fnc=function |() {\n\t\n\treturn\n}
+fnc=function |()\n{\n\t\n\treturn\n}
+#class=class | {\n\n\tfunction () {\n\t\t\n\t\treturn\n\t}\n}
+class=class |\n{\n\n\tfunction ()\n\t{\n\t\t\n\t\treturn\n\t}\n}
+#classe=class | extends {\n\n\tfunction () {\n\t\t\n\t\treturn\n\t}\n}
+classe=class | extends \n{\n\n\tfunction ()\n\t{\n\t\t\n\t\treturn\n\t}\n}
+par=parent::|();
+
+# Комментарии
+rem=/*\n * |\n */
+
+# Возвращаемые значения
+ret=return |;
+rt=return true;
+rf=return false;
+
+# Полезные функции
+ec=echo "|";
+pr=print_r(|);
+
+# Разное
+dec=declare (|) {\n\t\n}
+def=define
+# } //Сокращения для PHP
+

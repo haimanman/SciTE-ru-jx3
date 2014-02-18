@@ -1,0 +1,2963 @@
+AddUILockItem (key, dwBox, dwX)\n给Item加上UI锁\n返回值：无\n
+AppendCommand (key, fn, szHelp)\n添加一条宏指令\n返回值：无\n
+ApplyAchievementData (dwPlayerID)\n向服务端申请同步某玩家的成就数据\n返回值：无\n
+ApplyCharacterThreatRankList (dwCharacterID)\n请求角色的仇恨排行列表\n返回值：无\neTargetType：目标类型，详见枚举类型[[TARGET]]\ndwID：目标ID
+BigIntAdd (nLeft, nRight)\n执行Int范围内的加\n返回值：nResult\n可用于时间的加减，防止精度丢失
+BigIntSub (nLeft, nRight)\n执行Int范围内的减\n返回值：nResult\n可用于时间的加减，防止精度丢失
+BookID2GlobelRecipeID (dwBookID, dwSubID)\n通过书的套书ID与子ID获得其配方ID\n返回值：dwRecipeID\n与GlobelRecipeID2BookID互为逆操作
+BreakEquip (无)\n分解装备\n返回值：无\n
+BuyItem (dwNpcId, dwShopId, dwPageIndex, nPos, nCount)\n向服务器请求购买某道具\n返回值：该函数无返回值 如果因为某种原因不能购买道具，那么是不会发送请求的\n
+Camera_GetParams ([dwScene])\n获取镜头参数\n返回值：fDragSpeed, fMaxCameraDistance, fSpringResetSpeed, fCameraResetSpeed, nResetMode\n
+Camera_GetRTParams ([dwScene])\n获得镜头运行时的参数\n返回值：fCameraToObjectEyeScale, fYaw, fPitch\n
+CanSelectDoodad (dwDoodadID)\n能否选择Doodad\n返回值：无\n
+Chat_AddMonitorMsg (szChatName, szMsg)\n添加聊天窗口监测的频道\n返回值：无\n例：Chat_AddMonitorMsg("综合", "MSG_ITEM")
+Chat_GetMonitorMsg (szChatName)\n获取聊天窗口监测的频道\n返回值：szMsg\n例：Chat_GetMonitorMsg("综合")
+Chat_RemoveMonitorMsg (szChatName, szMsg)\n删除聊天窗口监测的频道\n返回值：无\n例：Chat_RemoveMonitorMsg("综合", "MSG_ITEM")
+CheckDistanceAndDirection (player, doodad)\n检查是否可以跟Doodad对话\n返回值：bCanDialog\n
+CloseLastMessageBox (无)\n关掉上次的消息框\n返回值：无\n
+CloseMessageBox (szName)\n关掉指定的消息框\n返回值：无\n
+CloseMiddleMap (无)\n关闭中地图\n返回值：无\n
+ColorText (szText, nColorIndex)\n文本着色\n返回值：szColoredText\n
+Conversion2ChineseNumber (num, szSeparator, tDigTable)\n将对应数字转换为汉字数字\n返回值：szCharNum\n
+DateToTime (nYear,nMonth,nDay,nHour,nMinute,nSecond)\n将日期时间转换为UNIX时间戳\n返回值：time_t时间\n将输入的时间变量转换成UNIX时间戳
+EditBox_GetChannel (无)\n获取当前聊天频道\n返回值：无\n
+EncodeComponentsString (szString)\n组件编码\n返回值：wszEncodedString\n
+FireEvent (...)\n释放事件\n返回值：无\n等同于FireEvent
+FireHelpEvent ()\n通知新手帮助事件\n返回值：无\n
+FireUIEvent (...)\n释放事件\n返回值：无\n参数形式如下：szEvent, arg1,?
+FixFloat (fNum, nEPS)\n浮点数转换成字符串，保留nEps个小数点\n返回值：szResult\n
+FormatAttributeValue (tParam)\n将属性值格式化，都只保留两位小数点\n返回值：无\ntParam的必须包含以下索引值nID,fValue0,fValue1,fParam0,fParam1,fParam2,fParam3; \n其中,fValue组若fValue0不为nil,都不能为nil;\nfParam组若fParam0不为nil,都不能为nil；\nnID必须为78或者79
+FormatHandle (szItem)\n获取格式化后的容器文本信息\n返回值：szText\n
+FormatLinkString (szMsg, szFont, ?)\n格式化链接字符串\n返回值：szResult\n
+FormatMoneyTab (nMoney或者是tMoney)\n格式化金钱表\n返回值：返回一个tMoney,表中包含nGold, nSilver, nCopper三项值\nnMoney的值以铜币为单位
+FormatString (szFormat, ?)\n格式化字符串\n返回值：szResult\n
+FormatTime (szFormat, nTime)\n格式化时间\n返回值：szDest\n
+GetAddOnCount (无)\n获取插件数量\n返回值：nCount\n
+GetAddOnInfo (nIndex)\n获取插件信息\n返回值：返回一个表，表中包含以下索引值："szID"，"szName"，"szDesc"，"szDependence"， "szWeakDependence"，"szVersion"，"bDefault"，"bEnable"，"bDisable"\n
+GetArenaStatistics (无)\n获取竞技场统计数据\n返回值：返回一个表，每一项的索引值对应一个玩家的相关信息表tTab；表tTab中包含以下索引值："dwCorpsID"，"nCorpsType"，"nCorpsLevel"，"dwSeasonTotalCount"，"nGroupID"，"szCorpsName"，"nDeltaCorpsLevel"，"dwCorpsSystemID"，"dwRoleID"，"nMatchLevel"，"nGrowupLevel"，"szPlayerName"，"nDeltaMatchLevel"，"nDeltaGrowupLevel"\n
+GetAuctionClient (无)\n获取AuctionClient对象\n返回值：返回AuctionClient对象\n
+GetBattleFieldPQInfo (无)\n获取当前战场PQ信息\n返回值：战场PQ信息表\n返回表包含以下的内容：dwBattleFieldPQID：战场PQID\ndwBattleFieldPQTemplateID：战场PQ模板ID\nnBattleFieldPQBeginTime：战场PQ开始时间\nnBattleFieldPQEndTime：战场PQ结束时间
+GetBindBuffDesc (nIndex, dwID, nLevel, szKey, skillKey)\n获取绑定BUFF的描述文本\n返回值：szDescText\n
+GetBookTipByItem (item, szFromLoorOrShop)\n获取书本的Tip文本\n返回值：szTip\n
+GetBookTipByItemInfo (itemInfo, nBookID, nSegmentID, bAddInfo)\n获取书本的Tip文本\n返回值：szTip\n
+GetBuffDesc (dwID, nLevel, szKey)\n根据szKey的不同，返回符合条件的数据\n返回值：返回值取决于根据szKey的取值\nszKeyName为"name"时，返回buff名；\n为"time"时返回buff时长；\n为"count"时，返回buff的跳数；\n为"interval"时，返回buff的跳数间隔；\n为"desc"时，返回其描述文本
+GetBuffInfo (dwBuffID, dwBuffLevel, data)\n获取buff,debuff,hot或dot的属性\n返回值：返回一个表\n如果函数执行成功，返回一个table，内容是data参数中取出key对应实际的属性值。以上面那个data为例，返回值为：{["WalkSpeedBase"]=buff效果对WalkSpeedBase影响的值, ["CurrentMana"]=buff效果对当前mana影响的值}
+GetBuffTime (dwBuffID, nBuffLevel)\n获取buff持续时间\n返回值：如果函数执行成功，返回buff持续时间，作用次数，间隔时间\n
+GetBuyLimitItemCDLeftFrames (无)\n获取还有多少帧可以接着买限量的商品\n返回值：nIntervel, nLeftFrame\nnIntervel:间隔时间\nnLeftFrame:剩余帧数
+GetCharacterDistance (dwSrcCharacterID,dwDstCharacterID)\n获取2个角色之间的距离\n返回值：如果函数执行成功，返回2个角色之间的距离，单位是点。如果函数执行失败，那么返回-1\n获取2个角色之间的距离
+GetClientPlayer (无)\n获取本客户端的Player对象\n返回值：本地Player对象\n若该对象不存在，则为nil
+GetClientTeam (无)\n获取本客户端的KTeamClient对象\n返回值：KTeamClient对象\n若不在组队状态，则返回nil
+GetColorDiamondInfoFromEnchantID (dwEnchantID)\n由附魔ID获取五彩石信息\n返回值：dwTabType，dwIndex\ndwTabType，dwIndex:物品类别及所属类别下的ID
+GetCorpsID (nCorpsType,dwPeekPlayerID)\n获取名剑队ID\n返回值：dwCorpsID\n
+GetCorpsInfo (dwCorpsID，bRank)\n获取战队相关信息\n返回值：返回一个表，包含以下索引值："szCorpsName","nCorpsType","nCorpsLevel","dwSeasonTotalCount","dwSeasonWinCount","dwWeekTotalCount","dwWeekWinCount","dwRanking","nLastCorpsLevel","dwLastWeekTotalCount","dwLastWeekWinCount","nMemberCount"\n
+GetCorpsMemberInfo (dwCorpsID,bRank)\n获取战队成员信息\n返回值：返回一个表，表中每一项的索引值对应一个玩家的信息tab。该信息tab包含以下索引值："dwPlayerID","szPlayerName","nCamp","nLevel","dwForceID","bLeader","dwCorpsSystemID","nGrowupLevel","nMatchingLevel","dwSeasonTotalCount","dwSeasonWinCount","dwWeekTotalCount","dwWeekWinCount","nLastGrowupLevel","dwLastWeekTotalCount","dwLastWeekWinCount"\n
+GetCurrentTime (无)\n获取游戏世界的当前时间\n返回值：返回从midnight,January-1,1970到调用时刻的秒数\n获取游戏世界的当前时间
+GetDesignationPrefixInfo (nPrefix)\n取得某个称号前缀的基础信息\n返回值：成功返回一个table，失败返回nil\n成功返回的table包含五个信息，键值分别为dwCoolDownID, dwBuffID, nBuffLevel, nOwnDuration. bIndependent分别表示该前缀的CD ID，拥有的属性（dwBuffID, nBuffLevel决定），玩家能拥有的时间（限时称号）， 是否为世界称号（独立于称号的其它组成）.没有CD时，对应的value为0.\n没有属性时dwBuffID, nBuffLevel对应的value均为0.非限时称号前缀nOwnDuration对应的value为0.\nIndependent对应的value为true表示是世界称号，否则不是.
+GetDiamondInfoFromEnchantID (dwEnchantID)\n由附魔ID获取五行石信息\n返回值：dwTabType，dwIndex\ndwTabType，dwIndex:物品类别及所属类别下的ID
+GetDoodad (dwID)\n通过Doodad的dwID获取Doodad对象\n返回值：返回Doodad对象\n
+GetDoodadQuestTip (dwDoodadTemplateID)\n获取Doodad上的任务Tip\n返回值：szTip\n
+GetDoodadTemplate (dwTemplateID)\n获取包含指定指定Doodad信息的模板数据\n返回值：如果有这个ID的Doodad模板，那么返回对应的KDoodadTemplate对象；否则返回nil\n
+GetFEAInfoByEnchantID (dwEnchantID)\n由附魔ID获取五彩石激活属性信息\n返回值：五彩石激活属性表\n每一个五彩石最多三条属性，每个属性是一个表，包含以下信息：\n{nID，nValue1，nValue2,\nnDiamondType,nCompare,nDiamondCount,nDiamondIntensity,bHaveScrip}
+GetFPS (无)\n获取帧数\n返回值：dwFPS\n
+GetForceFontColor (dwPeerID, dwSelfID)\n获取势力关系对应的字体颜色\n返回值：r, g, b\n
+GetForceImage (dwForceID)\n获取势力图标\n返回值：szPath,  nFrame\n
+GetForceTitle (dwForceID)\n获取势力对应的名称\n返回值：szTitle\n
+GetFormatImage (szPath, nFrame, nWidth, nHeight, nEventID, szImageName)\n获取格式化的图片信息文本\n返回值：szText\n
+GetFormatText (szText, nFont, nR, nG, nB, nEvent, szScript, szName, dwUserData, szLinkInfo)\n获取格式化后的文本字符串\n返回值：szText\n
+GetFrameAnchor (rame, szPoint)\n获取窗口停驻位置\n返回值：tAnchor\ntAnchor表中包含以下索引值：s, r, x, y
+GetFrameAnchorCorner (frame)\n获取窗口停驻的角落\n返回值：szCorner\n返回值取值范围如下："BOTTOMRIGHT"，"TOPRIGHT"，"BOTTOMLEFT"， "TOPLEFT"
+GetFrameAnchorEdge (frame, szLimit)\n获取窗口停驻偏向哪边\n返回值：szEdge\n返回值取值范围如下："LEFT", "RIGHT", "TOP", "BOTTOM";\n若szLimit为"VERTICAL"时，返回值取"TOP"或者"BOTTOM";\n若szLimit为"HORIZEN"时，返回值取"LEFT"或者 "RIGHT"
+GetGoldText (nGold, nFont)\n获取金钱的文本,以金币为单位\n返回值：szText\nnGold以金币为单位
+GetHeadTextForceFontColor (dwPeerID, dwSelfID)\n由两者势力关系来获取头顶的着色\n返回值：r, g, b\n不同的势力关系之间头顶文本的着色不同
+GetIntergerBit (nNumber)\n十进制整数占的位置\n返回值：nLargest\n例如11，返回2
+GetItem (dwID)\n通过Item的dwID获取Item对象\n返回值：返回Item对象\n通过Item的dwID获取Item对象
+GetItemAdvanceBoxKeyInfo (dwBoxTemplateID)\n获取对应宝箱的钥匙对象信息\n返回值：Key的ItemInfo对象\n
+GetItemCoolDown (dwSkillID, dwSkillLevel, dwCoolDownID)\n获取Item的冷却帧数\n返回值：nCoolDown\ndwSkillID, dwSkillLevel:技能ID与等级\ndwCoolDownID：CD的ID
+GetItemEnchantAttrib (dwEnchantID)\n获取道具的附魔属性\n返回值：Attrib Tab\n返回一个属性表，每一项都是一个子表，包括{nID, nValue1, nValue2},
+GetItemFontColorByQuality (nQuality, bText)\n由物品品质获取Item的字体颜色\n返回值：r,g,b\n
+GetItemInfo (dwTabType, dwIndex)\n获取指定道具类型的物品信息\n返回值：如果执行成功，则返回物品信息对象和物品信息对象的类型，否则返回nil\n获取指定道具类型的物品信息。函数执行失败返回nil。如果成功，则返回以下两种情况之一:1，返回KGItemInfo和ITEM_INFO_TYPE.CUSTEQUIP_INFO;2，返回KGItemInfo和ITEM_INFO_TYPE.OTHER_INFO
+GetItemMagicAttrib (无)\n获取获取物品的魔法属性\n返回值：魔法属性表\n表的每一项是个子表，对应dwAttribIndex的属性，包含以下内容：ID, nImportance, {Param0, Param1, Param2, Param3}
+GetItemNameByUIID (nUiId)\n通过uiid获取物品名称\n返回值：szName\n
+GetItemPosByItemTypeIndex (dwTabType, dwIndex)\n获取指定物品在身上背包中出现的第一个位置\n返回值：dwBox, dwX\n查找不到，则返回nil，nil
+GetItemPosInPackage (dwTabType, dwIndex, dwBox)\n获取指定物品在指定背包中出现的第一个位置\n返回值：dwX\n查找不到，则返回nil
+GetItemSetAttrib (dwSetID)\n获取套装属性\n返回值：套装的属性\n获取道具所属套装的属性。如果本道具不属于某个套装，则返回nil。如果道具属于某个套装，那么返回5个值： 1)dwUiId: 套装的Ui Id 2)table: 这个table是一个下标从1开始的数组，每个数组元素又是一个table, 这个table包含2个字段："nUiId"和"bEquiped", nUiId表示装备的ui id， bEquiped表示是否穿上了这件装备。 3)套装所包含的装备数量 4)套装中有几件穿在身上了 5)table: 这个table包含套装特殊属性，下标从最小能够激活套装特殊属性的 装备数量开始。例如，如果从2件开始能够激活套装属性，那么这个table中 的元素从下标2开始。这个table的每个元素又是一个table, 这个table包含5个字段："nID"(套装特殊属性的id), "nCount"（这是几件 装备激活的属性），"nValue1"（属性的第一个值），"nValue2"（属性的第2个 值，"bEquiped"（当前是否激活了这个属性）。
+GetKeyName (nKey)\n快捷键，获取nKey对应的szKey值\n返回值：szKey\n与GetKeyValue操作互逆
+GetKeyShow (nKey, bShift, bCtrl, bAlt, bShort)\n获取快捷键的显示字符串\n返回值：szKey\n
+GetKeyValue (szKey)\n快捷键，获取szKey对应的nKey值\n返回值：nKey\n与GetKeyName操作互逆
+GetLevelUpData (ROLE_TYPE,nLevel)\n获取角色等级数据\n返回值：取得角色升级的数据表\n获取角色等级数据。返回一个Lua的Table，包含以下字段："Experience"，"Strength"，"Agility"，"Vigor"， "Spirit"，"MaxLife"，"MaxMana"，"MaxStamina"，"MaxThew"，"RunSpeed"，"Height"，"LifeReplenish"，"LifeReplenishPercent"， "ManaReplenish"，"ManaReplenishPercent","ParryBaseRate","PhysicsCriticalStrike","SolarCriticalStrike","NeutralCriticalStrike","LunarCriticalStrike","PoisonCriticalStrike","NoneWeaponAttackSpeedBase","MaxPhysicsDefence","MaxContribution"
+GetLocalTimeText (无)\n获取当前时间\n返回值：szString\n返回字符串如下：时：分：秒（X年X月X日）
+GetLogicFrameCount (无)\n获取当前的游戏帧计数器的值\n返回值：返回一个整数，表示当前游戏帧计数器的值\n获取当前的游戏帧计数器的值;\n比如配合BUFF的消失帧来协同时用
+GetMailClient (无)\n获取KMailClient对象\n返回值：返回MailClient对象\n
+GetMapList (无)\n获取地图的MapID列表\n返回值：返回一个下标从1开始的table，每个项是一个地图的ID\n获取地图的MapID列表
+GetMapParams (dwMapID)\n获取地图参数\n返回值：返回一个表\n获取地图参数:szDir,nType,nMaxPlayerCount, nLimitTimes, nCampType\nszDir:地图的资源文件路径，对应MapList的ResourceFilePath列的值\nnType:地图类型\nnMaxPlayerCount：最多可容纳玩家人数 nLimitTimes：当天限制进入次数\nnCampType：阵营类型
+GetMasterRecipeList (dwMasterID, bHas, bCannot)\n获取训练师身上的配方列表\n返回值：如果函数执行成功，返回一个table，每一项包括： "dwCraftID": 技艺id "dwRecipeID": 配方id "bHas":   是否已经学会 "bCannot":  是否可以学习\n
+GetMoneyPureText (nMoney)\n获取金钱的纯文本\n返回值：szPureText\n例：传入参数12345，返回为"1金23银45铜"
+GetMoneyText (nMoney, szFont)\n获取金钱的文本\n返回值：szText\nnMoney以铜币为单位
+GetMoneyTipText (nMoney, nFont, bTenThousand)\n获取金钱的Tip文本\n返回值：szText\nnMoney以铜币为单位；bTenThousand以万金作计金币单位
+GetMsgFont (szType)\n获取消息字体\n返回值：nFont\n
+GetMsgFontColor (szType, bTab)\n获取消息的字体颜色\n返回值：bTab为true时，返回形如{r,g,b}的表，否则直接返回r,g,b\n
+GetMsgFontString (szType, tColor)\n获取消息的字体字符串\n返回值：szReturn\n
+GetNpc (dwID)\n获取指定ID的NPC对象\n返回值：返回指定ID的NPC对象\n若该对象不存在，则为nil
+GetNpcHeadImage (dwID)\n获取NPC的头顶图标\n返回值：szPath, nFrame\n
+GetNpcIntensity (npc)\n获取NPC强度\n返回值：nLevel\n普通：1；高手：2；头目：4；领袖：4
+GetNpcTemplate (dwID)\n获取包含指定指定Npc信息的模板数据\n返回值：函数执行成功，返回对应的KNpcTemplate对象；否则返回nil\n
+GetPartyMemberFontColor (无)\n获取队友的字体颜色\n返回值：r, g, b\n
+GetPingValue (无)\n获取当前的ping值\n返回值：返回ping值\n获取当前的ping值
+GetPlayer (dwID)\n获取指定ID的Player对象\n返回值：指定ID的Player对象\n若该对象不存在，则为nil
+GetPlayerItem (player, dwBox, dwX)\n获取玩家的Item，包括帮会仓库中的\n返回值：item\n
+GetPopupMenu (无)\n获取当前弹出菜单\n返回值：返回弹出菜单的窗口对象\n
+GetProfession (dwProfessionID)\n获取Profession对象\n返回值：如果执行成功，则返回对应的Profession对象，否则返回nil\n
+GetQuestInfo (dwID)\n获取包含指定任务信息的KQuestInfo对象\n返回值：如果执行成功，则返回对应的KQuestInfo对象，否则返回nil\n
+GetQuestState (dwQuestID, dwTargetType, dwTargetID)\n返回任务状态及任务等级\n返回值：nState,nQuestLevel\n
+GetRecipe (dwCraftID,dwRecipeID)\n获得生活技能的配方对象\n返回值：返回该生活技能配方recipe对象\n这个接口还可以传如下参数（dwCraftID， dwBookID， dwBookSubID），用来获得书籍对应配方信息
+GetRepairAllItemsPrice (dwNpcId, dwShopId)\n获取修理玩家身上所有道具的价格\n返回值：返回修理所有道具的价格\n
+GetReputeLimit (nLevel)\n获取某个等级下最大的声望值\n返回值：返回这个指定等级下最大的声望值。\n
+GetRootPath (无)\n获取根路径\n返回值：szRootPath\n
+GetScene (dwID)\n通过Scene的dwID获取Scene对象\n返回值：返回一个Scene对象；若无，返回nil\n通过Scene的dwID获取Scene对象
+GetShopItemBuyOtherInfo (dwNpcID, dwShopID, dwPageIndex, dwPosIndex)\n获取购买商店物品除金钱外的其它需求\n返回值：nPrestige, nContribution, nJustice, nExamPrint,dwTabType, dwIndex, nRequireAmount, nRequireAchievementRecord, nAchievementPoint, nDurability, nMentorValue, nRequireTitle,nCoin, nRequireCorpsValue, dwMaskCorpsNeedToCheck\nnPrestige:威望\nnContribution：帮贡\nnJustice：侠义值\nnExamPrint：监本印文\ndwTabType, dwIndex, nRequireAmount：所需物品及其数量 nRequireAchievementRecord：所需资历 nAchievementPoint：所耗费的成就点数 nDurability：耐久度\nnMentorValue：师徒值\nnRequireTitle：军衔战阶,nCoin:通宝 , nRequireCorpsValue：花费名剑币, dwMaskCorpsNeedToCheck：战队积分
+GetShopItemID (dwShopId, dwPageIndex, nPos)\n获取商店中某个道具的id\n返回值：返回道具的id。如果没有道具，那么返回0\n
+GetShopItemRepairPrice (dwNpcId, dwShopId, dwPageIndex, nPos)\n获取玩家身上某个道具的修理价格\n返回值：返回道具的修理价格\n
+GetShopItemReputeLevel (dwTabType, dwIndex, dwRandSeed)\n获取商店中某个道具的声望要求\n返回值：返回道具的声望要求\n
+GetShopItemSellPrice (dwNpcId, dwShopId, dwPageIndex, nPos)\n获取玩家身上某个道具的出售价格\n返回值：返回道具的出售价格\n
+GetSkill (dwSkillID, dwSkillLevel)\n通过技能ID与等级来获取Skill对象\n返回值：返回Skill对象\n
+GetSkillInfo (skillkey)\n获取技能的显示信息\n返回值：技能信息表\n如果函数执行成功，返回技能信息的一个table，包含："CastTime": 释放时间，\n"CoolDown1": 计时器id\n"CoolDown2": 计时器id\n"CoolDown3": 计时器id\n"CoolDown4": 计时器id\n"AreaRadius": 作用半径，单位点\n"MinRadius": 最小半径，单位点\n"MaxRadius": 最大半径，单位点\n"CostMana": 内力消耗\n"CostLife"：血量消耗\n"CostRage": 怒气消耗\n"CostTrain": 修为消耗\n"MinPhysicsDamage": 最小外功伤害\n"MaxPhysicsDamage": 最大外功伤害\n"MinSolarDamage": 最小阳性内功伤害\n"MaxSolarDamage": 最大阳性内功伤害\n"MinNeutralDamage": 最小中性内功伤害\n"MaxNeutralDamage": 最大中性内功伤害\n"MinLunarDamage": 最小阴性内功伤害\n"MaxLunarDamage": 最大阴性内功伤害\n"MinPoisonDamage": 最小毒性内功伤害\n"MaxPoisonDamage": 最大毒性内功伤害\n"MinTherapy": 最小治疗量\n"MaxTherapy": 最大治疗量
+GetSkillRecipeBaseInfo (dwRecipeID，dwRecipeLevel)\n获取武功秘笈的基本信息\n返回值：dwSkillID，dwSkillLevel，eType，nSkillRecipeType\ndwSkillID：对应技能ID\ndwSkillLevel：对应技能等级\neType：技能类别，详见SKILL_RECIPE_TYPE\nnSkillRecipeType：秘笈的类别
+GetTargetHandle (dwType, dwID)\n获取指定的目标对象\n返回值：返回一个玩家或者NPC对象\ndwType取值为：TARGET.PLAYER或者TARGET.NPC
+GetTickCount (无)\n获取当前时间\n返回值：dwTickCount\n
+GetTime (无)\n获取当前时间\n返回值：dwTime\n
+GetTimeText (nTime, bFrame, bShot, bInt, bCeil)\n将时长转化为符合条件的字符串\n返回值：szTimeText\nbShort为true时，只返回该时长对应的最大计量单位的值，如超过1天，返回n天，不足1天，返回n小时；最低单位为秒。为false时，返回X天X小时X分X秒\nbInt表示返回秒数是否取整型\nbCeil表示返回秒数取整型时，是以math.ceil方式，还是math.floor
+GetTimeToHourMinuteSecond (nTime, bFrame)\n将时间转化为时分秒的格式\n返回值：nHour, nMinute, nSecond\nbFrame为true时，表示nTime为帧数，否则为时长（单位：秒）
+GetTongClient (无)\n获取客户端帮会操作对象\n返回值：返回TongClient对象\n
+GetUIItemBox (dwBox, dwX, bEvenUnVisible)\n获取Item所在的BOX控件对象\n返回值：返回一个BOX控件对象\n
+GetUserInput (szMsg, fActionSure, fActionCancel, fAutoClose, rect, szDefault, nLimit, bNum, bRich, bDisableES)\n弹出输入框\n返回值：无\n
+GetUserInputNumber (nDefault, nMax, rect, fActionSure, fActionCancel, fAutoClose)\n弹出输入框：仅能输入数字\n返回值：无\n
+GetUserPercentage (fnAction, fnCancelAction, fDefaut, szMsg, rect, fnAutoClose)\n弹出百分比的滑动条界面\n返回值：无\n
+GetUserPreferences (nOffset,szFormat)\n获取玩家界面存盘数据\n返回值：返回格式制定的数据\n如果函数执行成功，返回从指定偏移处，数据格式描述字符所代表的一个数据。szFormat中合法的格式字符包括：d或D：DWORD类型，无符号32位整数；n或N：int类型，有符号32位整数；c或C：char类型，单字节字符；w或W：WORD类型，无符号16位整数；f或F：float类型，单精度浮点数；s或S：字符串类型。
+GetWeapenType (nType)\n获取武器类型对应的字符串描述\n返回值：szWeapenDetail\nnType:见枚举型[[WEAPON_DETAIL]]
+GlobelRecipeID2BookID (dwRecipeID)\n由一本书的配方ID获得它的套书ID及子ID\n返回值：dwBookID, dwSubID\n与BookID2GlobelRecipeID互为逆操作
+GoldSilverAndCopperToMoney (nGold, nSilver, nCopper)\n金钱的数值转化\n返回值：nMoney\n
+Hand_Clear (bForPick)\n清空装物品的格子\n返回值：无\nhand = Station.Lookup("Lowest/Hand", "Box_Hand")
+Hand_DropHandObj (无)\n移除物品格子中的物品\n返回值：无\nhand = Station.Lookup("Lowest/Hand", "Box_Hand")
+Hand_Get (无)\n获取装物品的格子对象\n返回值：box, box.nCount\nhand = Station.Lookup("Lowest/Hand", "Box_Hand")
+Hand_IsEmpty (无)\n装物品的格子是否为空\n返回值：无\nhand = Station.Lookup("Lowest/Hand", "Box_Hand")
+Hand_Pick (box, nCount, bAction)\n放物品到格子中\n返回值：无\nhand = Station.Lookup("Lowest/Hand", "Box_Hand")
+HideTip (bFadeOut)\n隐藏tip\n返回值：无\nbFadeOut为true时，Tip会淡出
+InitFrameAutoPosInfo (frame, nSize, szOnly, szFriendly, fnAutoClose)\n初始货窗口自动调整位置的相关信息\n返回值：无\n
+InsertDistributeMenu (tMenu, bDisable)\n插入Distribute菜单\n返回值：插入成功，则返回true\n
+InsertInviteTeamMenu (menu, szTargetName)\n插入邀请组队菜单\n返回值：无\n
+InsertMarkMenu (tMenu, dwCharacterID)\n插入Mark菜单\n返回值：插入成功，则返回true\n
+InsertPlayerCampMenu (tMenu)\n插入PlayerCamp菜单\n返回值：插入成功，则返回true\n
+InsertPlayerCommonMenu (tMenu, dwPlayerID, szPlayerName)\n插入PlayerCommon菜单\n返回值：插入成功，则返回true\n
+InsertPlayerKungfuMenu (tMenu, player)\n插入PlayerKungfu菜单\n返回值：插入成功，则返回true\n
+InsertPlayerMenu (tMenu)\n插入Player菜单\n返回值：插入成功，则返回true\n
+InsertTargetMenu (tMenu)\n插入Targert菜单\n返回值：插入成功，则返回true\n
+InsertTeammateLeaderMenu (tMenu, dwMemberID)\n插入TeammateLeader菜单\n返回值：插入成功，则返回true\n
+InsertTeammateMenu (tMenu, dwMemberID)\n插入Teammate菜单\n返回值：插入成功，则返回true\n
+InteractDoodad (player, doodad)\n能打开的情况下打开Doodad\n返回值：无\n
+IsAlly (dwSrcCharacterID, dwDstCharacterID)\n判断两角色的关系是否是同一阵营\n返回值：如果是同一阵营，返回true；否则返回false\n
+IsAltKeyDown (无)\n判断alt键是否按下\n返回值：bKeyDown\n
+IsBagInSort (无)\n判断背包是否在整理中\n返回值：bInSort:整理中为true,否则为false\n
+IsBankInSort (无)\n判断仓库是否在整理中\n返回值：bInSort:整理中为true,否则为false\n
+IsBuffDispel (dwBuffID, nLevel)\n判断buff是否可被驱散\n返回值：无\n
+IsCommonSkill (dwSkillID)\n是否为新手的普通攻击技能\n返回值：bCommonSkill, bMeleeSkill\nbCommonSkill:是否是新手普通攻击技能；bMeleeSkill：是否是近战武器的技能。
+IsCtrlKeyDown (无)\n判断ctrl键是否按下\n返回值：bKeyDown\n
+IsCursorInExclusiveMode (无)\n光标是否处于独占模式\n返回值：bInExclusiveMode\n光标在一个只有主动取消才能改变的状态，返回true;否则为flase
+IsEmpty (tTab)\n判断一个表是否为空表\n返回值：bIsEmpty\n必须确保传入表不为nil
+IsEnemy (dwSrcCharacterID，dwDstCharacterID)\n判断两个角色的关系是否是敌对关系\n返回值：如果是敌对关系，返回true；否则返回false\n
+IsFileExist (szFile)\n判断文件是否存在\n返回值：bExist\n
+IsKeyDown (szKey)\n判断szKey是否按下\n返回值：bKeyDown\n
+IsMiddleMapOpened (无)\n中地图是否打开\n返回值：已打开，返回true;否则为false\n
+IsMonitorMsg (szType)\n判断指定类型消息是否被监听且有监听消息\n返回值：无\n
+IsMultiThread (无)\n判断是否是多线程\n返回值：多线程模式返回true,否则为false\n
+IsMystiqueRecipeRead (item)\n判断提升技能属性的秘笈有没有被读过\n返回值：bRead\n
+IsMystiqueSkillRead (item)\n判断学习内功，招式的秘笈有没有被读过\n返回值：bRead，bExpMystique\n
+IsNeutrality (dwSrcCharacterID, dwDstCharacterID)\n判断两个角色的关系是否是中立关系\n返回值：如果是中立关系，返回true；否则返回false\n
+IsNpcExist (dwNpcID)\n判断Npc是否存在\n返回值：是否存在\n
+IsOptionOrOptionChildPanelOpened (无)\n判断是否有选项或其子窗口被打开\n返回值：有打开时，返回为true;否则为false\n当快捷键设置，界面设置，视频设置，声音设置，宏定义等窗口打开时返回为true
+IsParty (dwSrcCharacterID，dwDstCharacterID)\n判断某个关系是否是同一队伍\n返回值：如果是同一队伍，返回true；否则返回false\n
+IsPlayer (dwID)\n判断指定对象是否是Player\n返回值：如果传入的对象（dwID）是玩家，那么返回true，否则返回false\n判断指定对象是否是Player。\n需要注意的是本函数并不能确定对应ID的player对象真实存在
+IsPlayerExist (dwPlayerID)\n判断Player是否存在\n返回值：否存在\n
+IsPopupMenuOpened (无)\n判断是否已有弹出菜单\n返回值：bOpen\n
+IsRemotePlayer (dwPlayerID)\n判断是否是远程玩家\n返回值：是远程，返回true, 否则为false\n
+IsShiftKeyDown (无)\n判断shift键是否按下\n返回值：bKeyDown\n
+IsTableEmpty (tTab)\n判断一个表是否为空表\n返回值：bIsEmpty\n传入表为nil时，返回为true
+KeepOneByteFloat (fVal)\n浮点数转换成字符串，保留一个小数点\n返回值：szResult\n
+KeepTwoByteFloat (fVal)\n浮点数转换成字符串，保留两个小数点\n返回值：szResult\n
+Log (szMessage)\n写LOG\n返回值：无\n
+LootItem (dwDoodadID, dwItemID)\n向服务器申请从某个Doodad上拾取某个Item\n返回值：无\n
+LootMoney (dwDoodadID)\n拾取金钱\n返回值：这个函数把玩家打开的Doodad的id发送到服务器，然后服务器判断玩家能否拾取Doodad中的金钱\n
+MessageBox (tMsg, bDisableSound)\n弹出一个消息框\n返回值：无\ntMsg表中可包含以下索引值：szName, bModal, bVisibleWhenHideUI, fnAutoClose, fnAction, fnCancelAction, szCloseSound, bRichText, fX, fY; 其中，szName必须给出
+MoneyOptAdd (tLMoney, tRMoney)\n金钱相加\n返回值：返回一个tMoney,表中包含nGold, nSilver, nCopper三项值\ntLMoney,tRMoney可以是以铜币为单位的一个number，也可以是开如以下的表：{nGold = 1, nSilver=1, nCopper =2}
+MoneyOptCmp (tLMoney, tRMoney)\n比较两个金钱的值的大小\n返回值：tLMoney较大，返回1；tLMoney较小，返回-1；相等，则返回0\ntLMoney,tRMoney可以是以铜币为单位的一个number，也可以是开如以下的表：{nGold = 1, nSilver=1, nCopper =1}
+MoneyOptDiv (tLMoney, nDiv)\n金钱除操作\n返回值：返回一个tMoney,表中包含nGold, nSilver, nCopper三项值\ntLMoney可以是以铜币为单位的一个number，也可以是开如以下的表：{nGold = 1, nSilver=1, nCopper =4}
+MoneyOptMult (tLMoney, nMult)\n金钱乘操作\n返回值：返回一个tMoney,表中包含nGold, nSilver, nCopper三项值\ntLMoney可以是以铜币为单位的一个number，也可以是开如以下的表：{nGold = 1, nSilver=1, nCopper =5}
+MoneyOptSub (tLMoney, tRMoney)\n金钱相减\n返回值：返回一个tMoney,表中包含nGold, nSilver, nCopper三项值\ntLMoney,tRMoney可以是以铜币为单位的一个number，也可以是开如以下的表：{nGold = 1, nSilver=1, nCopper =3}
+MoneyToGoldSilverAndCopper (nMoney)\n金钱的数值转化\n返回值：nGold, nSilver, nCopper\n
+NPC_GetHeadImageFile (dwRepresentID)\n获取NPC头顶图片文件\n返回值：szNpcHeadImageFile\n
+NPC_GetProtrait (dwRepresentID)\n获取NPC头像\n返回值：szProtrait\n
+NumberToChinese (szString)\n将对应数字转换为中文\n返回值：szResult\n
+OnAddOnUseSkill (nSkillID, nSkillLevel)\n对当前目标NPC释放技能\n返回值：无\nPVE宏
+OnBreakEquip (无)\n响应分解装备\n返回值：无\n
+OnDestroyItem (无)\n摧毁物品\n返回值：无\n
+OnExchangeItem (dwBox1, dwX1, dwBox2, dwX2, nCount)\n交换两个格子中的物品\n返回值：操作成功，返回true;否则为false，并有相关信息输出\n
+OnItemLinkDown (hItem)\n打开物品链接\n返回值：无\n
+OnSplitBoxItem (box[, fnAutoClose])\n拆分物品\n返回值：无\n
+OnUpdateCraftState (player, box)\n更新生活技能的Box状态\n返回值：无\n
+OnUseCraft (nProID, nBranchID, nCraftID, box)\n响应使用生活技能\n返回值：无\n
+OnUseItem (dwBox, dwX, box)\n使用格子中的物品\n返回值：无\n
+OpenArenaCorpsPanel (bDisableSound, dwPlayerID)\n打开名剑队面板\n返回值：无\n
+OpenColorTablePanel (fnChangeColor, nX, nY)\n打开colortab面板\n返回值：无\n
+OpenDoodad (player, doodad)\n打开Doodad\n返回值：无\n
+OpenMiddleMap (dwMapID, nIndex)\n打开中地图\n返回值：无\n
+Output ()\n在系统消息中输出对应变量的值\n返回值：返回一个类的对象\n可用于调试
+OutputAchievementTip (dwAchievementID, Rect)\n输出成就的Tip\n返回值：无\n
+OutputActivityTip (dwActivityID, tRect)\n显示活动Tip\n返回值：无\n
+OutputBookTipByID (nBookID, nSegmentID, tRect)\n显示书本Tip\n返回值：无\n
+OutputBuffTip (dwCharacter, dwID, nLevel, nCount, bShowTime, nTime, tRect)\n显示Buff的Tip\n返回值：无\ndwCharacter：目前无用的传入参数
+OutputCraftTip (nProID, nBranchID, nCraftID, tRect)\n显示生活技能Tip\n返回值：无\n
+OutputDesignationTip (nID, bPrefix, Rect, bLink)\n输出称号的Tip\n返回值：无\n
+OutputDoodadTip (dwDoodadID, tRect)\n显示doodad的Tip\n返回值：无\n
+OutputEnchantLink (dwProID, dwCraftID, dwRecipeID, tRect)\n显示附魔的link\n返回值：无\n
+OutputEnchantTip (dwProID, dwCraftID, dwRecipeID, tRect)\n显示附魔的Tip\n返回值：无\n
+OutputFieldPQTip (dwPQTemplateID, tRect, bLink)\n显示区域公共日常Tip\n返回值：无\n
+OutputItemTip (nType, ag1, ag2, ag3, tRect, bLink, szFromLootOrShop, aShopInfo, bNoCmp, nBookInfo, dwPlayerID)\n输出物品的Tip\n返回值：无\nnType为UI_OBJECT_ITEM时,arg1,arg2为dwBox, dwXarg3取值nil;\nnType为UI_OBJECT_ITEM_ONLY_ID时,arg1为dwID, arg2，arg3取值nil;\nnType为UI_OBJECT_ITEM_INFO时，arg1,arg2,arg3为nItemVersion, nTabType, nIndex\nnType为UI_OBJECT_ITEM_MOUNT时，arg1为nUiId,arg2，arg3取值nil;
+OutputMessage (szType, szMsg, bRich, nFont, tColor)\n在聊天窗口输出信息\n返回值：无\n
+OutputPendantTip (dwItemIndex, Rect, bLink)\n输出挂件的Tip\n返回值：无\n
+OutputQuestTip (dwQuestID, tRect, bLink)\n显示任务Tip\n返回值：无\n
+OutputRecipeLink (dwCraftID, dwRecipeID, tRect)\n显示配方的link\n返回值：无\n
+OutputSkillLink (tRecipeKey, tRect)\n输出显示技能Link\n返回值：无\n
+OutputSkillRecipeTip (dwID, dwLevel, tRect, bLink[, tMoreInfo])\n输出显示技能秘笈Tip\n返回值：无\ntMoreInfo表可包含以下索引bHave, bActive
+OutputSkillTip (dwID, nLevel, tRect, bNextLevelDesc, bShortDesc, bRecipeList, bShowProfit, nTalentSkillLevel)\n输出显示技能Tip\n返回值：无\n
+OutputTeamMemberTip (dwID, rc)\n团队面板，输出队友信息Tip\n返回值：无\n
+OutputTip (szText, nWidth, tRect, nPosType, bLink, szLink, bAppend, bSub, bAddSub, nClosePos)\n输出显示Tip\n返回值：无\n
+OutputWarningMessage (szWarningType, szText, nTime)\n输出信息到警示或者提醒窗口\n返回值：无\n
+PackMoney (nGold, nSilver, nCopper)\n根据金银铜的值生成一个金钱table\n返回值：返回一个tMoney,表中包含nGold, nSilver, nCopper三项值\n
+PeekOtherPlayerBook (dwPlayerID)\n向服务器请求查看其它玩家的阅读信息\n返回值：Boolean 操作结果\ndwPlayerID：玩家ID
+PlayItemSound (nUiId)\n播放物品的声音\n返回值：无\n
+PlaySound (nType, szFilePath)\n播放音乐\n返回值：无\n
+PlayerChangeSuit (index)\n快速切换到第index套装备\n返回值：无\n
+Player_AppendAddonMenu (tMenu)\n添加自己的头像菜单\n返回值：无\n
+Player_GetAddonMenu (无)\n获取自己的头像菜单\n返回值：tMenu\n
+Player_GetAnimationResource (nRoleType, dwAnimationID)\n获取玩家对应的动画资源\n返回值：返回以下值：szAniFilePath：动画文件夹路径，若无，则返回Nil；szAniSoundFilePath：动画声音文件路径,若无，返回Nil； dwAniPlayType：动画播放类型； fAniPlaySpeed：播放速度。\n
+Player_GetEquipResource (nParamCount,dwRepresentIDs1,...dwRepresentIDs32)\n获取玩家对应的装备资源\n返回值：返回一个表，包含以下索引值："MDL", "MDLScale","CHEST", "HEADFORM", "WAIST", "PANTS", "BANGLE", "BANG", "PLAIT", "RL_WEAPON_LH", "RL_WEAPON_RH", "BACK_EXTEND", "WAIST_EXTEND", "FACE", "HAT", "SHEATH_LH", "SHEATH_RH";
+除"MDL", "MDLScale"以外，其余均为结构一致的表，分别表示对应表现部位的插槽，Mesh等信息，每一项都包含以下索引值："Socket","Mesh","Mtl","MeshScale","ColorChannelTable","ColorChannel"\n
+Player_GetRidesAnimationResource (dwRidesID, dwAnimationID)\n获取玩家坐骑的动画资源\n返回值：返回以下值：szAniFilePath：动画文件夹路径，若无，则返回Nil；szAniSoundFilePath：动画声音文件路径,若无，返回Nil； dwAniPlayType：动画播放类型； fAniPlaySpeed：播放速度fAniSoundRange，szSFXFilePath(无则为nil),szSFXBoneName(无则为nil),dwSFXPlayType,fSFXPlaySpeed, fSFXScale\n
+Player_GetRidesEquipResource (dwRidesID，dwRepresentIDs1,...dwRepresentIDs6)\n获取玩家的马具相关的资源\n返回值：返回一个表，包含以下索引值："MDL"，"Body", "Mane", "Head", "Chest", "Leg", "Pendant"；除"MDL"表示MDL文件路径（无则为nil）,每一项都包含以下索引值："Socket","Mesh","Mtl","MeshScale","ColorChannelTable","ColorChannel"\n
+PopupMenu (menu)\n弹出菜单\n返回值：无\n
+PopupMenuEx (hBtn, tData, fnCloseCondition, text)\n弹出菜单\n返回值：无\n
+PostThreadCall (fnCallBack, UserData, FunName, ?)\n通过PostThreadCall 是实现兼容单核和多核调用的方式\n返回值：无\n参数：\n1.fnCallBack： 回调函数，一旦收到返回值，就会调用此函数， 返回值作为此函数的参数\n2.UserData：  用户数据，如果不是为nil的话，回调时作为第一个参数原样传给回调函数\n3.FunName ：当前要调用的函数名字的字符串\n4. ...    :   不定参是当前要调用的函数的参数\n例子：\n1.调用 Scene_GetCharacterTopScreenPos 来获得角色的屏幕坐标\n2.定义一个回调函数OnRespondCharacterTopScreenPos(xScreen, yScreen)：获取坐标后要做的处理\nps：如果Userdata不为nil 回调函数定义成OnRespondCharacterTopScreenPos(Userdata, xScreen, yScreen)\n最后的调用方式：\nPostThreadCall(OnRespondCharacterTopScreenPos, nil, "Scene_GetCharacterTopScreenPos", dwCharacterID)\n内部展开流程:\n 单线程的情况：\n  1.调用 local xScreen, yScreen = Scene_GetCharacterTopScreenPos(dwCharacterID)\n  2.当场拿到返回值 xScreen, yScreen, 调用OnRespondCharacterTopScreenPos（xScreen， yScreen）\n  \n 多线程的情况：\n  1.调用 Scene_GetCharacterTopScreenPos(dwCharacterID)\n  2.当场拿不到返回值 等待通知\n  3.收到通知拿到返回值后调用OnRespondCharacterTopScreenPos（xScreen， yScreen）
+Random (无)\n生成一个随机数\n返回值：如果仅给出1个参数，返回[1, m]的一个随机数。如果给出2个参数，返回[m, n]的一个随机数\n在传入两个参数时，m必须等于1
+ReInitUI (无)\n重新加载UI\n返回值：无\n
+RefreshUILockItem (无)\n刷新Item的UI锁\n返回值：无\n
+RegisterCustomData (szVarPath)\n注册用户数据\n返回值：无\n
+RegisterEvent (event, fun)\n注册事件\n返回值：无\n
+RegisterMsgMonitor (Monitor, msg)\n注册监听者\n返回值：无\nMonitor为接收消息函数，msg为接收消息列表
+RegisterScrollControl (szFrameName, szBtnUp, szBtnDown, szScroll, tList)\n注册滑动条控制\n返回值：无\ntList的结构为{szePath, szWidgetName}
+RegisterScrollEvent (无)\n注册滑动条事件\n返回值：无\n包括控件鼠标滚轮事件，鼠标左键按下，左键按住不动， 滑动条位置改变
+ReloadUIAddon (无)\n重新加载插件\n返回值：无\n
+RemoveUILockItem (key, dwBox, dwX)\n移除Item的UI锁\n返回值：无\n
+RepairAllItems (dwNpcId, dwShopId)\n修理身上所有道具\n返回值：该函数无返回值\n
+RollItem (dwDoodadID, dwItemID, nChoice)\n对某物品掷骰\n返回值：无\n这个函数把玩家掷骰的对象和动作发送到服务器。\nnChoice：为以下三种类型之一：\nROLL_ITEM_CHOICE.CANCEL，ROLL_ITEM_CHOICE.NEED， ROLL_ITEM_CHOICE.GREED
+SceneObject_SetBrightness ([dwScene],nGameWorldObjectType, dwObject, fScale)\n设置场景模型高亮\n返回值：无\n
+SceneObject_SetTitleEffect (objectType, objectID, effectId)\n设置模型头顶效果\n返回值：无\n
+Scene_GameWorldPositionToScenePosition (fX,fY,fZ[,bOnFloor])\n逻辑坐标转换为场景坐标\n返回值：fX, fY, fZ\nbOnFloor默认为false\n该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式
+Scene_GameWorldPositionToScreenPoint (xLogical, yLogical, zLogical[, bOnFloor])\n逻辑坐标转成屏幕坐标\n返回值：fX, fY\nbOnFloor默认为false\n1.该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式\n2.若坐标在镜头外会转换失败，失败情况下的返回值为：a)通过PostThreadCall调用的话， 返回nil b)直接调 返回 "_error0"
+Scene_GetCharacterTop (dwCharacterID)\n获取角色的头顶文字的场景坐标\n返回值：fX, fY, fZ\n该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式
+Scene_GetCharacterTopScreenPos (dwCharacterID)\n获取角色头顶的屏幕坐标和场景坐标\n返回值：xScreen，yScreen，xPosition，yPosition，zPosition\n1.该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式\n2.若坐标在镜头外会转换失败，失败情况下的返回值为：a)通过PostThreadCall调用的话， 返回nil b)直接调 返回 "_error0"
+Scene_GetSceneID (无)\n获取当前场景的id\n返回值：sceneID\n
+Scene_PlaneGameWorldPosToScene (xLogical, yLogical)\n逻辑坐标x,y 转成 场景坐标的 x, z\n返回值：xScene,zScene\n
+Scene_ScenePointToScreenPoint (fX,fY,fZ)\n场景坐标转换为屏幕坐标\n返回值：fScreenX, fScreenY\n1.该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式\n2.若坐标在镜头外会转换失败，失败情况下的返回值为：a)通过PostThreadCall调用的话， 返回nil b)直接调 返回 "_error0"
+Scene_ScenePositionToGameWorldPosition (fX,fY,fZ[,bOnFloor])\n场景坐标转成逻辑坐标\n返回值：fX, fY, fZ\nbOnFloor默认为false\n该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式
+Scene_SelectObject (该接口的参数类型可以有以下4种：
+1.szOption
+2. dwScene, szOption
+3.fXScale, fYScale, szOption
+4.dwScene,fXScale, fYScale, szOption)\n在场景中选择Object\n返回值：返回一个表, 长度为符合条件的Object个数。表中每一项均为一个表，含有以下两个索引值："Type":类型见[TARGET], "ID"；若无符合条件的对象，刚返回一个表{{["Type"] = TARGET.NO_TARGET,["ID"] = 0}}\n
+ScreenShot (有两种参数形式：
+1.无
+2.szFilePath, nQuality [,bFullPath])\n截屏并返回存储位置\n返回值：szFilePath\n
+SearchTarget_IsOldVerion (无)\n判断查找目标是不是旧版的\n返回值：bOldVersion\n
+SearchTarget_SetAreaSettting (szType, nRadius, nAngle, nSelLevel, szMode)\n查找目录，设置区域设定\n返回值：无\nszMode取值为"Enmey"或者 "Ally"
+SearchTarget_SetOtherSettting (szType, tData, szMode)\n查找目标，设置一些其它信息\n返回值：无\nszType取值为"OnlyPlayer"，"Weakness"，"MidAxisFirst"，"OnlyNearDis"，"nVersion"， "CoolTime"，"SureTarget"，"RedFirst"，"Teammate"\nszMode取值为"Enmey"或者 "Ally"
+SelectMainActionBarPage (nPage)\n技能条翻页\n返回值：无\n
+SellItem (dwNpcId, dwShopId, dwBoxIndex, nPos, nCount)\n玩家将身上某个道具卖给商店\n返回值：无\n
+Send_RaidReadyConfirm (无)\n发起团队确认\n返回值：无\n
+SetCombatMeToTargetSetting (tMeToTarget)\n设置我对目标造成的效果是否显示\n返回值：无\n
+SetCombatTargetToMeSetting (tTargetToMe)\n设置目标对我造成的效果是否显示\n返回值：无\n
+SetGlobalTopHeadFlag (nCharacterType, nHeadType, bShow)\n设置全局头顶标志\n返回值：无\n
+SetMsgFontColor (szType, r, g, b)\n设置消息的字体颜色\n返回值：无\n
+SetTarget (eTargetType，dwID)\n设置当前主角的目标对象\n返回值：无\n
+SplitString (szText, szSeparators)\n将字符串用分割符分割，并返回分割后的列表\n返回值：tResult\n
+StringLowerW (szString)\n字符串操作：转小写\n返回值：szResult\n
+StringReplaceW (szText,szPattern,szReplace)\n字符串替换\n返回值：cszResult\n
+StringSubW (szText, nStartPos [, nEndPos])\n字符串操作：截取字符串\n返回值：szResult\n
+SwitchChatChannel (szHeader)\n切换聊天频道\n返回值：无\n例：SwitchChatChannel("/s ") 切到近聊频道
+SyncCorpsMemberData (dwCorpsID,bRank, dwPeekPlayerID)\n同步战队成员信息\n返回值：无\n
+Table_BuffIsVisible (dwBuffID, dwLevel)\n判断buff是否可见\n返回值：bShow\n
+Table_BuffNeedShow (dwBuffID, dwLevel)\n判断buff是否存在，存在即返回true\n返回值：bShow\n
+Table_BuffNeedShowTime (dwBuffID, dwLevel)\n判断buff是否需要显示其时间\n返回值：bShowTime\n
+Table_BuffNeedSparking (dwBuffID, dwLevel)\n判断buff是否需要闪烁\n返回值：bSparking\n
+Table_GetBuff (dwBuffID, dwLevel)\n获取对应Buff表\n返回值：tBuff\n
+Table_GetBuffDesc (dwBuffID, dwLevel)\n获取buff描述\n返回值：szDesc\n
+Table_GetBuffIconID (dwBuffID, dwLevel)\n获取buff图标\n返回值：nIconID\n
+Table_GetBuffName (dwBuffID, dwLevel)\n获取buff名字\n返回值：szName\n
+Table_GetForceImageName (dwForceID)\n获取势力对应的名称\n返回值：szForceName\n
+Table_GetItemDesc (nUIID)\n获取Item的描述\n返回值：szDesc\n
+Table_GetItemIconID (nUIID)\n通过uiid获取Item的图标\n返回值：nIconID\n
+Table_GetItemName (nUIID)\n获取Item的名称\n返回值：szName\n
+Table_GetLearnSkillInfo (dwLevel, dwSchool)\n获取某个等级可学的技能信息\n返回值：szSkill\n
+Table_GetMapName (dwMapID)\n获取地图名\n返回值：szName\n
+Table_GetNpcTemplateName (dwTemplateID)\n获取NPC的模板名称\n返回值：szName\n
+Table_GetPetAvatar (dwNpcTemplateID)\n获取宠物头像位置\n返回值：szAvatarPath\n
+Table_GetPetSkill (dwNpcTemplateID)\n获取宠物技能\n返回值：tSkill\n
+Table_GetQuestPoint (dwQuestID, szType, nIndex)\n获取任务的追踪点\n返回值：tPointList\n
+Table_GetRecipeList (dwSkillID)\n获取技能的秘笈列表，不限等级\n返回值：tSkillRecipe\n
+Table_GetSkill (dwSkillID, dwSkillLevel)\n获取技能表\n返回值：tSkill\n
+Table_GetSkillDesc (dwSkillID, dwSkillLevel)\n获取技能描述\n返回值：szDesc\n
+Table_GetSkillIconID (dwSkillID, dwSkillLevel)\n获取技能图标ID\n返回值：nIconID\n
+Table_GetSkillName (dwSkillID, dwSkillLevel)\n获取技能名\n返回值：szName\n
+Table_GetSkillRecipe (dwID, dwLevel)\n获取技能的秘笈列表\n返回值：tSkillRecipe\n
+Table_GetSkillSchoolIconID (dwSkillSchoolID)\n获取技能所属类别的图标\n返回值：nIconID\n
+Table_GetSkillSchoolName (dwSkillSchoolID)\n获取技能类别名\n返回值：szName\n
+Table_GetSkillShortDesc (dwSkillID, dwSkillLevel)\n获取技能简短描述\n返回值：szShortDesc\n
+Table_GetSkillSortOrder (dwSkillID, dwSkillLevel)\n获取技能排序的值\n返回值：fOrder\n
+Table_GetSkillSpecialDesc (dwSkillID, dwSkillLevel)\n获取技能特别描述\n返回值：szSpecialDesc\n
+Table_IsSkillCombatShow (dwSkillID, dwSkillLevel)\n技能是否为战斗中显示\n返回值：bCombatShow\n
+Table_IsSkillFormation (dwSkillID, dwSkillLevel)\n是否为阵法技能\n返回值：bFormation\n
+Table_IsSkillFormationCaster (dwSkillID, dwSkillLevel)\n是否为阵眼技能\n返回值：bFormationCaster\n
+Table_IsSkillShow (dwSkillID, dwSkillLevel)\n技能是否可显示\n返回值：bShow\n
+TargetPanel_GetOpenState (无)\n获取是否忽略打开的状态\n返回值：bIngore\nbIngore为true时，无法打开目标面板
+TargetPanel_SetOpenState (bIngore)\n设置是否忽略打开的状态\n返回值：无\nbIngore为true时，无法打开目标面板
+TargetSelection_AttachSceneObject ([dwScene],dwObject,nTargetType)\n选择目标附带场景中的object\n返回值：无\n脚底框
+TargetSelection_DetachSceneObject ([dwScene],dwObject,nTargetType)\n选择目标拆离场景中的object\n返回值：无\n脚底框
+Target_AppendAddonMenu (tMenu)\n添加的目标菜单\n返回值：无\n
+Target_GetAddonMenu (无)\n获取目标菜单\n返回值：tMenu\n
+Target_GetTargetData (无)\n获取当前目标的ID与类型\n返回值：dwID, dwType\n
+TimeToDate (nTime)\n将UNIX时间戳变量（32位整型）转换成Lua表导出\n返回值：{year, month, day, hour, minute, second, weekday}已经转换为当前时区的时间格式\n将输入的time_t变量转换成Lua时间格式表（本地时间）time_t变量是在C语言中广泛应用的时间表示格式（该格式也称UNIX时间戳），由time.h头文件定义\n这是一个32位整型数字，表示从1970年1月1日00:00:00UT(世界时间)开始到至今的秒数，能够保证使用到2038年1月18日不溢出应用场合：服务器与客户端同步一个指定时间变量，需要转换到界面显示Lua的OS库有类似的转换函数，但是由于OS库当前禁用，所以采用此函数对time_t变量进行转换
+Trace (szMessage)\n写LOG\n返回值：无\n
+TraceButton_AppendAddonMenu (tMenu)\n工具箱按钮添加菜单\n返回值：无\n
+TraceButton_GetAddonMenu (无)\n获取添加的工具箱按钮菜单\n返回值：tTraceButtonPlayerMenu\n
+UILog ()\n在系统消息中输出对应变量的值\n返回值：无\n等于Output
+UI_GetClientPlayerID (无)\n获取本客户端的玩家ID\n返回值：dwPlayerID\n
+UI_GetPlayerMountKungfuID (无)\n获取当前玩家装备的内功ID\n返回值：dwMountKungfuID\n
+UnRegisterEvent (event, fun)\n注销事件\n返回值：无\n
+UnRegisterMsgMonitor (Monitor, msg)\n注销监听者\n返回值：无\n如果msg为空注销所有Monitor监听的消息
+UnRegisterScrollAllControl (无)\n注销滑动条事件\n返回值：无\n包括控件鼠标滚轮事件，鼠标左键按下，左键按住不动， 滑动条位置改变
+UnpackMoney (tMoney)\n将一个金钱table转成三个值，分别对应金币，银币，铜钱\n返回值：nGold, nSilver, nCopper\n
+UpdataItemBoxObject (box, dwBox, dwX, item)\n更新物品格子\n返回值：无\n
+UpdataItemCDProgress (player, box, v1[, v2[, v3]])\n更新格子的物品使用CD，并返回其CD剩余时间\n返回值：nLeftTime\n
+UpdataItemInfoBoxObject (hBox, nVersion, nTabType, nIndex, nCount)\n更新Item信息及物品格子\n返回值：无\n
+UpdataSkillCDProgress (player, box)\n更新技能CD显示\n返回值：无\n
+UpdateCustomModeWindow (frame, szName, bPenetrable, bDisable, bSizeWithAllChild)\n更新玩家自定义界面\n返回值：当前处于玩家自定义模式下，返回true;否则为false\n
+UpdateItemBoxExtend (box, item, nQuality)\n更新物品格子的扩展图\n返回值：无\n
+UpdateMountBoxObject (无)\n更新装备物品的，用于马具\n返回值：无\n
+ViewInviteToPlayer (dwPlayerID)\n可用于显示玩家装备\n返回值：无\n
+ViewOtherPlayerChannels (dwPlayerID)\n可用于显示玩家经脉等信息\n返回值：无\n
+ViewOtherZhenPaiSkill (dwPlayerID)\n可用于显示玩家镇派信息\n返回值：无\n
+class (super)\n创建一个类\n返回值：返回一个类的对象\nsuper可以为nil
+
+
+Show ()\nCursor.Show(bShow)：设置光标是否显示\n返回值：无\n\nStation.Show(无)：显示station\n返回值：无\n\nItemNull:Show([bShow])：显示控件\n返回值：无\nbShow默认为true;为false时表示隐藏\nWndWindow:Show([bShow])：显示窗口\n返回值：无\nbShow默认为true
+IsVisible ()\nCursor.IsVisible(无)：获取光标是否可见\n返回值：bShow\n\nStation.IsVisible(无)：是否可见\n返回值：bVisible\n\nItemNull:IsVisible(无)：是否可见\n返回值：bVisible\n\nWndWindow:IsVisible(无)：窗口是否可见\n返回值：bVisible\n
+Switch (nIndex)\nCursor.Switch：切换光标\n返回值：无\n
+GetCurrentIndex (无)\nCursor.GetCurrentIndex：获取当前光标的index\n返回值：nIndex\nbScale默认为false
+Restore (无)\nCursor.Restore：光标恢复\n返回值：无\n
+IsExist (nIndex)\nCursor.IsExist：光标是否存在\n返回值：bExist\n
+Load ()\nCursor.Load(nIndex，szCursorFile)：加载光标\n返回值：无\n\nHotkey.Load(szFile)：以覆盖方式加载快捷键\n返回值：无\n\nKG_Table.Load(szFilePath,  tTab, [nMode, [bAdjust]])：加载一个tab文件，并转换为lua的表结构\n返回值：返回一个TableFile对象\ntTab:形如{[1] = {f = "", t = ""}},f表示该列的值的类型，t表示该列转换为lua表结构中对应的索引值\nnMode:取值见枚举型[[FILE_OPEN_MODE]]\nbAdjust:文件路径是否作自适应调整
+Unload (nIndex)\nCursor.Unload：卸载光标\n返回值：无\n
+LoadAll (无)\nCursor.LoadAll：加载所有光标\n返回值：无\n
+UnloadAll (无)\nCursor.UnloadAll：卸载所有光标\n返回值：无\n
+GetPos (bScale)\nCursor.GetPos：获取光标位置\n返回值：fX, fY,[bScale]\n
+SetPos (fX, fY,[bScale])\nCursor.SetPos：设置光标位置\n返回值：无\n
+Enable ()\nCursor.Enable(bEnable)：光标开关\n返回值：无\n\nHotkey.Enable(nEable)：快捷键开关\n返回值：无\n\nWndButton:Enable(bEnable)：设置是否有效\n返回值：无\nbEnable为false时失效\nWndCheckBox:Enable(bEnable)：设置是否有效\n返回值：无\n\nWndWindow:Enable(bEnable)：设置窗口是否有效\n返回值：无\n
+SetOffset (nOffset)\nFont.SetOffset：设置偏移量\n返回值：无\n
+GetOffset (无)\nFont.GetOffset：获取偏移量\n返回值：nOffset\n
+GetChatFontID (无)\nFont.GetChatFontID：获取聊天字体ID\n返回值：无\n
+LoadDefaultFontList (无)\nFont.LoadDefaultFontList：加载默认字体列表\n返回值：无\n
+LoadFontList (szPath)\nFont.LoadFontList：加载字体列表\n返回值：无\n
+SetFont (dwID, szName, Path, nSize, tTable)\nFont.SetFont：设置字体\n返回值：无\ntTab为一个表，包含以下索引值："vertical","border","shadow","mono","mipmap"
+GetFont (无)\nFont.GetFont：获取字体\n返回值：dwID, szName, Path, nSize, tTable\ntTab为一个表，包含以下索引值："vertical","border","shadow","mono","mipmap"
+GetFontPathList (无)\nFont.GetFontPathList：获取字体路径列表\n返回值：tFontPathList\ntFontPathList表：索引值从1开始，每一项包含两个索引值，"szName","szFile"
+LoadAsAdd (szFile)\nHotkey.LoadAsAdd：以添加方式加载快捷键\n返回值：无\n
+LoadDefault (无)\nHotkey.LoadDefault：重新加载默认的快捷键\n返回值：无\n
+LoadFromLuaAsAdd (tTab)\nHotkey.LoadFromLuaAsAdd：从lua的表中添加加载快捷键\n返回值：无\ntTab的结构如：{{dwCommand, dwValue},...}
+GetBinding (nDefault)\nHotkey.GetBinding：获取绑定的快捷键列表\n返回值：返回一个索引值从1开始的tab表，表中每一项包含以下索引值：szCommand, szDesc, szHeader, bUnchangeable, szTip, Hotkey1,HotKey2;其中，HoteKey1,HotKey2的结构如下：{nKey, bShift, bCtrl, bAlt}\nnDefault:非零或者为true时，表示获取的是默认的
+Save (szFile)\nHotkey.Save：以覆盖方式保存快捷键到文件中\n返回值：无\n
+SaveAsAdd (szFile)\nHotkey.SaveAsAdd：以添加方式保存快捷键到文件中\n返回值：无\n
+SaveToLuaAsAdd (无)\nHotkey.SaveToLuaAsAdd：以修改过的快捷键保存到lua表中\n返回值：返回返回一个索引值从1开始的tab表，表中每一项的结构如下：{uNameHash, dwHotkey}\n
+Clear ()\nHotkey.Clear(无)：清除所有的快捷键\n返回值：无\n\nHandle:Clear(无)：清除控件\n返回值：无\n\nTreeLeaf:Clear(无)：清除控件\n返回值：无\n\nWndMinimap:Clear(无)：清空小地图\n返回值：无\n
+Set (szCommand, nIndex,nKey [,nShift [,nCtrl [, nAlt] ] ])\nHotkey.Set：设置快捷键\n返回值：无\nnShift,nCtrl,nAlt可以为0，1或者false, true
+Get (szCommand [, nIndex])\nHotkey.Get：获取快捷键\n返回值：nKey, nShift, nCtrl, nAlt\n
+IsUsed (nKey [,nShift [,nCtrl [, nAlt] ] ])\nHotkey.IsUsed：查询快捷键是否已被占用\n返回值：被占用返回true，否则为false\nnShift,nCtrl,nAlt可以为0，1或者false, true
+SetCapture ()\nHotkey.SetCapture(nCap)：设置是否捕获快捷键\n返回值：无\nnCamp可以为0，1或者false, true；为0或者false时，将不在捕获快捷键\nStation.SetCapture(有以下两种参数形式，如下：1)szTreePath 2) WndWindow 3)nil)：设置捕获窗口\n返回值：无\n
+AddBinding (szName, szDesc, szHeader, nScriptDown, nScriptup, [nUnchangeable]
+或者为szName, szDesc, szHeader, nScriptDown, nScriptup, szTip, [nUnchangeable])\nHotkey.AddBinding：绑定快捷键\n返回值：无\n
+IsEnable (无)\nHotkey.IsEnable：快捷键是否打开\n返回值：打开返回true,否则为false\n
+GetCaptureKey (nKey,nShift,nCtrl,nAlt)\nHotkey.GetCaptureKey：获取捕获的快捷键\n返回值：无\n
+Sell (dwNpcID, dwBox,dwX, nStartPrice, nBuyItNowPrice, nLeftHour)\nKAuctionClient.Sell：拍卖行出售物品\n返回值：无\n
+Bid (dwNpcID, dwSaleID, dwCRC, nPrice)\nKAuctionClient.Bid：拍卖行竞拍物品\n返回值：无\n
+ctor ()\nKClass.ctor：定义构造函数\n返回值：无\n
+new ()\nKClass.new：创建实例\n返回值：新实例\n
+DistributeItem (dwItemID, dwDstPlayerID)\nKDoodad.DistributeItem：分配物品\n返回值：无\n
+CanLoot (dwPlayerID)\nKDoodad.CanLoot：判断能否被拾取\n返回值：bCanLoot\n如果指定玩家能够参与该doodad的拾取，那么返回true；否则返回false
+CanDialog ()\nKDoodad.CanDialog(player)：判断能够与目标player对话\n返回值：如果可以对话，返回true；否则返回false\n\nKNpc.CanDialog(player)：判断能够与目标player对话\n返回值：如果可以对话，返回true；否则返回false\n\nKPlayer.CanDialog(player)：判断能够与目标player对话\n返回值：如果可以对话，返回true；否则返回false\n
+HaveQuest (dwPlayerID)\nKDoodad.HaveQuest：判断是否包含有任务\n返回值：如果doodad上有指定玩家可以领取的任务，那么返回true；否则返回false\n
+GetAbsoluteCoordinate ()\nKDoodad.GetAbsoluteCoordinate(无)：获取当前的绝对坐标\n返回值：返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所代表的长度不同。\n\nKNpc.GetAbsoluteCoordinate(无)：获取当前的绝对坐标\n返回值：返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所代表的长度不同。\n\nKPlayer.GetAbsoluteCoordinate(无)：获取当前的绝对坐标\n返回值：返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所代表的长度不同。\n
+IsSelectable ()\nKDoodad.IsSelectable(无)：判断能否被选中\n返回值：如果该Doodad能够被选中，返回true，否则返回false\n\nKNpc.IsSelectable(无)：判断能否被选中\n返回值：如果该npc能够被选中，返回true，否则返回false\n
+GetLootItem (dwLootIndex, KObjData)\nKDoodad.GetLootItem：获取拾取列表中的指定物品\n返回值：Item, bNeedRoll，bLeader\n1)Item对象\n2)bNeedRoll 是否需要Roll点\n3)bLeader: 如果分配模式为队长分配，且物品的品质高于分配线，那么为true，否则为false
+GetLootMoney (无)\nKDoodad.GetLootMoney：获取拾取列表中的金钱数目\n返回值：nMoney\n
+GetLooterList (无)\nKDoodad.GetLooterList：获取拾取者名单\n返回值：包含拾取者信息的table\n这个table是下标从1开始的数组，数组的每一项又是一个table，包含队伍每个成员的信息： 1) szName: 队员名字。 2) dwID: 队员id 3) bOnLineFlag: 如果队员在线，且可以参与拾取该物品，则为true；否则为false 例如有2个队伍成员，都在线，但只有甲可以拾取，那么结果为， {[1]={szName="甲", dwID=ID_1, bOnLineFlag=true}, [2]={szName="乙", dwID=ID2, bOnLineFlag=false}}
+CanSit (无)\nKDoodad.CanSit：能否坐下\n返回值：如果可以坐下，返回true；否则返回false\n
+GetRecipeID (无)\nKDoodad.GetRecipeID：获取配方ID\n返回值：如果函数执行成功，返回配方ID；否则返回0\n
+IsRepairable (无)\nKItem.IsRepairable：判断道具是否可以修理\n返回值：如果道具可修理，那么返回true；否则返回false 当道具大类属于装备，不可叠放，且当前耐久小于最大耐久时，会认为该道具可以修理。\n
+GetRequireAttrib ()\nKItem.GetRequireAttrib(无)：获取物品的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue1, nValue2\n\nKIteminfo.GetRequireAttrib(无)：获取装备的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue\n
+GetLeftExistTime (无)\nKItem.GetLeftExistTime：临时道具获取存在的剩余时间\n返回值：nLeftTime\n
+GetMagicAttrib (无)\nKItem.GetMagicAttrib：获取物品的魔法属性\n返回值：返回一个包含物品魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1,nValue2\n
+GetMountIndex (无)\nKItem.GetMountIndex：获取物品应该装备到目标物品的位置\n返回值：获取成功，则返回true;否则为false\n如马具安装到马的位置
+GetBaseAttrib ()\nKItem.GetBaseAttrib(无)：获取物品基本属性\n返回值：返回一个包含物品基本属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n\nKIteminfo.GetBaseAttrib(无)：获取装备基本属性\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nMin, nMax\n
+GetMagicAttribByStrengthLevel (nStrengthLevel)\nKItem.GetMagicAttribByStrengthLevel：获取因装备强化附加的魔法属性\n返回值：返回一个魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n
+GetSlotCount (无)\nKItem.GetSlotCount：获取装备道具上五行石的孔的数量\n返回值：nSlotCount\n不算五彩石的孔
+GetMountDiamondEnchantID (nSlotIndex)\nKItem.GetMountDiamondEnchantID：获取装备孔上的五行石对应的附魔ID\n返回值：dwEnchantID\n
+IsDiamondSlotAttributeActive (nSlotIndex)\nKItem.IsDiamondSlotAttributeActive：判断某个孔上的五行石是否被激活\n返回值：激活则返回true;否则为false\n
+GetSlotAttrib (nSlotIndex, nDiamondLevel)\nKItem.GetSlotAttrib：获取五行石镶嵌孔的属性\n返回值：返回一个表，结构如下：{"nID", "nMask", "Param0", "Param1"},其中"nMask"对应激活孔属性的五行石类型的掩码，"Param0", "Param1"对应属性的nValue1,nValue2\n
+CanMountColorDiamond (无)\nKItem.CanMountColorDiamond：判断Item能否装备五彩石\n返回值：若可以装备，返回true;否则为false\n只有武器才有五彩石镶嵌和五行激活
+GetMountFEAEnchantID (无)\nKItem.GetMountFEAEnchantID：获取武器上的五行激活附魔ID\n返回值：dwEnchantID\n
+GetTemporaryEnchantLeftSeconds (无)\nKItem.GetTemporaryEnchantLeftSeconds：获取临时附魔的剩余时间\n返回值：nLeftSecond\n
+GetMagicAttribIndexList (无)\nKIteminfo.GetMagicAttribIndexList：获取装备魔法属性ID表\n返回值：返回一个表，表的结构如下：{[1] = XX, ..[n] = XX}(n<=12)\n
+GetCoolDown (无)\nKIteminfo.GetCoolDown：获取装备CD时间\n返回值：返回值为装备CD时间\n
+GetMailInfo (dwMailID)\nKMailClient.GetMailInfo：返回指定邮件对象\n返回值：返回一个KMailInfo对象，若无，则返回为Nil\n
+GetMailList (无)\nKMailClient.GetMailList：获取邮件列表\n返回值：返回一个下标从1开始的table，每一项包含以下内容: MailID:  邮件Id SenderName: 发送者名字 Title:  主题 LeftSeconds: 邮件剩余时间 UnReadFlag: 是否已读 MoneyFlag: 是否有金钱 TextFlag: 是否有正文 ItemFlag: 是否有附件 SystemFlag: 是否是系统邮件\n
+DeleteMail (dwMailID)\nKMailClient.DeleteMail：删除邮件\n返回值：无\n
+CountMail (无)\nKMailClient.CountMail：获取邮件数量\n返回值：返回2个值: nUnreadCount 未读邮件数量 nTotalCount  邮件总数量\n
+RequestContent (dwNpcID)\nKMailInfo.RequestContent：向服务器申请获取邮件内容\n返回值：无\n不做这步操作，将无法取出邮件中的物品及金钱
+TakeItem (nIndex)\nKMailInfo.TakeItem：取走邮件中的物品\n返回值：无\n
+GetType ()\nKMailInfo.GetType(无)：返回邮件类型\n返回值：nType\n\nItemNull:GetType(无)：获取控件类型\n返回值：szType\n\nWndWindow:GetType(无)：获取窗口的类型\n返回值：szType\nszType的值如下："WndWindow","WndEdit","WndButton","WndCheckBox", "WndNewScrollBar","WndPageSet","WndWebPage","WndMinimap","WndFrame"
+GetText ()\nKMailInfo.GetText(无)：获取邮件正文文字内容\n返回值：szText\n\nText:GetText(无)：获取文本\n返回值：szText\n\nWndEdit:GetText(无)：获取文本编辑框中的文本内容\n返回值：szText\n
+TakeMoney (无)\nKMailInfo.TakeMoney：取走邮件中的金钱\n返回值：无\n
+GetLeftTime (无)\nKMailInfo.GetLeftTime：返回邮件剩余时间\n返回值：nSendTime\n
+Read (无)\nKMailInfo.Read：阅读邮件\n返回值：无\n
+GetBuffList ()\nKNpc.GetBuffList(无)：获取Buff列表\n返回值：如果函数执行成功，返回1个table，包含： dwID: BuffID nLevel: Buff等级 bCanCancel: 是否能取消 nEndFrame: Buff结束时间 nIndex: buff索引 nStackNum: buff叠加数 dwSkillSrcID: buff所属技能ID\n\nKPlayer.GetBuffList(无)：获取Buff列表\n返回值：如果函数执行成功，返回1个table，包含： dwID: BuffID nLevel: Buff等级 bCanCancel: 是否能取消 nEndFrame: Buff结束时间 nIndex: buff索引 nStackNum: buff叠加数 dwSkillSrcID: buff所属技能ID\n
+GetTarget ()\nKNpc.GetTarget(无)：获取当前选定的目标\n返回值：该函数返回2个值：eTargetType, dwTargetID,eTargetType是[[TARGET]]，表明选定目标的类型 dwTargetID是目标的id\neTargetType的取值为以下值：TARGET.NOT_TARGET, TARGET.COORDINATION,TARGET.NPC, TARGET.DOODAD, TARGET.PLAYER,TARGET.ITEM,TARGET.ITEM_POS\nKPlayer.GetTarget(无)：获取当前选定的目标\n返回值：该函数返回2个值：eTargetType, dwTargetID,eTargetType是[[TARGET]]，表明选定目标的类型 dwTargetID是目标的id\neTargetType的取值为以下值：TARGET.NOT_TARGET, TARGET.COORDINATION,TARGET.NPC, TARGET.DOODAD, TARGET.PLAYER,TARGET.ITEM,TARGET.ITEM_POS
+GetSkillPrepareState ()\nKNpc.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n\nKPlayer.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n
+GetMapID ()\nKNpc.GetMapID(无)：获取角色所在地图的id\n返回值：dwMapID\n\nKPlayer.GetMapID(无)：获取角色所在地图的id\n返回值：dwMapID\n
+CanSeeName (无)\nKNpc.CanSeeName：判断能否被看见名字\n返回值：如果可以对话，返回true；否则返回false\n
+CanSeeLifeBar (无)\nKNpc.CanSeeLifeBar：判断能否被看见血条\n返回值：如果可以对话，返回true；否则返回false\n
+GetNpcQuest (无)\nKNpc.GetNpcQuest：取得npc的所有任务\n返回值：返回npc的所有任务ID\n
+CancelBuff (nIndex)\nKPlayer.CancelBuff：取消buff\n返回值：如果成功，返回true，否则返回false\n
+GetPet (无)\nKPlayer.GetPet：获取当前角色的宠物\n返回值：返回宠物NPC对象；若无，返回nil\n
+GetItemAmountInAllPackages (dwTabType, dwIndex)\nKPlayer.GetItemAmountInAllPackages：获取角色所有背包某种道具的数量\n返回值：返回角色所有背包某种道具的数量\n
+Talk (nTalkRange,szReceiver,tData)\nKPlayer.Talk：玩家说话\n返回值：如果函数执行成功，返回true; 否则返回false\n仅限以下频道使用：PLAYER_TALK_CHANNEL.WHISPER，PLAYER_TALK_CHANNEL.TEAM，PLAYER_TALK_CHANNEL.RAID， PLAYER_TALK_CHANNEL.BATTLE_FIELD， PLAYER_TALK_CHANNEL.NEARBY，PLAYER_TALK_CHANNEL.TongAlliance，PLAYER_TALK_CHANNEL.TONG
+CastProfessionSkill (dwCraft, dwRecipeID, [eTargetType, dwTargetID])\nKPlayer.CastProfessionSkill：释放生活技能\n返回值：释放成功时，返回1\n当技能对象为书本时，参数为 dwCraftID，dwBookID，dwBookSubID
+StopCurrentAction (无)\nKPlayer.StopCurrentAction：停止当前动作\n返回值：操作成功，返回true;否则为false\n
+IsInParty (无)\nKPlayer.IsInParty：判断角色是否在一个队伍中\n返回值：如果角色在队伍中，返回true；否则返回false\n
+GetSkillLevel (dwSkillID)\nKPlayer.GetSkillLevel：获取当前某个技能的等级\n返回值：nSkillLevel\n
+GetBoxSize (dwBox)\nKPlayer.GetBoxSize：获取背包容量\n返回值：dwSize\n
+GetKungfuMount (无)\nKPlayer.GetKungfuMount：获取已装备的武功对象，返回对应的Skill对象\n返回值：返回SKill对象\n
+IsPlayerInMyParty (dwPlayerID)\nKPlayer.IsPlayerInMyParty：判断玩家是否与本玩家在同一个队伍中\n返回值：如果dwPlayerID的玩家与本玩家属于同一队伍，那么返回true；否则返回false\n
+GetTalkData (无)\nKPlayer.GetTalkData：获取当前聊天内容\n返回值：返回一个table\n
+GetSkillCDProgress (dwSkillID, dwSkillLevel)\nKPlayer.GetSkillCDProgress：获取技能的CD相关信息：是否有cd，剩余cd时间和总cd时间\n返回值：如果执行成功，返回3个值：是否有CD(true或false)，剩余CD时间和总CD时间。Cd时间的单位是帧。如果技能有多个cd计时器，那么会返回结束时间最晚的cd信息。\n
+GetItemAmount (dwTabType, dwIndex, [dwBookID, dwSubID])\nKPlayer.GetItemAmount：获取角色身上某种道具的数量\n返回值：返回角色身上某种道具的数量\n
+GetProfessionLevel (dwProfessionID)\nKPlayer.GetProfessionLevel：获取生活技能的等级和熟练度\n返回值：如果函数执行成功，返回2个值：dwLevel和dwExp，分别代表技能的等级和熟练度。\n
+GetOTActionState (无)\nKPlayer.GetOTActionState：获取ot动作的状态\n返回值：nOTActionState\n
+GetQuestTraceInfo (dwQuestID)\nKPlayer.GetQuestTraceInfo：获取任务追踪相关信息\n返回值：返回一个tab\ntab包含以下项：\n"finish"：bool,是否已经完成\n"fail"：bool,是否已经失败\nassist：bool,是否为可协助任务, [time]：当任务有限制时间时才返回，返回剩余时间\nquest_state：任务需要的任务变量的列表信息返回最多包含8个子表的tab，每一个子tab结构如下：{"i", "need", "have"},其中i = 0~7,need为任务变量，不为零，have为当前其值\nkill_npc:任务需求的杀死NPC列表信息。返回最多包含4个子表的tab,每一个子tab结构如下：{"i", "need", "have", "tempalte_id"},i = 0~3,need为需求杀死的NPC数量，have为当前完成数量， tempalte_id为对应NPC的模板ID\nneed_item:，返回最多包含8个子表的tab,每一个子tab结构如下：{"i", "need", "have", "type","index"},i = 0~7,need为需求item的数量，have为当前拥有数量， "type","index“为对应item的类型及ID\nhave_trace：是否有跟踪信息
+GetMoney (无)\nKPlayer.GetMoney：获取金钱数量\n返回值：nMoney\n
+GetSkillRecipeKey (dwSkillID, dwSkillLevel)\nKPlayer.GetSkillRecipeKey：获取秘笈的key\n返回值：如果函数执行成功，返回秘笈的key，是一个table，包含以下内容： "skill_id": skill id "skill_level": skill等级 "recipe1" ~ "recipe12": 秘笈\n
+GetRepresentID (无)\nKPlayer.GetRepresentID：获取表现逻辑Id\n返回值：会把所有的表现逻辑id返回，总共数量是REPRESENT_COUNT个（8个） 返回值从左到右依次是：MELEE_WEAPON, HELM, CHEST, WAISTS, PANTS, BANGLE, EXTEND, FACE\n
+GetQuestPhase (dwQuestID)\nKPlayer.GetQuestPhase：获取任务阶段状态\n返回值：返回值含义：3: 表示已完成任务0: 表示任务不存在1: 表示任务正在进行中，2: 表示任务已完成但还没有交-1: 表示任务id非法\n
+GetQuestID (nQuestIndex)\nKPlayer.GetQuestID：获取任务列表中某个任务的id\n返回值：dwQuestID\n通过任务序号获取任务ID
+GetReputeLevel (dwForceID)\nKPlayer.GetReputeLevel：获取玩家的声望等级\n返回值：获取玩家在某一势力的声望等级\n
+GetQuestTree (无)\nKPlayer.GetQuestTree：获取玩家身上的任务列表\n返回值：返回2个值：任务table及其元素个数。
+任务table是一个下表从1开始的数组。每一个任务是数组的一项，也是一个table。 每一个任务的table包含以下字段：nQuestIndex(任务索引，对应程序内部的存储索引), nLevel(任务等级), szName(任务名称), szQuestDiff(对应Quests.tab中的Difficulty).
+任务table中的任务会分类，即同一类（按照Quests.tab中Class分类）任务会 放在相邻的位置。每一类任务开始时，那个任务的table中的nQuestIndex字段是-1, nLevel是0， szItem是分类的名字（对应Quests.tab中的Class）,szQuestDiff则是一个没有用的值。
+同一类任务中的每个任务又是按照nLevel升序排列的。例如对于类别为“扬州”的一系列任务， 级别低的任务会排在级别高的任务前面。\n
+GetQuestExpAttenuation (dwQuestID)\nKPlayer.GetQuestExpAttenuation：获取任务奖励经验的削减情况\n返回值：nExp, nRepeatCutPercent, nLevelCutPercent\nnExp:奖励经验\nnRepeatCutPercent:重复做任务时奖励的削减百分比\nnLevelCutPercent：等级提升时奖励消减的百分比
+GetBookSegmentList (dwBookID)\nKPlayer.GetBookSegmentList：获取某本书已经阅读过的卷\n返回值：如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，数组的每一项是书籍的第几卷。只有读过的书才会加入到这个table中。\n
+GetItemCDProgress (无)\nKPlayer.GetItemCDProgress：获取道具的cd信息\n返回值：bIsCooldown, nLeftCooldown, nTotalCooldown, bBroken\n有以下几种参数组合：\n1个参数：dwItemID: 道具id\n2个参数：dwBox, dwX。 dwBox是道具所在背包的索引，参见INVENTORY_INDEX。 dwX是道具在背包内的位置。\n3个参数：version, type, index: version是道具系统的版本号，整数。type是道具表类型， 取值参见ITEM_TABLE_TYPE。index是道具在配置表中的id
+GetQuestDiffcultyLevel (dwQuestID)\nKPlayer.GetQuestDiffcultyLevel：取得玩家等级与任务等级差的程度\n返回值：QUEST_DIFFICULTY_LEVEL\n任务头顶标记用
+GetBookList (无)\nKPlayer.GetBookList：获取书籍的索引列表\n返回值：如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，每一项是书籍的一个索引，只有玩家读过的书才会加入到结果返回。 书籍的索引从1开始。\n
+IsRecipeLearned (dwCraftID, dwRecipeID)\nKPlayer.IsRecipeLearned：判断是否已经学会配方\n返回值：如果已经学会配方，返回true；否则返回false\n
+GetProfessionMaxLevel (dwProfessionID)\nKPlayer.GetProfessionMaxLevel：获取生活技能最大等级\n返回值：函数如果执行成功返回最大等级，否则不返回.\n
+GetProfessionProficiency (dwProfessionID)\nKPlayer.GetProfessionProficiency：获取生活技能熟练度\n返回值：函数如果执行成功返回熟练度，否则不返回.\n
+GetSkillRecipeList (dwSkillID, dwSkillLevel)\nKPlayer.GetSkillRecipeList：获取武功秘笈列表\n返回值：如果函数执行成功，返回一个下标从1开始的table，table的每一项是一个包含秘笈信息的table。每个秘笈信息table包含以下内容： "recipe_id": 秘笈id "recipe_level": 秘笈等级 "active": bool类型，秘笈是否被激活\n列表第一项从1开始取，每一项是一个子表，包括："recipe_id", "recipe_level", "active"
+OpenVenation (nVenationID)\nKPlayer.OpenVenation：打通经脉\n返回值：如果函数执行成功，返回true；否则返回false\n
+IsBookMemorized (dwBookID, dwIndex)\nKPlayer.IsBookMemorized：是否是已记忆书籍\n返回值：如果是，返回true；否则返回false\n
+GetBoxFreeRoomSize (nBoxIndex)\nKPlayer.GetBoxFreeRoomSize：获取指定背包剩余空间\n返回值：成功则返回剩余空间大小。\n
+GetBankPackageCount (无)\nKPlayer.GetBankPackageCount：获取仓库中已经激活的背包位数量\n返回值：nBankPackageCount\n
+GetProfessionBranch (dwProfessionID)\nKPlayer.GetProfessionBranch：获取生活技能的分支id\n返回值：dwBranchID\n
+IsAchievementAcquired (nAchievementID)\nKPlayer.IsAchievementAcquired：判断某个成就是否获得\n返回值：为真表示该成就已获得，否则未获得\n
+IsInRaid (无)\nKPlayer.IsInRaid：判断玩家是否已处于团队模式中\n返回值：处于团队模式中，返回为true;否则皆为false\n
+GetAllSkillList (无)\nKPlayer.GetAllSkillList：获取玩家身上的所有的武功技能\n返回值：返回一个tab,类型如下:{[dwSkillID]=dwSkillLevel, ...}\n
+GetReputation (dwForceID)\nKPlayer.GetReputation：获取玩家声望值\n返回值：返回玩家在某势力内的声望\n
+Jump (bStandJump, nDirectionXY)\nKPlayer.Jump：跳\n返回值：无\nbStandJump:是否立定跳；nDirectionXY：角度
+WindowSelect (dwIndex,bySelect)\nKPlayer.WindowSelect：窗口选择\n返回值：无\n
+GetTalkLinkItem (dwItemID)\nKPlayer.GetTalkLinkItem：获取聊天信息中道具链接所代表的道具对象\n返回值：如果函数执行成功，返回道具对应的KItem对象。\n
+CanAcceptQuest (无)\nKPlayer.CanAcceptQuest：判断能否接某个任务\n返回值：参数有三种形式：a)dwQuestID，b)dwQuestID，dwTemplateID，c)dwQuestID，eTargetType, dwTargetID\n
+OpenTalent (nTalentID, nTalentLevel)\nKPlayer.OpenTalent：向服务端申请打通镇派经脉\n返回值：参数个数正确时，该函数当前一直返回true\n
+SatisfyRequire (nAttributeID, nValue1, [nValue2])\nKPlayer.SatisfyRequire：检查角色是否满足某个属性要求\n返回值：符合要求，返回true;否则为false\n
+IsDesignationPrefixAcquired (nPrefix)\nKPlayer.IsDesignationPrefixAcquired：判断某个称号前缀玩家是否已获得\n返回值：已获得返回true，否则返回false\n
+IsDesignationPostfixAcquired (nPostfix)\nKPlayer.IsDesignationPostfixAcquired：判断某个称号后缀玩家是否已获得\n返回值：已获得返回true，否则返回false\n
+GetProfessionAdjustLevel (dwProfessionID)\nKPlayer.GetProfessionAdjustLevel：获取生活技能被其他因素影响的等级\n返回值：dwAdjustLevel\n
+IsPartyLeader (无)\nKPlayer.IsPartyLeader：判断角色是否是队长\n返回值：如果角色处于一个队伍中，且是队长，返回true；否则返回false\n
+IsPartyFull (无)\nKPlayer.IsPartyFull：判断队伍是否已经满员\n返回值：如果玩家所在队伍已经满员，返回true；否则返回false\n
+CanApplyDuel (dwTargetID)\nKPlayer.CanApplyDuel：检查能否与目标玩家切磋\n返回值：如果可以，返回true；否则返回false\n
+CanAddFoe (无)\nKPlayer.CanAddFoe：判断能否加仇人\n返回值：能，则返回true;否则为false\n玩家为中立，或者在战斗状态，或者低于限制等级时均不得加仇人
+GetEquipPos (dwBoxIndex, dwX)\nKPlayer.GetEquipPos：看道具能在身上哪个部位装备，返回对应的位置\n返回值：如果可以装备，返回装备位置。否则返回nil\n
+GetMaxExamPrint (无)\nKPlayer.GetMaxExamPrint：获取监本印文上限，最大拥有数\n返回值：nMaxValue\n
+GetExamPrintRemainSpace (无)\nKPlayer.GetExamPrintRemainSpace：玩家本周还能得到多少监本印文\n返回值：nRemianSpace\n
+IsProfessionLearnedByCraftID (dwCraftID)\nKPlayer.IsProfessionLearnedByCraftID：是已学习生活技能\n返回值：如果是已学习生活技能，返回true；否则返回false\n
+GetEquipIDArray (nID)\nKPlayer.GetEquipIDArray：获取玩家多套装备缩绑定ID标示\n返回值：nValue\n
+ExchangeItem (dwSrcBox, dwSrcX, dwDestBox, dwDestX, [dwAmount])\nKPlayer.ExchangeItem：交换身上背包两个物品的位置\n返回值：背包序号取值：[[INVENTORY_INDEX]]\n
+GetMapVisitFlag (nMapID)\nKPlayer.GetMapVisitFlag：获取玩家是否已访问地图标志\n返回值：如果已访问，返回true，否则返回false\n
+GetFellowshipGroupInfo (无)\nKPlayer.GetFellowshipGroupInfo：获取联系人分组信息\n返回值：如果函数执行成功，返回一个下标从1开始的table，每个项包含： id: 分组id name: 分组名称\n
+GetFellowshipInfo (dwGroupID)\nKPlayer.GetFellowshipInfo：获取某一分组内联系人信息\n返回值：返回一个表\n返回一个表，每一项都是一个表（索引值以1开始），包含以下项："id", "married", "brother","level","name","attraction","mapid","forceid","remark"
+GetKungfuList (dwSchoolID)\nKPlayer.GetKungfuList：获取玩家身上武功的列表\n返回值：如果函数执行成功，返回一个包含玩家身上属于该门派的武功的table。这个table以武功的id为索引，对应武功的等级，即这个表是如下形式的： {[dwKungfuID]=dwKungfuLevel, ...}\n
+GetSkillList (dwKungfuID)\nKPlayer.GetSkillList：获取角色身上属于某种武功的技能列表\n返回值：返回一个table，table的每一项以技能id为索引，对应的值为技能等级，即是这种形式：{[dwSkillId] = skillLevel, ...}\n
+IsPartyMemberInSameScene (dwID)\nKPlayer.IsPartyMemberInSameScene：判断队伍中的另一个玩家与我是否在同一场景(mapid和copyindex都相同)\n返回值：是在同一场景则返回true，其他情况不返回值\n判断队伍中的另一个玩家与我是否在同一场景（mapid和copyindex都相同）
+GetItemPos (dwTabType, dwIndex)\nKPlayer.GetItemPos：获取道具位置\n返回值：dwBox,dwX\n这个函数接收3种参数组合：(建议只使用前两种，3可能是兼容以前老代码的)\n 1) dwItemID 道具id\n2) dwTabType, dwIndex: dwTabType是道具表类型，参见[[ITEM_TABLE_TYPE]]dwIndex是道具在配置表的索引\n3) nVersion, dwTabType, dwIndex: nVersion是版本号，其余与2)中含义相同 返回值是dwBox, dwX，即道具所在背包索引和位置
+CanBreakEquip (dwBox, dwX)\nKPlayer.CanBreakEquip：判断物品能否被分解成五行石\n返回值：能分解，返回true; 否则为false\n
+ActiveSkillRecipe (dwRecipeID, dwRecipeLevel)\nKPlayer.ActiveSkillRecipe：激活武功秘笈\n返回值：如果函数执行成功，返回true；否则返回false\n
+DeactiveSKillRecipe (dwRecipeID, dwRecipeLevel)\nKPlayer.DeactiveSKillRecipe：取消激活武功秘笈\n返回值：如果函数执行成功，返回true；否则返回false\n
+GetCDInterval (dwCooldownID)\nKPlayer.GetCDInterval：获取某个Cooldown计时器的cd时间\n返回值：nTotalCooldown\n
+GetTotalEquipScore (无)\nKPlayer.GetTotalEquipScore：获取装备总分\n返回值：nScore\n
+GetBaseEquipScore (无)\nKPlayer.GetBaseEquipScore：获取装备基础分数\n返回值：nScore\n
+GetStrengthEquipScore (无)\nKPlayer.GetStrengthEquipScore：获取装备强化分数\n返回值：nScore\n
+GetMountsEquipScore (无)\nKPlayer.GetMountsEquipScore：获取装备镶嵌分数\n返回值：nScore\n
+SetFellowshipRemark (dwAlliedPlayerID, szRemark)\nKPlayer.SetFellowshipRemark：设置联系人备注\n返回值：如果函数执行成功，返回true；否则返回false\n
+GetCDLeft (dwCooldownID)\nKPlayer.GetCDLeft：获取剩余CD时间，单位帧\n返回值：nLeftCooldown\n
+GetHortation (无)\nKQuestInfo.GetHortation：获取任务完成后能够得到的结果\n返回值：如果做完任务能够有一些结果，例如获得奖励，影响声望，那么会返回一个table，它可能包含以下内容：
+
+{"money", "skill", "prestige", "contribution", "presenttrain", "tongdevelopmentpoint","tongfund", "presentjustice","presentexamprint","reputation" ={{"force", "value"},...} }。\n
+TimeLimitationBindItemGetLeftTime (dwItemID)\nKScene.TimeLimitationBindItemGetLeftTime：返回限时绑定道具的剩余时间\n返回值：nLeftTime\n
+ChangeMemberGroup ()\nKTeamClient.ChangeMemberGroup(dwTargetMemberID,nTargetGroup)：更改帮会成员玩家的分组\n返回值：无\n\nKTongClient.ChangeMemberGroup(dwMemberID, nDstGroup, [dwDstMemberID])：将队员从一个分组调整到另一个分组\n返回值：无\n
+SetTeamFormationLeader (dwNewFormationLeader, [nGroupIndex])\nKTeamClient.SetTeamFormationLeader：移交阵眼\n返回值：无\nnGroupIndex默认为零，不得大于等于5
+TeamNotifySignpost (nX, nY)\nKTeamClient.TeamNotifySignpost：向队友发送小地图上的标记\n返回值：无\n
+SetTeamRollQuality (nQuality)\nKTeamClient.SetTeamRollQuality：设置需要ROLL点的物品品质\n返回值：无\n
+GetMemberInfo ()\nKTeamClient.GetMemberInfo(dwMemberID)：返回队员的相关信息\n返回值：返回一个表，包括以下几项："szName","nLevel","bIsOnLine","bDeathFlag","nCamp","dwForceID", "nMaxLife", "nCurrentLife", "nMaxMana","nCurrentMana","dwMapID", "nMapCopyIndex", "nPosX", "nPosY","nRoleType", "nFormationCoefficient", "dwMiniAvatarID","dwMountKungfuID"\n\nKTongClient.GetMemberInfo(dwPlayerID)：获取帮会成员信息\n返回值：返回一个表，包括："dwID":玩家ID，"nGroupID":分组ID，"nJoinTime":入帮时间，"nLastOfflineTime":上次下线时间，"nSalary":工资，"nDevelopmentContribution"：贡献发展点，"nFundContribution"：贡献帮会资金\n
+GetGroupInfo ()\nKTeamClient.GetGroupInfo(nTeamGroup)：返回队伍的分组相关信息\n返回值：返回一个表，包括以下几项：1."dwFormationLeader"：阵眼；2."MemberList"：一个表，包含所有成员的ID\n\nKTongClient.GetGroupInfo(nGroupID)：获取帮会分组信息\n返回值：返回一个table,结构如下：{"szName", "bEnable"}\n
+GetMemberGroupIndex (dwMemberID)\nKTeamClient.GetMemberGroupIndex：返回队员所在的分组ID\n返回值：nIndex\n
+GetTeamMark (无)\nKTeamClient.GetTeamMark：返回队伍标记\n返回值：返回一个表，结构如下：{[dwMarkTargetID] = i,...},i从1计数\n返回的表可用来确定某个玩家或者NPC是否被打队伍标记
+SetTeamMark (无)\nKTeamClient.SetTeamMark：设置队伍标记\n返回值：nMarkType,dwTargetID\n
+GetAuthorityInfo (dwAuthority)\nKTeamClient.GetAuthorityInfo：获取权限相关的玩家ID\n返回值：dwAuthority\ndwAuthority的取值如下：TEAM_AUTHORITY_TYPE.LEADER：队长，TEAM_AUTHORITY_TYP .DISTRIBUTE：分配者 TEAM_AUTHORITY_TYP.MARK：标记者
+SetAuthorityInfo (dwAuthority, dwTargetID)\nKTeamClient.SetAuthorityInfo：设置权限\n返回值：无\ndwAuthority的取值如下：TEAM_AUTHORITY_TYPE.LEADER：队长，TEAM_AUTHORITY_TYP .DISTRIBUTE：分配者 TEAM_AUTHORITY_TYP.MARK：标记者
+IsPlayerInTeam (dwPlayerID)\nKTeamClient.IsPlayerInTeam：判断玩家是否在队伍中\n返回值：若在队伍中，返回为true;否则为false\n
+GetClientTeamMemberName (dwMemberID)\nKTeamClient.GetClientTeamMemberName：获取队伍成员的名字\n返回值：szRoleName\n
+SetTeamLootMode (nLootMode)\nKTeamClient.SetTeamLootMode：设置物品分配模式\n返回值：无\n
+GetTeamSize (无)\nKTeamClient.GetTeamSize：返回队伍人数容量\n返回值：nTeamSize\n
+GetTeamMemberList (无)\nKTeamClient.GetTeamMemberList：返回所有队员ID\n返回值：返回一个表，表中每一项均为一个成员的ID\n
+ApplyGetTongName (dwTongID)\nKTongClient.ApplyGetTongName：获取帮会名称\n返回值：szTongName\n
+ApplyRepertoryPage (nPageIndex)\nKTongClient.ApplyRepertoryPage：向服务器申请同步帮会仓库页面\n返回值：无\n
+ApplyOpenRepertory (dwNpcID)\nKTongClient.ApplyOpenRepertory：向服务器申请打开仓库页面\n返回值：无\n
+GetMemberCount (无)\nKTongClient.GetMemberCount：获取帮会成员数量\n返回值：nCount\n
+GetMemberList (bOffLine, szSort, bRise, nGroupFilter, nSchoolFilter)\nKTongClient.GetMemberList：获取帮会成员列表\n返回值：返回一个符合条件的玩家ID列表\nszSort:取值为以下之一:\n"name", "level", "school","map","remark", "group", "join_time", "last_offline_time", "development_contribution"
+CheckBaseOperationGroup (nGroup, nOperationIndex)\nKTongClient.CheckBaseOperationGroup：检查分组的基本操作权限\n返回值：若有相应权限，返回为true,否则为false\n
+ApplyTongInfo (无)\nKTongClient.ApplyTongInfo：向服务端申请同步帮会信息\n返回值：无\n
+ApplyTongRoster (无)\nKTongClient.ApplyTongRoster：向服务端申请帮会花名册\n返回值：无\n
+SetFocusWindow (有以下三种参数形式，如下：1)szTreePath 2) Wnd 3）nil)\nStation.SetFocusWindow：设置当前焦点窗口\n返回值：无\n
+GetFocusWindow (无)\nStation.GetFocusWindow：获取当前焦点窗口\n返回值：返回一个Wnd对象\n
+SetActiveFrame (有以下三种参数形式：
+1.szTreePath, [bBringToTop]
+2.WndFrame, [bBringToTop]
+3.nil, [bBringToTop])\nStation.SetActiveFrame：设置当前活动窗口框架\n返回值：无\n
+GetActiveFrame (无)\nStation.GetActiveFrame：获取当前活动窗口框架\n返回值：返回一个WndFrame对象\n
+GetCapture (无)\nStation.GetCapture：获取捕获窗口\n返回值：返回一个WndWindow对象\n
+ReleaseCapture (无)\nStation.ReleaseCapture：释放当前捕获窗口\n返回值：无\n
+Lookup ()\nStation.Lookup(有以下几种参数形式：
+1.无 2.szTreePath)：查找控件对象\n返回值：返回一个控件对象\n\nHandle:Lookup(有两种参数形式：1.nIndex 2.szItemName)：查询控件\n返回值：返回控件对象\n\nTreeLeaf:Lookup(有两种参数形式：1.nIndex 2.szItemName)：查询控件\n返回值：返回控件对象\n\nWndWindow:Lookup(szTreePath, [szItemTreePath])：查询控件\n返回值：返回一个符合条件的控件\n
+GetWindowPosition (无)\nStation.GetWindowPosition：获取窗口位置\n返回值：nX,nY\n
+GetClientPosition (无)\nStation.GetClientPosition：获取客户端位置\n返回值：nX,nY\n
+GetClientSize (无)\nStation.GetClientSize：获取客户端实际大小\n返回值：fWidth, fHeight\n
+OriginalToAdjustPos (w,h)\nStation.OriginalToAdjustPos：原始位置调整到实际位置\n返回值：wFact, hFact\n
+AdjustToOriginalPos (x, y)\nStation.AdjustToOriginalPos：实际位置调整到原始位置\n返回值：w,h\n
+SetUIScale (fScale, [bForceUpdate])\nStation.SetUIScale：设置UI缩放\n返回值：无\nbForceUpdate：默认为false
+GetUIScale (无)\nStation.GetUIScale：获取UI缩放值\n返回值：fScale\n
+GetMaxUIScale (无)\nStation.GetMaxUIScale：获取UI最大缩放值\n返回值：fScale\n
+IsFullScreen (无)\nStation.IsFullScreen：客户端是否窗口最大化\n返回值：bFullScreen\n
+IsPanauision (无)\nStation.IsPanauision：客户端是否处于宽屏\n返回值：bPanauision\n
+IsExclusiveMode (无)\nStation.IsExclusiveMode：客户端是否处于全屏模式\n返回值：bExclusiveMode\n
+Hide ()\nStation.Hide(无)：隐藏station\n返回值：无\n\nItemNull:Hide([bHide])：隐藏控件\n返回值：无\nbHide默认为true;为false时表示显示\nWndWindow:Hide([bHide])：隐藏窗口\n返回值：无\nbHide默认为true
+GetScreenPos (无)\nStation.GetScreenPos：获取station在屏幕中的位置\n返回值：nleft, ntop\n
+GetMessagePos ([bScale])\nStation.GetMessagePos：获取消息弹出位置，即当前光标位置\n返回值：nX,nY\n
+GetMessageWheelDelta (无)\nStation.GetMessageWheelDelta：获取消息鼠标滚轮增量\n返回值：fDelta\n
+GetMessageKey (无)\nStation.GetMessageKey：获取消息键\n返回值：nKey\n
+GetMouseOverWindow (无)\nStation.GetMouseOverWindow：获取当前鼠标所在的窗口\n返回值：返回一个窗口对象\n
+ToggleWindow ()\nStation.ToggleWindow(szIniFileName, szFrameName)：当窗口打开时，关闭窗口；反之，则打开\n返回值：无\n\nWnd.ToggleWindow(szIniFileName, szFrameName)：当窗口打开时，关闭窗口；反之，则打开\n返回值：无\n
+OpenWindow ()\nStation.OpenWindow(szFileName [, szFrameName])：打开窗口\n返回值：返回一个窗口对象\nszFrameName默认与szFileName一致\nWnd.OpenWindow(szFileName [, szFrameName])：打开窗口\n返回值：返回一个窗口对象\nszFrameName默认与szFileName一致
+CloseWindow ()\nStation.CloseWindow(两种参数形式：
+1.WndFrame对象
+2.szFrameName)：关闭窗口\n返回值：无\n\nWnd.CloseWindow(两种参数形式：
+1.WndFrame对象
+2.szFrameName)：关闭窗口\n返回值：无\n
+SetSelectedBox (box)\nUserSelect.SetSelectedBox：设置玩家当前选择的物品格子\n返回值：无\n
+RefreshSelectedBox (无)\nUserSelect.RefreshSelectedBox：刷新当前选择的物品格子\n返回值：无\n
+SelectPoint (fnAction, fnCancel, fnCondition, box)\nUserSelect.SelectPoint：选择点\n返回值：无\n
+SelectItem (fnAction, fnCancel, fnCondition, box, bBreakEquip)\nUserSelect.SelectItem：选择物品\n返回值：无\n
+CancelSelect ()\nUserSelect.CancelSelect(无)：取消选择\n返回值：无\n\nWndEdit:CancelSelect(无)：取消选择\n返回值：无\n
+IsSelectPoint (无)\nUserSelect.IsSelectPoint：判断当前是否选择的是点\n返回值：bIsSelectPoint\n
+SatisfySelectPoint (x, y, z, bFalse)\nUserSelect.SatisfySelectPoint：光标显示与选择点模式相匹配\n返回值：bSatisfied\n
+DoSelectPoint (x, y, z)\nUserSelect.DoSelectPoint：选择一个点\n返回值：非选择点模式，返回false;其它为true\n
+IsSelectItem (无)\nUserSelect.IsSelectItem：判断当前是否选择的是Item\n返回值：bIsSelectItem\n
+SatisfySelectItem (dwBox, dwX, bFalse)\nUserSelect.SatisfySelectItem：光标显示与选择Item模式相匹配\n返回值：bSatisfied\n
+DoSelectItem (dwBox, dwX)\nUserSelect.DoSelectItem：选择一个Item\n返回值：非选择物品模式，返回false;其它为true\n
+IsSelectCharacter (无)\nUserSelect.IsSelectCharacter：判断当前是否选择的是玩家或者NPC\n返回值：bIsSelectCharacter\n
+SatisfySelectCharacter (dwType, dwID, bFalse)\nUserSelect.SatisfySelectCharacter：光标显示与选择角色模式相匹配\n返回值：bSatisfied\n
+SetGroup (nGroup)\nAnimate.SetGroup：设置动画组\n返回值：无\n
+SetLoopCount (nLoopCount)\nAnimate.SetLoopCount：设置循环次数\n返回值：无\n
+SetImagePath (szImage)\nAnimate.SetImagePath：设置图片地址\n返回值：无\n
+SetAnimate (szImage,nGroup, [nLoopCount])\nAnimate.SetAnimate：设置动画\n返回值：无\n
+AutoSize ()\nAnimate.AutoSize(无)：自动调整大小\n返回值：无\n\nImage:AutoSize(无)：自动调整大小\n返回值：无\n\nText:AutoSize(无)：自动调整大小\n返回值：无\n
+Replay (无)\nAnimate.Replay：重播\n返回值：无\n
+SetIdenticalInterval (nValue)\nAnimate.SetIdenticalInterval：设置相同的时间间隔\n返回值：无\n
+IsFinished (无)\nAnimate.IsFinished：判断动画是否播放结束\n返回值：bFinished\n
+SetBoxIndex (nIndex)\nBox.SetBoxIndex：设置box的序列号\n返回值：无\n
+GetBoxIndex (无)\nBox.GetBoxIndex：获取box的序列号\n返回值：nIndex\n
+SetObject (nObjectType,ObjectData1,ObjectData2,?ObjectData6)\nBox.SetObject：设置Object\n返回值：无\n
+GetObject (无)\nBox.GetObject：获取Object\n返回值：nObjectType,ObjectData1,ObjectData2,?ObjectData6\n
+GetObjectType (无)\nBox.GetObjectType：获取Object的类型\n返回值：nObjectType\n
+GetObjectData (无)\nBox.GetObjectData：获取Object的数据\n返回值：ObjectData1,ObjectData2,?ObjectData6\n
+ClearObject (无)\nBox.ClearObject：清除Object\n返回值：无\n
+EnableObject (bEnable)\nBox.EnableObject：设置是否激活Objece\n返回值：无\n
+IsObjectEnable (无)\nBox.IsObjectEnable：判断是否已激活Objece\n返回值：bEnable\n
+SetObjectCoolDown (bCoolDown)\nBox.SetObjectCoolDown：设置Object是否CD了\n返回值：无\n
+IsObjectCoolDown (无)\nBox.IsObjectCoolDown：获取Object是否在CD\n返回值：bCoolDown\n
+SetObjectSparking (bSparking)\nBox.SetObjectSparking：设置object闪烁\n返回值：无\n
+SetObjectInUse (bInUse)\nBox.SetObjectInUse：设置object在使用中\n返回值：无\n
+SetObjectStaring (bStaring)\nBox.SetObjectStaring：设置object发亮\n返回值：无\n
+SetObjectSelected (bSelect)\nBox.SetObjectSelected：设置object被选择\n返回值：无\n
+IsObjectSelected (无)\nBox.IsObjectSelected：判断object是否被选择\n返回值：bSelect\n
+SetObjectMouseOver (bMouseOver)\nBox.SetObjectMouseOver：设置Object是否有鼠标覆盖\n返回值：无\n
+IsObjectMouseOver (无)\nBox.IsObjectMouseOver：判断Object是否有鼠标覆盖\n返回值：bMouseOver\n
+SetObjectPressed (bPressed)\nBox.SetObjectPressed：设置Object是否被按下\n返回值：无\n
+IsObjectPressed (无)\nBox.IsObjectPressed：判断Object是否被按下\n返回值：bPressed\n
+SetCoolDownPercentage (fCoolingDownPercentage)\nBox.SetCoolDownPercentage：设置Objectr的CD百分比\n返回值：无\n
+GetCoolDownPercentage (无)\nBox.GetCoolDownPercentage：获取Object的CD百分比\n返回值：fCoolingDownPercentage\n
+SetObjectIcon (nObjectIcon)\nBox.SetObjectIcon：设置Object的图标\n返回值：无\n
+GetObjectIcon (无)\nBox.GetObjectIcon：获取Object的图标\n返回值：nObjectIcon\n
+ClearObjectIcon (无)\nBox.ClearObjectIcon：清除Object的图标\n返回值：无\n
+SetOverText (nOverTextIndex, szOverText)\nBox.SetOverText：设置Box上的文本\n返回值：无\n
+GetOverText (nOverTextIndex)\nBox.GetOverText：获取Box上的文本\n返回值：szOverText\n
+SetOverTextFontScheme (nOverTextIndex, szFontScheme)\nBox.SetOverTextFontScheme：设置Box上的文本字体\n返回值：无\n
+GetOverTextFontScheme (nOverTextIndex)\nBox.GetOverTextFontScheme：获取Box上的文本字体\n返回值：szFontScheme\n
+SetOverTextPosition (nOverTextIndex, nPos)\nBox.SetOverTextPosition：设置Box上的文本位置\n返回值：无\n
+GetOverTextPosition (nOverTextIndex)\nBox.GetOverTextPosition：获取Box上的文本位置\n返回值：nPos\n
+SetExtentImage (szImage,nFrame)\nBox.SetExtentImage：设置扩展图\n返回值：无\n
+ClearExtentImage (无)\nBox.ClearExtentImage：清除扩展图\n返回值：无\n
+SetExtentAnimate (szImage,nGroup, [nLoopCount])\nBox.SetExtentAnimate：设置扩展的动画\n返回值：无\n
+ClearExtentAnimate (无)\nBox.ClearExtentAnimate：清除扩展的动画\n返回值：无\n
+AppendItemFromString ()\nHandle.AppendItemFromString(szString)：添加控件，从字符串中读取\n返回值：无\n\nTreeLeaf:AppendItemFromString(szString)：添加控件，从字符串中读取\n返回值：无\n
+AppendItemFromIni ()\nHandle.AppendItemFromIni(szIniFile, szSectionName [, szNewName])：添加控件，从配置文件中读取\n返回值：无\n\nTreeLeaf:AppendItemFromIni(szIniFile, szSectionName [, szNewName])：添加控件，从配置文件中读取\n返回值：无\n
+AdjustItemShowInfo ()\nHandle.AdjustItemShowInfo(无)：调整Item的显示信息\n返回值：无\n\nTreeLeaf:AdjustItemShowInfo(无)：调整Item的显示信息\n返回值：无\n
+InsertItemFromString ()\nHandle.InsertItemFromString(有两种参数形式：1.nIndex, bBehindOrBefore,szString
+2.szItemName, bBehindOrBefore,szString)：插入控件，从字符串读取\n返回值：无\n\nTreeLeaf:InsertItemFromString(有两种参数形式：1.nIndex, bBehindOrBefore,szString
+2.szItemName, bBehindOrBefore,szString)：插入控件，从字符串读取\n返回值：无\n
+InsertItemFromIni ()\nHandle.InsertItemFromIni(有两种参数形式：1.nIndex, bBehindOrBefore,szIniFile,szSectionName [,szNewName]
+2.szItemName, bBehindOrBefore,szIniFile,szSectionName [,szNewName])：插入控件，从配置文件中记取\n返回值：无\n\nTreeLeaf:InsertItemFromIni(有两种参数形式：1.nIndex, bBehindOrBefore,szIniFile,szSectionName [,szNewName]
+2.szItemName, bBehindOrBefore,szIniFile,szSectionName [,szNewName])：插入控件，从配置文件中记取\n返回值：无\n
+FormatAllItemPos ()\nHandle.FormatAllItemPos(无)：格式化所有控件的位置\n返回值：无\n\nTreeLeaf:FormatAllItemPos(无)：格式化所有控件的位置\n返回值：无\n
+SetHandleStyle ()\nHandle.SetHandleStyle(dwHandleStyle)：设置handle的样式\n返回值：无\n\nTreeLeaf:SetHandleStyle(dwHandleStyle)：设置handle的样式\n返回值：无\n
+SetMinRowHeight ()\nHandle.SetMinRowHeight(fHeight)：设置最小行高\n返回值：无\n\nTreeLeaf:SetMinRowHeight(fHeight)：设置最小行高\n返回值：无\n
+SetMaxRowHeight ()\nHandle.SetMaxRowHeight(fHeight)：设置最大行高\n返回值：无\n\nTreeLeaf:SetMaxRowHeight(fHeight)：设置最大行高\n返回值：无\n
+SetRowHeight ()\nHandle.SetRowHeight(fHeight)：设置行的高度\n返回值：无\n等同于设置最小行高\nTreeLeaf:SetRowHeight(fHeight)：设置行的高度\n返回值：无\n
+SetRowSpacing ()\nHandle.SetRowSpacing(fSpacing)：设置行间距\n返回值：无\n\nText:SetRowSpacing(fRowSpacing)：设置行间距\n返回值：无\n\nTreeLeaf:SetRowSpacing(fSpacing)：设置行间距\n返回值：无\n等同于设置最小行高\nWndEdit:SetRowSpacing(fRowSpacing)：设置行间距\n返回值：无\n
+RemoveItem ()\nHandle.RemoveItem(有三种参数形式：1.nIndex 2.控件对象 3.szItemName)：移除控件\n返回值：无\n\nTreeLeaf:RemoveItem(有三种参数形式：1.nIndex 2.控件对象 3.szItemName)：移除控件\n返回值：无\n
+GetItemStartRelPos ()\nHandle.GetItemStartRelPos(无)：获取控件起始位置\n返回值：fX, fY\n\nTreeLeaf:GetItemStartRelPos(无)：获取控件起始位置\n返回值：fX, fY\n
+SetItemStartRelPos ()\nHandle.SetItemStartRelPos(fX, fY)：设置控件起始位置\n返回值：无\n\nTreeLeaf:SetItemStartRelPos(fX, fY)：设置控件起始位置\n返回值：无\n
+SetSizeByAllItemSize ()\nHandle.SetSizeByAllItemSize(无)：由所有控件大小来设置handle的大小\n返回值：无\n\nTreeLeaf:SetSizeByAllItemSize(无)：由所有控件大小来设置handle的大小\n返回值：无\n
+GetAllItemSize ()\nHandle.GetAllItemSize(无)：获取所有控件的大小\n返回值：fW, fH\n\nTreeLeaf:GetAllItemSize(无)：获取所有控件的大小\n返回值：fW, fH\n
+GetItemCount ()\nHandle.GetItemCount(无)：获取控件的总数量\n返回值：nCount\n\nTreeLeaf:GetItemCount(无)：获取控件的总数量\n返回值：nCount\n
+GetVisibleItemCount ()\nHandle.GetVisibleItemCount(无)：获取可见控件的总数量\n返回值：nCount\n\nTreeLeaf:GetVisibleItemCount(无)：获取可见控件的总数量\n返回值：nCount\n
+EnableFormatWhenAppend ()\nHandle.EnableFormatWhenAppend(bFlag)：设置是否当有控件添加时就格式化\n返回值：无\n\nTreeLeaf:EnableFormatWhenAppend(bFlag)：设置是否当有控件添加时就格式化\n返回值：无\n
+ExchangeItemIndex ()\nHandle.ExchangeItemIndex(1.nIndex1, nIndex2 
+2.nIndex1, pItem2
+3.pItem1, nIndex2
+4.pItem1, nIndex2)：交换两个控件的序列号\n返回值：无\n\nTreeLeaf:ExchangeItemIndex(1.nIndex1, nIndex2 
+2.nIndex1, pItem2
+3.pItem1, nIndex2
+4.pItem1, nIndex2)：交换两个控件的序列号\n返回值：无\n
+Sort ()\nHandle.Sort(无)：排序\n返回值：无\n\nTreeLeaf:Sort(无)：排序\n返回值：无\n
+AppendItemFromData ()\nHandle.AppendItemFromData(ItemData [,szNewName])：添加控件，从控件数据中读取\n返回值：无\n\nTreeLeaf:AppendItemFromData(ItemData [,szNewName])：添加控件，从控件数据中读取\n返回值：无\n
+SetFrame (nFrame)\nImage.SetFrame：设置Frame\n返回值：无\n
+GetFrame (无)\nImage.GetFrame：获取Frame\n返回值：nFrame\n
+SetImageType (nImageType)\nImage.SetImageType：设置图片类型\n返回值：无\n
+GetImageType (无)\nImage.GetImageType：获取图片类型\n返回值：nImageType\n类型见枚举型：[[IMAGE]]
+SetPercentage (fPercentage)\nImage.SetPercentage：设置百分比\n返回值：无\n
+GetPercentage (无)\nImage.GetPercentage：获取百分比\n返回值：fPercentage\n
+SetRotate (fRotate)\nImage.SetRotate：设置旋转度\n返回值：无\n
+GetRotate (无)\nImage.GetRotate：获取旋转度\n返回值：fRotate\n
+GetImageID (无)\nImage.GetImageID：获取图片ID\n返回值：dwImageID\n
+FromUITex (szImage, nFrame)\nImage.FromUITex：从UITex中加载图片\n返回值：无\n
+FromTextureFile (szImage [,bCache])\nImage.FromTextureFile：从贴图文件中加载图片\n返回值：无\n
+FromScene (p3DScene)\nImage.FromScene：从3D场景处加载图片\n返回值：无\n
+FromImageID (dwImageID)\nImage.FromImageID：通过图片ID来加载图片\n返回值：无\n
+FromIconID (nIcon)\nImage.FromIconID：通过IconID来加载图片\n返回值：无\n
+FromWindow (pWindow)\nImage.FromWindow：加载图片，图片来自于窗口（镜像图片）\n返回值：无\n
+FromItem (控件对象)\nImage.FromItem：加载图片，图片来自于控件（镜像图片）\n返回值：无\n
+PtInItem (fAbsX, fAbsY)\nItemNull.PtInItem：判断点是否在控件内\n返回值：bInItem\n
+SetRelPos ()\nItemNull.SetRelPos(fRelX,fRelY)：设置相对位置\n返回值：无\n\nWndWindow:SetRelPos(fX, fY)：设置窗口相对位置\n返回值：无\n
+GetRelPos ()\nItemNull.GetRelPos(无)：获取相对位置\n返回值：fRelX,fRelY\n\nWndWindow:GetRelPos(无)：获取窗口相对位置\n返回值：fX,fY\n
+SetAbsPos ()\nItemNull.SetAbsPos(fAbsX, fAbsY)：设置绝对位置\n返回值：无\n\nWndWindow:SetAbsPos(fX, fY)：设置窗口绝对位置\n返回值：无\n
+GetAbsPos ()\nItemNull.GetAbsPos(无)：获取绝对位置\n返回值：fAbsX, fAbsY\n\nWndWindow:GetAbsPos(无)：获取窗口绝对位置\n返回值：fX,fY\n
+SetSize ()\nItemNull.SetSize(fWidth,fHeight)：设置大小\n返回值：无\n\nWndWindow:SetSize(fWidth,fHeight)：设置窗口的大小\n返回值：无\n
+GetSize ()\nItemNull.GetSize(无)：获取大小\n返回值：fWidth,fHeight\n\nWndWindow:GetSize(无)：获取窗口的大小\n返回值：fWidth, fHeight\n
+SetPosType (dwPosType)\nItemNull.SetPosType：设置坐标类型\n返回值：无\n
+GetPosType (无)\nItemNull.GetPosType：获取坐标类型\n返回值：dwPosType\n
+GetName ()\nItemNull.GetName(无)：获取Name\n返回值：szName\n\nWndWindow:GetName(无)：获取窗口名称\n返回值：szName\n
+SetName ()\nItemNull.SetName(szName)：设置Name\n返回值：无\n\nWndWindow:SetName(szName)：设置窗口名称\n返回值：无\n
+SetTip (有两种参数形式：
+1.nTipIndex
+2.szTip, nShowType, [nRichText])\nItemNull.SetTip：设置Tip\n返回值：无\n
+GetTip (无)\nItemNull.GetTip：获取Tip\n返回值：szTip, nShowTipType\n
+SetUserData (fUserData)\nItemNull.SetUserData：设置玩家数据\n返回值：无\n
+GetUserData (无)\nItemNull.GetUserData：获取玩家数据\n返回值：fUserData\n
+ClearEvent (无)\nItemNull.ClearEvent：清除事件\n返回值：无\n
+EnableScale (bEable)\nItemNull.EnableScale：设置是否可缩放\n返回值：无\n
+Scale ()\nItemNull.Scale(fX,fY)：缩放\n返回值：无\n\nWndWindow:Scale(fXScale, fYScale)：缩放窗口\n返回值：无\n
+LockShowAndHide (bEnable)\nItemNull.LockShowAndHide：设置是否给显示隐藏上锁，使不能再改变其可见状态\n返回值：无\n
+SetAlpha ()\nItemNull.SetAlpha(nAlpha)：设置透明度\n返回值：无\n\nWndWindow:SetAlpha(nAlpha)：设置窗口透明度，包括它所有的子窗口及控件\n返回值：无\n
+GetAlpha ()\nItemNull.GetAlpha(无)：获取透明度\n返回值：nAlpha\n\nWndWindow:GetAlpha(无)：获取窗口的透明度\n返回值：nAlpha\n
+GetParent ()\nItemNull.GetParent(无)：获取其父控件或者父窗口\n返回值：返回一个控件对象或者窗口对象\n\nWndWindow:GetParent(无)：获取父窗口\n返回值：窗口对象\n
+GetRoot ()\nItemNull.GetRoot(无)：获取其根窗口\n返回值：返回一个WndFrame对象\n\nWndWindow:GetRoot(无)：获取根窗口\n返回值：WndFrame对象\n
+GetIndex (无)\nItemNull.GetIndex：获取控件Index\n返回值：nIndex\n
+SetIndex (nNewIndex)\nItemNull.SetIndex：设置控件Index\n返回值：无\n
+ExchangeIndex (有两种参数形式：
+1.nIndex
+2.pItemNext)\nItemNull.ExchangeIndex：交换控件Index\n返回值：无\n
+GetTreePath ()\nItemNull.GetTreePath(无)：获取控件的TreePath\n返回值：szTreePath\n\nWndWindow:GetTreePath(无)：获取窗口的szTreePath\n返回值：szTreePath\n
+SetIntPos (bIsIntPos)\nItemNull.SetIntPos：设置整形坐标\n返回值：无\n
+IsIntPos (无)\nItemNull.IsIntPos：判断是否是整形坐标\n返回值：bIsIntPos\n
+IsLink (无)\nItemNull.IsLink：是否是链接\n返回值：bIsLink\n
+GetLinkInfo (无)\nItemNull.GetLinkInfo：获取链接信息\n返回值：szLinkInfo\n
+IsValid ()\nItemNull.IsValid(无)：是否合法\n返回值：bValid\n\nWndWindow:IsValid(无)：判断是否为有效合法的窗口\n返回值：bValid\n
+SetScene (p3DScene)\nScene.SetScene：设置场景\n返回值：无\n
+EnableAlpha (bEnable)\nScene.EnableAlpha：设置透明度是否有效\n返回值：无\n
+SetShadowColor (两种参数形式：
+1.dwColor，
+2.szColor,[Alpha] Alpha值默认为255)\nShadow.SetShadowColor：设置阴影颜色\n返回值：无\n
+GetShadowColor (无)\nShadow.GetShadowColor：获取阴影颜色\n返回值：dwColor\n
+GetColorRGB (无)\nShadow.GetColorRGB：获取颜色（RGB模式）\n返回值：dwR, dwG, dwB\n
+SetColorRGB (dwR, dwG, dwB)\nShadow.SetColorRGB：设置颜色（RGB模式）\n返回值：无\n
+SetTriangleFan (dwType [, nBold])\nShadow.SetTriangleFan：设置shadow的功能类型\n返回值：无\n参数dwType:功能类型,见枚举值GEOMETRY_TYPE\n当功能类型是GEOMETRY_TYPE.LINE时：nBold才起作用代表线的厚度\n例子：\n1.画连接线：\n shadow:SetTriangleFan(GEOMETRY_TYPE.LINE, 3)\n shadow:ClearTriangleFanPoint()\n shadow:AppendCharacterID(me.dwID, true, r, g, b, a)\n shadow:AppendCharacterID(tar.dwID, true, r, g, b, a)\n shadow:Show()\n2.画气场名字：\nshadow:ClearTriangleFanPoint()\nshadow:SetTriangleFan(GEOMETRY_TYPE.TEXT)\nshadow:AppendCharacterID(tar.dwID, true, r, g, b, a, 0, 40, "生太极", 0, 1)\nshadow:AppendCharacterID(tar1.dwID, true, r, g, b, a, 0, 40, "镇山河", 0, 1)\nshadow:Show()\n可以支持一个shadow 添加多个绘制名字的
+IsTriangleFan (无)\nShadow.IsTriangleFan：判断是否为三角形扇\n返回值：bTriangleFan\n
+AppendTriangleFanPoint (x, y, r, g, b, a [, dwFontSchemeID, szText, fSpace, fScale])\nShadow.AppendTriangleFanPoint：添加屏幕坐标作为一个绘制点;当功能类型为GEOMETRY_TYPE.TEXT时，代表在绘制点绘制一段文字\n返回值：无\n参数：\nx, y      屏幕坐标\nr,g,b,a      颜色\ndwFontSchemeID 字体id;功能类型是GEOMETRY_TYPE.TEXT 才有用\nszText     绘制的文字;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfSpace     文字间的间隔;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfScale     文字的缩放;功能类型是GEOMETRY_TYPE.TEXT 才有用
+SetD3DPT (nD3DPT)\nShadow.SetD3DPT：设制顶点的绘制方式\n返回值：无\nnD3DPT： 绘制类型，取值有两种：\n  1.D3DPT.TRIANGLESTRIP\n   三角形带：索引区中每三个一个三角形，前一个三角形的后两个顶点和后一个三角形的前两个顶点重合。\n   即绘制的第一个三边形使用3个顶点，后面绘制的每一个三角形只使用一个额外的顶点。\n  2.D3DPT.TRIANGLEFAN （默认值）\n   三角扇形：索引区中第一个点为公共顶点，后面依次展开，每两个点和公共定点组成三角形。\n例：Shadow:SetD3DPT(D3DPT.TRIANGLESTRIP)   --默认是D3DPT.TRIANGLEFAN
+AppendTriangleFan3DPoint (x, y, z, r, g, b, a [,fTopDelta, dwFontSchemeID, szText, fSpace, fScale])\nShadow.AppendTriangleFan3DPoint：添加逻辑世界坐标作为一个绘制点;当功能类型为GEOMETRY_TYPE.TEXT时，代表在绘制点绘制一段文字\n返回值：无\n参数：\nx, y, z     逻辑世界坐标\nr,g,b,a      颜色\nfTopDelta    传的是数值表示场景坐标高度的调整值，比如根据角色id 取到头顶坐标后 加上这个值后 再转成屏幕坐标；传的是表，则为{scenex, sceney, scenez, screenx, screeny} ,场景坐标加上这个  scenex, sceney, scenez 再转成屏幕坐标,最后屏幕坐标加上 screenx ,screeny 作为最终坐标 \ndwFontSchemeID 字体id;功能类型是GEOMETRY_TYPE.TEXT 才有用\nszText     绘制的文字;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfSpace     文字间的间隔;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfScale     文字的缩放;功能类型是GEOMETRY_TYPE.TEXT 才有用
+ClearTriangleFanPoint (无)\nShadow.ClearTriangleFanPoint：清除所有的三角形扇点\n返回值：无\n
+AppendDoodadID (dwDoodadID, r, g, b, a [,fTopDelta, dwFontSchemeID, szText, fSpace, fScale])\nShadow.AppendDoodadID：添加一个DoodadID，以Doodad的原点代表一个绘制点;当功能类型为GEOMETRY_TYPE.TEXT时，代表在绘制点绘制一段文字\n返回值：无\n参数：\ndwDoodadID     \nr,g,b,a      颜色\nfTopDelta    传的是数值表示场景坐标高度的调整值，比如根据角色id 取到头顶坐标后 加上这个值后 再转成屏幕坐标；传的是表，则为{scenex, sceney, scenez, screenx, screeny} ,场景坐标加上这个  scenex, sceney, scenez 再转成屏幕坐标,最后屏幕坐标加上 screenx ,screeny 作为最终坐标\n   \ndwFontSchemeID 字体id;功能类型是GEOMETRY_TYPE.TEXT 才有用\nszText     绘制的文字;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfSpace     文字间的间隔;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfScale     文字的缩放;功能类型是GEOMETRY_TYPE.TEXT 才有用
+AppendCharacterID (dwCharacterID, bCharacterTop, r, g, b, a [,fTopDelta, dwFontSchemeID, szText, fSpace, fScale])\nShadow.AppendCharacterID：添加一个角色ID，以角色的原点或者头顶代表一个绘制点;当功能类型为GEOMETRY_TYPE.TEXT时，代表在绘制点绘制一段文字\n返回值：无\n参数：\ndwCharacterID  角色ID\nbCharacterTop  是否取角色的头顶作为绘制点\nr,g,b,a      颜色\nfTopDelta    传的是数值表示场景坐标高度的调整值，比如根据角色id 取到头顶坐标后 加上这个值后 再转成屏幕坐标；传的是表，则为{scenex, sceney, scenez, screenx, screeny} ,场景坐标加上这个  scenex, sceney, scenez 再转成屏幕坐标,最后屏幕坐标加上 screenx ,screeny 作为最终坐标\ndwFontSchemeID 字体id;功能类型是GEOMETRY_TYPE.TEXT 才有用\nszText     绘制的文字;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfSpace     文字间的间隔;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfScale     文字的缩放;功能类型是GEOMETRY_TYPE.TEXT 才有用
+GetRow (uRow)\nTableFile
+(KG_Table.Load 创建的对象).GetRow：获取tab文件的某一行\n返回值：tLine：tab文件中对应行的lua表\n
+Search (nKey0 [,nKey1 [,nKey2]])\nTableFile
+(KG_Table.Load 创建的对象).Search：查询tab中符合条件的行\n返回值：tLine：tab文件中对应行的lua表\n
+GetRowCount (无)\nTableFile
+(KG_Table.Load 创建的对象).GetRowCount：获取tab文件的行数\n返回值：uTotalRow\n
+TableRealse (无)\nTableFile
+(KG_Table.Load 创建的对象).TableRealse：释放TabFile对象\n返回值：无\n
+SetFontScheme ()\nText.SetFontScheme(nFontScheme)：设置字体\n返回值：无\n\nWndEdit:SetFontScheme(nFont)：设置字体\n返回值：无\n平时的字体，非选中时的字体
+GetFontScheme ()\nText.GetFontScheme(无)：获取字体\n返回值：nFontScheme\n\nWndEdit:GetFontScheme(无)：返回当前字体\n返回值：nFont\n平时的字体，非选中时的字体
+SetText ()\nText.SetText(szText)：设置文本\n返回值：无\n\nWndEdit:SetText(szText)：设置文本编辑框的文本内容\n返回值：无\n
+GetTextLen (无)\nText.GetTextLen：获取文本长度\n返回值：nTextLength\n
+SetVAlign (nValign)\nText.SetVAlign：设置垂直对齐方式\n返回值：无\n1：中间对齐 2：底对齐
+GetVAlign (无)\nText.GetVAlign：获取垂直对齐方式\n返回值：nValign\n1：中间对齐 2：底对齐
+SetHAlign (nHalign)\nText.SetHAlign：设置水平对齐方式\n返回值：无\n1：中间对齐 2：右对齐
+GetHAlign (无)\nText.GetHAlign：获取水平对齐方式\n返回值：nHalign\n1：中间对齐 2：右对齐
+GetRowSpacing (无)\nText.GetRowSpacing：获取行间距\n返回值：fRowSpacing\n
+SetMultiLine ()\nText.SetMultiLine(bMultiLine)：设置为多行文本\n返回值：无\nbMultiLine:true表示为多行文本，否则为单行\nWndEdit:SetMultiLine(bMultiLine)：设置为多行编辑\n返回值：无\n
+IsMultiLine ()\nText.IsMultiLine(无)：是否为多行文本\n返回值：bMultiLine\n\nWndEdit:IsMultiLine(无)：是否为多行编辑\n返回值：bMultiLine\n
+FormatTextForDraw (无)\nText.FormatTextForDraw：为渲染作格式文本\n返回值：无\n
+SetCenterEachLine (bCenterEachLine)\nText.SetCenterEachLine：设置文本是否中间对齐\n返回值：无\n
+IsCenterEachLine (无)\nText.IsCenterEachLine：判断文本是否中间对齐\n返回值：bCenterEachLine\n
+SetFontSpacing ()\nText.SetFontSpacing(fSpacing)：设置字间距\n返回值：无\n\nWndEdit:SetFontSpacing(fFontSpacing)：设置字间距\n返回值：无\n
+GetFontSpacing (无)\nText.GetFontSpacing：获取字间距\n返回值：fSpacing\n
+SetRichText (bRichText)\nText.SetRichText：设置是否为RichText\n返回值：无\n
+IsRichText (无)\nText.IsRichText：判断是否为RichText\n返回值：bRichText\n
+GetFontScale (无)\nText.GetFontScale：获取字体缩放度\n返回值：fScale\n
+SetFontScale (fScale)\nText.SetFontScale：设置字体缩放度\n返回值：无\n
+SetFontID (dwFontID)\nText.SetFontID：设置字体ID\n返回值：无\n
+SetFontColor ()\nText.SetFontColor(两种参数形式：
+1.dwColor
+2.nRed, nGreen, nBlue)：设置字体颜色\n返回值：无\n\nWndEdit:SetFontColor(dwRed, dwGreen, dwBlue)：设置字体 颜色\n返回值：无\n
+SetFontBorder (nSize, nRed, nGreen, nBlue)\nText.SetFontBorder：设置字体边框\n返回值：无\n
+SetFontShadow (nSize, nRed, nGreen, nBlue)\nText.SetFontShadow：设置字体阴影\n返回值：无\n
+GetFontID (无)\nText.GetFontID：获取字体ID\n返回值：dwFontID\n
+GetFontColor (无)\nText.GetFontColor：获取字体颜色\n返回值：nRed, nGreen, nBlue\n
+GetFontBoder (无)\nText.GetFontBoder：获取字体边框\n返回值：nSize, nRed, nGreen, nBlue\n
+GetFontProjection (无)\nText.GetFontProjection：获取字体阴影\n返回值：nSize, nRed, nGreen, nBlue\n
+GetTextExtent ([nTextLength])\nText.GetTextExtent：获取文本内容占用的长宽\n返回值：fWidth, fHeight\nnTextLength默认为-1，此时读取全文
+GetTextPosExtent ([fWidth])\nText.GetTextPosExtent：获取给定的位置在文本的第几个字符处\n返回值：nTextLength\nfWidth默认为0
+IsExpand (无)\nTreeLeaf.IsExpand：判断是否已被展开\n返回值：bIsExpand\n
+ExpandOrCollapse (bIsExpand)\nTreeLeaf.ExpandOrCollapse：传入参数为true时，展开；否则，收起\n返回值：无\n
+Expand (无)\nTreeLeaf.Expand：展开\n返回值：无\n
+Collapse (无)\nTreeLeaf.Collapse：收起\n返回值：无\n
+SetIndent (nIndent)\nTreeLeaf.SetIndent：设置缩进\n返回值：无\n
+GetIndent (无)\nTreeLeaf.GetIndent：获取缩进\n返回值：nIndent\n
+SetEachIndentWidth (fWidth)\nTreeLeaf.SetEachIndentWidth：设置单个缩进的宽度\n返回值：无\n
+GetEachIndentWidth (无)\nTreeLeaf.GetEachIndentWidth：获取单个缩进的宽度\n返回值：fWidth\n
+SetNodeIconSize (fW, fH)\nTreeLeaf.SetNodeIconSize：设置节点图标的大小\n返回值：无\n
+SetIconImage (szImage, nExpandFrame, nCollapseFrame)\nTreeLeaf.SetIconImage：设置图标图片\n返回值：无\n
+PtInIcon (fX,fY)\nTreeLeaf.PtInIcon：判断点是否在图标内\n返回值：bInIcon\n
+AdjustNodeIconPos (无)\nTreeLeaf.AdjustNodeIconPos：自动调整节点图标的位置\n返回值：无\n
+AutoSetIconSize (无)\nTreeLeaf.AutoSetIconSize：自动设置图标大小\n返回值：无\n
+SetShowIndex (nShowIndex)\nTreeLeaf.SetShowIndex：设置显示序列号\n返回值：无\n
+GetShowIndex (无)\nTreeLeaf.GetShowIndex：获取显示序列号\n返回值：nShowIndex\n
+IsEnabled (无)\nWndButton.IsEnabled：是否有效\n返回值：bEnable\n
+SetAnimateGroupNormal (nGroup)\nWndButton.SetAnimateGroupNormal：设置Button状态为普通时的AnimateGroup\n返回值：无\n
+SetAnimateGroupMouseOver (nGroup)\nWndButton.SetAnimateGroupMouseOver：设置Button状态为MouseOver时的AnimateGroup\n返回值：无\n
+SetAnimateGroupMouseDown (nGroup)\nWndButton.SetAnimateGroupMouseDown：设置Button状态为MouseDown时的AnimateGroup\n返回值：无\n
+SetAnimateGroupDisable (nGroup)\nWndButton.SetAnimateGroupDisable：设置Button状态为Disable时的AnimateGroup\n返回值：无\n
+RegisterLButtonDrag (无)\nWndButton.RegisterLButtonDrag：注册鼠标左键拖动\n返回值：无\n
+UnregisterLButtonDrag (无)\nWndButton.UnregisterLButtonDrag：注销鼠标左键拖动\n返回值：无\n
+IsLButtonDragable (无)\nWndButton.IsLButtonDragable：判断鼠标左键是否可拖动\n返回值：bDrageble\n
+RegisterRButtonDrag (无)\nWndButton.RegisterRButtonDrag：注册鼠标右键拖动\n返回值：无\n
+UnregisterRButtonDrag (无)\nWndButton.UnregisterRButtonDrag：注销鼠标右键拖动\n返回值：无\n
+IsRButtonDragable (无)\nWndButton.IsRButtonDragable：判断鼠标右键是否可拖动\n返回值：bDrageble\n
+IsCheckBoxActive (无)\nWndCheckBox.IsCheckBoxActive：判断当前勾选框是否有效\n返回值：bActive\n
+IsCheckBoxChecked (无)\nWndCheckBox.IsCheckBoxChecked：判断当前是否已被勾选\n返回值：bChecked\n
+Check (bCheck)\nWndCheckBox.Check：设置是否勾选\n返回值：无\n
+ToggleCheck (无)\nWndCheckBox.ToggleCheck：反转勾选状态\n返回值：无\n当前被勾选时，取消勾选；反之，则勾选
+SetAnimation (szImagePath, nUncheckAndEnable, nCheckAndEnable, nUnCheckAndDisable,nCheckAndDisable,nChecking,nUnChecking,nCheckedAndEnableWhenMouseOver,nUncheckedAndEnableWhenMouseOver,nCheckedAndDisableWhenMouseOver, nUncheckedAndDisableWhenMouseOver)\nWndCheckBox.SetAnimation：设置动画\n返回值：无\n
+GetTextLength ([bMultiByte])\nWndEdit.GetTextLength：获取文本框中文本长度\n返回值：nLength\nbMulitByte:默认为true,以多字节方式获取文本
+ClearText (无)\nWndEdit.ClearText：清除文本编辑框中的文本\n返回值：无\n
+InsertObj (szText, tTab)\nWndEdit.InsertObj：插入一个Obj\n返回值：无\n
+GetTextStruct (无)\nWndEdit.GetTextStruct：获取文本的Lua结构\n返回值：tTextStruct\n
+SetType (nType)\nWndEdit.SetType：设置文本编辑框的类型\n返回值：无\n参数为1时可以输入西文字符，符号、标点等；参数为2时可输入中文字符
+SetLimit (nLimit)\nWndEdit.SetLimit：设置限制用户输入的最大长度\n返回值：无\n为-1表示不限制
+GetLimit (无)\nWndEdit.GetLimit：获取限制用户输入的最大长度\n返回值：nLimit\n为-1表示不限制
+SetLimitMultiByte (bMultiByte)\nWndEdit.SetLimitMultiByte：设置输入的长度的控制是否使用MultiByte为计算单位\n返回值：无\nbMultiByte表示使用MultiByte为计算单位
+IsLimitMultiByte (无)\nWndEdit.IsLimitMultiByte：当前输入的长度的控制是否使用MultiByte为计算单位\n返回值：bMultiByte\nbMultiByte表示使用MultiByte为计算单位
+SelectAll (无)\nWndEdit.SelectAll：选择全部\n返回值：无\n
+InsertText (szText)\nWndEdit.InsertText：插入文本\n返回值：无\n
+Backspace (无)\nWndEdit.Backspace：退格\n返回值：无\n
+SetFocusBgColor (dwRed, dwGreen, dwBlue)\nWndEdit.SetFocusBgColor：设置有焦点时的背景颜色\n返回值：无\n
+SetSelectBgColor (dwRed, dwGreen, dwBlue)\nWndEdit.SetSelectBgColor：设置选中部分的背景颜色\n返回值：无\n
+SetSelectFontScheme (nFont)\nWndEdit.SetSelectFontScheme：设置选中时的字体\n返回值：无\n
+SetCurSel (nStart [, nEnd])\nWndEdit.SetCurSel：设置当前选中\n返回值：无\n
+EnableDrag (bDragable)\nWndFrame.EnableDrag：设置当前窗口是否可拖动\n返回值：无\n
+IsDragable (无)\nWndFrame.IsDragable：判断当前窗口是否可拖动\n返回值：bDragable\n
+EnableFollowMouse (bEnable)\nWndFrame.EnableFollowMouse：设置是否跟随鼠标移动\n返回值：无\n
+IsFollowMouseMove (无)\nWndFrame.IsFollowMouseMove：判断是否跟随鼠标移动\n返回值：bEnable\n
+SetDragArea (fX,fY,fW,fH)\nWndFrame.SetDragArea：设置可拖动的区域范围\n返回值：无\n
+FocusPrev (无)\nWndFrame.FocusPrev：设置上一个窗口为焦点窗口\n返回值：bResult\n成功则返回true,否则为false
+FocusNext (无)\nWndFrame.FocusNext：设置下一个窗口为焦点窗口\n返回值：bResult\n成功则返回true,否则为false
+FocusHome (无)\nWndFrame.FocusHome：设置第一个窗口为焦点窗口\n返回值：bResult\n成功则返回true,否则为false
+FocusEnd (无)\nWndFrame.FocusEnd：设置最后一个窗口为焦点窗口\n返回值：bResult\n成功则返回true,否则为false
+FadeIn (nCount)\nWndFrame.FadeIn：窗口淡入\n返回值：无\n
+FadeOut (nCount)\nWndFrame.FadeOut：窗口渐隐\n返回值：无\n
+ShowWhenUIHide (无)\nWndFrame.ShowWhenUIHide：设置窗口风格：UI隐藏时显现\n返回值：无\n
+HideWhenUIHide (无)\nWndFrame.HideWhenUIHide：设置窗口风格：UI显现时隐藏\n返回值：无\n
+IsVisibleWhenUIHide (无)\nWndFrame.IsVisibleWhenUIHide：判断UI隐藏时窗口是否可见\n返回值：bVisible\n
+IsAddOn (无)\nWndFrame.IsAddOn：判断是否为插件窗口\n返回值：bAddon\n
+CreateItemData (IniFile, szSection, szKey)\nWndFrame.CreateItemData：创建控件的中间层数据\n返回值：返回控件的中间层数据\n
+RemoveItemData (pItemData)\nWndFrame.RemoveItemData：移除控件的中间层数据\n返回值：无\n
+LookUpItemData (szKey)\nWndFrame.LookUpItemData：查询控件的中间层数据\n返回值：返回控件的中间层数据\n
+SetMapPath (szMapPath)\nWndMinimap.SetMapPath：设置地图文件地址\n返回值：无\n
+SetScale (fScale)\nWndMinimap.SetScale：设置缩放尺度\n返回值：无\n
+GetScale (无)\nWndMinimap.GetScale：获取缩放尺度\n返回值：fScale\n
+GetSendPos (无)\nWndMinimap.GetSendPos：获取鼠标点击的地图位置\n返回值：fX, fY\n
+SetScrollPos (nPos)\nWndNewScrollBar.SetScrollPos：设置滚动条位置\n返回值：无\n
+GetScrollPos (无)\nWndNewScrollBar.GetScrollPos：获取滚动条位置\n返回值：nPos\n
+SetStepCount (nStepCount)\nWndNewScrollBar.SetStepCount：设置总步数\n返回值：无\n
+GetStepCount (无)\nWndNewScrollBar.GetStepCount：获取总步数\n返回值：nStepCount\n
+SetPageStepCount (nStepCount)\nWndNewScrollBar.SetPageStepCount：设置每页可显示的步数\n返回值：无\n
+GetPageStepCount (无)\nWndNewScrollBar.GetPageStepCount：获取每页可显示的频数\n返回值：nStepCount\n
+ScrollPrev ([nStepCount])\nWndNewScrollBar.ScrollPrev：滑动到之前，步数默认为1\n返回值：无\nnStepCount默认为1
+ScrollNext ([nStepCount])\nWndNewScrollBar.ScrollNext：滑动到之后，步数默认为1\n返回值：无\nnStepCount默认为1
+ScrollPagePrev (无)\nWndNewScrollBar.ScrollPagePrev：滑动到之前一页\n返回值：无\n
+ScrollPageNext (无)\nWndNewScrollBar.ScrollPageNext：滑动到之后一页\n返回值：无\n
+ScrollHome (无)\nWndNewScrollBar.ScrollHome：滑动到开始处\n返回值：无\n
+ScrollEnd (无)\nWndNewScrollBar.ScrollEnd：滑动到末尾处\n返回值：无\n
+SetDragStep (bDragStep)\nWndNewScrollBar.SetDragStep：设置鼠标拖动步长\n返回值：无\n
+ActivePage (有两种参数形式：
+1.nPageIndex
+2.szWndName)\nWndPageSet.ActivePage：激活指定的页面\n返回值：无\n
+GetActivePageIndex (无)\nWndPageSet.GetActivePageIndex：获取当前激活的页面\n返回值：nAcitvePage\n
+GetLastActivePageIndex (无)\nWndPageSet.GetLastActivePageIndex：获取前一个激活页\n返回值：nLastAcitvePage\n
+AddPage (有四种参数形式：1.WndWindow, WndCheckBox[,szNewPageName [,szNewCheckBoxName]]  2.WndWindow, szCheckBox[,szNewPageName [,szNewCheckBoxName]] 3.szPage, WndCheckBox[,szNewPageName [,szNewCheckBoxName]] 4.szPage, szCheckBox[,szNewPageName [,szNewCheckBoxName]])\nWndPageSet.AddPage：添加一个标签页\n返回值：无\n
+GetActivePage (无)\nWndPageSet.GetActivePage：获取当前激活的页面\n返回值：返回当前激活的页面对象\n
+GetActiveCheckBox (无)\nWndPageSet.GetActiveCheckBox：获取当前激活的CheckBox\n返回值：返回当前激活的CheckBox\n
+SetScrollVerStepSzie (nSetpCount)\nWndScroll.SetScrollVerStepSzie：设置垂直方向滑动步长\n返回值：无\n
+SetScrollHorStepSzie (nSetpCount)\nWndScroll.SetScrollHorStepSzie：设置水平方向滑动步长\n返回值：无\n
+Navigate (szURL)\nWndWebPage.Navigate：打开网页\n返回值：无\n
+NavigateBindCard (szConst,szAccount,szPasswordTreePath)\nWndWebPage.NavigateBindCard：绑定帐号打开网页\n返回值：无\n
+CanGoBack (无)\nWndWebPage.CanGoBack：是否能后退\n返回值：bCan\n
+CanGoForward (无)\nWndWebPage.CanGoForward：是否能前进\n返回值：bCan\n
+GoBack (无)\nWndWebPage.GoBack：后退\n返回值：无\n
+GoForward (无)\nWndWebPage.GoForward：前进\n返回值：无\n
+Refresh (无)\nWndWebPage.Refresh：刷新\n返回值：无\n
+GetLocationName (无)\nWndWebPage.GetLocationName：获取当前查看的文档名\n返回值：szLocationName\n
+GetLocationURL (无)\nWndWebPage.GetLocationURL：获取当前查看的文档的完整的URL\n返回值：szLocationURL\n
+GetDocument (无)\nWndWebPage.GetDocument：获取当前查看的文档\n返回值：szDocument\n
+IsDisable (无)\nWndWindow.IsDisable：窗口是否失效\n返回值：bDisable\n
+SetCursorAbove (无)\nWndWindow.SetCursorAbove：使光标移动到悬浮在此窗口中的位置上\n返回值：无\n
+ToggleVisible (无)\nWndWindow.ToggleVisible：窗口可见时隐藏，否则显示\n返回值：无\n
+BringToTop (无)\nWndWindow.BringToTop：将窗口移动到最上层\n返回值：无\n
+CreateItemHandle (有两种参数形式：
+1.szString
+2.szIniFile, szSection, [szNewName])\nWndWindow.CreateItemHandle：创建挂接的ItemHandle\n返回值：无\n
+ReleaseItemHandle (无)\nWndWindow.ReleaseItemHandle：释放挂接的ItemHandle\n返回值：无\n
+GetPrev (无)\nWndWindow.GetPrev：获取前一个同级窗口\n返回值：窗口对象\n
+GetNext (无)\nWndWindow.GetNext：获取后一个同级窗口\n返回值：窗口对象\n
+GetFirstChild (无)\nWndWindow.GetFirstChild：获取第一个子窗口\n返回值：窗口对象\n
+CorrectPos (1.无
+2.szAnotherWnd, [nType] 其中nType默认为ALW.CENTER
+3.fX, fY, [nType] 其中nType默认为ALW.CENTER
+4.fLeft, fTop, fRight, fBottom, [nType]其中nType默认为ALW.CENTER)\nWndWindow.CorrectPos：调整窗口位置\n返回值：无\n
+SetSizeWithAllChild (bEnable)\nWndWindow.SetSizeWithAllChild：设置窗口风格：以子窗口的范围测试的集合作为自己的范围测试的集合\n返回值：无\nbEnable为true时生效，否则失效
+SetMousePenetrable (bEnable)\nWndWindow.SetMousePenetrable：设置窗口风格：鼠标完全穿透，不接收任何消息\n返回值：无\nbEnable为true时生效，否则失效
+SetSelfAlpha (nAlpha)\nWndWindow.SetSelfAlpha：设置窗口透明度，仅包括它自身，不包含其子窗口及控件\n返回值：无\n
+ChangeRelation (有两种参数形式：
+1.Wnd [, bBehind [, bChild]]
+2.szPath [, bBehind [, bChild]])\nWndWindow.ChangeRelation：改变窗口的层级关系\n返回值：无\nbBehind默认为true, bChild默认为false
+SetPoint (有以下四种参数形式
+1.fX,fY
+2.szSide, fX, fY, szRelSize, fRelOffsetX,fRelOffSetY
+3.szSide, fX, fY, Wnd, szRelSize, fRelOffsetX,fRelOffSetY
+4.szSide, fX, fY,szRelTreePath ,szRelSize, fRelOffsetX,fRelOffSetY)\nWndWindow.SetPoint：设置窗口左上角位置\n返回值：无\n
+Destroy (无)\nWndWindow.Destroy：摧毁窗口\n返回值：无\n
+
+
+OnActivePage ()\n事件处理函数
+OnCheckBoxCheck ()\n事件处理函数
+OnCheckBoxDrag ()\n事件处理函数
+OnCheckBoxDragBegin ()\n事件处理函数
+OnCheckBoxDragEnd ()\n事件处理函数
+OnCheckBoxUncheck ()\n事件处理函数
+OnDragButton ()\n事件处理函数
+OnDragButtonBegin ()\n事件处理函数
+OnDragButtonEnd ()\n事件处理函数
+OnEditChanged ()\n事件处理函数
+OnEditSpecialKeyDown ()\n事件处理函数
+OnEvent ()\n事件处理函数
+OnFrameBreathe ()\n事件处理函数
+OnFrameCreate ()\n事件处理函数
+OnFrameDestroy ()\n事件处理函数
+OnFrameDrag ()\n事件处理函数
+OnFrameDragEnd ()\n事件处理函数
+OnFrameDragSetPosEnd ()\n事件处理函数
+OnFrameFadeIn ()\n事件处理函数
+OnFrameFadeOut ()\n事件处理函数
+OnFrameHide ()\n事件处理函数
+OnFrameKeyDown ()\n事件处理函数
+OnFrameRender ()\n事件处理函数
+OnFrameShow ()\n事件处理函数
+OnGlobalRButtonDBClick ()\n事件处理函数
+OnGlobalRButtonDown ()\n事件处理函数
+OnGlobalRButtonUp ()\n事件处理函数
+OnIgnoreKeyDown ()\n事件处理函数
+OnItemKeyDown ()\n事件处理函数
+OnItemKeyUp ()\n事件处理函数
+OnItemLButtonClick ()\n事件处理函数
+OnItemLButtonDBClick ()\n事件处理函数
+OnItemLButtonDown ()\n事件处理函数
+OnItemLButtonDrag ()\n事件处理函数
+OnItemLButtonDragEnd ()\n事件处理函数
+OnItemLButtonUp ()\n事件处理函数
+OnItemMButtonClick ()\n事件处理函数
+OnItemMButtonDBClick ()\n事件处理函数
+OnItemMButtonDown ()\n事件处理函数
+OnItemMButtonDrag ()\n事件处理函数
+OnItemMButtonDragEnd ()\n事件处理函数
+OnItemMButtonUp ()\n事件处理函数
+OnItemMouseEnter ()\n事件处理函数
+OnItemMouseHover ()\n事件处理函数
+OnItemMouseLeave ()\n事件处理函数
+OnItemMouseMove ()\n事件处理函数
+OnItemMouseWheel ()\n事件处理函数
+OnItemRButtonClick ()\n事件处理函数
+OnItemRButtonDBClick ()\n事件处理函数
+OnItemRButtonDown ()\n事件处理函数
+OnItemRButtonDrag ()\n事件处理函数
+OnItemRButtonDragEnd ()\n事件处理函数
+OnItemRButtonUp ()\n事件处理函数
+OnItemRefreshTip ()\n事件处理函数
+OnKillFocus ()\n事件处理函数
+OnLButtonClick ()\n事件处理函数
+OnLButtonDBClick ()\n事件处理函数
+OnLButtonDown ()\n事件处理函数
+OnLButtonHold ()\n事件处理函数
+OnLButtonUp ()\n事件处理函数
+OnMinimapMouseEnterSelf ()\n事件处理函数
+OnMinimapMouseLeaveObj ()\n事件处理函数
+OnMinimapMouseLeaveSelf ()\n事件处理函数
+OnMinimapSendInfo ()\n事件处理函数
+OnMouseEnter ()\n事件处理函数
+OnMouseHover ()\n事件处理函数
+OnMouseLeave ()\n事件处理函数
+OnMouseWheel ()\n事件处理函数
+OnRButtonClick ()\n事件处理函数
+OnRButtonDBClick ()\n事件处理函数
+OnRButtonDown ()\n事件处理函数
+OnRButtonUp ()\n事件处理函数
+OnRefreshTip ()\n事件处理函数
+OnSceneLButtonDown ()\n事件处理函数
+OnSceneLButtonUp ()\n事件处理函数
+OnSceneRButtonDown ()\n事件处理函数
+OnSceneRButtonUp ()\n事件处理函数
+OnScrollBarPosChanged ()\n事件处理函数
+OnSetFocus ()\n事件处理函数
+
+
+ALW
+ALW.CENTER
+CENTER = 0 
+ALW.LEFT_RIGHT
+LEFT_RIGHT = 1 
+ALW.RIGHT_LEFT
+RIGHT_LEFT = 2 
+ALW.TOP_BOTTOM
+TOP_BOTTOM = 3 
+ALW.BOTTOM_TOP
+BOTTOM_TOP = 4 
+ALW.RIGHT_LEFT_AND_BOTTOM_TOP
+RIGHT_LEFT_AND_BOTTOM_TOP = 5 
+BULLET_DETAIL
+BULLET_DETAIL.BOLT
+BOLT = 0 
+BULLET_DETAIL.SNARE
+SNARE = 1 
+BULLET_DETAIL.TOTAL
+TOTAL = 2 
+CAMP
+CAMP.NEUTRAL
+NEUTRAL = 0 
+CAMP.GOOD
+GOOD = 1 
+CAMP.EVIL
+EVIL = 2 
+CURSOR
+CURSOR.NORMAL
+NORMAL = 0 
+CURSOR.CAST
+CAST = 1 
+CURSOR.UNABLECAST
+UNABLECAST = 2 
+CURSOR.TRAVEL
+TRAVEL = 3 
+CURSOR.UNABLETRAVEL
+UNABLETRAVEL = 4 
+CURSOR.SELL
+SELL = 5 
+CURSOR.UNABLESELL
+UNABLESELL = 6 
+CURSOR.BUYBACK
+BUYBACK = 7 
+CURSOR.UNABLEBUYBACK
+UNABLEBUYBACK = 8 
+CURSOR.REPAIRE
+REPAIRE = 9 
+CURSOR.UNABLEREPAIRE
+UNABLEREPAIRE = 10 
+CURSOR.ATTACK
+ATTACK = 11 
+CURSOR.UNABLEATTACK
+UNABLEATTACK = 12 
+CURSOR.SPEAK
+SPEAK = 13 
+CURSOR.UNABLESPEAK
+UNABLESPEAK = 14 
+CURSOR.LOOT
+LOOT = 15 
+CURSOR.UNABLELOOT
+UNABLELOOT = 16 
+CURSOR.LOCK
+LOCK = 17 
+CURSOR.UNABLELOCK
+UNABLELOCK = 18 
+CURSOR.INSPECT
+INSPECT = 19 
+CURSOR.UNABLEINSPECT
+UNABLEINSPECT = 20 
+CURSOR.SPLIT
+SPLIT = 21 
+CURSOR.UNABLESPLIT
+UNABLESPLIT = 22 
+CURSOR.FLOWER
+FLOWER = 23 
+CURSOR.UNABLEFLOWER
+UNABLEFLOWER = 24 
+CURSOR.MINE
+MINE = 25 
+CURSOR.UNABLEMINE
+UNABLEMINE = 26 
+CURSOR.SEARCH
+SEARCH = 27 
+CURSOR.UNABLESEARCH
+UNABLESEARCH = 28 
+CURSOR.QUEST
+QUEST = 29 
+CURSOR.UNABLEQUEST
+UNABLEQUEST = 30 
+CURSOR.READ
+READ = 31 
+CURSOR.UNABLEREAD
+UNABLEREAD = 32 
+CURSOR.MARKPRICE
+MARKPRICE = 33 
+CURSOR.TOP_BOTTOM
+TOP_BOTTOM = 34 
+CURSOR.LEFT_RIGHT
+LEFT_RIGHT = 35 
+CURSOR.LEFTTOP_RIGHTBOTTOM
+LEFTTOP_RIGHTBOTTOM = 36 
+CURSOR.RIGHTTOP_LEFTBOTTOM
+RIGHTTOP_LEFTBOTTOM = 37 
+CURSOR.HAND_OBJECT
+HAND_OBJECT = 59 
+D3DPT
+D3DPT.TRIANGLESTRIP
+TRIANGLESTRIP = 5 三角形带：索引区中每三个一个三角形，前一个三角形的后两个顶点和后一个三角形的前两个顶点重合。\n   即绘制的第一个三边形使用3个顶点，后面绘制的每一个三角形只使用一个额外的顶点。
+D3DPT.TRIANGLEFAN
+TRIANGLEFAN = 6 三角扇形：索引区中第一个点为公共顶点，后面依次展开，每两个点和公共定点组成三角形。
+DOODAD_KIND
+DOODAD_KIND.INVALID
+INVALID = 0 
+DOODAD_KIND.NORMAL
+NORMAL = 1 
+DOODAD_KIND.CORPSE
+CORPSE = 2 
+DOODAD_KIND.QUEST
+QUEST = 3 
+DOODAD_KIND.READ
+READ = 4 
+DOODAD_KIND.DIALOG
+DIALOG = 5 
+DOODAD_KIND.ACCEPT_QUEST
+ACCEPT_QUEST = 6 
+DOODAD_KIND.TREASURE
+TREASURE = 7 
+DOODAD_KIND.ORNAMENT
+ORNAMENT = 8 
+DOODAD_KIND.CRAFT_TARGET
+CRAFT_TARGET = 9 
+DOODAD_KIND.CLIENT_ONLY
+CLIENT_ONLY = 10 
+DOODAD_KIND.CHAIR
+CHAIR = 12 
+DOODAD_KIND.GUIDE
+GUIDE = 13 
+DOODAD_KIND.DOOR
+DOOR = 14 
+DOODAD_KIND.NPCDROP
+NPCDROP = 11 
+EQUIPMENT_INVENTORY
+EQUIPMENT_INVENTORY.MELEE_WEAPON
+MELEE_WEAPON = 0 
+EQUIPMENT_INVENTORY.BIG_SWORD
+BIG_SWORD = 1 
+EQUIPMENT_INVENTORY.RANGE_WEAPON
+RANGE_WEAPON = 2 
+EQUIPMENT_INVENTORY.CHEST
+CHEST = 3 
+EQUIPMENT_INVENTORY.HELM
+HELM = 4 
+EQUIPMENT_INVENTORY.AMULET
+AMULET = 5 
+EQUIPMENT_INVENTORY.LEFT_RING
+LEFT_RING = 6 
+EQUIPMENT_INVENTORY.RIGHT_RING
+RIGHT_RING = 7 
+EQUIPMENT_INVENTORY.WAIST
+WAIST = 8 
+EQUIPMENT_INVENTORY.PENDANT
+PENDANT = 9 
+EQUIPMENT_INVENTORY.PANTS
+PANTS = 10 
+EQUIPMENT_INVENTORY.BOOTS
+BOOTS = 11 
+EQUIPMENT_INVENTORY.BANGLE
+BANGLE = 12 
+EQUIPMENT_INVENTORY.PACKAGE1
+PACKAGE1 = 13 
+EQUIPMENT_INVENTORY.PACKAGE2
+PACKAGE2 = 14 
+EQUIPMENT_INVENTORY.PACKAGE3
+PACKAGE3 = 15 
+EQUIPMENT_INVENTORY.PACKAGE4
+PACKAGE4 = 16 
+EQUIPMENT_INVENTORY.BANK_PACKAGE1
+BANK_PACKAGE1 = 18 
+EQUIPMENT_INVENTORY.BANK_PACKAGE2
+BANK_PACKAGE2 = 19 
+EQUIPMENT_INVENTORY.BANK_PACKAGE3
+BANK_PACKAGE3 = 20 
+EQUIPMENT_INVENTORY.BANK_PACKAGE4
+BANK_PACKAGE4 = 21 
+EQUIPMENT_INVENTORY.BANK_PACKAGE5
+BANK_PACKAGE5 = 22 
+EQUIPMENT_INVENTORY.ARROW
+ARROW = 23 
+EQUIPMENT_INVENTORY.HORSE
+HORSE = 24 
+EQUIPMENT_INVENTORY.TOTAL
+TOTAL = 25 
+EQUIPMENT_REPRESENT
+EQUIPMENT_REPRESENT.FACE_STYLE
+FACE_STYLE = 0 
+EQUIPMENT_REPRESENT.HAIR_STYLE
+HAIR_STYLE = 1 
+EQUIPMENT_REPRESENT.HELM_STYLE
+HELM_STYLE = 2 
+EQUIPMENT_REPRESENT.HELM_COLOR
+HELM_COLOR = 3 
+EQUIPMENT_REPRESENT.HELM_ENCHANT
+HELM_ENCHANT = 4 
+EQUIPMENT_REPRESENT.CHEST_STYLE
+CHEST_STYLE = 5 
+EQUIPMENT_REPRESENT.CHEST_COLOR
+CHEST_COLOR = 6 
+EQUIPMENT_REPRESENT.CHEST_ENCHANT
+CHEST_ENCHANT = 7 
+EQUIPMENT_REPRESENT.WAIST_STYLE
+WAIST_STYLE = 8 
+EQUIPMENT_REPRESENT.WAIST_COLOR
+WAIST_COLOR = 9 
+EQUIPMENT_REPRESENT.WAIST_ENCHANT
+WAIST_ENCHANT = 10 
+EQUIPMENT_REPRESENT.BANGLE_STYLE
+BANGLE_STYLE = 11 
+EQUIPMENT_REPRESENT.BANGLE_COLOR
+BANGLE_COLOR = 12 
+EQUIPMENT_REPRESENT.BANGLE_ENCHANT
+BANGLE_ENCHANT = 13 
+EQUIPMENT_REPRESENT.BOOTS_STYLE
+BOOTS_STYLE = 14 
+EQUIPMENT_REPRESENT.BOOTS_COLOR
+BOOTS_COLOR = 15 
+EQUIPMENT_REPRESENT.WEAPON_STYLE
+WEAPON_STYLE = 16 
+EQUIPMENT_REPRESENT.WEAPON_COLOR
+WEAPON_COLOR = 17 
+EQUIPMENT_REPRESENT.WEAPON_ENCHANT1
+WEAPON_ENCHANT1 = 18 
+EQUIPMENT_REPRESENT.WEAPON_ENCHANT2
+WEAPON_ENCHANT2 = 19 
+EQUIPMENT_REPRESENT.BIG_SWORD_STYLE
+BIG_SWORD_STYLE = 20 
+EQUIPMENT_REPRESENT.BIG_SWORD_COLOR
+BIG_SWORD_COLOR = 21 
+EQUIPMENT_REPRESENT.BIG_SWORD_ENCHANT1
+BIG_SWORD_ENCHANT1 = 22 
+EQUIPMENT_REPRESENT.BIG_SWORD_ENCHANT2
+BIG_SWORD_ENCHANT2 = 23 
+EQUIPMENT_REPRESENT.BACK_EXTEND
+BACK_EXTEND = 24 
+EQUIPMENT_REPRESENT.WAIST_EXTEND
+WAIST_EXTEND = 25 
+EQUIPMENT_REPRESENT.HORSE_STYLE
+HORSE_STYLE = 26 
+EQUIPMENT_REPRESENT.HORSE_ADORNMENT1
+HORSE_ADORNMENT1 = 27 
+EQUIPMENT_REPRESENT.HORSE_ADORNMENT2
+HORSE_ADORNMENT2 = 28 
+EQUIPMENT_REPRESENT.HORSE_ADORNMENT3
+HORSE_ADORNMENT3 = 29 
+EQUIPMENT_REPRESENT.HORSE_ADORNMENT4
+HORSE_ADORNMENT4 = 30 
+EQUIPMENT_REPRESENT.RESERVED
+RESERVED = 32 
+EQUIPMENT_REPRESENT.TOTAL
+TOTAL = 33 
+EQUIPMENT_SUB
+EQUIPMENT_SUB.MELEE_WEAPON
+MELEE_WEAPON = 0 
+EQUIPMENT_SUB.RANGE_WEAPON
+RANGE_WEAPON = 1 
+EQUIPMENT_SUB.CHEST
+CHEST = 2 
+EQUIPMENT_SUB.HELM
+HELM = 3 
+EQUIPMENT_SUB.AMULET
+AMULET = 4 
+EQUIPMENT_SUB.RING
+RING = 5 
+EQUIPMENT_SUB.WAIST
+WAIST = 6 
+EQUIPMENT_SUB.PENDANT
+PENDANT = 7 
+EQUIPMENT_SUB.PANTS
+PANTS = 8 
+EQUIPMENT_SUB.BOOTS
+BOOTS = 9 
+EQUIPMENT_SUB.BANGLE
+BANGLE = 10 
+EQUIPMENT_SUB.WAIST_EXTEND
+WAIST_EXTEND = 11 
+EQUIPMENT_SUB.PACKAGE
+PACKAGE = 12 
+EQUIPMENT_SUB.ARROW
+ARROW = 13 
+EQUIPMENT_SUB.BACK_EXTEND
+BACK_EXTEND = 14 
+EQUIPMENT_SUB.HORSE
+HORSE = 15 
+EQUIPMENT_SUB.BULLET
+BULLET = 16 
+FILE_OPEN_MODE
+FILE_OPEN_MODE.NORMAL
+NORMAL = 0 
+FILE_OPEN_MODE.USE_FILE_MAPPING
+USE_FILE_MAPPING = 1 
+GEOMETRY_TYPE
+GEOMETRY_TYPE.INVALID
+INVALID = 0 矩形填充，大小为控件的大小
+GEOMETRY_TYPE.TRIANGLE
+TRIANGLE = 1 通过三角绘制不规则图形
+GEOMETRY_TYPE.LINE
+LINE = 2 添加2个点 绘制 一条直线
+GEOMETRY_TYPE.TEXT
+TEXT = 3 绘制文字，如果顶点上带有文字，则在该点绘制指定的文字
+GLOBAL
+GLOBAL.GAME_FPS
+GAME_FPS = 16 
+GLOBAL.DIRECTION_COUNT
+DIRECTION_COUNT = 256 
+GLOBAL.CELL_LENGTH
+CELL_LENGTH = 32 
+GLOBAL.LOGICAL_CELL_CM_LENGTH
+LOGICAL_CELL_CM_LENGTH = 50 
+GLOBAL.INVALID_PARTY_ID
+INVALID_PARTY_ID = 0 
+GLOBAL.INVALID_SKILL_ID
+INVALID_SKILL_ID = 0 
+GLOBAL.MOVE_DEST_RANGE
+MOVE_DEST_RANGE = 4096 
+GLOBAL.CURRENT_ITEM_VERSION
+CURRENT_ITEM_VERSION = 1 
+GLOBAL.MAX_BANK_PACKAGE_COUNT
+MAX_BANK_PACKAGE_COUNT = 5 
+GLOBAL.START_QUEST_DELAY
+START_QUEST_DELAY = 128 
+GLOBAL.AI_USER_EVENT
+AI_USER_EVENT = 1000 
+GLOBAL.AI_USER_ACTION
+AI_USER_ACTION = 1000 
+IMAGE
+IMAGE.NORMAL
+NORMAL = 0 
+IMAGE.LEFT_RIGHT
+LEFT_RIGHT = 1 
+IMAGE.RIGHT_LEFT
+RIGHT_LEFT = 2 
+IMAGE.TOP_BOTTOM
+TOP_BOTTOM = 3 
+IMAGE.BOTTOM_TOP
+BOTTOM_TOP = 4 
+IMAGE.TIMER_HIDE
+TIMER_HIDE = 5 
+IMAGE.TIMER_SHOW
+TIMER_SHOW = 13 
+IMAGE.ROTATE
+ROTATE = 6 
+IMAGE.FLIP_HORIZONTAL
+FLIP_HORIZONTAL = 8 
+IMAGE.FLIP_VERTICAL
+FLIP_VERTICAL = 7 
+IMAGE.FLIP_CENTRAL
+FLIP_CENTRAL = 9 
+IMAGE.NINE_PART
+NINE_PART = 10 
+IMAGE.LEFT_CENTER_RIGHT
+LEFT_CENTER_RIGHT = 11 
+IMAGE.TOP_CENTER_BOTTOM
+TOP_CENTER_BOTTOM = 12 
+INVENTORY_INDEX
+INVENTORY_INDEX.INVALID
+INVALID = 255 
+INVENTORY_INDEX.EQUIP
+EQUIP = 0 
+INVENTORY_INDEX.PACKAGE
+PACKAGE = 1 
+INVENTORY_INDEX.PACKAGE1
+PACKAGE1 = 2 
+INVENTORY_INDEX.PACKAGE2
+PACKAGE2 = 3 
+INVENTORY_INDEX.PACKAGE3
+PACKAGE3 = 4 
+INVENTORY_INDEX.PACKAGE4
+PACKAGE4 = 5 
+INVENTORY_INDEX.BANK
+BANK = 7 
+INVENTORY_INDEX.BANK_PACKAGE1
+BANK_PACKAGE1 = 8 
+INVENTORY_INDEX.BANK_PACKAGE2
+BANK_PACKAGE2 = 9 
+INVENTORY_INDEX.BANK_PACKAGE3
+BANK_PACKAGE3 = 10 
+INVENTORY_INDEX.BANK_PACKAGE4
+BANK_PACKAGE4 = 11 
+INVENTORY_INDEX.BANK_PACKAGE5
+BANK_PACKAGE5 = 12 
+INVENTORY_INDEX.SOLD_LIST
+SOLD_LIST = 13 
+INVENTORY_INDEX.EQUIP_BACKUP1
+EQUIP_BACKUP1 = 14 
+INVENTORY_INDEX.EQUIP_BACKUP2
+EQUIP_BACKUP2 = 15 
+INVENTORY_INDEX.SYSTEM_PACKAGE
+SYSTEM_PACKAGE = 16 
+INVENTORY_INDEX.BULLET_PACKAGE
+BULLET_PACKAGE = 17 
+INVENTORY_INDEX.TOTAL
+TOTAL = 20 
+INVENTORY_TYPE
+INVENTORY_TYPE.EQUIPMENT
+EQUIPMENT = 0 
+INVENTORY_TYPE.PACKAGE
+PACKAGE = 1 
+INVENTORY_TYPE.BANK
+BANK = 2 
+INVENTORY_TYPE.SLOT
+SLOT = 3 
+INVENTORY_TYPE.SOLD_LIST
+SOLD_LIST = 4 
+INVENTORY_TYPE.TOTAL
+TOTAL = 9 
+ITEM_BIND
+ITEM_BIND.INVALID
+INVALID = 0 
+ITEM_BIND.NEVER_BIND
+NEVER_BIND = 1 
+ITEM_BIND.BIND_ON_EQUIPPED
+BIND_ON_EQUIPPED = 2 
+ITEM_BIND.BIND_ON_PICKED
+BIND_ON_PICKED = 3 
+ITEM_BIND.BIND_ON_TIME_LIMITATION
+BIND_ON_TIME_LIMITATION = 4 
+ITEM_EXIST_TYPE
+ITEM_EXIST_TYPE.INVALID
+ITEM_EXIST_TYPE.PERMANENT
+PERMANENT = 0 
+ITEM_EXIST_TYPE.OFFLINE
+OFFLINE = 2 
+ITEM_EXIST_TYPE.ONLINE
+ONLINE = 1 
+ITEM_EXIST_TYPE.ONLINEANDOFFLINE
+ONLINEANDOFFLINE = 3 
+ITEM_EXIST_TYPE.TIMESTAMP
+TIMESTAMP = 4 
+ITEM_GENRE
+ITEM_GENRE.EQUIPMENT
+EQUIPMENT = 0 
+ITEM_GENRE.POTION
+POTION = 1 
+ITEM_GENRE.TASK_ITEM
+TASK_ITEM = 2 
+ITEM_GENRE.MATERIAL
+MATERIAL = 3 
+ITEM_GENRE.BOOK
+BOOK = 4 
+ITEM_GENRE.DESIGNATION
+DESIGNATION = 5 
+ITEM_GENRE.MOUNT_ITEM
+MOUNT_ITEM = 6 
+ITEM_GENRE.ENCHANT_ITEM
+ENCHANT_ITEM = 7 
+ITEM_GENRE.DIAMOND
+DIAMOND = 10 
+ITEM_GENRE.COLOR_DIAMOND
+COLOR_DIAMOND = 11 
+ITEM_GENRE.BOX
+BOX = 8 
+ITEM_GENRE.BOX_KEY
+BOX_KEY = 9 
+ITEM_GENRE.TOTAL
+TOTAL = 16 
+ITEM_POSITION
+ITEM_POSITION.BY_CUSTOM
+BY_CUSTOM = 0 
+ITEM_POSITION.LEFT_BOTTOM
+LEFT_BOTTOM = 1 
+ITEM_POSITION.LEFT_TOP
+LEFT_TOP = 2 
+ITEM_POSITION.LEFT_CENTER
+LEFT_CENTER = 3 
+ITEM_POSITION.TOP_LEFT
+TOP_LEFT = 4 
+ITEM_POSITION.TOP_RIGHT
+TOP_RIGHT = 5 
+ITEM_POSITION.TOP_CENTER
+TOP_CENTER = 6 
+ITEM_POSITION.RIGHT_TOP
+RIGHT_TOP = 7 
+ITEM_POSITION.RIGHT_BOTTOM
+RIGHT_BOTTOM = 8 
+ITEM_POSITION.RIGHT_CENTER
+RIGHT_CENTER = 9 
+ITEM_POSITION.BOTTOM_LEFT
+BOTTOM_LEFT = 10 
+ITEM_POSITION.BOTTOM_RIGHT
+BOTTOM_RIGHT = 11 
+ITEM_POSITION.BOTTOM_CENTER
+BOTTOM_CENTER = 12 
+ITEM_TABLE_TYPE
+ITEM_TABLE_TYPE.ATTRIB
+ATTRIB = 1 
+ITEM_TABLE_TYPE.OTHER
+OTHER = 5 
+ITEM_TABLE_TYPE.CUST_WEAPON
+CUST_WEAPON = 6 
+ITEM_TABLE_TYPE.CUST_ARMOR
+CUST_ARMOR = 7 
+ITEM_TABLE_TYPE.CUST_TRINKET
+CUST_TRINKET = 8 
+ITEM_TABLE_TYPE.SET
+SET = 9 
+LOAD_LOGIN_REASON
+LOAD_LOGIN_REASON.START_GAME_LOGIN
+START_GAME_LOGIN = 0 
+LOAD_LOGIN_REASON.RETURN_GAME_LOGIN
+RETURN_GAME_LOGIN = 1 
+LOAD_LOGIN_REASON.RETURN_ROLE_LIST
+RETURN_ROLE_LIST = 2 
+LOAD_LOGIN_REASON.RETURN_CLEAR_UI
+RETURN_CLEAR_UI = 3 
+LOAD_LOGIN_REASON.KICK_OUT_BY_GM
+KICK_OUT_BY_GM = 4 
+LOAD_LOGIN_REASON.KICK_OUT_BY_OTHERS
+KICK_OUT_BY_OTHERS = 5 
+LOAD_LOGIN_REASON.AUTO_EXIT
+AUTO_EXIT = 6 
+LOAD_LOGIN_REASON.KICK_OUT_FOR_UNDERAGE_LIMIT
+KICK_OUT_FOR_UNDERAGE_LIMIT = 7 
+MAIL_TYPE
+MAIL_TYPE.PLAYER
+PLAYER = 0 
+MAIL_TYPE.SYSTEM
+SYSTEM = 1 
+MAIL_TYPE.AUCTION
+AUCTION = 2 
+MAIL_TYPE.GM_MESSAGE
+GM_MESSAGE = 3 
+MAIL_TYPE.PLAYER_MESSAGE
+PLAYER_MESSAGE = 4 
+MAP_CAMP_TYPE
+MAP_CAMP_TYPE.ALL_PROTECT
+ALL_PROTECT = 1 
+MAP_CAMP_TYPE.PROTECT_GOOD
+PROTECT_GOOD = 2 
+MAP_CAMP_TYPE.PROTECT_EVIL
+PROTECT_EVIL = 3 
+MAP_CAMP_TYPE.NEUTRAL
+NEUTRAL = 4 
+MAP_CAMP_TYPE.FIGHT
+FIGHT = 5 
+MAP_TYPE
+MAP_TYPE.NORMAL_MAP
+NORMAL_MAP = 0 
+MAP_TYPE.DUNGEON
+DUNGEON = 1 
+MAP_TYPE.BATTLE_FIELD
+BATTLE_FIELD = 2 
+MAP_TYPE.BIRTH_MAP
+BIRTH_MAP = 3 
+MAP_TYPE.TONG_DUNGEON
+TONG_DUNGEON = 4 
+MOVE_STATE
+MOVE_STATE.INVALID
+INVALID = 0 
+MOVE_STATE.ON_STAND
+ON_STAND = 1 
+MOVE_STATE.ON_WALK
+ON_WALK = 2 
+MOVE_STATE.ON_RUN
+ON_RUN = 3 
+MOVE_STATE.ON_JUMP
+ON_JUMP = 4 
+MOVE_STATE.ON_SWIM_JUMP
+ON_SWIM_JUMP = 5 
+MOVE_STATE.ON_SWIM
+ON_SWIM = 6 
+MOVE_STATE.ON_FLOAT
+ON_FLOAT = 7 
+MOVE_STATE.ON_SIT
+ON_SIT = 8 
+MOVE_STATE.ON_KNOCKED_DOWN
+ON_KNOCKED_DOWN = 9 
+MOVE_STATE.ON_KNOCKED_BACK
+ON_KNOCKED_BACK = 10 
+MOVE_STATE.ON_KNOCKED_OFF
+ON_KNOCKED_OFF = 11 
+MOVE_STATE.ON_SPRINT_BREAK
+ON_SPRINT_BREAK = 22 
+MOVE_STATE.ON_HALT
+ON_HALT = 12 
+MOVE_STATE.ON_FREEZE
+ON_FREEZE = 13 
+MOVE_STATE.ON_ENTRAP
+ON_ENTRAP = 14 
+MOVE_STATE.ON_AUTO_FLY
+ON_AUTO_FLY = 15 
+MOVE_STATE.ON_DEATH
+ON_DEATH = 16 
+MOVE_STATE.ON_DASH
+ON_DASH = 17 
+MOVE_STATE.ON_PULL
+ON_PULL = 18 
+MOVE_STATE.ON_REPULSED
+ON_REPULSED = 19 
+MOVE_STATE.ON_RISE
+ON_RISE = 20 
+MOVE_STATE.ON_SKID
+ON_SKID = 21 
+MOVIE
+MOVIE.FILTER_NOT
+FILTER_NOT = 1 
+MOVIE.FILTER_CUBIC
+FILTER_CUBIC = 2 
+MOVIE.FILTER_LINEAR
+FILTER_LINEAR = 3 
+MOVIE.QUALITY_PIRATE
+QUALITY_PIRATE = 1500000 
+MOVIE.QUALITY_DISC
+QUALITY_DISC = 3500000 
+MOVIE.QUALITY_CINEMATIC
+QUALITY_CINEMATIC = 5500000 
+MOVIE.QUALITY_CINEMATIC1
+QUALITY_CINEMATIC1 = 11000000 
+MOVIE.QUALITY_CINEMATIC2
+QUALITY_CINEMATIC2 = 22000000 
+MOVIE.QUALITY_CINEMATIC3
+QUALITY_CINEMATIC3 = 44000000 
+MOVIE.QUALITY_CINEMATIC4
+QUALITY_CINEMATIC4 = 88000000 
+MOVIE.QUALITY_MAX
+QUALITY_MAX = 88000000 
+MOVIE.H261
+H261 = 0 
+MOVIE.H263
+H263 = 1 
+MOVIE.H264
+H264 = 2 
+MOVIE.MPEG2
+MPEG2 = 3 
+MOVIE.MPEG4
+MPEG4 = 4 
+MOVIE.FPS_25
+FPS_25 = 25 
+MOVIE.FPS_30
+FPS_30 = 30 
+MOVIE.FPS_50
+FPS_50 = 50 
+MOVIE.FPS_60
+FPS_60 = 60 
+PARTY_LOOT_MODE
+PARTY_LOOT_MODE.INVALID
+INVALID = 0 
+PARTY_LOOT_MODE.FREE_FOR_ALL
+FREE_FOR_ALL = 1 
+PARTY_LOOT_MODE.DISTRIBUTE
+DISTRIBUTE = 2 
+PARTY_LOOT_MODE.GROUP_LOOT
+GROUP_LOOT = 3 
+PLAYER_TALK_CHANNEL
+PLAYER_TALK_CHANNEL.INVALID
+INVALID = 0 
+PLAYER_TALK_CHANNEL.NEARBY
+NEARBY = 1 
+PLAYER_TALK_CHANNEL.TEAM
+TEAM = 2 
+PLAYER_TALK_CHANNEL.RAID
+RAID = 3 
+PLAYER_TALK_CHANNEL.BATTLE_FIELD
+BATTLE_FIELD = 4 
+PLAYER_TALK_CHANNEL.SENCE
+SENCE = 5 
+PLAYER_TALK_CHANNEL.WHISPER
+WHISPER = 6 
+PLAYER_TALK_CHANNEL.FACE
+FACE = 7 
+PLAYER_TALK_CHANNEL.GM_MESSAGE
+GM_MESSAGE = 8 
+PLAYER_TALK_CHANNEL.LOCAL_SYS
+LOCAL_SYS = 9 
+PLAYER_TALK_CHANNEL.GLOBAL_SYS
+GLOBAL_SYS = 10 
+PLAYER_TALK_CHANNEL.GM_ANNOUNCE
+GM_ANNOUNCE = 11 
+PLAYER_TALK_CHANNEL.TO_TONG_GM_ANNOUNCE
+TO_TONG_GM_ANNOUNCE = 12 
+PLAYER_TALK_CHANNEL.TO_PLAYER_GM_ANNOUNCE
+TO_PLAYER_GM_ANNOUNCE = 13 
+PLAYER_TALK_CHANNEL.NPC_NEARBY
+NPC_NEARBY = 14 
+PLAYER_TALK_CHANNEL.NPC_PARTY
+NPC_PARTY = 15 
+PLAYER_TALK_CHANNEL.NPC_SENCE
+NPC_SENCE = 16 
+PLAYER_TALK_CHANNEL.NPC_WHISPER
+NPC_WHISPER = 17 
+PLAYER_TALK_CHANNEL.NPC_SAY_TO
+NPC_SAY_TO = 18 
+PLAYER_TALK_CHANNEL.NPC_YELL_TO
+NPC_YELL_TO = 19 
+PLAYER_TALK_CHANNEL.NPC_FACE
+NPC_FACE = 20 
+PLAYER_TALK_CHANNEL.NPC_SAY_TO_ID
+NPC_SAY_TO_ID = 21 
+PLAYER_TALK_CHANNEL.NPC_SAY_TO_CAMP
+NPC_SAY_TO_CAMP = 22 
+PLAYER_TALK_CHANNEL.TONG
+TONG = 23 
+PLAYER_TALK_CHANNEL.TONG_ALLIANCE
+TONG_ALLIANCE = 24 
+PLAYER_TALK_CHANNEL.TONG_SYS
+TONG_SYS = 25 
+PLAYER_TALK_CHANNEL.WORLD
+WORLD = 26 
+PLAYER_TALK_CHANNEL.FORCE
+FORCE = 27 
+PLAYER_TALK_CHANNEL.CAMP
+CAMP = 28 
+PLAYER_TALK_CHANNEL.MENTOR
+MENTOR = 29 
+PLAYER_TALK_CHANNEL.FRIENDS
+FRIENDS = 30 
+PLAYER_TALK_CHANNEL.CHANNEL1
+CHANNEL1 = 100 
+PLAYER_TALK_CHANNEL.CHANNEL2
+CHANNEL2 = 101 
+PLAYER_TALK_CHANNEL.CHANNEL3
+CHANNEL3 = 102 
+PLAYER_TALK_CHANNEL.CHANNEL4
+CHANNEL4 = 103 
+PLAYER_TALK_CHANNEL.CHANNEL5
+CHANNEL5 = 104 
+PLAYER_TALK_CHANNEL.CHANNEL6
+CHANNEL6 = 105 
+PLAYER_TALK_CHANNEL.CHANNEL7
+CHANNEL7 = 106 
+PLAYER_TALK_CHANNEL.CHANNEL8
+CHANNEL8 = 107 
+PLAYER_TALK_CHANNEL.DEBUG_THREAT
+DEBUG_THREAT = 108 
+QUEST_STATE
+QUEST_STATE.UNFINISHED
+UNFINISHED = 0 
+QUEST_STATE.FINISHED
+FINISHED = 1 
+RELATION_TYPE
+RELATION_TYPE.INVALID
+INVALID = 0 
+RELATION_TYPE.NONE
+NONE = 1 
+RELATION_TYPE.SELF
+SELF = 2 
+RELATION_TYPE.ALLY
+ALLY = 4 
+RELATION_TYPE.ENEMY
+ENEMY = 16 
+RELATION_TYPE.NEUTRALITY
+NEUTRALITY = 32 
+RELATION_TYPE.PARTY
+PARTY = 64 
+RELATION_TYPE.ALL
+ALL = 127 
+REVIVE_TYPE
+REVIVE_TYPE.IN_SITU
+IN_SITU = 1 
+REVIVE_TYPE.BY_PLAYER
+BY_PLAYER = 2 
+REVIVE_TYPE.IN_ALTAR
+IN_ALTAR = 3 
+REVIVE_TYPE.CANCEL_BY_PLAYER
+CANCEL_BY_PLAYER = 4 
+ROLE_TYPE
+ROLE_TYPE.STANDARD_MALE
+STANDARD_MALE = 1 
+ROLE_TYPE.STANDARD_FEMALE
+STANDARD_FEMALE = 2 
+ROLE_TYPE.STRONG_MALE
+STRONG_MALE = 3 
+ROLE_TYPE.SEXY_FEMALE
+SEXY_FEMALE = 4 
+ROLE_TYPE.LITTLE_BOY
+LITTLE_BOY = 5 
+ROLE_TYPE.LITTLE_GIRL
+LITTLE_GIRL = 6 
+SKILL_CAST_EFFECT_TYPE
+SKILL_CAST_EFFECT_TYPE.INVALID
+INVALID = 0 
+SKILL_CAST_EFFECT_TYPE.HARMFUL
+HARMFUL = 1 
+SKILL_CAST_EFFECT_TYPE.NERTUAL
+NERTUAL = 2 
+SKILL_CAST_EFFECT_TYPE.BENEFICIAL
+BENEFICIAL = 3 
+SKILL_EFFECT_TYPE
+SKILL_EFFECT_TYPE.INVALID
+INVALID = 0 
+SKILL_EFFECT_TYPE.SKILL
+SKILL = 1 
+SKILL_EFFECT_TYPE.BUFF
+BUFF = 2 
+SKILL_EFFECT_TYPE.TOTAL
+TOTAL = 3 
+SKILL_RECIPE_TYPE
+SKILL_RECIPE_TYPE.NORMAL
+NORMAL = 0 
+SKILL_RECIPE_TYPE.EQUIPMENT
+EQUIPMENT = 1 
+SKILL_RECIPE_TYPE.SYSTEM
+SYSTEM = 2 
+SKILL_RECIPE_TYPE.TALENT
+TALENT = 3 
+SKILL_RESULT_CODE
+SKILL_RESULT_CODE.SUCCESS
+SUCCESS = 1 
+SKILL_RESULT_CODE.FAILED
+FAILED = 2 
+SKILL_RESULT_CODE.INVALID_CAST_MODE
+INVALID_CAST_MODE = 3 
+SKILL_RESULT_CODE.NOT_ENOUGH_LIFE
+NOT_ENOUGH_LIFE = 4 
+SKILL_RESULT_CODE.NOT_ENOUGH_MANA
+NOT_ENOUGH_MANA = 5 
+SKILL_RESULT_CODE.NOT_ENOUGH_RAGE
+NOT_ENOUGH_RAGE = 6 
+SKILL_RESULT_CODE.NOT_ENOUGH_ENERGY
+NOT_ENOUGH_ENERGY = 7 
+SKILL_RESULT_CODE.NOT_ENOUGH_TRAIN
+NOT_ENOUGH_TRAIN = 8 
+SKILL_RESULT_CODE.NOT_ENOUGH_STAMINA
+NOT_ENOUGH_STAMINA = 9 
+SKILL_RESULT_CODE.NOT_ENOUGH_ITEM
+NOT_ENOUGH_ITEM = 10 
+SKILL_RESULT_CODE.NOT_ENOUGH_AMMO
+NOT_ENOUGH_AMMO = 11 
+SKILL_RESULT_CODE.SKILL_NOT_READY
+SKILL_NOT_READY = 12 
+SKILL_RESULT_CODE.INVALID_SKILL
+INVALID_SKILL = 13 
+SKILL_RESULT_CODE.INVALID_TARGET
+INVALID_TARGET = 14 
+SKILL_RESULT_CODE.NO_TARGET
+NO_TARGET = 15 
+SKILL_RESULT_CODE.NEED_TARGET
+NEED_TARGET = 16 
+SKILL_RESULT_CODE.TOO_CLOSE_TARGET
+TOO_CLOSE_TARGET = 17 
+SKILL_RESULT_CODE.TOO_FAR_TARGET
+TOO_FAR_TARGET = 18 
+SKILL_RESULT_CODE.OUT_OF_ANGLE
+OUT_OF_ANGLE = 19 
+SKILL_RESULT_CODE.TARGET_INVISIBLE
+TARGET_INVISIBLE = 20 
+SKILL_RESULT_CODE.WEAPON_ERROR
+WEAPON_ERROR = 21 
+SKILL_RESULT_CODE.WEAPON_DESTROY
+WEAPON_DESTROY = 22 
+SKILL_RESULT_CODE.AMMO_ERROR
+AMMO_ERROR = 23 
+SKILL_RESULT_CODE.NOT_EQUIT_AMMO
+NOT_EQUIT_AMMO = 24 
+SKILL_RESULT_CODE.MOUNT_ERROR
+MOUNT_ERROR = 25 
+SKILL_RESULT_CODE.IN_OTACTION
+IN_OTACTION = 26 
+SKILL_RESULT_CODE.ON_SILENCE
+ON_SILENCE = 27 
+SKILL_RESULT_CODE.NOT_FORMATION_LEADER
+NOT_FORMATION_LEADER = 28 
+SKILL_RESULT_CODE.NOT_ENOUGH_MEMBER
+NOT_ENOUGH_MEMBER = 29 
+SKILL_RESULT_CODE.NOT_START_ACCUMULATE
+NOT_START_ACCUMULATE = 30 
+SKILL_RESULT_CODE.SKILL_ERROR
+SKILL_ERROR = 32 
+SKILL_RESULT_CODE.BUFF_ERROR
+BUFF_ERROR = 33 
+SKILL_RESULT_CODE.NOT_IN_FIGHT
+NOT_IN_FIGHT = 34 
+SKILL_RESULT_CODE.MOVE_STATE_ERROR
+MOVE_STATE_ERROR = 35 
+SKILL_RESULT_CODE.ERROR_BY_HORSE
+ERROR_BY_HORSE = 36 
+SKILL_RESULT_CODE.BUFF_INVALID
+BUFF_INVALID = 37 
+SKILL_RESULT_CODE.FORCE_EFFECT
+FORCE_EFFECT = 38 
+SKILL_RESULT_CODE.BUFF_IMMUNITY
+BUFF_IMMUNITY = 39 
+SKILL_RESULT_CODE.TARGET_LIFE_ERROR
+TARGET_LIFE_ERROR = 40 
+SKILL_RESULT_CODE.SELF_LIFE_ERROR
+SELF_LIFE_ERROR = 41 
+SKILL_RESULT_CODE.DST_MOVE_STATE_ERROR
+DST_MOVE_STATE_ERROR = 42 
+SKILL_RESULT_CODE.NOT_PARTY
+NOT_PARTY = 43 
+SKILL_RESULT_CODE.MAP_BAN
+MAP_BAN = 44 
+SKILL_RESULT_CODE.TARGET_STEALTH
+TARGET_STEALTH = 45 
+SKILL_RESULT_CODE.ERROR_BY_SPRINT
+ERROR_BY_SPRINT = 46 
+SKILL_RESULT_TYPE
+SKILL_RESULT_TYPE.PHYSICS_DAMAGE
+PHYSICS_DAMAGE = 0 
+SKILL_RESULT_TYPE.SOLAR_MAGIC_DAMAGE
+SOLAR_MAGIC_DAMAGE = 1 
+SKILL_RESULT_TYPE.NEUTRAL_MAGIC_DAMAGE
+NEUTRAL_MAGIC_DAMAGE = 2 
+SKILL_RESULT_TYPE.LUNAR_MAGIC_DAMAGE
+LUNAR_MAGIC_DAMAGE = 3 
+SKILL_RESULT_TYPE.POISON_DAMAGE
+POISON_DAMAGE = 4 
+SKILL_RESULT_TYPE.REFLECTIED_DAMAGE
+REFLECTIED_DAMAGE = 5 
+SKILL_RESULT_TYPE.THERAPY
+THERAPY = 6 
+SKILL_RESULT_TYPE.STEAL_LIFE
+STEAL_LIFE = 7 
+SKILL_RESULT_TYPE.ABSORB_THERAPY
+ABSORB_THERAPY = 8 
+SKILL_RESULT_TYPE.ABSORB_DAMAGE
+ABSORB_DAMAGE = 9 
+SKILL_RESULT_TYPE.SHIELD_DAMAGE
+SHIELD_DAMAGE = 10 
+SKILL_RESULT_TYPE.PARRY_DAMAGE
+PARRY_DAMAGE = 11 
+SKILL_RESULT_TYPE.INSIGHT_DAMAGE
+INSIGHT_DAMAGE = 12 
+SKILL_RESULT_TYPE.EFFECTIVE_DAMAGE
+EFFECTIVE_DAMAGE = 13 
+SKILL_RESULT_TYPE.EFFECTIVE_THERAPY
+EFFECTIVE_THERAPY = 14 
+SKILL_RESULT_TYPE.TRANSFER_LIFE
+TRANSFER_LIFE = 15 
+SKILL_RESULT_TYPE.TRANSFER_MANA
+TRANSFER_MANA = 16 
+SOUND
+SOUND.BG_MUSIC
+BG_MUSIC = 0 
+SOUND.UI_SOUND
+UI_SOUND = 1 
+SOUND.UI_ERROR_SOUND
+UI_ERROR_SOUND = 2 
+SOUND.SCENE_SOUND
+SCENE_SOUND = 3 
+SOUND.CHARACTER_SOUND
+CHARACTER_SOUND = 4 
+SOUND.CHARACTER_SPEAK
+CHARACTER_SPEAK = 5 
+SOUND.FRESHER_TIP
+FRESHER_TIP = 6 
+SOUND.SYSTEM_TIP
+SYSTEM_TIP = 7 
+TARGET
+TARGET.NO_TARGET
+NO_TARGET = 1 
+TARGET.COORDINATION
+COORDINATION = 2 
+TARGET.NPC
+NPC = 3 
+TARGET.DOODAD
+DOODAD = 5 
+TARGET.PLAYER
+PLAYER = 4 
+TARGET.ITEM
+ITEM = 6 
+TARGET.ITEM_POS
+ITEM_POS = 7 
+TEAM_AUTHORITY_TYPE
+TEAM_AUTHORITY_TYPE.LEADER
+LEADER = 1 
+TEAM_AUTHORITY_TYPE.DISTRIBUTE
+DISTRIBUTE = 2 
+TEAM_AUTHORITY_TYPE.MARK
+MARK = 3 
+WEAPON_DETAIL
+WEAPON_DETAIL.WAND
+WAND = 0 
+WEAPON_DETAIL.SPEAR
+SPEAR = 1 
+WEAPON_DETAIL.SWORD
+SWORD = 2 
+WEAPON_DETAIL.FIST
+FIST = 3 
+WEAPON_DETAIL.DOUBLE_WEAPON
+DOUBLE_WEAPON = 4 
+WEAPON_DETAIL.PEN
+PEN = 5 
+WEAPON_DETAIL.SLING_SHOT
+SLING_SHOT = 6 
+WEAPON_DETAIL.DART
+DART = 7 
+WEAPON_DETAIL.MACH_DART
+MACH_DART = 8 
+WEAPON_DETAIL.BIG_SWORD
+BIG_SWORD = 9 
+WEAPON_DETAIL.FLUTE
+FLUTE = 10 
+WEAPON_DETAIL.BOW
+BOW = 11 
+WEAPON_DETAIL.TOTAL
+TOTAL = 14 
+WNDSIDE
+WNDSIDE.TOP
+TOP = 0 
+WNDSIDE.BOTTOM
+BOTTOM = 1 
+WNDSIDE.LEFT
+LEFT = 2 
+WNDSIDE.RIGHT
+RIGHT = 3 
+WNDSIDE.TOPLEFT
+TOPLEFT = 4 
+WNDSIDE.TOPRIGHT
+TOPRIGHT = 5 
+WNDSIDE.BOTTOMLEFT
+BOTTOMLEFT = 6 
+WNDSIDE.BOTTOMRIGHT
+BOTTOMRIGHT = 7 
+WNDSIDE.CENTER
+CENTER = 8 
+WNDSIDE.LEFTCENTER
+LEFTCENTER = 9 
+WNDSIDE.RIGHTCENTER
+RIGHTCENTER = 10 
+WNDSIDE.TOPCENTER
+TOPCENTER = 11 
+WNDSIDE.BOTTOMCENTER
+BOTTOMCENTER = 12 
+UI_OBJECT_ITEM
+UI_OBJECT_SHOP_ITEM
+UI_OBJECT_OTER_PLAYER_ITEM
+UI_OBJECT_ITEM_ONLY_ID
+UI_OBJECT_ITEM_INFO
+UI_OBJECT_SKILL
+UI_OBJECT_CRAFT
+UI_OBJECT_SKILL_RECIPE
+UI_OBJECT_SYS_BTN
+UI_OBJECT_MACRO
+UI_OBJECT_MOUNT
+UI_OBJECT_ENCHANT
+UI_OBJECT_NOT_NEED_KNOWN
+PARTY_MARK_ICON_PATH
+PARTY_MARK_ICON_FRAME_LIST
+
+
+#$KAuctionClient=GetAuctionClient%s*%b()
+KAuctionClient.Sell
+KAuctionClient.Bid
+
+
+#$KClass=class%s*%b()
+KClass:ctor
+KClass.new
+
+
+#$KDoodad=GetDoodad%s*%b()
+KDoodad.GetScene
+KDoodad.DistributeItem
+KDoodad.CanLoot
+KDoodad.CanDialog
+KDoodad.HaveQuest
+KDoodad.GetAbsoluteCoordinate
+KDoodad.IsSelectable
+KDoodad.GetLootItem
+KDoodad.GetLootMoney
+KDoodad.GetLooterList
+KDoodad.CanSit
+KDoodad.GetRecipeID
+KDoodad.dwID
+KDoodad.dwTemplateID
+KDoodad.szName
+KDoodad.nKind
+KDoodad.nX
+KDoodad.nY
+KDoodad.nZ
+
+
+#$KItem=GetItem%s*%b()
+#$KItem=[%w_]+%.GetItem%s*%b()
+#$KItem=GetPlayerItem%s*%b()
+KItem.IsRepairable
+KItem.GetRequireAttrib
+KItem.GetLeftExistTime
+KItem.GetMagicAttrib
+KItem.GetMountIndex
+KItem.GetBaseAttrib
+KItem.GetMagicAttribByStrengthLevel
+KItem.GetSlotCount
+KItem.GetMountDiamondEnchantID
+KItem.IsDiamondSlotAttributeActive
+KItem.GetSlotAttrib
+KItem.CanMountColorDiamond
+KItem.GetMountFEAEnchantID
+KItem.GetTemporaryEnchantLeftSeconds
+KItem.dwID
+KItem.szName
+KItem.nLevel
+KItem.nGenre
+KItem.nSub
+KItem.nDetail
+KItem.nBindType
+KItem.bCanTrade
+KItem.bCanDestroy
+KItem.dwTabType
+KItem.dwIndex
+KItem.nQuality
+KItem.nCurrentDurability
+KItem.nStackNum
+KItem.nMaxStackNum
+KItem.nMaxDurability
+KItem.nBookID
+KItem.bBind
+KItem.bCanStack
+KItem.bCanConsume
+KItem.nVersion
+KItem.nMaxExistAmount
+KItem.nMaxExistTime
+KItem.nUiId
+KItem.dwSetID
+
+
+#$KIteminfo=GetItemInfo%s*%b()
+KIteminfo.GetRequireAttrib
+KIteminfo.GetBaseAttrib
+KIteminfo.GetMagicAttribIndexList
+KIteminfo.GetCoolDown
+
+
+#$KMailClient=GetMailClient%s*%b()
+KMailClient.GetMailInfo
+KMailClient.GetMailList
+KMailClient.DeleteMail
+KMailClient.CountMail
+
+
+#$KMailInfo=[%w_]+%.GetMailInfo%s*%b()
+KMailInfo.RequestContent
+KMailInfo.GetItem
+KMailInfo.TakeItem
+KMailInfo.GetType
+KMailInfo.GetText
+KMailInfo.TakeMoney
+KMailInfo.GetLeftTime
+KMailInfo.Read
+KMailInfo.dwMailID
+KMailInfo.szSenderName
+KMailInfo.szTitle
+KMailInfo.bReadFlag
+KMailInfo.bMoneyFlag
+KMailInfo.bItemFlag
+KMailInfo.bPayFlag
+KMailInfo.bGotContentFlag
+KMailInfo.nMoney
+KMailInfo.nAllItemPrice
+
+
+#$KNpc=GetNpc%s*%b()
+KNpc.GetScene
+KNpc.GetBuffList
+KNpc.GetTarget
+KNpc.GetSkillPrepareState
+KNpc.CanDialog
+KNpc.GetMapID
+KNpc.CanSeeName
+KNpc.GetAbsoluteCoordinate
+KNpc.CanSeeLifeBar
+KNpc.IsSelectable
+KNpc.SetTarget
+KNpc.GetNpcQuest
+KNpc.dwID
+KNpc.nX
+KNpc.nY
+KNpc.nZ
+KNpc.nFaceDirection
+KNpc.szName
+KNpc.szTitle
+KNpc.dwForceID
+KNpc.nLevel
+KNpc.dwTemplateID
+KNpc.dwModelID
+KNpc.nTouchRange
+KNpc.bDialogFlag
+KNpc.nGender
+KNpc.nCurrentLife
+KNpc.nMaxLife
+KNpc.nCurrentMana
+KNpc.nMaxMana
+KNpc.nMoveState
+KNpc.dwEmployer
+KNpc.bFightState
+KNpc.nCurrentRage
+KNpc.nMaxRage
+KNpc.nCurrentEnergy
+KNpc.nMaxEnergy
+KNpc.dwDropTargetPlayerID
+
+
+#$KPlayer=GetClientPlayer%s*%b()
+#$KPlayer=GetPlayer%s*%b()
+KPlayer.CancelBuff
+KPlayer.GetItem
+KPlayer.GetScene
+KPlayer.GetRecipe
+KPlayer.GetBuffList
+KPlayer.GetProfession
+KPlayer.GetPet
+KPlayer.GetItemAmountInAllPackages
+KPlayer.Talk
+KPlayer.CastProfessionSkill
+KPlayer.StopCurrentAction
+KPlayer.GetTarget
+KPlayer.IsInParty
+KPlayer.GetSkillLevel
+KPlayer.GetBoxSize
+KPlayer.GetKungfuMount
+KPlayer.IsPlayerInMyParty
+KPlayer.GetTalkData
+KPlayer.GetSkillCDProgress
+KPlayer.GetItemAmount
+KPlayer.GetProfessionLevel
+KPlayer.GetOTActionState
+KPlayer.GetQuestTraceInfo
+KPlayer.GetSkillPrepareState
+KPlayer.GetMoney
+KPlayer.GetSkillRecipeKey
+KPlayer.GetRepresentID
+KPlayer.GetQuestPhase
+KPlayer.GetQuestID
+KPlayer.GetReputeLevel
+KPlayer.GetQuestTree
+KPlayer.GetQuestExpAttenuation
+KPlayer.CanDialog
+KPlayer.GetQuestState
+KPlayer.GetBookSegmentList
+KPlayer.GetItemCDProgress
+KPlayer.GetMapID
+KPlayer.GetQuestDiffcultyLevel
+KPlayer.GetBookList
+KPlayer.IsRecipeLearned
+KPlayer.GetProfessionMaxLevel
+KPlayer.GetProfessionProficiency
+KPlayer.GetSkillRecipeList
+KPlayer.OpenVenation
+KPlayer.IsBookMemorized
+KPlayer.GetBoxFreeRoomSize
+KPlayer.GetBankPackageCount
+KPlayer.GetProfessionBranch
+KPlayer.GetAbsoluteCoordinate
+KPlayer.IsAchievementAcquired
+KPlayer.IsInRaid
+KPlayer.GetAllSkillList
+KPlayer.GetReputation
+KPlayer.Jump
+KPlayer.WindowSelect
+KPlayer.GetTalkLinkItem
+KPlayer.CanAcceptQuest
+KPlayer.OpenTalent
+KPlayer.SatisfyRequire
+KPlayer.IsDesignationPrefixAcquired
+KPlayer.IsDesignationPostfixAcquired
+KPlayer.GetProfessionAdjustLevel
+KPlayer.IsPartyLeader
+KPlayer.IsPartyFull
+KPlayer.CanApplyDuel
+KPlayer.CanAddFoe
+KPlayer.GetEquipPos
+KPlayer.GetMaxExamPrint
+KPlayer.GetExamPrintRemainSpace
+KPlayer.IsProfessionLearnedByCraftID
+KPlayer.GetEquipIDArray
+KPlayer.ExchangeItem
+KPlayer.GetMapVisitFlag
+KPlayer.GetFellowshipGroupInfo
+KPlayer.GetFellowshipInfo
+KPlayer.GetKungfuList
+KPlayer.GetSkillList
+KPlayer.IsPartyMemberInSameScene
+KPlayer.GetItemPos
+KPlayer.CanBreakEquip
+KPlayer.ActiveSkillRecipe
+KPlayer.DeactiveSKillRecipe
+KPlayer.GetCDInterval
+KPlayer.GetTotalEquipScore
+KPlayer.GetBaseEquipScore
+KPlayer.GetStrengthEquipScore
+KPlayer.GetMountsEquipScore
+KPlayer.SetFellowshipRemark
+KPlayer.GetCDLeft
+KPlayer.dwID
+KPlayer.nX
+KPlayer.nY
+KPlayer.nZ
+KPlayer.nFaceDirection
+KPlayer.szName
+KPlayer.szTitle
+KPlayer.dwForceID
+KPlayer.nLevel
+KPlayer.nExperience
+KPlayer.nOnPracticeRoom
+KPlayer.nCurrentStamina
+KPlayer.nCurrentThew
+KPlayer.nMaxStamina
+KPlayer.nMaxThew
+KPlayer.nBattleFieldSide
+KPlayer.dwSchoolID
+KPlayer.nCurrentTrainValue
+KPlayer.nMaxTrainValue
+KPlayer.nUsedTrainValue
+KPlayer.nDirectionXY
+KPlayer.nCurrentLife
+KPlayer.nMaxLife
+KPlayer.nMaxLifeBase
+KPlayer.nCurrentMana
+KPlayer.nMaxMana
+KPlayer.nMaxManaBase
+KPlayer.nCurrentEnergy
+KPlayer.nMaxEnergy
+KPlayer.nEnergyReplenish
+KPlayer.bCanUseBigSword
+KPlayer.nAccumulateValue
+KPlayer.nCamp
+KPlayer.nCampFlag
+KPlayer.bOnHorse
+KPlayer.nMoveState
+KPlayer.dwTongID
+KPlayer.nGender
+KPlayer.nCurrentRage
+KPlayer.nMaxRage
+KPlayer.dwEmployer
+KPlayer.nCurrentPrestige
+KPlayer.bFightState
+KPlayer.nRunSpeed
+KPlayer.nRunSpeedBase
+KPlayer.dwTeamID
+KPlayer.nRoleType
+KPlayer.nContribution
+KPlayer.nCoin
+KPlayer.nJustice
+KPlayer.nExamPrint
+KPlayer.nArenaAward
+KPlayer.nActivityAward
+KPlayer.bHideHat
+KPlayer.bRedName
+KPlayer.dwKillCount
+KPlayer.nRankPoint
+KPlayer.nTitle
+KPlayer.nTitlePoint
+KPlayer.dwPetID
+KPlayer.nCurrentSunEnergy
+KPlayer.nSunPowerValue
+KPlayer.nMaxSunEnergy
+KPlayer.nCurrentMoonEnergy
+KPlayer.nMoonPowerValue
+KPlayer.nMaxMoonEnergy
+KPlayer.dwMiniAvatarID
+KPlayer.bCampFlag
+KPlayer.nSprintPower
+KPlayer.nSprintPowerMax
+KPlayer.nSprintPowerRevive
+KPlayer.nHorseSprintPower
+KPlayer.nHorseSprintPowerMax
+KPlayer.nHorseSprintPowerReviv
+KPlayer.bSprintFlag
+
+
+#$KQuestInfo=GetQuestInfo%s*%b()
+KQuestInfo.GetHortation
+
+
+#$KScene=[%w_]+%.GetScene%s*%b()
+KScene.TimeLimitationBindItemGetLeftTime
+KScene.dwID
+KScene.nType
+KScene.szName
+KScene.bCanTongWar
+KScene.bCanPK
+KScene.bCanDuel
+KScene.szDisplayName
+KScene.dwMapID
+KScene.nCopyIndex
+KScene.bReviveInSitu
+KScene.nInFightPlayerCount
+KScene.bCampType
+KScene.bIsArenaMap
+
+
+#$KTeamClient=GetClientTeam%s*%b()
+KTeamClient.ChangeMemberGroup
+KTeamClient.SetTeamFormationLeader
+KTeamClient.TeamNotifySignpost
+KTeamClient.SetTeamRollQuality
+KTeamClient.GetMemberInfo
+KTeamClient.GetGroupInfo
+KTeamClient.GetMemberGroupIndex
+KTeamClient.GetTeamMark
+KTeamClient.SetTeamMark
+KTeamClient.GetAuthorityInfo
+KTeamClient.SetAuthorityInfo
+KTeamClient.IsPlayerInTeam
+KTeamClient.GetClientTeamMemberName
+KTeamClient.SetTeamLootMode
+KTeamClient.GetTeamSize
+KTeamClient.GetTeamMemberList
+KTeamClient.dwTeamID
+KTeamClient.bSystem
+KTeamClient.bTeamLeader
+KTeamClient.nLootMode
+KTeamClient.nRollQuality
+KTeamClient.nCamp
+KTeamClient.dwDistributeMan
+KTeamClient.dwFormationLeader
+KTeamClient.nGroupNum
+
+
+#$KTongClient=GetTongClient%s*%b()
+KTongClient.ApplyGetTongName
+KTongClient.ChangeMemberGroup
+KTongClient.ApplyRepertoryPage
+KTongClient.ApplyOpenRepertory
+KTongClient.GetMemberInfo
+KTongClient.GetGroupInfo
+KTongClient.GetMemberCount
+KTongClient.GetMemberList
+KTongClient.CheckBaseOperationGroup
+KTongClient.ApplyTongInfo
+KTongClient.ApplyTongRoster
+KTongClient.dwMaster
+KTongClient.nTotalWageRate
+KTongClient.nLevel
+KTongClient.nDevelopmentPoint
+KTongClient.nMaxMemberCount
+KTongClient.bCanModifyGroupWage
+KTongClient.nCamp
+KTongClient.szTongName
+KTongClient.szAnnouncement
+KTongClient.szOnlineMessage
+KTongClient.szIntroduction
+KTongClient.szRules
+KTongClient.nState
+
+
+#$WndWindow=Wnd%.OpenWindow%s*%b()
+WndWindow:GetRelPos
+WndWindow:GetAbsPos
+WndWindow:GetSize
+WndWindow:SetSize
+WndWindow:IsVisible
+WndWindow:IsDisable
+WndWindow:SetRelPos
+WndWindow:SetAbsPos
+WndWindow:SetCursorAbove
+WndWindow:Enable
+WndWindow:Show
+WndWindow:Hide
+WndWindow:ToggleVisible
+WndWindow:BringToTop
+WndWindow:Scale
+WndWindow:CreateItemHandle
+WndWindow:ReleaseItemHandle
+WndWindow:Lookup
+WndWindow:GetName
+WndWindow:SetName
+WndWindow:GetPrev
+WndWindow:GetNext
+WndWindow:GetParent
+WndWindow:GetRoot
+WndWindow:GetFirstChild
+WndWindow:CorrectPos
+WndWindow:SetSizeWithAllChild
+WndWindow:SetMousePenetrable
+WndWindow:SetAlpha
+WndWindow:SetSelfAlpha
+WndWindow:GetAlpha
+WndWindow:GetType
+WndWindow:ChangeRelation
+WndWindow:SetPoint
+WndWindow:Destroy
+WndWindow:GetTreePath
+WndWindow:IsValid
+
+
+Cursor.Show
+Cursor.IsVisible
+Cursor.Switch
+Cursor.GetCurrentIndex
+Cursor.Restore
+Cursor.IsExist
+Cursor.Load
+Cursor.Unload
+Cursor.LoadAll
+Cursor.UnloadAll
+Cursor.GetPos
+Cursor.SetPos
+Cursor.Enable
+
+
+Font.SetOffset
+Font.GetOffset
+Font.GetChatFontID
+Font.LoadDefaultFontList
+Font.LoadFontList
+Font.SetFont
+Font.GetFont
+Font.GetFontPathList
+
+
+Hotkey.Load
+Hotkey.LoadAsAdd
+Hotkey.LoadDefault
+Hotkey.LoadFromLuaAsAdd
+Hotkey.GetBinding
+Hotkey.Save
+Hotkey.SaveAsAdd
+Hotkey.SaveToLuaAsAdd
+Hotkey.Clear
+Hotkey.Set
+Hotkey.Get
+Hotkey.IsUsed
+Hotkey.IsKeyDown
+Hotkey.SetCapture
+Hotkey.AddBinding
+Hotkey.Enable
+Hotkey.IsEnable
+Hotkey.GetCaptureKey
+
+
+KG_Table.Load
+
+
+Station.SetFocusWindow
+Station.GetFocusWindow
+Station.SetActiveFrame
+Station.GetActiveFrame
+Station.SetCapture
+Station.GetCapture
+Station.ReleaseCapture
+Station.Lookup
+Station.GetWindowPosition
+Station.GetClientPosition
+Station.GetClientSize
+Station.OriginalToAdjustPos
+Station.AdjustToOriginalPos
+Station.SetUIScale
+Station.GetUIScale
+Station.GetMaxUIScale
+Station.IsFullScreen
+Station.IsPanauision
+Station.IsExclusiveMode
+Station.IsVisible
+Station.Show
+Station.Hide
+Station.GetScreenPos
+Station.GetMessagePos
+Station.GetMessageWheelDelta
+Station.GetMessageKey
+Station.GetMouseOverWindow
+Station.ToggleWindow
+Station.OpenWindow
+Station.CloseWindow
+
+
+UserSelect.SetSelectedBox
+UserSelect.RefreshSelectedBox
+UserSelect.SelectPoint
+UserSelect.SelectItem
+UserSelect.CancelSelect
+UserSelect.IsSelectPoint
+UserSelect.SatisfySelectPoint
+UserSelect.DoSelectPoint
+UserSelect.IsSelectItem
+UserSelect.SatisfySelectItem
+UserSelect.DoSelectItem
+UserSelect.IsSelectCharacter
+UserSelect.SatisfySelectCharacter
+
+
+Wnd.ToggleWindow
+Wnd.OpenWindow
+Wnd.CloseWindow
+CraftReadComparePanel.UpdateList
+CraftReadComparePanel.OnSetFocus
+CraftReadComparePanel.OnItemMouseLeave
+CraftReadComparePanel.OnLButtonDown
+CraftReadComparePanel.OnItemMouseEnter
+CraftReadComparePanel.UpdateBgStatus
+CraftReadComparePanel.ChangeCheckBox
+CraftReadComparePanel.OnFrameBreathe
+CraftReadComparePanel.UpdateFilterValue
+CraftReadComparePanel.UpdateCondition
+CraftReadComparePanel.OnScrollBarPosChanged
+CraftReadComparePanel.OnFrameCreate
+CraftReadComparePanel.nSortID
+CraftReadComparePanel.nPlayerID
+CraftReadComparePanel.OnItemLButtonDown
+CraftReadComparePanel.UpdateExperience
+CraftReadComparePanel.Selected
+CraftReadComparePanel.OnLButtonHold
+CraftReadComparePanel.bIsSearch
+CraftReadComparePanel.bCoolDown
+CraftReadComparePanel.OnKillFocus
+CraftReadComparePanel.tSelectBook
+CraftReadComparePanel.OnEditChanged
+CraftReadComparePanel.OnSearch
+CraftReadComparePanel.OnLButtonClick
+CraftReadComparePanel.OnEvent
+CraftReadComparePanel.tExpand
+CraftReadComparePanel.OnItemMouseWheel
+CraftReadComparePanel.OnUpdateScorllList
+CraftReadComparePanel.PopupMenu
+CraftReadComparePanel.tFilter
+CraftReadComparePanel.OnCheckBoxCheck
+CraftReadComparePanel.Init
+CraftReadComparePanel.GetFilterValue
+MainMessageLine.getFPSFont
+MainMessageLine.ProcessVersion0
+MainMessageLine.MMpkDownloadTip
+MainMessageLine.addCommom
+MainMessageLine.DefaultAnchor
+MainMessageLine.OnItemMouseLeave
+MainMessageLine.getSetting
+MainMessageLine.addMoney
+MainMessageLine.OnItemMouseEnter
+MainMessageLine.UpdateValue
+MainMessageLine.bNormalHide
+MainMessageLine.CheckCondition
+MainMessageLine.OnFrameBreathe
+MainMessageLine.addCurrency
+MainMessageLine.IsItemExist
+MainMessageLine.GetItemObject
+MainMessageLine.adjustSize
+MainMessageLine.IsLink2OpenPanel
+MainMessageLine.isItemShow
+MainMessageLine.OnFrameDragEnd
+MainMessageLine.tShow
+MainMessageLine.updateShow
+MainMessageLine.normalHideCheck
+MainMessageLine.OnMouseEnter
+MainMessageLine.OnLoadData
+MainMessageLine.GetCurrencyLinkInfo
+MainMessageLine.nVersion
+MainMessageLine.IsItemShow
+MainMessageLine.ShowMainLine
+MainMessageLine.getCommomValue
+MainMessageLine.OnItemLButtonUp
+MainMessageLine.Anchor
+MainMessageLine.GetCurrencyNumber
+MainMessageLine.commomTip
+MainMessageLine.menuCheck
+MainMessageLine.PopupDungeonMenu
+MainMessageLine.initIndex
+MainMessageLine.linkTip
+MainMessageLine.OnMouseLeave
+MainMessageLine.OnItemRButtonDown
+MainMessageLine.OnFrameCreate
+MainMessageLine.OnItemLButtonDown
+MainMessageLine.OnEvent
+MainMessageLine.UpdateAnchor
+MainMessageLine.UpdateFont
+MainMessageLine.getPingFont
+MainMessageLine.IsNotExistItem
+MainMessageLine.HideMainLine
+MainMessageLine.OnLButtonClick
+MainMessageLine.currencyTip
+MainMessageLine.CheckMPak
+CraftManagePanel.UpdateList
+CraftManagePanel.UpdateInfo
+CraftManagePanel.GetRecipeTotalCount
+CraftManagePanel.nProfessionID
+CraftManagePanel.nProfessionLevel
+CraftManagePanel.nMakeRecipeID
+CraftManagePanel.OnItemMouseEnter
+CraftManagePanel.UpdateContent
+CraftManagePanel.UpdateMakeCount
+CraftManagePanel.UpdateBgStatus
+CraftManagePanel.UpdateTitle
+CraftManagePanel.bIsMaking
+CraftManagePanel.OnFrameBreathe
+CraftManagePanel.OnScrollBarPosChanged
+CraftManagePanel.OnFrameCreate
+CraftManagePanel.tMakeChecked
+CraftManagePanel.OnCheckBoxUncheck
+CraftManagePanel.OnLButtonDown
+CraftManagePanel.TableSortCmp
+CraftManagePanel.OnItemMouseWheel
+CraftManagePanel.ForamtCoolDownTime
+CraftManagePanel.OnSearch
+CraftManagePanel.OnLButtonClick
+CraftManagePanel.OnKillFocus
+CraftManagePanel.tRecipe
+CraftManagePanel.OnSetFocus
+CraftManagePanel.OnEditChanged
+CraftManagePanel.OnEnchantItem
+CraftManagePanel.OnMakeRecipe
+CraftManagePanel.ClearMakeInfo
+CraftManagePanel.Selected
+CraftManagePanel.OnLButtonHold
+CraftManagePanel.bIsSearch
+CraftManagePanel.OnItemLButtonClick
+CraftManagePanel.tSelected
+CraftManagePanel.nMakeCount
+CraftManagePanel.Init
+CraftManagePanel.SetMakeInfo
+CraftManagePanel.nMakeCraftID
+CraftManagePanel.SetBtnStatus
+CraftManagePanel.OnEvent
+CraftManagePanel.UpdateRecipeTable
+CraftManagePanel.IsOnMakeRecipe
+CraftManagePanel.OnUpdateScorllList
+CraftManagePanel.OnUpdateScorllContent
+CraftManagePanel.OnItemMouseLeave
+CraftManagePanel.OnCheckBoxCheck
+CraftManagePanel.GetTextFontAndFrame
+CraftManagePanel.tExpand
+MiddleMap.UpdateAlpha
+MiddleMap.OnSetFocus
+MiddleMap.CanQueryWanted
+MiddleMap.OnItemMouseLeave
+MiddleMap.UpdateQuestInfo
+MiddleMap.tFieldPQ
+MiddleMap.OnItemMouseEnter
+MiddleMap.IsSafeToMap
+MiddleMap.IsShowPlayerPos
+MiddleMap.nIndex
+MiddleMap.OutputQuestTargetTip
+MiddleMap.GetMapMiddleMapIndex
+MiddleMap.tDelSelectNpc
+MiddleMap.SetCharged
+MiddleMap.UpdateDieMark
+MiddleMap.UpdateQuestTitle
+MiddleMap.SaveSelectNpc
+MiddleMap.RenameFlagPoint
+MiddleMap.UpdateFreeLimit
+MiddleMap.GetQuestMarkFrame
+MiddleMap.LoadOldSelectNpc
+MiddleMap.LPosToHPos
+MiddleMap.MarkNpc
+MiddleMap.OnItemRButtonDown
+MiddleMap.MarkAllAcceptedQuest
+MiddleMap.EnterArea
+MiddleMap.GetQuestTraceTextOfMap
+MiddleMap.tSelectNpc
+MiddleMap.aLoad
+MiddleMap.OnKillFocus
+MiddleMap.UpdateMapFlag
+MiddleMap.tDynamicData
+MiddleMap.UpdateAcceptedMark
+MiddleMap.aNpc
+MiddleMap.UpdateTrafficBySkill
+MiddleMap.SelectAreaOrNpcTrunk
+MiddleMap.OnSelectArea
+MiddleMap.OnLButtonDown
+MiddleMap.nAlpha
+MiddleMap.CheckQuestShow
+MiddleMap.GetQuestListOfMap
+MiddleMap.HPosToLPos
+MiddleMap.bUI
+MiddleMap.OnFrameBreathe
+MiddleMap.GetMapAreaName
+MiddleMap.IsShowQuest
+MiddleMap.UpdateQuestOrMapCheckState
+MiddleMap.MarkTargetOfQuest
+MiddleMap.OnItemLButtonDown
+MiddleMap.UpdateAreaTitle
+MiddleMap.UpdateActivitySymbolShow
+MiddleMap.UpdateSelectNpcMark
+MiddleMap.aShowFlag
+MiddleMap.UpdateCurrentMap
+MiddleMap.UpdateActivitySymbol
+MiddleMap.UpdatePingPoint
+MiddleMap.UpdateQuestTitleState
+MiddleMap.OnItemLButtonClick
+MiddleMap.nFlagCount
+MiddleMap.IsMiddleMapDownload
+MiddleMap.showrighty
+MiddleMap.bShowActivitySymbol
+MiddleMap.h
+MiddleMap.GetQuestFinishPoint
+MiddleMap.OnItemRButtonDBClick
+MiddleMap.UpdateNpcTitle
+MiddleMap.showrightx
+MiddleMap.NewFlagPoint
+MiddleMap.UpdateMapMark
+MiddleMap.OnFrameCreate
+MiddleMap.OnEditChanged
+MiddleMap.UpdateTrafficNodeState
+MiddleMap.tCanAcceptQuest
+MiddleMap.GetQuestTargetPoint
+MiddleMap.scale
+MiddleMap.UpdateAreaInfoTip
+MiddleMap.UpdateFieldMarkState
+MiddleMap.OnItemLButtonUp
+MiddleMap.tDefaultSelectNpc
+MiddleMap.InitFieldMark
+MiddleMap.UnSelectArea
+MiddleMap.MatchFilter
+MiddleMap.SelectQuestOrMap
+MiddleMap.InitMiddleMapInfo
+MiddleMap.OnLButtonClick
+MiddleMap.tQuestShow
+MiddleMap.InitMapFieldPQInfo
+MiddleMap.OnLButtonHold
+MiddleMap.SelectQuest
+MiddleMap.OnItemMouseWheel
+MiddleMap.UpdateQuestAcceptedMarkState
+MiddleMap.LoadNewSelectNpc
+MiddleMap.UpdateDynamicData
+MiddleMap.QueryWanted
+MiddleMap.UpdateTraffic
+MiddleMap.UpdateFlashData
+MiddleMap.MarkFieldPQ
+MiddleMap.startx
+MiddleMap.starty
+MiddleMap.GetQuestMapID
+MiddleMap.OnItemRButtonUp
+MiddleMap.UpdateWantPoint
+MiddleMap.aInfo
+MiddleMap.ShowMap
+MiddleMap.UpdateQuestBtnState
+MiddleMap.aArea
+MiddleMap.UpdateNpcDoodad
+MiddleMap.showlefty
+MiddleMap.OnSkillTraffic
+MiddleMap.scaleFinal
+MiddleMap.UpdateAreaOrNpcMark
+MiddleMap.UpdateRaidQuest
+MiddleMap.w
+MiddleMap.OnItemLButtonDBClick
+MiddleMap.UpdateQuestList
+MiddleMap.OnCheckBoxUncheck
+MiddleMap.UpdateSelectDoodad
+MiddleMap.tQuestTargetFrame
+MiddleMap.RemoveFlagPoint
+MiddleMap.UpdateQuestTraceState
+MiddleMap.aDoodad
+MiddleMap.GetMapAreaFullScreenSfx
+MiddleMap.SelectNpc
+MiddleMap.GetMapAreaBgMusic
+MiddleMap.MarkAllCanAcceptQuest
+MiddleMap.OnItemRButtonClick
+MiddleMap.UpdateAreaOrNpcTruckSize
+MiddleMap.OnCheckBoxCheck
+MiddleMap.tQuestFinishFrame
+MiddleMap.InitMapCanAcceptQuestInfo
+MiddleMap.tTrafficFrame
+MiddleMap.showleftx
+MiddleMap.OnScrollBarPosChanged
+MiddleMap.OnMouseWheel
+MiddleMap.MarkPlayerQuest
+MiddleMap.SelectArea
+MiddleMap.UpdateSelectNpc
+MiddleMap.UpdateMapPos
+MiddleMap.OnEvent
+MiddleMap.UpdateVesion
+MiddleMap.UpdateAreaOrNpcList
+MiddleMap.MarkActivitySymbol
+MiddleMap.dwMapID
+MiddleMap.aFlag
+MiddleMap.UpdateQuestTarget
+MiddleMap.nLastDynamicRequestTime
+MiddleMap.UpdateQuestMark
+AuctionPanel.SaveSearchInfo
+AuctionPanel.OnSetFocus
+AuctionPanel.GetItemSellInfo
+AuctionPanel.OnItemMouseLeave
+AuctionPanel.IsOpened
+AuctionPanel.OnItemMouseEnter
+AuctionPanel.OnItemLButtonDrag
+AuctionPanel.UpdateItemList
+AuctionPanel.UpdateItemTypeList
+AuctionPanel.Open
+AuctionPanel.OnItemDataInfoUpdate
+AuctionPanel.InitSearchInfo
+AuctionPanel.OnFrameCreate
+AuctionPanel.AddItemSubTypeList
+AuctionPanel.OnCheckBoxUncheck
+AuctionPanel.ShowNotice
+AuctionPanel.UnLockOperate
+AuctionPanel.UpdateItemSellInfo
+AuctionPanel._Exit
+AuctionPanel.AuctionCancel
+AuctionPanel.UpateShowInfo
+AuctionPanel.OnItemLButtonDragEnd
+AuctionPanel.OnFrameKeyDown
+AuctionPanel.AuctionSell
+AuctionPanel._OnLoad
+AuctionPanel.OnKillFocus
+AuctionPanel.PopupMenu
+AuctionPanel.OnLButtonClick
+AuctionPanel.ClearBox
+AuctionPanel.UpdateSelectedInfo
+AuctionPanel.SetSaleInfo
+AuctionPanel.OnLButtonDown
+AuctionPanel.OnExchangeBoxItem
+AuctionPanel.UpdateBgStatus
+AuctionPanel.ApplyLookup
+AuctionPanel.OnFrameBreathe
+AuctionPanel.LockOperate
+AuctionPanel.OnItemLButtonDown
+AuctionPanel.OnUpdateItemTypeList
+AuctionPanel.UpdateSaleInfo
+AuctionPanel.UpdateMoney
+AuctionPanel.UpdateItemPriceInfo
+AuctionPanel.Close
+AuctionPanel.GetSelectedItem
+AuctionPanel.tItemSellInfoCache
+AuctionPanel.ExchangeBagAndAuctionItem
+AuctionPanel.OnUpdateItemList
+AuctionPanel.Selected
+AuctionPanel.OnLButtonHold
+AuctionPanel.InitBusinessInfo
+AuctionPanel.OnItemLButtonClick
+AuctionPanel.OnScrollBarPosChanged
+AuctionPanel.IsSearchOpened
+AuctionPanel.Init
+AuctionPanel.AuctionBuy
+AuctionPanel.IsSellOpened
+AuctionPanel.OnEditChanged
+AuctionPanel.OnEvent
+AuctionPanel.OnItemMouseWheel
+AuctionPanel.SetItemName
+AuctionPanel.OnItemLButtonDBClick
+AuctionPanel.FormatAuctionTime
+AuctionPanel.OnSortStateUpdate
+AuctionPanel.AuctionBid
+AuctionPanel.OnCheckBoxCheck
+AuctionPanel.OnItemLButtonUp
+CraftReadManagePanel.UpdateList
+CraftReadManagePanel.OnSetFocus
+CraftReadManagePanel.RequireReadAll
+CraftReadManagePanel.OnItemMouseLeave
+CraftReadManagePanel.UpdateCopyAllState
+CraftReadManagePanel.OnLButtonDown
+CraftReadManagePanel.UpdateCheckState
+CraftReadManagePanel.OnItemMouseEnter
+CraftReadManagePanel.UpdateBgStatus
+CraftReadManagePanel.ChangeCheckBox
+CraftReadManagePanel.OnFrameBreathe
+CraftReadManagePanel.UpdateFilterValue
+CraftReadManagePanel.UpdateCondition
+CraftReadManagePanel.OnScrollBarPosChanged
+CraftReadManagePanel.OnFrameCreate
+CraftReadManagePanel.nSortID
+CraftReadManagePanel.GetExamPrint
+CraftReadManagePanel.OnItemLButtonDown
+CraftReadManagePanel.RequireThew
+CraftReadManagePanel.UpdateExperience
+CraftReadManagePanel.nBookID
+CraftReadManagePanel.OnItemMouseWheel
+CraftReadManagePanel.GetTip
+CraftReadManagePanel.GetTitle
+CraftReadManagePanel.OnItemLButtonUp
+CraftReadManagePanel.RequireLevelTip
+CraftReadManagePanel.Selected
+CraftReadManagePanel.OnLButtonHold
+CraftReadManagePanel.bIsSearch
+CraftReadManagePanel.bCoolDown
+CraftReadManagePanel.OnKillFocus
+CraftReadManagePanel.GetDHMSByFrame
+CraftReadManagePanel.OnEditChanged
+CraftReadManagePanel.OnSearch
+CraftReadManagePanel.OnLButtonClick
+CraftReadManagePanel.nTotalCopyNum
+CraftReadManagePanel.OnEvent
+CraftReadManagePanel.PopupMenu
+CraftReadManagePanel.GetFilterValue
+CraftReadManagePanel.OnUpdateScorllList
+CraftReadManagePanel.nSegmentID
+CraftReadManagePanel.tFilter
+CraftReadManagePanel.OnCheckBoxCheck
+CraftReadManagePanel.RequireItems
+CraftReadManagePanel.tExpand

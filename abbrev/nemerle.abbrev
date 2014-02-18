@@ -1,0 +1,54 @@
+# Nemerle Abbreviations
+# by nicksabaka@gmail.com
+# Code Snippets
+ss=$"|$"
+sss=@"|"
+us=using |;
+using=using (def | = )\n{\n\t;\n}
+de=def | = ;
+def=def |() : void\n{\n\t;\n}
+del=delegate |(_ : int, _ : string) : void;
+mut=mutable | = ;
+arr=array[|]
+li=list[|]
+hash=def | : Hashtable[string, object] = Hashtable() <-\n[\n\t"" = "",\n\t"" = "",\n];
+match=match (|)\n{\n\t|| "?" => { }\n\t|| _ => { }\n}
+if=if (|)\n{\n\t;\n}\nelse\n{\n\t;\n}
+else=else\n{\n\t|;\n}
+when=when (|)\n{\n\t\n}
+unless=unless (|)\n{\n\t\n}
+do=do {\n\t|;\n} while (true);
+while=while (true)\n{\n\t|;\n}
+for=for (mutable i = 0; i < |; i++)\n{\n\t;\n}
+fore=foreach (| in )\n{\n\t;\n}
+rep=repeat (|)\n{\n\t;\n}
+try=try\n{\n\t|;\n}\ncatch\n{\n\t|| e is Exception => { }\n\t|| _ => { }\n}
+tryfin=try\n{\n\t|;\n}\ncatch\n{\n\t|| e is Exception => { }\n\t|| _ => { }\n}\nfinally\n{\n\t\n}
+regex=regexp match (|)\n{\n\t|| @"^.+$" => { }\n\t|| _ => { }\n}
+thro=throw Exception("|");
+nam=namespace |\n{\n\t\n}
+main=Main(_args : array[string]) : void\n{\n\t|;\n}
+int=public interface |\n{\n\tpublic Method1() : void;\n}
+intp=private interface |\n{\n\tpublic Method1() : void;\n}
+mod=public module |\n{\n\t\n\tpublic Method1() : void\n{\n\t;\n}\n}
+modp=private module |\n{\n\t\n\tpublic Method1() : void\n{\n\t;\n}\n}
+cla=public class |\n{\n\t\n\tpublic this() : void\n\t{\n\t\t;\n\t}\n}
+clap=private class |\n{\n\t\n\tpublic this() : void\n\t{\n\t\t;\n\t}\n}
+stru=struct |\n{\n\tpublic mutable var1 : int;\n\tpublic mutable var2 : string;\n}
+pub=public |() : void\n{\n\t;\n}
+pri=private _|() : void\n{\n\t;\n}
+pubs=public static |() : void\n{\n\t;\n}
+pris=private static _|() : void\n{\n\t;\n}
+async=async\n{\n\t|\n}
+asser=assert (|, "message");
+ret=return:\n{\n\t|\n\treturn();\n}
+break=break:\n{\n\t|\n\tbreak();\n}
+assem=[assembly: |]
+prop=[Accessor (|Property)]\nprivate mutable property : string;
+var=variant |\n{\n\t|| One\n\t|| Two\n}
+enum=enum |\n{\n\t|| One\n\t|| Two\n}
+latex=late (|);
+nolatx=nolate (|);
+late=late\n{\n\t|;\n}
+nolat=nolate\n{\n\t|;\n}
+write=Console.WriteLine("{0}", |);
