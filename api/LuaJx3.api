@@ -239,8 +239,7 @@ PlayerChangeSuit (index)\n快速切换到第index套装备\n返回值：无\n
 Player_AppendAddonMenu (tMenu)\n添加自己的头像菜单\n返回值：无\n
 Player_GetAddonMenu (无)\n获取自己的头像菜单\n返回值：tMenu\n
 Player_GetAnimationResource (nRoleType, dwAnimationID)\n获取玩家对应的动画资源\n返回值：返回以下值：szAniFilePath：动画文件夹路径，若无，则返回Nil；szAniSoundFilePath：动画声音文件路径,若无，返回Nil； dwAniPlayType：动画播放类型； fAniPlaySpeed：播放速度。\n
-Player_GetEquipResource (nParamCount,dwRepresentIDs1,...dwRepresentIDs32)\n获取玩家对应的装备资源\n返回值：返回一个表，包含以下索引值："MDL", "MDLScale","CHEST", "HEADFORM", "WAIST", "PANTS", "BANGLE", "BANG", "PLAIT", "RL_WEAPON_LH", "RL_WEAPON_RH", "BACK_EXTEND", "WAIST_EXTEND", "FACE", "HAT", "SHEATH_LH", "SHEATH_RH";
-除"MDL", "MDLScale"以外，其余均为结构一致的表，分别表示对应表现部位的插槽，Mesh等信息，每一项都包含以下索引值："Socket","Mesh","Mtl","MeshScale","ColorChannelTable","ColorChannel"\n
+Player_GetEquipResource (nParamCount,dwRepresentIDs1,...dwRepresentIDs32)\n获取玩家对应的装备资源\n返回值：返回一个表，包含以下索引值："MDL", "MDLScale","CHEST", "HEADFORM", "WAIST", "PANTS", "BANGLE", "BANG", "PLAIT", "RL_WEAPON_LH", "RL_WEAPON_RH", "BACK_EXTEND", "WAIST_EXTEND", "FACE", "HAT", "SHEATH_LH", "SHEATH_RH";除"MDL", "MDLScale"以外，其余均为结构一致的表，分别表示对应表现部位的插槽，Mesh等信息，每一项都包含以下索引值："Socket","Mesh","Mtl","MeshScale","ColorChannelTable","ColorChannel"\n
 Player_GetRidesAnimationResource (dwRidesID, dwAnimationID)\n获取玩家坐骑的动画资源\n返回值：返回以下值：szAniFilePath：动画文件夹路径，若无，则返回Nil；szAniSoundFilePath：动画声音文件路径,若无，返回Nil； dwAniPlayType：动画播放类型； fAniPlaySpeed：播放速度fAniSoundRange，szSFXFilePath(无则为nil),szSFXBoneName(无则为nil),dwSFXPlayType,fSFXPlaySpeed, fSFXScale\n
 Player_GetRidesEquipResource (dwRidesID，dwRepresentIDs1,...dwRepresentIDs6)\n获取玩家的马具相关的资源\n返回值：返回一个表，包含以下索引值："MDL"，"Body", "Mane", "Head", "Chest", "Leg", "Pendant"；除"MDL"表示MDL文件路径（无则为nil）,每一项都包含以下索引值："Socket","Mesh","Mtl","MeshScale","ColorChannelTable","ColorChannel"\n
 PopupMenu (menu)\n弹出菜单\n返回值：无\n
@@ -268,14 +267,8 @@ Scene_GetSceneID (无)\n获取当前场景的id\n返回值：sceneID\n
 Scene_PlaneGameWorldPosToScene (xLogical, yLogical)\n逻辑坐标x,y 转成 场景坐标的 x, z\n返回值：xScene,zScene\n
 Scene_ScenePointToScreenPoint (fX,fY,fZ)\n场景坐标转换为屏幕坐标\n返回值：fScreenX, fScreenY\n1.该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式\n2.若坐标在镜头外会转换失败，失败情况下的返回值为：a)通过PostThreadCall调用的话， 返回nil b)直接调 返回 "_error0"
 Scene_ScenePositionToGameWorldPosition (fX,fY,fZ[,bOnFloor])\n场景坐标转成逻辑坐标\n返回值：fX, fY, fZ\nbOnFloor默认为false\n该接口在多核版本异步才能拿到返回值，调用时可用PostThreadCall方式\n兼容单核和多核模式
-Scene_SelectObject (该接口的参数类型可以有以下4种：
-1.szOption
-2. dwScene, szOption
-3.fXScale, fYScale, szOption
-4.dwScene,fXScale, fYScale, szOption)\n在场景中选择Object\n返回值：返回一个表, 长度为符合条件的Object个数。表中每一项均为一个表，含有以下两个索引值："Type":类型见[TARGET], "ID"；若无符合条件的对象，刚返回一个表{{["Type"] = TARGET.NO_TARGET,["ID"] = 0}}\n
-ScreenShot (有两种参数形式：
-1.无
-2.szFilePath, nQuality [,bFullPath])\n截屏并返回存储位置\n返回值：szFilePath\n
+Scene_SelectObject (该接口的参数类型可以有以下4种：1.szOption2. dwScene, szOption3.fXScale, fYScale, szOption4.dwScene,fXScale, fYScale, szOption)\n在场景中选择Object\n返回值：返回一个表, 长度为符合条件的Object个数。表中每一项均为一个表，含有以下两个索引值："Type":类型见[TARGET], "ID"；若无符合条件的对象，刚返回一个表{{["Type"] = TARGET.NO_TARGET,["ID"] = 0}}\n
+ScreenShot (有两种参数形式：1.无2.szFilePath, nQuality [,bFullPath])\n截屏并返回存储位置\n返回值：szFilePath\n
 SearchTarget_IsOldVerion (无)\n判断查找目标是不是旧版的\n返回值：bOldVersion\n
 SearchTarget_SetAreaSettting (szType, nRadius, nAngle, nSelLevel, szMode)\n查找目录，设置区域设定\n返回值：无\nszMode取值为"Enmey"或者 "Ally"
 SearchTarget_SetOtherSettting (szType, tData, szMode)\n查找目标，设置一些其它信息\n返回值：无\nszType取值为"OnlyPlayer"，"Weakness"，"MidAxisFirst"，"OnlyNearDis"，"nVersion"， "CoolTime"，"SureTarget"，"RedFirst"，"Teammate"\nszMode取值为"Enmey"或者 "Ally"
@@ -355,6 +348,9 @@ ViewInviteToPlayer (dwPlayerID)\n可用于显示玩家装备\n返回值：无\n
 ViewOtherPlayerChannels (dwPlayerID)\n可用于显示玩家经脉等信息\n返回值：无\n
 ViewOtherZhenPaiSkill (dwPlayerID)\n可用于显示玩家镇派信息\n返回值：无\n
 class (super)\n创建一个类\n返回值：返回一个类的对象\nsuper可以为nil
+clone (var)\n克隆变量\n返回值：varTmp\n可克隆变量类型为：nil, boolean, number, string, table\n当变量类型为：function或者userdata时，返回nil
+rlcmd (szCommand)\n执行命令\n返回值：无\n
+var2str (var [, szIndent])\n将变量转换为字符串\n返回值：szVar\nszIndent可用于table类型的变量
 
 
 Show ()\nCursor.Show(bShow)：设置光标是否显示\n返回值：无\n\nStation.Show(无)：显示station\n返回值：无\n\nItemNull:Show([bShow])：显示控件\n返回值：无\nbShow默认为true;为false时表示隐藏\nWndWindow:Show([bShow])：显示窗口\n返回值：无\nbShow默认为true
@@ -390,8 +386,7 @@ Set (szCommand, nIndex,nKey [,nShift [,nCtrl [, nAlt] ] ])\nHotkey.Set：设置�
 Get (szCommand [, nIndex])\nHotkey.Get：获取快捷键\n返回值：nKey, nShift, nCtrl, nAlt\n
 IsUsed (nKey [,nShift [,nCtrl [, nAlt] ] ])\nHotkey.IsUsed：查询快捷键是否已被占用\n返回值：被占用返回true，否则为false\nnShift,nCtrl,nAlt可以为0，1或者false, true
 SetCapture ()\nHotkey.SetCapture(nCap)：设置是否捕获快捷键\n返回值：无\nnCamp可以为0，1或者false, true；为0或者false时，将不在捕获快捷键\nStation.SetCapture(有以下两种参数形式，如下：1)szTreePath 2) WndWindow 3)nil)：设置捕获窗口\n返回值：无\n
-AddBinding (szName, szDesc, szHeader, nScriptDown, nScriptup, [nUnchangeable]
-或者为szName, szDesc, szHeader, nScriptDown, nScriptup, szTip, [nUnchangeable])\nHotkey.AddBinding：绑定快捷键\n返回值：无\n
+AddBinding (szName, szDesc, szHeader, nScriptDown, nScriptup, [nUnchangeable]或者为szName, szDesc, szHeader, nScriptDown, nScriptup, szTip, [nUnchangeable])\nHotkey.AddBinding：绑定快捷键\n返回值：无\n
 IsEnable (无)\nHotkey.IsEnable：快捷键是否打开\n返回值：打开返回true,否则为false\n
 GetCaptureKey (nKey,nShift,nCtrl,nAlt)\nHotkey.GetCaptureKey：获取捕获的快捷键\n返回值：无\n
 Sell (dwNpcID, dwBox,dwX, nStartPrice, nBuyItNowPrice, nLeftHour)\nKAuctionClient.Sell：拍卖行出售物品\n返回值：无\n
@@ -466,10 +461,7 @@ GetRepresentID (无)\nKPlayer.GetRepresentID：获取表现逻辑Id\n返回值�
 GetQuestPhase (dwQuestID)\nKPlayer.GetQuestPhase：获取任务阶段状态\n返回值：返回值含义：3: 表示已完成任务0: 表示任务不存在1: 表示任务正在进行中，2: 表示任务已完成但还没有交-1: 表示任务id非法\n
 GetQuestID (nQuestIndex)\nKPlayer.GetQuestID：获取任务列表中某个任务的id\n返回值：dwQuestID\n通过任务序号获取任务ID
 GetReputeLevel (dwForceID)\nKPlayer.GetReputeLevel：获取玩家的声望等级\n返回值：获取玩家在某一势力的声望等级\n
-GetQuestTree (无)\nKPlayer.GetQuestTree：获取玩家身上的任务列表\n返回值：返回2个值：任务table及其元素个数。
-任务table是一个下表从1开始的数组。每一个任务是数组的一项，也是一个table。 每一个任务的table包含以下字段：nQuestIndex(任务索引，对应程序内部的存储索引), nLevel(任务等级), szName(任务名称), szQuestDiff(对应Quests.tab中的Difficulty).
-任务table中的任务会分类，即同一类（按照Quests.tab中Class分类）任务会 放在相邻的位置。每一类任务开始时，那个任务的table中的nQuestIndex字段是-1, nLevel是0， szItem是分类的名字（对应Quests.tab中的Class）,szQuestDiff则是一个没有用的值。
-同一类任务中的每个任务又是按照nLevel升序排列的。例如对于类别为“扬州”的一系列任务， 级别低的任务会排在级别高的任务前面。\n
+GetQuestTree (无)\nKPlayer.GetQuestTree：获取玩家身上的任务列表\n返回值：返回2个值：任务table及其元素个数。任务table是一个下表从1开始的数组。每一个任务是数组的一项，也是一个table。 每一个任务的table包含以下字段：nQuestIndex(任务索引，对应程序内部的存储索引), nLevel(任务等级), szName(任务名称), szQuestDiff(对应Quests.tab中的Difficulty).任务table中的任务会分类，即同一类（按照Quests.tab中Class分类）任务会 放在相邻的位置。每一类任务开始时，那个任务的table中的nQuestIndex字段是-1, nLevel是0， szItem是分类的名字（对应Quests.tab中的Class）,szQuestDiff则是一个没有用的值。同一类任务中的每个任务又是按照nLevel升序排列的。例如对于类别为“扬州”的一系列任务， 级别低的任务会排在级别高的任务前面。\n
 GetQuestExpAttenuation (dwQuestID)\nKPlayer.GetQuestExpAttenuation：获取任务奖励经验的削减情况\n返回值：nExp, nRepeatCutPercent, nLevelCutPercent\nnExp:奖励经验\nnRepeatCutPercent:重复做任务时奖励的削减百分比\nnLevelCutPercent：等级提升时奖励消减的百分比
 GetBookSegmentList (dwBookID)\nKPlayer.GetBookSegmentList：获取某本书已经阅读过的卷\n返回值：如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，数组的每一项是书籍的第几卷。只有读过的书才会加入到这个table中。\n
 GetItemCDProgress (无)\nKPlayer.GetItemCDProgress：获取道具的cd信息\n返回值：bIsCooldown, nLeftCooldown, nTotalCooldown, bBroken\n有以下几种参数组合：\n1个参数：dwItemID: 道具id\n2个参数：dwBox, dwX。 dwBox是道具所在背包的索引，参见INVENTORY_INDEX。 dwX是道具在背包内的位置。\n3个参数：version, type, index: version是道具系统的版本号，整数。type是道具表类型， 取值参见ITEM_TABLE_TYPE。index是道具在配置表中的id
@@ -524,9 +516,7 @@ GetStrengthEquipScore (无)\nKPlayer.GetStrengthEquipScore：获取装备强化�
 GetMountsEquipScore (无)\nKPlayer.GetMountsEquipScore：获取装备镶嵌分数\n返回值：nScore\n
 SetFellowshipRemark (dwAlliedPlayerID, szRemark)\nKPlayer.SetFellowshipRemark：设置联系人备注\n返回值：如果函数执行成功，返回true；否则返回false\n
 GetCDLeft (dwCooldownID)\nKPlayer.GetCDLeft：获取剩余CD时间，单位帧\n返回值：nLeftCooldown\n
-GetHortation (无)\nKQuestInfo.GetHortation：获取任务完成后能够得到的结果\n返回值：如果做完任务能够有一些结果，例如获得奖励，影响声望，那么会返回一个table，它可能包含以下内容：
-
-{"money", "skill", "prestige", "contribution", "presenttrain", "tongdevelopmentpoint","tongfund", "presentjustice","presentexamprint","reputation" ={{"force", "value"},...} }。\n
+GetHortation (无)\nKQuestInfo.GetHortation：获取任务完成后能够得到的结果\n返回值：如果做完任务能够有一些结果，例如获得奖励，影响声望，那么会返回一个table，它可能包含以下内容：{"money", "skill", "prestige", "contribution", "presenttrain", "tongdevelopmentpoint","tongfund", "presentjustice","presentexamprint","reputation" ={{"force", "value"},...} }。\n
 TimeLimitationBindItemGetLeftTime (dwItemID)\nKScene.TimeLimitationBindItemGetLeftTime：返回限时绑定道具的剩余时间\n返回值：nLeftTime\n
 ChangeMemberGroup ()\nKTeamClient.ChangeMemberGroup(dwTargetMemberID,nTargetGroup)：更改帮会成员玩家的分组\n返回值：无\n\nKTongClient.ChangeMemberGroup(dwMemberID, nDstGroup, [dwDstMemberID])：将队员从一个分组调整到另一个分组\n返回值：无\n
 SetTeamFormationLeader (dwNewFormationLeader, [nGroupIndex])\nKTeamClient.SetTeamFormationLeader：移交阵眼\n返回值：无\nnGroupIndex默认为零，不得大于等于5
@@ -554,15 +544,11 @@ ApplyTongInfo (无)\nKTongClient.ApplyTongInfo：向服务端申请同步帮会�
 ApplyTongRoster (无)\nKTongClient.ApplyTongRoster：向服务端申请帮会花名册\n返回值：无\n
 SetFocusWindow (有以下三种参数形式，如下：1)szTreePath 2) Wnd 3）nil)\nStation.SetFocusWindow：设置当前焦点窗口\n返回值：无\n
 GetFocusWindow (无)\nStation.GetFocusWindow：获取当前焦点窗口\n返回值：返回一个Wnd对象\n
-SetActiveFrame (有以下三种参数形式：
-1.szTreePath, [bBringToTop]
-2.WndFrame, [bBringToTop]
-3.nil, [bBringToTop])\nStation.SetActiveFrame：设置当前活动窗口框架\n返回值：无\n
+SetActiveFrame (有以下三种参数形式：1.szTreePath, [bBringToTop]2.WndFrame, [bBringToTop]3.nil, [bBringToTop])\nStation.SetActiveFrame：设置当前活动窗口框架\n返回值：无\n
 GetActiveFrame (无)\nStation.GetActiveFrame：获取当前活动窗口框架\n返回值：返回一个WndFrame对象\n
 GetCapture (无)\nStation.GetCapture：获取捕获窗口\n返回值：返回一个WndWindow对象\n
 ReleaseCapture (无)\nStation.ReleaseCapture：释放当前捕获窗口\n返回值：无\n
-Lookup ()\nStation.Lookup(有以下几种参数形式：
-1.无 2.szTreePath)：查找控件对象\n返回值：返回一个控件对象\n\nHandle:Lookup(有两种参数形式：1.nIndex 2.szItemName)：查询控件\n返回值：返回控件对象\n\nTreeLeaf:Lookup(有两种参数形式：1.nIndex 2.szItemName)：查询控件\n返回值：返回控件对象\n\nWndWindow:Lookup(szTreePath, [szItemTreePath])：查询控件\n返回值：返回一个符合条件的控件\n
+Lookup ()\nStation.Lookup(有以下几种参数形式：1.无 2.szTreePath)：查找控件对象\n返回值：返回一个控件对象\n\nHandle:Lookup(有两种参数形式：1.nIndex 2.szItemName)：查询控件\n返回值：返回控件对象\n\nTreeLeaf:Lookup(有两种参数形式：1.nIndex 2.szItemName)：查询控件\n返回值：返回控件对象\n\nWndWindow:Lookup(szTreePath, [szItemTreePath])：查询控件\n返回值：返回一个符合条件的控件\n
 GetWindowPosition (无)\nStation.GetWindowPosition：获取窗口位置\n返回值：nX,nY\n
 GetClientPosition (无)\nStation.GetClientPosition：获取客户端位置\n返回值：nX,nY\n
 GetClientSize (无)\nStation.GetClientSize：获取客户端实际大小\n返回值：fWidth, fHeight\n
@@ -582,11 +568,7 @@ GetMessageKey (无)\nStation.GetMessageKey：获取消息键\n返回值：nKey\n
 GetMouseOverWindow (无)\nStation.GetMouseOverWindow：获取当前鼠标所在的窗口\n返回值：返回一个窗口对象\n
 ToggleWindow ()\nStation.ToggleWindow(szIniFileName, szFrameName)：当窗口打开时，关闭窗口；反之，则打开\n返回值：无\n\nWnd.ToggleWindow(szIniFileName, szFrameName)：当窗口打开时，关闭窗口；反之，则打开\n返回值：无\n
 OpenWindow ()\nStation.OpenWindow(szFileName [, szFrameName])：打开窗口\n返回值：返回一个窗口对象\nszFrameName默认与szFileName一致\nWnd.OpenWindow(szFileName [, szFrameName])：打开窗口\n返回值：返回一个窗口对象\nszFrameName默认与szFileName一致
-CloseWindow ()\nStation.CloseWindow(两种参数形式：
-1.WndFrame对象
-2.szFrameName)：关闭窗口\n返回值：无\n\nWnd.CloseWindow(两种参数形式：
-1.WndFrame对象
-2.szFrameName)：关闭窗口\n返回值：无\n
+CloseWindow ()\nStation.CloseWindow(两种参数形式：1.WndFrame对象2.szFrameName)：关闭窗口\n返回值：无\n\nWnd.CloseWindow(两种参数形式：1.WndFrame对象2.szFrameName)：关闭窗口\n返回值：无\n
 SetSelectedBox (box)\nUserSelect.SetSelectedBox：设置玩家当前选择的物品格子\n返回值：无\n
 RefreshSelectedBox (无)\nUserSelect.RefreshSelectedBox：刷新当前选择的物品格子\n返回值：无\n
 SelectPoint (fnAction, fnCancel, fnCondition, box)\nUserSelect.SelectPoint：选择点\n返回值：无\n
@@ -646,12 +628,8 @@ ClearExtentAnimate (无)\nBox.ClearExtentAnimate：清除扩展的动画\n返回
 AppendItemFromString ()\nHandle.AppendItemFromString(szString)：添加控件，从字符串中读取\n返回值：无\n\nTreeLeaf:AppendItemFromString(szString)：添加控件，从字符串中读取\n返回值：无\n
 AppendItemFromIni ()\nHandle.AppendItemFromIni(szIniFile, szSectionName [, szNewName])：添加控件，从配置文件中读取\n返回值：无\n\nTreeLeaf:AppendItemFromIni(szIniFile, szSectionName [, szNewName])：添加控件，从配置文件中读取\n返回值：无\n
 AdjustItemShowInfo ()\nHandle.AdjustItemShowInfo(无)：调整Item的显示信息\n返回值：无\n\nTreeLeaf:AdjustItemShowInfo(无)：调整Item的显示信息\n返回值：无\n
-InsertItemFromString ()\nHandle.InsertItemFromString(有两种参数形式：1.nIndex, bBehindOrBefore,szString
-2.szItemName, bBehindOrBefore,szString)：插入控件，从字符串读取\n返回值：无\n\nTreeLeaf:InsertItemFromString(有两种参数形式：1.nIndex, bBehindOrBefore,szString
-2.szItemName, bBehindOrBefore,szString)：插入控件，从字符串读取\n返回值：无\n
-InsertItemFromIni ()\nHandle.InsertItemFromIni(有两种参数形式：1.nIndex, bBehindOrBefore,szIniFile,szSectionName [,szNewName]
-2.szItemName, bBehindOrBefore,szIniFile,szSectionName [,szNewName])：插入控件，从配置文件中记取\n返回值：无\n\nTreeLeaf:InsertItemFromIni(有两种参数形式：1.nIndex, bBehindOrBefore,szIniFile,szSectionName [,szNewName]
-2.szItemName, bBehindOrBefore,szIniFile,szSectionName [,szNewName])：插入控件，从配置文件中记取\n返回值：无\n
+InsertItemFromString ()\nHandle.InsertItemFromString(有两种参数形式：1.nIndex, bBehindOrBefore,szString2.szItemName, bBehindOrBefore,szString)：插入控件，从字符串读取\n返回值：无\n\nTreeLeaf:InsertItemFromString(有两种参数形式：1.nIndex, bBehindOrBefore,szString2.szItemName, bBehindOrBefore,szString)：插入控件，从字符串读取\n返回值：无\n
+InsertItemFromIni ()\nHandle.InsertItemFromIni(有两种参数形式：1.nIndex, bBehindOrBefore,szIniFile,szSectionName [,szNewName]2.szItemName, bBehindOrBefore,szIniFile,szSectionName [,szNewName])：插入控件，从配置文件中记取\n返回值：无\n\nTreeLeaf:InsertItemFromIni(有两种参数形式：1.nIndex, bBehindOrBefore,szIniFile,szSectionName [,szNewName]2.szItemName, bBehindOrBefore,szIniFile,szSectionName [,szNewName])：插入控件，从配置文件中记取\n返回值：无\n
 FormatAllItemPos ()\nHandle.FormatAllItemPos(无)：格式化所有控件的位置\n返回值：无\n\nTreeLeaf:FormatAllItemPos(无)：格式化所有控件的位置\n返回值：无\n
 SetHandleStyle ()\nHandle.SetHandleStyle(dwHandleStyle)：设置handle的样式\n返回值：无\n\nTreeLeaf:SetHandleStyle(dwHandleStyle)：设置handle的样式\n返回值：无\n
 SetMinRowHeight ()\nHandle.SetMinRowHeight(fHeight)：设置最小行高\n返回值：无\n\nTreeLeaf:SetMinRowHeight(fHeight)：设置最小行高\n返回值：无\n
@@ -666,13 +644,7 @@ GetAllItemSize ()\nHandle.GetAllItemSize(无)：获取所有控件的大小\n返
 GetItemCount ()\nHandle.GetItemCount(无)：获取控件的总数量\n返回值：nCount\n\nTreeLeaf:GetItemCount(无)：获取控件的总数量\n返回值：nCount\n
 GetVisibleItemCount ()\nHandle.GetVisibleItemCount(无)：获取可见控件的总数量\n返回值：nCount\n\nTreeLeaf:GetVisibleItemCount(无)：获取可见控件的总数量\n返回值：nCount\n
 EnableFormatWhenAppend ()\nHandle.EnableFormatWhenAppend(bFlag)：设置是否当有控件添加时就格式化\n返回值：无\n\nTreeLeaf:EnableFormatWhenAppend(bFlag)：设置是否当有控件添加时就格式化\n返回值：无\n
-ExchangeItemIndex ()\nHandle.ExchangeItemIndex(1.nIndex1, nIndex2 
-2.nIndex1, pItem2
-3.pItem1, nIndex2
-4.pItem1, nIndex2)：交换两个控件的序列号\n返回值：无\n\nTreeLeaf:ExchangeItemIndex(1.nIndex1, nIndex2 
-2.nIndex1, pItem2
-3.pItem1, nIndex2
-4.pItem1, nIndex2)：交换两个控件的序列号\n返回值：无\n
+ExchangeItemIndex ()\nHandle.ExchangeItemIndex(1.nIndex1, nIndex2 2.nIndex1, pItem23.pItem1, nIndex24.pItem1, nIndex2)：交换两个控件的序列号\n返回值：无\n\nTreeLeaf:ExchangeItemIndex(1.nIndex1, nIndex2 2.nIndex1, pItem23.pItem1, nIndex24.pItem1, nIndex2)：交换两个控件的序列号\n返回值：无\n
 Sort ()\nHandle.Sort(无)：排序\n返回值：无\n\nTreeLeaf:Sort(无)：排序\n返回值：无\n
 AppendItemFromData ()\nHandle.AppendItemFromData(ItemData [,szNewName])：添加控件，从控件数据中读取\n返回值：无\n\nTreeLeaf:AppendItemFromData(ItemData [,szNewName])：添加控件，从控件数据中读取\n返回值：无\n
 SetFrame (nFrame)\nImage.SetFrame：设置Frame\n返回值：无\n
@@ -702,9 +674,7 @@ SetPosType (dwPosType)\nItemNull.SetPosType：设置坐标类型\n返回值：�
 GetPosType (无)\nItemNull.GetPosType：获取坐标类型\n返回值：dwPosType\n
 GetName ()\nItemNull.GetName(无)：获取Name\n返回值：szName\n\nWndWindow:GetName(无)：获取窗口名称\n返回值：szName\n
 SetName ()\nItemNull.SetName(szName)：设置Name\n返回值：无\n\nWndWindow:SetName(szName)：设置窗口名称\n返回值：无\n
-SetTip (有两种参数形式：
-1.nTipIndex
-2.szTip, nShowType, [nRichText])\nItemNull.SetTip：设置Tip\n返回值：无\n
+SetTip (有两种参数形式：1.nTipIndex2.szTip, nShowType, [nRichText])\nItemNull.SetTip：设置Tip\n返回值：无\n
 GetTip (无)\nItemNull.GetTip：获取Tip\n返回值：szTip, nShowTipType\n
 SetUserData (fUserData)\nItemNull.SetUserData：设置玩家数据\n返回值：无\n
 GetUserData (无)\nItemNull.GetUserData：获取玩家数据\n返回值：fUserData\n
@@ -718,9 +688,7 @@ GetParent ()\nItemNull.GetParent(无)：获取其父控件或者父窗口\n返�
 GetRoot ()\nItemNull.GetRoot(无)：获取其根窗口\n返回值：返回一个WndFrame对象\n\nWndWindow:GetRoot(无)：获取根窗口\n返回值：WndFrame对象\n
 GetIndex (无)\nItemNull.GetIndex：获取控件Index\n返回值：nIndex\n
 SetIndex (nNewIndex)\nItemNull.SetIndex：设置控件Index\n返回值：无\n
-ExchangeIndex (有两种参数形式：
-1.nIndex
-2.pItemNext)\nItemNull.ExchangeIndex：交换控件Index\n返回值：无\n
+ExchangeIndex (有两种参数形式：1.nIndex2.pItemNext)\nItemNull.ExchangeIndex：交换控件Index\n返回值：无\n
 GetTreePath ()\nItemNull.GetTreePath(无)：获取控件的TreePath\n返回值：szTreePath\n\nWndWindow:GetTreePath(无)：获取窗口的szTreePath\n返回值：szTreePath\n
 SetIntPos (bIsIntPos)\nItemNull.SetIntPos：设置整形坐标\n返回值：无\n
 IsIntPos (无)\nItemNull.IsIntPos：判断是否是整形坐标\n返回值：bIsIntPos\n
@@ -729,9 +697,7 @@ GetLinkInfo (无)\nItemNull.GetLinkInfo：获取链接信息\n返回值：szLink
 IsValid ()\nItemNull.IsValid(无)：是否合法\n返回值：bValid\n\nWndWindow:IsValid(无)：判断是否为有效合法的窗口\n返回值：bValid\n
 SetScene (p3DScene)\nScene.SetScene：设置场景\n返回值：无\n
 EnableAlpha (bEnable)\nScene.EnableAlpha：设置透明度是否有效\n返回值：无\n
-SetShadowColor (两种参数形式：
-1.dwColor，
-2.szColor,[Alpha] Alpha值默认为255)\nShadow.SetShadowColor：设置阴影颜色\n返回值：无\n
+SetShadowColor (两种参数形式：1.dwColor，2.szColor,[Alpha] Alpha值默认为255)\nShadow.SetShadowColor：设置阴影颜色\n返回值：无\n
 GetShadowColor (无)\nShadow.GetShadowColor：获取阴影颜色\n返回值：dwColor\n
 GetColorRGB (无)\nShadow.GetColorRGB：获取颜色（RGB模式）\n返回值：dwR, dwG, dwB\n
 SetColorRGB (dwR, dwG, dwB)\nShadow.SetColorRGB：设置颜色（RGB模式）\n返回值：无\n
@@ -743,14 +709,10 @@ AppendTriangleFan3DPoint (x, y, z, r, g, b, a [,fTopDelta, dwFontSchemeID, szTex
 ClearTriangleFanPoint (无)\nShadow.ClearTriangleFanPoint：清除所有的三角形扇点\n返回值：无\n
 AppendDoodadID (dwDoodadID, r, g, b, a [,fTopDelta, dwFontSchemeID, szText, fSpace, fScale])\nShadow.AppendDoodadID：添加一个DoodadID，以Doodad的原点代表一个绘制点;当功能类型为GEOMETRY_TYPE.TEXT时，代表在绘制点绘制一段文字\n返回值：无\n参数：\ndwDoodadID     \nr,g,b,a      颜色\nfTopDelta    传的是数值表示场景坐标高度的调整值，比如根据角色id 取到头顶坐标后 加上这个值后 再转成屏幕坐标；传的是表，则为{scenex, sceney, scenez, screenx, screeny} ,场景坐标加上这个  scenex, sceney, scenez 再转成屏幕坐标,最后屏幕坐标加上 screenx ,screeny 作为最终坐标\n   \ndwFontSchemeID 字体id;功能类型是GEOMETRY_TYPE.TEXT 才有用\nszText     绘制的文字;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfSpace     文字间的间隔;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfScale     文字的缩放;功能类型是GEOMETRY_TYPE.TEXT 才有用
 AppendCharacterID (dwCharacterID, bCharacterTop, r, g, b, a [,fTopDelta, dwFontSchemeID, szText, fSpace, fScale])\nShadow.AppendCharacterID：添加一个角色ID，以角色的原点或者头顶代表一个绘制点;当功能类型为GEOMETRY_TYPE.TEXT时，代表在绘制点绘制一段文字\n返回值：无\n参数：\ndwCharacterID  角色ID\nbCharacterTop  是否取角色的头顶作为绘制点\nr,g,b,a      颜色\nfTopDelta    传的是数值表示场景坐标高度的调整值，比如根据角色id 取到头顶坐标后 加上这个值后 再转成屏幕坐标；传的是表，则为{scenex, sceney, scenez, screenx, screeny} ,场景坐标加上这个  scenex, sceney, scenez 再转成屏幕坐标,最后屏幕坐标加上 screenx ,screeny 作为最终坐标\ndwFontSchemeID 字体id;功能类型是GEOMETRY_TYPE.TEXT 才有用\nszText     绘制的文字;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfSpace     文字间的间隔;功能类型是GEOMETRY_TYPE.TEXT 才有用\nfScale     文字的缩放;功能类型是GEOMETRY_TYPE.TEXT 才有用
-GetRow (uRow)\nTableFile
-(KG_Table.Load 创建的对象).GetRow：获取tab文件的某一行\n返回值：tLine：tab文件中对应行的lua表\n
-Search (nKey0 [,nKey1 [,nKey2]])\nTableFile
-(KG_Table.Load 创建的对象).Search：查询tab中符合条件的行\n返回值：tLine：tab文件中对应行的lua表\n
-GetRowCount (无)\nTableFile
-(KG_Table.Load 创建的对象).GetRowCount：获取tab文件的行数\n返回值：uTotalRow\n
-TableRealse (无)\nTableFile
-(KG_Table.Load 创建的对象).TableRealse：释放TabFile对象\n返回值：无\n
+GetRow (uRow)\nTableFile(KG_Table.Load 创建的对象).GetRow：获取tab文件的某一行\n返回值：tLine：tab文件中对应行的lua表\n
+Search (nKey0 [,nKey1 [,nKey2]])\nTableFile(KG_Table.Load 创建的对象).Search：查询tab中符合条件的行\n返回值：tLine：tab文件中对应行的lua表\n
+GetRowCount (无)\nTableFile(KG_Table.Load 创建的对象).GetRowCount：获取tab文件的行数\n返回值：uTotalRow\n
+TableRealse (无)\nTableFile(KG_Table.Load 创建的对象).TableRealse：释放TabFile对象\n返回值：无\n
 SetFontScheme ()\nText.SetFontScheme(nFontScheme)：设置字体\n返回值：无\n\nWndEdit:SetFontScheme(nFont)：设置字体\n返回值：无\n平时的字体，非选中时的字体
 GetFontScheme ()\nText.GetFontScheme(无)：获取字体\n返回值：nFontScheme\n\nWndEdit:GetFontScheme(无)：返回当前字体\n返回值：nFont\n平时的字体，非选中时的字体
 SetText ()\nText.SetText(szText)：设置文本\n返回值：无\n\nWndEdit:SetText(szText)：设置文本编辑框的文本内容\n返回值：无\n
@@ -772,9 +734,7 @@ IsRichText (无)\nText.IsRichText：判断是否为RichText\n返回值：bRichTe
 GetFontScale (无)\nText.GetFontScale：获取字体缩放度\n返回值：fScale\n
 SetFontScale (fScale)\nText.SetFontScale：设置字体缩放度\n返回值：无\n
 SetFontID (dwFontID)\nText.SetFontID：设置字体ID\n返回值：无\n
-SetFontColor ()\nText.SetFontColor(两种参数形式：
-1.dwColor
-2.nRed, nGreen, nBlue)：设置字体颜色\n返回值：无\n\nWndEdit:SetFontColor(dwRed, dwGreen, dwBlue)：设置字体 颜色\n返回值：无\n
+SetFontColor ()\nText.SetFontColor(两种参数形式：1.dwColor2.nRed, nGreen, nBlue)：设置字体颜色\n返回值：无\n\nWndEdit:SetFontColor(dwRed, dwGreen, dwBlue)：设置字体 颜色\n返回值：无\n
 SetFontBorder (nSize, nRed, nGreen, nBlue)\nText.SetFontBorder：设置字体边框\n返回值：无\n
 SetFontShadow (nSize, nRed, nGreen, nBlue)\nText.SetFontShadow：设置字体阴影\n返回值：无\n
 GetFontID (无)\nText.GetFontID：获取字体ID\n返回值：dwFontID\n
@@ -865,9 +825,7 @@ ScrollPageNext (无)\nWndNewScrollBar.ScrollPageNext：滑动到之后一页\n�
 ScrollHome (无)\nWndNewScrollBar.ScrollHome：滑动到开始处\n返回值：无\n
 ScrollEnd (无)\nWndNewScrollBar.ScrollEnd：滑动到末尾处\n返回值：无\n
 SetDragStep (bDragStep)\nWndNewScrollBar.SetDragStep：设置鼠标拖动步长\n返回值：无\n
-ActivePage (有两种参数形式：
-1.nPageIndex
-2.szWndName)\nWndPageSet.ActivePage：激活指定的页面\n返回值：无\n
+ActivePage (有两种参数形式：1.nPageIndex2.szWndName)\nWndPageSet.ActivePage：激活指定的页面\n返回值：无\n
 GetActivePageIndex (无)\nWndPageSet.GetActivePageIndex：获取当前激活的页面\n返回值：nAcitvePage\n
 GetLastActivePageIndex (无)\nWndPageSet.GetLastActivePageIndex：获取前一个激活页\n返回值：nLastAcitvePage\n
 AddPage (有四种参数形式：1.WndWindow, WndCheckBox[,szNewPageName [,szNewCheckBoxName]]  2.WndWindow, szCheckBox[,szNewPageName [,szNewCheckBoxName]] 3.szPage, WndCheckBox[,szNewPageName [,szNewCheckBoxName]] 4.szPage, szCheckBox[,szNewPageName [,szNewCheckBoxName]])\nWndPageSet.AddPage：添加一个标签页\n返回值：无\n
@@ -889,28 +847,17 @@ IsDisable (无)\nWndWindow.IsDisable：窗口是否失效\n返回值：bDisable\
 SetCursorAbove (无)\nWndWindow.SetCursorAbove：使光标移动到悬浮在此窗口中的位置上\n返回值：无\n
 ToggleVisible (无)\nWndWindow.ToggleVisible：窗口可见时隐藏，否则显示\n返回值：无\n
 BringToTop (无)\nWndWindow.BringToTop：将窗口移动到最上层\n返回值：无\n
-CreateItemHandle (有两种参数形式：
-1.szString
-2.szIniFile, szSection, [szNewName])\nWndWindow.CreateItemHandle：创建挂接的ItemHandle\n返回值：无\n
+CreateItemHandle (有两种参数形式：1.szString2.szIniFile, szSection, [szNewName])\nWndWindow.CreateItemHandle：创建挂接的ItemHandle\n返回值：无\n
 ReleaseItemHandle (无)\nWndWindow.ReleaseItemHandle：释放挂接的ItemHandle\n返回值：无\n
 GetPrev (无)\nWndWindow.GetPrev：获取前一个同级窗口\n返回值：窗口对象\n
 GetNext (无)\nWndWindow.GetNext：获取后一个同级窗口\n返回值：窗口对象\n
 GetFirstChild (无)\nWndWindow.GetFirstChild：获取第一个子窗口\n返回值：窗口对象\n
-CorrectPos (1.无
-2.szAnotherWnd, [nType] 其中nType默认为ALW.CENTER
-3.fX, fY, [nType] 其中nType默认为ALW.CENTER
-4.fLeft, fTop, fRight, fBottom, [nType]其中nType默认为ALW.CENTER)\nWndWindow.CorrectPos：调整窗口位置\n返回值：无\n
+CorrectPos (1.无2.szAnotherWnd, [nType] 其中nType默认为ALW.CENTER3.fX, fY, [nType] 其中nType默认为ALW.CENTER4.fLeft, fTop, fRight, fBottom, [nType]其中nType默认为ALW.CENTER)\nWndWindow.CorrectPos：调整窗口位置\n返回值：无\n
 SetSizeWithAllChild (bEnable)\nWndWindow.SetSizeWithAllChild：设置窗口风格：以子窗口的范围测试的集合作为自己的范围测试的集合\n返回值：无\nbEnable为true时生效，否则失效
 SetMousePenetrable (bEnable)\nWndWindow.SetMousePenetrable：设置窗口风格：鼠标完全穿透，不接收任何消息\n返回值：无\nbEnable为true时生效，否则失效
 SetSelfAlpha (nAlpha)\nWndWindow.SetSelfAlpha：设置窗口透明度，仅包括它自身，不包含其子窗口及控件\n返回值：无\n
-ChangeRelation (有两种参数形式：
-1.Wnd [, bBehind [, bChild]]
-2.szPath [, bBehind [, bChild]])\nWndWindow.ChangeRelation：改变窗口的层级关系\n返回值：无\nbBehind默认为true, bChild默认为false
-SetPoint (有以下四种参数形式
-1.fX,fY
-2.szSide, fX, fY, szRelSize, fRelOffsetX,fRelOffSetY
-3.szSide, fX, fY, Wnd, szRelSize, fRelOffsetX,fRelOffSetY
-4.szSide, fX, fY,szRelTreePath ,szRelSize, fRelOffsetX,fRelOffSetY)\nWndWindow.SetPoint：设置窗口左上角位置\n返回值：无\n
+ChangeRelation (有两种参数形式：1.Wnd [, bBehind [, bChild]]2.szPath [, bBehind [, bChild]])\nWndWindow.ChangeRelation：改变窗口的层级关系\n返回值：无\nbBehind默认为true, bChild默认为false
+SetPoint (有以下四种参数形式1.fX,fY2.szSide, fX, fY, szRelSize, fRelOffsetX,fRelOffSetY3.szSide, fX, fY, Wnd, szRelSize, fRelOffsetX,fRelOffSetY4.szSide, fX, fY,szRelTreePath ,szRelSize, fRelOffsetX,fRelOffSetY)\nWndWindow.SetPoint：设置窗口左上角位置\n返回值：无\n
 Destroy (无)\nWndWindow.Destroy：摧毁窗口\n返回值：无\n
 
 
@@ -2569,40 +2516,6 @@ UserSelect.SatisfySelectCharacter
 Wnd.ToggleWindow
 Wnd.OpenWindow
 Wnd.CloseWindow
-CraftReadComparePanel.UpdateList
-CraftReadComparePanel.OnSetFocus
-CraftReadComparePanel.OnItemMouseLeave
-CraftReadComparePanel.OnLButtonDown
-CraftReadComparePanel.OnItemMouseEnter
-CraftReadComparePanel.UpdateBgStatus
-CraftReadComparePanel.ChangeCheckBox
-CraftReadComparePanel.OnFrameBreathe
-CraftReadComparePanel.UpdateFilterValue
-CraftReadComparePanel.UpdateCondition
-CraftReadComparePanel.OnScrollBarPosChanged
-CraftReadComparePanel.OnFrameCreate
-CraftReadComparePanel.nSortID
-CraftReadComparePanel.nPlayerID
-CraftReadComparePanel.OnItemLButtonDown
-CraftReadComparePanel.UpdateExperience
-CraftReadComparePanel.Selected
-CraftReadComparePanel.OnLButtonHold
-CraftReadComparePanel.bIsSearch
-CraftReadComparePanel.bCoolDown
-CraftReadComparePanel.OnKillFocus
-CraftReadComparePanel.tSelectBook
-CraftReadComparePanel.OnEditChanged
-CraftReadComparePanel.OnSearch
-CraftReadComparePanel.OnLButtonClick
-CraftReadComparePanel.OnEvent
-CraftReadComparePanel.tExpand
-CraftReadComparePanel.OnItemMouseWheel
-CraftReadComparePanel.OnUpdateScorllList
-CraftReadComparePanel.PopupMenu
-CraftReadComparePanel.tFilter
-CraftReadComparePanel.OnCheckBoxCheck
-CraftReadComparePanel.Init
-CraftReadComparePanel.GetFilterValue
 MainMessageLine.getFPSFont
 MainMessageLine.ProcessVersion0
 MainMessageLine.MMpkDownloadTip
@@ -2961,3 +2874,37 @@ CraftReadManagePanel.tFilter
 CraftReadManagePanel.OnCheckBoxCheck
 CraftReadManagePanel.RequireItems
 CraftReadManagePanel.tExpand
+CraftReadComparePanel.UpdateList
+CraftReadComparePanel.OnSetFocus
+CraftReadComparePanel.OnItemMouseLeave
+CraftReadComparePanel.OnLButtonDown
+CraftReadComparePanel.OnItemMouseEnter
+CraftReadComparePanel.UpdateBgStatus
+CraftReadComparePanel.ChangeCheckBox
+CraftReadComparePanel.OnFrameBreathe
+CraftReadComparePanel.UpdateFilterValue
+CraftReadComparePanel.UpdateCondition
+CraftReadComparePanel.OnScrollBarPosChanged
+CraftReadComparePanel.OnFrameCreate
+CraftReadComparePanel.nSortID
+CraftReadComparePanel.nPlayerID
+CraftReadComparePanel.OnItemLButtonDown
+CraftReadComparePanel.UpdateExperience
+CraftReadComparePanel.Selected
+CraftReadComparePanel.OnLButtonHold
+CraftReadComparePanel.bIsSearch
+CraftReadComparePanel.bCoolDown
+CraftReadComparePanel.OnKillFocus
+CraftReadComparePanel.tSelectBook
+CraftReadComparePanel.OnEditChanged
+CraftReadComparePanel.OnSearch
+CraftReadComparePanel.OnLButtonClick
+CraftReadComparePanel.OnEvent
+CraftReadComparePanel.tExpand
+CraftReadComparePanel.OnItemMouseWheel
+CraftReadComparePanel.OnUpdateScorllList
+CraftReadComparePanel.PopupMenu
+CraftReadComparePanel.tFilter
+CraftReadComparePanel.OnCheckBoxCheck
+CraftReadComparePanel.Init
+CraftReadComparePanel.GetFilterValue
