@@ -404,20 +404,20 @@ GetLootMoney (无)\nKDoodad.GetLootMoney：获取拾取列表中的金钱数目\
 GetLooterList (无)\nKDoodad.GetLooterList：获取拾取者名单\n返回值：包含拾取者信息的table\n这个table是下标从1开始的数组，数组的每一项又是一个table，包含队伍每个成员的信息： 1) szName: 队员名字。 2) dwID: 队员id 3) bOnLineFlag: 如果队员在线，且可以参与拾取该物品，则为true；否则为false 例如有2个队伍成员，都在线，但只有甲可以拾取，那么结果为， {[1]={szName="甲", dwID=ID_1, bOnLineFlag=true}, [2]={szName="乙", dwID=ID2, bOnLineFlag=false}}
 CanSit (无)\nKDoodad.CanSit：能否坐下\n返回值：如果可以坐下，返回true；否则返回false\n
 GetRecipeID (无)\nKDoodad.GetRecipeID：获取配方ID\n返回值：如果函数执行成功，返回配方ID；否则返回0\n
+GetMagicAttrib (无)\nKItem.GetMagicAttrib：获取物品的魔法属性\n返回值：返回一个包含物品魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1,nValue2\n
 IsRepairable (无)\nKItem.IsRepairable：判断道具是否可以修理\n返回值：如果道具可修理，那么返回true；否则返回false 当道具大类属于装备，不可叠放，且当前耐久小于最大耐久时，会认为该道具可以修理。\n
 GetRequireAttrib ()\nKItem.GetRequireAttrib(无)：获取物品的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue1, nValue2\n\nKIteminfo.GetRequireAttrib(无)：获取装备的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue\n
-GetLeftExistTime (无)\nKItem.GetLeftExistTime：临时道具获取存在的剩余时间\n返回值：nLeftTime\n
-GetMagicAttrib (无)\nKItem.GetMagicAttrib：获取物品的魔法属性\n返回值：返回一个包含物品魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1,nValue2\n
 GetMountIndex (无)\nKItem.GetMountIndex：获取物品应该装备到目标物品的位置\n返回值：获取成功，则返回true;否则为false\n如马具安装到马的位置
 GetBaseAttrib ()\nKItem.GetBaseAttrib(无)：获取物品基本属性\n返回值：返回一个包含物品基本属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n\nKIteminfo.GetBaseAttrib(无)：获取装备基本属性\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nMin, nMax\n
-GetMagicAttribByStrengthLevel (nStrengthLevel)\nKItem.GetMagicAttribByStrengthLevel：获取因装备强化附加的魔法属性\n返回值：返回一个魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n
-GetSlotCount (无)\nKItem.GetSlotCount：获取装备道具上五行石的孔的数量\n返回值：nSlotCount\n不算五彩石的孔
-GetMountDiamondEnchantID (nSlotIndex)\nKItem.GetMountDiamondEnchantID：获取装备孔上的五行石对应的附魔ID\n返回值：dwEnchantID\n
 IsDiamondSlotAttributeActive (nSlotIndex)\nKItem.IsDiamondSlotAttributeActive：判断某个孔上的五行石是否被激活\n返回值：激活则返回true;否则为false\n
 GetSlotAttrib (nSlotIndex, nDiamondLevel)\nKItem.GetSlotAttrib：获取五行石镶嵌孔的属性\n返回值：返回一个表，结构如下：{"nID", "nMask", "Param0", "Param1"},其中"nMask"对应激活孔属性的五行石类型的掩码，"Param0", "Param1"对应属性的nValue1,nValue2\n
 CanMountColorDiamond (无)\nKItem.CanMountColorDiamond：判断Item能否装备五彩石\n返回值：若可以装备，返回true;否则为false\n只有武器才有五彩石镶嵌和五行激活
 GetMountFEAEnchantID (无)\nKItem.GetMountFEAEnchantID：获取武器上的五行激活附魔ID\n返回值：dwEnchantID\n
 GetTemporaryEnchantLeftSeconds (无)\nKItem.GetTemporaryEnchantLeftSeconds：获取临时附魔的剩余时间\n返回值：nLeftSecond\n
+GetLeftExistTime (无)\nKItem.GetLeftExistTime：临时道具获取存在的剩余时间\n返回值：nLeftTime\n
+GetMagicAttribByStrengthLevel (nStrengthLevel)\nKItem.GetMagicAttribByStrengthLevel：获取因装备强化附加的魔法属性\n返回值：返回一个魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n
+GetMountDiamondEnchantID (nSlotIndex)\nKItem.GetMountDiamondEnchantID：获取装备孔上的五行石对应的附魔ID\n返回值：dwEnchantID\n
+GetSlotCount (无)\nKItem.GetSlotCount：获取装备道具上五行石的孔的数量\n返回值：nSlotCount\n不算五彩石的孔
 GetMagicAttribIndexList (无)\nKIteminfo.GetMagicAttribIndexList：获取装备魔法属性ID表\n返回值：返回一个表，表的结构如下：{[1] = XX, ..[n] = XX}(n<=12)\n
 GetCoolDown (无)\nKIteminfo.GetCoolDown：获取装备CD时间\n返回值：返回值为装备CD时间\n
 GetMailInfo (dwMailID)\nKMailClient.GetMailInfo：返回指定邮件对象\n返回值：返回一个KMailInfo对象，若无，则返回为Nil\n
@@ -517,7 +517,7 @@ GetMountsEquipScore (无)\nKPlayer.GetMountsEquipScore：获取装备镶嵌分�
 SetFellowshipRemark (dwAlliedPlayerID, szRemark)\nKPlayer.SetFellowshipRemark：设置联系人备注\n返回值：如果函数执行成功，返回true；否则返回false\n
 GetCDLeft (dwCooldownID)\nKPlayer.GetCDLeft：获取剩余CD时间，单位帧\n返回值：nLeftCooldown\n
 GetHortation (无)\nKQuestInfo.GetHortation：获取任务完成后能够得到的结果\n返回值：如果做完任务能够有一些结果，例如获得奖励，影响声望，那么会返回一个table，它可能包含以下内容：{"money", "skill", "prestige", "contribution", "presenttrain", "tongdevelopmentpoint","tongfund", "presentjustice","presentexamprint","reputation" ={{"force", "value"},...} }。\n
-TimeLimitationBindItemGetLeftTime (dwItemID)\nKScene.TimeLimitationBindItemGetLeftTime：返回限时绑定道具的剩余时间\n返回值：nLeftTime\n
+TimeLimitationBindItemGetLeftTime ()\nKScene.TimeLimitationBindItemGetLeftTime：未处理\n返回值：\n
 ChangeMemberGroup ()\nKTeamClient.ChangeMemberGroup(dwTargetMemberID,nTargetGroup)：更改帮会成员玩家的分组\n返回值：无\n\nKTongClient.ChangeMemberGroup(dwMemberID, nDstGroup, [dwDstMemberID])：将队员从一个分组调整到另一个分组\n返回值：无\n
 SetTeamFormationLeader (dwNewFormationLeader, [nGroupIndex])\nKTeamClient.SetTeamFormationLeader：移交阵眼\n返回值：无\nnGroupIndex默认为零，不得大于等于5
 TeamNotifySignpost (nX, nY)\nKTeamClient.TeamNotifySignpost：向队友发送小地图上的标记\n返回值：无\n
@@ -2095,52 +2095,155 @@ KDoodadTemplate.bCanOperateEach
 #$KItem=GetItem%s*%b()
 #$KItem=[%w_]+%.GetItem%s*%b()
 #$KItem=GetPlayerItem%s*%b()
-KItem.IsRepairable
-KItem.GetRequireAttrib
-KItem.GetLeftExistTime
-KItem.GetMagicAttrib
-KItem.GetMountIndex
-KItem.GetBaseAttrib
-KItem.GetMagicAttribByStrengthLevel
-KItem.GetSlotCount
-KItem.GetMountDiamondEnchantID
-KItem.IsDiamondSlotAttributeActive
-KItem.GetSlotAttrib
-KItem.CanMountColorDiamond
-KItem.GetMountFEAEnchantID
-KItem.GetTemporaryEnchantLeftSeconds
-KItem.dwID
-KItem.szName
-KItem.nLevel
-KItem.nGenre
-KItem.nSub
-KItem.nDetail
-KItem.nBindType
+KItem.bSpecialRepair
+KItem.GetHorseMagicAttribByFullLevel
+KItem.GetChangeCof
+KItem.nGenTime
 KItem.bCanTrade
-KItem.bCanDestroy
-KItem.dwTabType
-KItem.dwIndex
-KItem.nQuality
-KItem.nCurrentDurability
-KItem.nStackNum
-KItem.nMaxStackNum
-KItem.nMaxDurability
-KItem.nBookID
-KItem.bBind
-KItem.bCanStack
 KItem.bCanConsume
-KItem.nVersion
-KItem.nMaxExistAmount
-KItem.nMaxExistTime
+KItem.nStrengthLevel
+KItem.nDomesticateFullMeasure
+KItem.dwIndex
+KItem.nBindType
+KItem.bCanChangeMagic
+KItem.szName
+KItem.GetPermanentEnchantAttrib
+KItem.dwTabType
+KItem.nDetail
+KItem.IsRepairable
+KItem.dwID
+KItem.nBookID
+KItem.bCanStack
+KItem.nAucGenre
+KItem.GetChangeAttribByStrengthLevel
+KItem.nBaseScore
+KItem.nMaxStackNum
+KItem.GetMountAttrib
+KItem.dwPermanentEnchantID
+KItem.GetMountIndex
+KItem.GetRequireLevel
+KItem.GetUseSkill
+KItem.GetMountEnchantID
+KItem.nGenre
+KItem.GetSlotAttrib
+KItem.dwSkillLevel
+KItem.GetHorseBaseAttribByFullLevel
 KItem.nUiId
+KItem.CanMountColorDiamond
+KItem.CanEquip
+KItem.nStackNum
+KItem.GetHorseMaxFullMeasure
+KItem.nEquipScore
+KItem.GetHorseFullLevel
+KItem.CheckIgnoreBindMask
+KItem.bBind
+KItem.IsDestroyOnMount
+KItem.nLevel
+KItem.GetSlotCount
 KItem.dwSetID
+KItem.dwTemporaryEnchantID
+KItem.nFullMeasure
+KItem.nStrengthScore
+KItem.GetLeftExistTime
+KItem.GetMagicAttribByStrengthLevel
+KItem.dwEnchantID
+KItem.CanAbrade
+KItem.nRepresentID
+KItem.GetRequireAttrib
+KItem.GetMountDiamondEnchantID
+KItem.bCanDestroy
+KItem.GetMagicAttribOutOfMagicChange
+KItem.nDomesticateGrowthLevel
+KItem.nCurrentDurability
+KItem.GetTemporaryEnchantLeftSeconds
+KItem.NeedRepair
+KItem.dwSkillID
+KItem.IsScoreEquip
+KItem.nPrice
+KItem.nMaxDurability
+KItem.GetSetAttrib
+KItem.nAucSub
+KItem.nMaxExistAmount
+KItem.HasScript
+KItem.nSub
+KItem.nVersion
+KItem.nQuality
+KItem.GetChangeAttrib
+KItem.GetChangeInfo
+KItem.GetMagicAttrib
+KItem.GetMountFEAEnchantID
+KItem.nColorID
+KItem.GetBaseAttrib
+KItem.GetMountItemUIID
+KItem.nMountsScore
+KItem.IsDiamondSlotAttributeActive
+KItem.GetTemporaryEnchantAttrib
 
 
 #$KIteminfo=GetItemInfo%s*%b()
-KIteminfo.GetRequireAttrib
-KIteminfo.GetBaseAttrib
+KIteminfo.nAbradeRate
+KIteminfo.GetEnchantRepresentID
+KIteminfo.nUiId
+KIteminfo.nPostfix
+KIteminfo.IsMentorBind
+KIteminfo.dwBoxTemplateID
+KIteminfo.nPackageGenerType
 KIteminfo.GetMagicAttribIndexList
+KIteminfo.nRecommendID
+KIteminfo.dwRequireForceID
+KIteminfo.bCanTrade
+KIteminfo.dwSkillLevel
+KIteminfo.bCanUseInFight
+KIteminfo.nRequireProfessionLevel
+KIteminfo.nMaxDurability
+KIteminfo.IsTongBind
+KIteminfo.nRequireGender
+KIteminfo.nRequireLevel
+KIteminfo.nGenre
+KIteminfo.bCanStack
+KIteminfo.dwScriptID
+KIteminfo.bCanConsume
+KIteminfo.nAucGenre
+KIteminfo.nLevel
+KIteminfo.GetSlotCount
+KIteminfo.nBindType
+KIteminfo.bCanEvilCampUse
+KIteminfo.szName
+KIteminfo.GetSetAttrib
+KIteminfo.dwRequireProfessionID
+KIteminfo.GetMagicAttrib
+KIteminfo.dwEnchantID
+KIteminfo.nPrefix
+KIteminfo.nRepresentID
+KIteminfo.nMaxExistTime
+KIteminfo.bCanSetColor
+KIteminfo.nDetail
+KIteminfo.dwCoolDownID
+KIteminfo.nPackageSubType
+KIteminfo.nCanExteriorSchool
+KIteminfo.nMaxStrengthLevel
+KIteminfo.nColorID
+KIteminfo.dwSkillID
+KIteminfo.dwID
+KIteminfo.GetRequireAttrib
+KIteminfo.dwEquipCoolDownID
+KIteminfo.GetBaseAttrib
+KIteminfo.nAucSub
+KIteminfo.nMaxExistAmount
+KIteminfo.IsDungeonBind
+KIteminfo.nSub
+KIteminfo.bCanNeutralCampUse
+KIteminfo.nQuality
+KIteminfo.nBaseScore
+KIteminfo.nExistType
 KIteminfo.GetCoolDown
+KIteminfo.bCanDestroy
+KIteminfo.nSetID
+KIteminfo.bCanGoodCampUse
+KIteminfo.bCanUseOnHorse
+KIteminfo.nPrice
+KIteminfo.dwRequireProfessionBranch
+KIteminfo.GetSlotAttrib
 
 
 #$KMailClient=GetMailClient%s*%b()
