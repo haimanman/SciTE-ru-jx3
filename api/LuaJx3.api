@@ -2094,6 +2094,7 @@ KMailInfo.nAllItemPrice
 
 
 #$KNpc=GetNpc%s*%b()
+#$KNpc=[%w_]+%.GetPet%s*%b()
 KNpc.GetScene
 KNpc.GetBuffList
 KNpc.GetTarget
