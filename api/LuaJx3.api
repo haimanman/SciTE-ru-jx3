@@ -431,13 +431,14 @@ GetText ()\nKMailInfo.GetText(无)：获取邮件正文文字内容\n返回值�
 TakeMoney (无)\nKMailInfo.TakeMoney：取走邮件中的金钱\n返回值：无\n
 GetLeftTime (无)\nKMailInfo.GetLeftTime：返回邮件剩余时间\n返回值：nSendTime\n
 Read (无)\nKMailInfo.Read：阅读邮件\n返回值：无\n
-GetBuffList ()\nKNpc.GetBuffList(无)：获取Buff列表\n返回值：如果函数执行成功，返回1个table，包含： dwID: BuffID nLevel: Buff等级 bCanCancel: 是否能取消 nEndFrame: Buff结束时间 nIndex: buff索引 nStackNum: buff叠加数 dwSkillSrcID: buff所属技能ID\n\nKPlayer.GetBuffList(无)：获取Buff列表\n返回值：如果函数执行成功，返回1个table，包含： dwID: BuffID nLevel: Buff等级 bCanCancel: 是否能取消 nEndFrame: Buff结束时间 nIndex: buff索引 nStackNum: buff叠加数 dwSkillSrcID: buff所属技能ID\n
 GetTarget ()\nKNpc.GetTarget(无)：获取当前选定的目标\n返回值：该函数返回2个值：eTargetType, dwTargetID,eTargetType是[[TARGET]]，表明选定目标的类型 dwTargetID是目标的id\neTargetType的取值为以下值：TARGET.NOT_TARGET, TARGET.COORDINATION,TARGET.NPC, TARGET.DOODAD, TARGET.PLAYER,TARGET.ITEM,TARGET.ITEM_POS\nKPlayer.GetTarget(无)：获取当前选定的目标\n返回值：该函数返回2个值：eTargetType, dwTargetID,eTargetType是[[TARGET]]，表明选定目标的类型 dwTargetID是目标的id\neTargetType的取值为以下值：TARGET.NOT_TARGET, TARGET.COORDINATION,TARGET.NPC, TARGET.DOODAD, TARGET.PLAYER,TARGET.ITEM,TARGET.ITEM_POS
 GetSkillPrepareState ()\nKNpc.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n\nKPlayer.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n
 GetMapID ()\nKNpc.GetMapID(无)：获取角色所在地图的id\n返回值：dwMapID\n\nKPlayer.GetMapID(无)：获取角色所在地图的id\n返回值：dwMapID\n
 CanSeeName (无)\nKNpc.CanSeeName：判断能否被看见名字\n返回值：如果可以对话，返回true；否则返回false\n
 CanSeeLifeBar (无)\nKNpc.CanSeeLifeBar：判断能否被看见血条\n返回值：如果可以对话，返回true；否则返回false\n
 GetNpcQuest (无)\nKNpc.GetNpcQuest：取得npc的所有任务\n返回值：返回npc的所有任务ID\n
+GetBuffCount ()\nKNpc.GetBuffCount(无)：获取buff的个数\n返回值：buff个数\n\nKPlayer.GetBuffCount(无)：获取buff的个数\n返回值：buff个数\n
+GetBuff ()\nKNpc.GetBuff(nIndex)：获取第几个buff\n返回值：dwID, nLevel, bCanCancel, nEndFrame, nIndex, nStackNum, dwSkillSrcID, bValid\n获取索引从 0 开始，返回的 dwID 如果是 nil 代表该索引下的 buff  已经失效\nKPlayer.GetBuff(nIndex)：获取第几个buff\n返回值：dwID, nLevel, bCanCancel, nEndFrame, nIndex, nStackNum, dwSkillSrcID, bValid\n获取索引从 0 开始，返回的 dwID 如果是 nil 代表该索引下的 buff  已经失效
 CancelBuff (nIndex)\nKPlayer.CancelBuff：取消buff\n返回值：如果成功，返回true，否则返回false\n
 GetPet (无)\nKPlayer.GetPet：获取当前角色的宠物\n返回值：返回宠物NPC对象；若无，返回nil\n
 GetItemAmountInAllPackages (dwTabType, dwIndex)\nKPlayer.GetItemAmountInAllPackages：获取角色所有背包某种道具的数量\n返回值：返回角色所有背包某种道具的数量\n
@@ -2364,7 +2365,8 @@ KNpc.nDodge
 KNpc.nNoneWeaponAttackSpeedBase
 KNpc.dwGuardForceID
 KNpc.nSense
-KNpc.GetBuffList
+KNpc.GetBuffCount
+KNpc.GetBuff
 KNpc.nPoisonMagicReflectionPercent
 KNpc.nStrain
 KNpc.nPoisonHitValue
@@ -2678,7 +2680,8 @@ KPlayer.nBeatBackRate
 KPlayer.GetSkillRecipeKey
 KPlayer.SwimTo
 KPlayer.GetQuestIndex
-KPlayer.GetBuffList
+KPlayer.GetBuffCount
+KPlayer.GetBuff
 KPlayer.GetAcquiredDesignationPostfix
 KPlayer.dwFellowPetID
 KPlayer.nPoisonHitValue
@@ -3078,7 +3081,6 @@ KPlayer.GetMapVisitFlag
 KPlayer.Stealth
 KPlayer.GetDisarm
 KPlayer.nPoisonCriticalDamagePower
-KPlayer.GetBuff
 KPlayer.SetDisarm
 KPlayer.TradingInviteRequest
 KPlayer.GetKillNpcCount
