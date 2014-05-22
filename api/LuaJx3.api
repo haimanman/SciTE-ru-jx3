@@ -395,31 +395,31 @@ ctor ()\nKClass.ctor：定义构造函数\n返回值：无\n
 new ()\nKClass.new：创建实例\n返回值：新实例\n
 DistributeItem (dwItemID, dwDstPlayerID)\nKDoodad.DistributeItem：分配物品\n返回值：无\n
 CanLoot (dwPlayerID)\nKDoodad.CanLoot：判断能否被拾取\n返回值：bCanLoot\n如果指定玩家能够参与该doodad的拾取，那么返回true；否则返回false
-CanDialog ()\nKDoodad.CanDialog(player)：判断能够与目标player对话\n返回值：如果可以对话，返回true；否则返回false\n\nKNpc.CanDialog(player)：判断能够与目标player对话\n返回值：如果可以对话，返回true；否则返回false\n\nKPlayer.CanDialog(player)：判断能够与目标player对话\n返回值：如果可以对话，返回true；否则返回false\n
+CanDialog ()\nKDoodad.CanDialog()：未处理\n返回值：\n\nKNpc.CanDialog()：未处理\n返回值：\n\nKPlayer.CanDialog()：未处理\n返回值：\n
 HaveQuest (dwPlayerID)\nKDoodad.HaveQuest：判断是否包含有任务\n返回值：如果doodad上有指定玩家可以领取的任务，那么返回true；否则返回false\n
-GetAbsoluteCoordinate ()\nKDoodad.GetAbsoluteCoordinate(无)：获取当前的绝对坐标\n返回值：返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所代表的长度不同。\n\nKNpc.GetAbsoluteCoordinate(无)：获取当前的绝对坐标\n返回值：返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所代表的长度不同。\n\nKPlayer.GetAbsoluteCoordinate(无)：获取当前的绝对坐标\n返回值：返回3个值(nX, nY, nZ)，分别代表X坐标、Y坐标和Z坐标。单位都是点。注意：水平方向上的“点”和垂直方向上的“点”是不一样的，它们所代表的长度不同。\n
-IsSelectable ()\nKDoodad.IsSelectable(无)：判断能否被选中\n返回值：如果该Doodad能够被选中，返回true，否则返回false\n\nKNpc.IsSelectable(无)：判断能否被选中\n返回值：如果该npc能够被选中，返回true，否则返回false\n
+GetAbsoluteCoordinate ()\nKDoodad.GetAbsoluteCoordinate()：未处理\n返回值：\n\nKNpc.GetAbsoluteCoordinate()：未处理\n返回值：\n\nKPlayer.GetAbsoluteCoordinate()：未处理\n返回值：\n
+IsSelectable ()\nKDoodad.IsSelectable()：未处理\n返回值：\n\nKNpc.IsSelectable()：未处理\n返回值：\n
 GetLootItem (dwLootIndex, KObjData)\nKDoodad.GetLootItem：获取拾取列表中的指定物品\n返回值：Item, bNeedRoll，bLeader\n1)Item对象\n2)bNeedRoll 是否需要Roll点\n3)bLeader: 如果分配模式为队长分配，且物品的品质高于分配线，那么为true，否则为false
 GetLootMoney (无)\nKDoodad.GetLootMoney：获取拾取列表中的金钱数目\n返回值：nMoney\n
 GetLooterList (无)\nKDoodad.GetLooterList：获取拾取者名单\n返回值：包含拾取者信息的table\n这个table是下标从1开始的数组，数组的每一项又是一个table，包含队伍每个成员的信息： 1) szName: 队员名字。 2) dwID: 队员id 3) bOnLineFlag: 如果队员在线，且可以参与拾取该物品，则为true；否则为false 例如有2个队伍成员，都在线，但只有甲可以拾取，那么结果为， {[1]={szName="甲", dwID=ID_1, bOnLineFlag=true}, [2]={szName="乙", dwID=ID2, bOnLineFlag=false}}
 CanSit (无)\nKDoodad.CanSit：能否坐下\n返回值：如果可以坐下，返回true；否则返回false\n
 GetRecipeID (无)\nKDoodad.GetRecipeID：获取配方ID\n返回值：如果函数执行成功，返回配方ID；否则返回0\n
-GetMagicAttrib (无)\nKItem.GetMagicAttrib：获取物品的魔法属性\n返回值：返回一个包含物品魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1,nValue2\n
-IsRepairable (无)\nKItem.IsRepairable：判断道具是否可以修理\n返回值：如果道具可修理，那么返回true；否则返回false 当道具大类属于装备，不可叠放，且当前耐久小于最大耐久时，会认为该道具可以修理。\n
-GetRequireAttrib ()\nKItem.GetRequireAttrib(无)：获取物品的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue1, nValue2\n\nKIteminfo.GetRequireAttrib(无)：获取装备的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue\n
-GetMountIndex (无)\nKItem.GetMountIndex：获取物品应该装备到目标物品的位置\n返回值：获取成功，则返回true;否则为false\n如马具安装到马的位置
-GetBaseAttrib ()\nKItem.GetBaseAttrib(无)：获取物品基本属性\n返回值：返回一个包含物品基本属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n\nKIteminfo.GetBaseAttrib(无)：获取装备基本属性\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nMin, nMax\n
-IsDiamondSlotAttributeActive (nSlotIndex)\nKItem.IsDiamondSlotAttributeActive：判断某个孔上的五行石是否被激活\n返回值：激活则返回true;否则为false\n
-GetSlotAttrib (nSlotIndex, nDiamondLevel)\nKItem.GetSlotAttrib：获取五行石镶嵌孔的属性\n返回值：返回一个表，结构如下：{"nID", "nMask", "Param0", "Param1"},其中"nMask"对应激活孔属性的五行石类型的掩码，"Param0", "Param1"对应属性的nValue1,nValue2\n
-CanMountColorDiamond (无)\nKItem.CanMountColorDiamond：判断Item能否装备五彩石\n返回值：若可以装备，返回true;否则为false\n只有武器才有五彩石镶嵌和五行激活
-GetMountFEAEnchantID (无)\nKItem.GetMountFEAEnchantID：获取武器上的五行激活附魔ID\n返回值：dwEnchantID\n
-GetTemporaryEnchantLeftSeconds (无)\nKItem.GetTemporaryEnchantLeftSeconds：获取临时附魔的剩余时间\n返回值：nLeftSecond\n
-GetLeftExistTime (无)\nKItem.GetLeftExistTime：临时道具获取存在的剩余时间\n返回值：nLeftTime\n
-GetMagicAttribByStrengthLevel (nStrengthLevel)\nKItem.GetMagicAttribByStrengthLevel：获取因装备强化附加的魔法属性\n返回值：返回一个魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n
-GetMountDiamondEnchantID (nSlotIndex)\nKItem.GetMountDiamondEnchantID：获取装备孔上的五行石对应的附魔ID\n返回值：dwEnchantID\n
+GetMagicAttrib ()\nKGItem.GetMagicAttrib()：未处理\n返回值：\n\nKItem.GetMagicAttrib(无)：获取物品的魔法属性\n返回值：返回一个包含物品魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1,nValue2\n
+IsRepairable ()\nKGItem.IsRepairable()：未处理\n返回值：\n\nKItem.IsRepairable(无)：判断道具是否可以修理\n返回值：如果道具可修理，那么返回true；否则返回false 当道具大类属于装备，不可叠放，且当前耐久小于最大耐久时，会认为该道具可以修理。\n
+GetRequireAttrib ()\nKGItem.GetRequireAttrib()：未处理\n返回值：\n\nKItem.GetRequireAttrib(无)：获取物品的需求属性表\n返回值：返回值是一个table，每一项又是一个包含以下字段的table：nID, nValue1, nValue2\n\nKIteminfo.GetRequireAttrib()：未处理\n返回值：\n
+GetMountIndex ()\nKGItem.GetMountIndex()：未处理\n返回值：\n\nKItem.GetMountIndex(无)：获取物品应该装备到目标物品的位置\n返回值：获取成功，则返回true;否则为false\n如马具安装到马的位置
+GetBaseAttrib ()\nKGItem.GetBaseAttrib()：未处理\n返回值：\n\nKItem.GetBaseAttrib(无)：获取物品基本属性\n返回值：返回一个包含物品基本属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n\nKIteminfo.GetBaseAttrib()：未处理\n返回值：\n
+IsDiamondSlotAttributeActive ()\nKGItem.IsDiamondSlotAttributeActive()：未处理\n返回值：\n\nKItem.IsDiamondSlotAttributeActive(nSlotIndex)：判断某个孔上的五行石是否被激活\n返回值：激活则返回true;否则为false\n
+GetSlotAttrib ()\nKGItem.GetSlotAttrib()：未处理\n返回值：\n\nKItem.GetSlotAttrib(nSlotIndex, nDiamondLevel)：获取五行石镶嵌孔的属性\n返回值：返回一个表，结构如下：{"nID", "nMask", "Param0", "Param1"},其中"nMask"对应激活孔属性的五行石类型的掩码，"Param0", "Param1"对应属性的nValue1,nValue2\n
+CanMountColorDiamond ()\nKGItem.CanMountColorDiamond()：未处理\n返回值：\n\nKItem.CanMountColorDiamond(无)：判断Item能否装备五彩石\n返回值：若可以装备，返回true;否则为false\n只有武器才有五彩石镶嵌和五行激活
+GetMountFEAEnchantID ()\nKGItem.GetMountFEAEnchantID()：未处理\n返回值：\n\nKItem.GetMountFEAEnchantID(无)：获取武器上的五行激活附魔ID\n返回值：dwEnchantID\n
+GetTemporaryEnchantLeftSeconds ()\nKGItem.GetTemporaryEnchantLeftSeconds()：未处理\n返回值：\n\nKItem.GetTemporaryEnchantLeftSeconds(无)：获取临时附魔的剩余时间\n返回值：nLeftSecond\n
+GetLeftExistTime ()\nKGItem.GetLeftExistTime()：未处理\n返回值：\n\nKItem.GetLeftExistTime(无)：临时道具获取存在的剩余时间\n返回值：nLeftTime\n
+GetMagicAttribByStrengthLevel ()\nKGItem.GetMagicAttribByStrengthLevel()：未处理\n返回值：\n\nKItem.GetMagicAttribByStrengthLevel(nStrengthLevel)：获取因装备强化附加的魔法属性\n返回值：返回一个魔法属性的table，每一项又是一个包含以下字段的table：nID,nValue1, nValue2\n
+GetMountDiamondEnchantID ()\nKGItem.GetMountDiamondEnchantID()：未处理\n返回值：\n\nKItem.GetMountDiamondEnchantID(nSlotIndex)：获取装备孔上的五行石对应的附魔ID\n返回值：dwEnchantID\n
 GetSlotCount (无)\nKItem.GetSlotCount：获取装备道具上五行石的孔的数量\n返回值：nSlotCount\n不算五彩石的孔
-GetMagicAttribIndexList (无)\nKIteminfo.GetMagicAttribIndexList：获取装备魔法属性ID表\n返回值：返回一个表，表的结构如下：{[1] = XX, ..[n] = XX}(n<=12)\n
-GetCoolDown (无)\nKIteminfo.GetCoolDown：获取装备CD时间\n返回值：返回值为装备CD时间\n
+GetMagicAttribIndexList ()\nKIteminfo.GetMagicAttribIndexList：未处理\n返回值：\n
+GetCoolDown ()\nKIteminfo.GetCoolDown：未处理\n返回值：\n
 GetMailInfo (dwMailID)\nKMailClient.GetMailInfo：返回指定邮件对象\n返回值：返回一个KMailInfo对象，若无，则返回为Nil\n
 GetMailList (无)\nKMailClient.GetMailList：获取邮件列表\n返回值：返回一个下标从1开始的table，每一项包含以下内容: MailID:  邮件Id SenderName: 发送者名字 Title:  主题 LeftSeconds: 邮件剩余时间 UnReadFlag: 是否已读 MoneyFlag: 是否有金钱 TextFlag: 是否有正文 ItemFlag: 是否有附件 SystemFlag: 是否是系统邮件\n
 DeleteMail (dwMailID)\nKMailClient.DeleteMail：删除邮件\n返回值：无\n
@@ -431,92 +431,92 @@ GetText ()\nKMailInfo.GetText(无)：获取邮件正文文字内容\n返回值�
 TakeMoney (无)\nKMailInfo.TakeMoney：取走邮件中的金钱\n返回值：无\n
 GetLeftTime (无)\nKMailInfo.GetLeftTime：返回邮件剩余时间\n返回值：nSendTime\n
 Read (无)\nKMailInfo.Read：阅读邮件\n返回值：无\n
-GetTarget ()\nKNpc.GetTarget(无)：获取当前选定的目标\n返回值：该函数返回2个值：eTargetType, dwTargetID,eTargetType是[[TARGET]]，表明选定目标的类型 dwTargetID是目标的id\neTargetType的取值为以下值：TARGET.NOT_TARGET, TARGET.COORDINATION,TARGET.NPC, TARGET.DOODAD, TARGET.PLAYER,TARGET.ITEM,TARGET.ITEM_POS\nKPlayer.GetTarget(无)：获取当前选定的目标\n返回值：该函数返回2个值：eTargetType, dwTargetID,eTargetType是[[TARGET]]，表明选定目标的类型 dwTargetID是目标的id\neTargetType的取值为以下值：TARGET.NOT_TARGET, TARGET.COORDINATION,TARGET.NPC, TARGET.DOODAD, TARGET.PLAYER,TARGET.ITEM,TARGET.ITEM_POS
-GetSkillPrepareState ()\nKNpc.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n\nKPlayer.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n
-GetMapID ()\nKNpc.GetMapID(无)：获取角色所在地图的id\n返回值：dwMapID\n\nKPlayer.GetMapID(无)：获取角色所在地图的id\n返回值：dwMapID\n
-CanSeeName (无)\nKNpc.CanSeeName：判断能否被看见名字\n返回值：如果可以对话，返回true；否则返回false\n
-CanSeeLifeBar (无)\nKNpc.CanSeeLifeBar：判断能否被看见血条\n返回值：如果可以对话，返回true；否则返回false\n
-GetNpcQuest (无)\nKNpc.GetNpcQuest：取得npc的所有任务\n返回值：返回npc的所有任务ID\n
-GetBuffCount ()\nKNpc.GetBuffCount(无)：获取buff的个数\n返回值：buff个数\n\nKPlayer.GetBuffCount(无)：获取buff的个数\n返回值：buff个数\n
-GetBuff ()\nKNpc.GetBuff(nIndex)：获取第几个buff\n返回值：dwID, nLevel, bCanCancel, nEndFrame, nIndex, nStackNum, dwSkillSrcID, bValid\n获取索引从 0 开始，返回的 dwID 如果是 nil 代表该索引下的 buff  已经失效\nKPlayer.GetBuff(nIndex)：获取第几个buff\n返回值：dwID, nLevel, bCanCancel, nEndFrame, nIndex, nStackNum, dwSkillSrcID, bValid\n获取索引从 0 开始，返回的 dwID 如果是 nil 代表该索引下的 buff  已经失效
-CancelBuff (nIndex)\nKPlayer.CancelBuff：取消buff\n返回值：如果成功，返回true，否则返回false\n
+GetTarget ()\nKNpc.GetTarget()：未处理\n返回值：\n\nKPlayer.GetTarget()：未处理\n返回值：\n
+GetSkillPrepareState ()\nKNpc.GetSkillPrepareState()：未处理\n返回值：\n\nKPlayer.GetSkillPrepareState(无)：获取技能准备状态\n返回值：函数返回4个参数 参数1 bIsPrepare 技能是否在准备 参数2 dwSkillID 技能ID 参数3 dwSkillLevel 技能等级 参数4 fProgress 技能准备进度\n
+GetMapID ()\nKNpc.GetMapID()：未处理\n返回值：\n\nKPlayer.GetMapID()：未处理\n返回值：\n
+CanSeeName ()\nKNpc.CanSeeName：未处理\n返回值：\n
+CanSeeLifeBar ()\nKNpc.CanSeeLifeBar：未处理\n返回值：\n
+GetNpcQuest ()\nKNpc.GetNpcQuest：未处理\n返回值：\n
+GetBuffCount ()\nKNpc.GetBuffCount()：未处理\n返回值：\n\nKPlayer.GetBuffCount()：未处理\n返回值：\n
+GetBuff ()\nKNpc.GetBuff()：未处理\n返回值：\n\nKPlayer.GetBuff()：未处理\n返回值：\n
+CancelBuff ()\nKPlayer.CancelBuff：未处理\n返回值：\n
 GetPet (无)\nKPlayer.GetPet：获取当前角色的宠物\n返回值：返回宠物NPC对象；若无，返回nil\n
-GetItemAmountInAllPackages (dwTabType, dwIndex)\nKPlayer.GetItemAmountInAllPackages：获取角色所有背包某种道具的数量\n返回值：返回角色所有背包某种道具的数量\n
+GetItemAmountInAllPackages ()\nKPlayer.GetItemAmountInAllPackages：未处理\n返回值：\n
 Talk (nTalkRange,szReceiver,tData)\nKPlayer.Talk：玩家说话\n返回值：如果函数执行成功，返回true; 否则返回false\n仅限以下频道使用：PLAYER_TALK_CHANNEL.WHISPER，PLAYER_TALK_CHANNEL.TEAM，PLAYER_TALK_CHANNEL.RAID， PLAYER_TALK_CHANNEL.BATTLE_FIELD， PLAYER_TALK_CHANNEL.NEARBY，PLAYER_TALK_CHANNEL.TongAlliance，PLAYER_TALK_CHANNEL.TONG
-CastProfessionSkill (dwCraft, dwRecipeID, [eTargetType, dwTargetID])\nKPlayer.CastProfessionSkill：释放生活技能\n返回值：释放成功时，返回1\n当技能对象为书本时，参数为 dwCraftID，dwBookID，dwBookSubID
-StopCurrentAction (无)\nKPlayer.StopCurrentAction：停止当前动作\n返回值：操作成功，返回true;否则为false\n
-IsInParty (无)\nKPlayer.IsInParty：判断角色是否在一个队伍中\n返回值：如果角色在队伍中，返回true；否则返回false\n
-GetSkillLevel (dwSkillID)\nKPlayer.GetSkillLevel：获取当前某个技能的等级\n返回值：nSkillLevel\n
-GetBoxSize (dwBox)\nKPlayer.GetBoxSize：获取背包容量\n返回值：dwSize\n
+CastProfessionSkill ()\nKPlayer.CastProfessionSkill：未处理\n返回值：\n
+StopCurrentAction ()\nKPlayer.StopCurrentAction：未处理\n返回值：\n
+IsInParty ()\nKPlayer.IsInParty：未处理\n返回值：\n
+GetSkillLevel ()\nKPlayer.GetSkillLevel：未处理\n返回值：\n
+GetBoxSize ()\nKPlayer.GetBoxSize：未处理\n返回值：\n
 GetKungfuMount (无)\nKPlayer.GetKungfuMount：获取已装备的武功对象，返回对应的Skill对象\n返回值：返回SKill对象\n
-IsPlayerInMyParty (dwPlayerID)\nKPlayer.IsPlayerInMyParty：判断玩家是否与本玩家在同一个队伍中\n返回值：如果dwPlayerID的玩家与本玩家属于同一队伍，那么返回true；否则返回false\n
-GetTalkData (无)\nKPlayer.GetTalkData：获取当前聊天内容\n返回值：返回一个table\n
-GetSkillCDProgress (dwSkillID, dwSkillLevel)\nKPlayer.GetSkillCDProgress：获取技能的CD相关信息：是否有cd，剩余cd时间和总cd时间\n返回值：如果执行成功，返回3个值：是否有CD(true或false)，剩余CD时间和总CD时间。Cd时间的单位是帧。如果技能有多个cd计时器，那么会返回结束时间最晚的cd信息。\n
-GetItemAmount (dwTabType, dwIndex, [dwBookID, dwSubID])\nKPlayer.GetItemAmount：获取角色身上某种道具的数量\n返回值：返回角色身上某种道具的数量\n
-GetProfessionLevel (dwProfessionID)\nKPlayer.GetProfessionLevel：获取生活技能的等级和熟练度\n返回值：如果函数执行成功，返回2个值：dwLevel和dwExp，分别代表技能的等级和熟练度。\n
+IsPlayerInMyParty ()\nKPlayer.IsPlayerInMyParty：未处理\n返回值：\n
+GetTalkData ()\nKPlayer.GetTalkData：未处理\n返回值：\n
+GetSkillCDProgress ()\nKPlayer.GetSkillCDProgress：未处理\n返回值：\n
+GetItemAmount ()\nKPlayer.GetItemAmount：未处理\n返回值：\n
+GetProfessionLevel ()\nKPlayer.GetProfessionLevel：未处理\n返回值：\n
 GetOTActionState (无)\nKPlayer.GetOTActionState：获取ot动作的状态\n返回值：nOTActionState\n
-GetQuestTraceInfo (dwQuestID)\nKPlayer.GetQuestTraceInfo：获取任务追踪相关信息\n返回值：返回一个tab\ntab包含以下项：\n"finish"：bool,是否已经完成\n"fail"：bool,是否已经失败\nassist：bool,是否为可协助任务, [time]：当任务有限制时间时才返回，返回剩余时间\nquest_state：任务需要的任务变量的列表信息返回最多包含8个子表的tab，每一个子tab结构如下：{"i", "need", "have"},其中i = 0~7,need为任务变量，不为零，have为当前其值\nkill_npc:任务需求的杀死NPC列表信息。返回最多包含4个子表的tab,每一个子tab结构如下：{"i", "need", "have", "tempalte_id"},i = 0~3,need为需求杀死的NPC数量，have为当前完成数量， tempalte_id为对应NPC的模板ID\nneed_item:，返回最多包含8个子表的tab,每一个子tab结构如下：{"i", "need", "have", "type","index"},i = 0~7,need为需求item的数量，have为当前拥有数量， "type","index“为对应item的类型及ID\nhave_trace：是否有跟踪信息
-GetMoney (无)\nKPlayer.GetMoney：获取金钱数量\n返回值：nMoney\n
-GetSkillRecipeKey (dwSkillID, dwSkillLevel)\nKPlayer.GetSkillRecipeKey：获取秘笈的key\n返回值：如果函数执行成功，返回秘笈的key，是一个table，包含以下内容： "skill_id": skill id "skill_level": skill等级 "recipe1" ~ "recipe12": 秘笈\n
-GetRepresentID (无)\nKPlayer.GetRepresentID：获取表现逻辑Id\n返回值：会把所有的表现逻辑id返回，总共数量是REPRESENT_COUNT个（8个） 返回值从左到右依次是：MELEE_WEAPON, HELM, CHEST, WAISTS, PANTS, BANGLE, EXTEND, FACE\n
-GetQuestPhase (dwQuestID)\nKPlayer.GetQuestPhase：获取任务阶段状态\n返回值：返回值含义：3: 表示已完成任务0: 表示任务不存在1: 表示任务正在进行中，2: 表示任务已完成但还没有交-1: 表示任务id非法\n
-GetQuestID (nQuestIndex)\nKPlayer.GetQuestID：获取任务列表中某个任务的id\n返回值：dwQuestID\n通过任务序号获取任务ID
-GetReputeLevel (dwForceID)\nKPlayer.GetReputeLevel：获取玩家的声望等级\n返回值：获取玩家在某一势力的声望等级\n
-GetQuestTree (无)\nKPlayer.GetQuestTree：获取玩家身上的任务列表\n返回值：返回2个值：任务table及其元素个数。任务table是一个下表从1开始的数组。每一个任务是数组的一项，也是一个table。 每一个任务的table包含以下字段：nQuestIndex(任务索引，对应程序内部的存储索引), nLevel(任务等级), szName(任务名称), szQuestDiff(对应Quests.tab中的Difficulty).任务table中的任务会分类，即同一类（按照Quests.tab中Class分类）任务会 放在相邻的位置。每一类任务开始时，那个任务的table中的nQuestIndex字段是-1, nLevel是0， szItem是分类的名字（对应Quests.tab中的Class）,szQuestDiff则是一个没有用的值。同一类任务中的每个任务又是按照nLevel升序排列的。例如对于类别为“扬州”的一系列任务， 级别低的任务会排在级别高的任务前面。\n
-GetQuestExpAttenuation (dwQuestID)\nKPlayer.GetQuestExpAttenuation：获取任务奖励经验的削减情况\n返回值：nExp, nRepeatCutPercent, nLevelCutPercent\nnExp:奖励经验\nnRepeatCutPercent:重复做任务时奖励的削减百分比\nnLevelCutPercent：等级提升时奖励消减的百分比
-GetBookSegmentList (dwBookID)\nKPlayer.GetBookSegmentList：获取某本书已经阅读过的卷\n返回值：如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，数组的每一项是书籍的第几卷。只有读过的书才会加入到这个table中。\n
-GetItemCDProgress (无)\nKPlayer.GetItemCDProgress：获取道具的cd信息\n返回值：bIsCooldown, nLeftCooldown, nTotalCooldown, bBroken\n有以下几种参数组合：\n1个参数：dwItemID: 道具id\n2个参数：dwBox, dwX。 dwBox是道具所在背包的索引，参见INVENTORY_INDEX。 dwX是道具在背包内的位置。\n3个参数：version, type, index: version是道具系统的版本号，整数。type是道具表类型， 取值参见ITEM_TABLE_TYPE。index是道具在配置表中的id
-GetQuestDiffcultyLevel (dwQuestID)\nKPlayer.GetQuestDiffcultyLevel：取得玩家等级与任务等级差的程度\n返回值：QUEST_DIFFICULTY_LEVEL\n任务头顶标记用
-GetBookList (无)\nKPlayer.GetBookList：获取书籍的索引列表\n返回值：如果函数执行成功，返回一个table，这个table是一个下标从1开始的数组，每一项是书籍的一个索引，只有玩家读过的书才会加入到结果返回。 书籍的索引从1开始。\n
-IsRecipeLearned (dwCraftID, dwRecipeID)\nKPlayer.IsRecipeLearned：判断是否已经学会配方\n返回值：如果已经学会配方，返回true；否则返回false\n
-GetProfessionMaxLevel (dwProfessionID)\nKPlayer.GetProfessionMaxLevel：获取生活技能最大等级\n返回值：函数如果执行成功返回最大等级，否则不返回.\n
-GetProfessionProficiency (dwProfessionID)\nKPlayer.GetProfessionProficiency：获取生活技能熟练度\n返回值：函数如果执行成功返回熟练度，否则不返回.\n
-GetSkillRecipeList (dwSkillID, dwSkillLevel)\nKPlayer.GetSkillRecipeList：获取武功秘笈列表\n返回值：如果函数执行成功，返回一个下标从1开始的table，table的每一项是一个包含秘笈信息的table。每个秘笈信息table包含以下内容： "recipe_id": 秘笈id "recipe_level": 秘笈等级 "active": bool类型，秘笈是否被激活\n列表第一项从1开始取，每一项是一个子表，包括："recipe_id", "recipe_level", "active"
-OpenVenation (nVenationID)\nKPlayer.OpenVenation：打通经脉\n返回值：如果函数执行成功，返回true；否则返回false\n
-IsBookMemorized (dwBookID, dwIndex)\nKPlayer.IsBookMemorized：是否是已记忆书籍\n返回值：如果是，返回true；否则返回false\n
-GetBoxFreeRoomSize (nBoxIndex)\nKPlayer.GetBoxFreeRoomSize：获取指定背包剩余空间\n返回值：成功则返回剩余空间大小。\n
-GetBankPackageCount (无)\nKPlayer.GetBankPackageCount：获取仓库中已经激活的背包位数量\n返回值：nBankPackageCount\n
-GetProfessionBranch (dwProfessionID)\nKPlayer.GetProfessionBranch：获取生活技能的分支id\n返回值：dwBranchID\n
-IsAchievementAcquired (nAchievementID)\nKPlayer.IsAchievementAcquired：判断某个成就是否获得\n返回值：为真表示该成就已获得，否则未获得\n
-IsInRaid (无)\nKPlayer.IsInRaid：判断玩家是否已处于团队模式中\n返回值：处于团队模式中，返回为true;否则皆为false\n
-GetAllSkillList (无)\nKPlayer.GetAllSkillList：获取玩家身上的所有的武功技能\n返回值：返回一个tab,类型如下:{[dwSkillID]=dwSkillLevel, ...}\n
-GetReputation (dwForceID)\nKPlayer.GetReputation：获取玩家声望值\n返回值：返回玩家在某势力内的声望\n
-Jump (bStandJump, nDirectionXY)\nKPlayer.Jump：跳\n返回值：无\nbStandJump:是否立定跳；nDirectionXY：角度
-WindowSelect (dwIndex,bySelect)\nKPlayer.WindowSelect：窗口选择\n返回值：无\n
+GetQuestTraceInfo ()\nKPlayer.GetQuestTraceInfo：未处理\n返回值：\n
+GetMoney ()\nKPlayer.GetMoney：未处理\n返回值：\n
+GetSkillRecipeKey ()\nKPlayer.GetSkillRecipeKey：未处理\n返回值：\n
+GetRepresentID ()\nKPlayer.GetRepresentID：未处理\n返回值：\n
+GetQuestPhase ()\nKPlayer.GetQuestPhase：未处理\n返回值：\n
+GetQuestID ()\nKPlayer.GetQuestID：未处理\n返回值：\n
+GetReputeLevel ()\nKPlayer.GetReputeLevel：未处理\n返回值：\n
+GetQuestTree ()\nKPlayer.GetQuestTree：未处理\n返回值：\n
+GetQuestExpAttenuation ()\nKPlayer.GetQuestExpAttenuation：未处理\n返回值：\n
+GetBookSegmentList ()\nKPlayer.GetBookSegmentList：未处理\n返回值：\n
+GetItemCDProgress ()\nKPlayer.GetItemCDProgress：未处理\n返回值：\n
+GetQuestDiffcultyLevel ()\nKPlayer.GetQuestDiffcultyLevel：未处理\n返回值：\n
+GetBookList ()\nKPlayer.GetBookList：未处理\n返回值：\n
+IsRecipeLearned ()\nKPlayer.IsRecipeLearned：未处理\n返回值：\n
+GetProfessionMaxLevel ()\nKPlayer.GetProfessionMaxLevel：未处理\n返回值：\n
+GetProfessionProficiency ()\nKPlayer.GetProfessionProficiency：未处理\n返回值：\n
+GetSkillRecipeList ()\nKPlayer.GetSkillRecipeList：未处理\n返回值：\n
+OpenVenation ()\nKPlayer.OpenVenation：未处理\n返回值：\n
+IsBookMemorized ()\nKPlayer.IsBookMemorized：未处理\n返回值：\n
+GetBoxFreeRoomSize ()\nKPlayer.GetBoxFreeRoomSize：未处理\n返回值：\n
+GetBankPackageCount ()\nKPlayer.GetBankPackageCount：未处理\n返回值：\n
+GetProfessionBranch ()\nKPlayer.GetProfessionBranch：未处理\n返回值：\n
+IsAchievementAcquired ()\nKPlayer.IsAchievementAcquired：未处理\n返回值：\n
+IsInRaid ()\nKPlayer.IsInRaid：未处理\n返回值：\n
+GetAllSkillList ()\nKPlayer.GetAllSkillList：未处理\n返回值：\n
+GetReputation ()\nKPlayer.GetReputation：未处理\n返回值：\n
+Jump ()\nKPlayer.Jump：未处理\n返回值：\n
+WindowSelect ()\nKPlayer.WindowSelect：未处理\n返回值：\n
 GetTalkLinkItem (dwItemID)\nKPlayer.GetTalkLinkItem：获取聊天信息中道具链接所代表的道具对象\n返回值：如果函数执行成功，返回道具对应的KItem对象。\n
-CanAcceptQuest (无)\nKPlayer.CanAcceptQuest：判断能否接某个任务\n返回值：参数有三种形式：a)dwQuestID，b)dwQuestID，dwTemplateID，c)dwQuestID，eTargetType, dwTargetID\n
-OpenTalent (nTalentID, nTalentLevel)\nKPlayer.OpenTalent：向服务端申请打通镇派经脉\n返回值：参数个数正确时，该函数当前一直返回true\n
-SatisfyRequire (nAttributeID, nValue1, [nValue2])\nKPlayer.SatisfyRequire：检查角色是否满足某个属性要求\n返回值：符合要求，返回true;否则为false\n
-IsDesignationPrefixAcquired (nPrefix)\nKPlayer.IsDesignationPrefixAcquired：判断某个称号前缀玩家是否已获得\n返回值：已获得返回true，否则返回false\n
-IsDesignationPostfixAcquired (nPostfix)\nKPlayer.IsDesignationPostfixAcquired：判断某个称号后缀玩家是否已获得\n返回值：已获得返回true，否则返回false\n
-GetProfessionAdjustLevel (dwProfessionID)\nKPlayer.GetProfessionAdjustLevel：获取生活技能被其他因素影响的等级\n返回值：dwAdjustLevel\n
-IsPartyLeader (无)\nKPlayer.IsPartyLeader：判断角色是否是队长\n返回值：如果角色处于一个队伍中，且是队长，返回true；否则返回false\n
-IsPartyFull (无)\nKPlayer.IsPartyFull：判断队伍是否已经满员\n返回值：如果玩家所在队伍已经满员，返回true；否则返回false\n
-CanApplyDuel (dwTargetID)\nKPlayer.CanApplyDuel：检查能否与目标玩家切磋\n返回值：如果可以，返回true；否则返回false\n
-CanAddFoe (无)\nKPlayer.CanAddFoe：判断能否加仇人\n返回值：能，则返回true;否则为false\n玩家为中立，或者在战斗状态，或者低于限制等级时均不得加仇人
-GetEquipPos (dwBoxIndex, dwX)\nKPlayer.GetEquipPos：看道具能在身上哪个部位装备，返回对应的位置\n返回值：如果可以装备，返回装备位置。否则返回nil\n
-GetMaxExamPrint (无)\nKPlayer.GetMaxExamPrint：获取监本印文上限，最大拥有数\n返回值：nMaxValue\n
-GetExamPrintRemainSpace (无)\nKPlayer.GetExamPrintRemainSpace：玩家本周还能得到多少监本印文\n返回值：nRemianSpace\n
-IsProfessionLearnedByCraftID (dwCraftID)\nKPlayer.IsProfessionLearnedByCraftID：是已学习生活技能\n返回值：如果是已学习生活技能，返回true；否则返回false\n
-GetEquipIDArray (nID)\nKPlayer.GetEquipIDArray：获取玩家多套装备缩绑定ID标示\n返回值：nValue\n
-ExchangeItem (dwSrcBox, dwSrcX, dwDestBox, dwDestX, [dwAmount])\nKPlayer.ExchangeItem：交换身上背包两个物品的位置\n返回值：背包序号取值：[[INVENTORY_INDEX]]\n
-GetMapVisitFlag (nMapID)\nKPlayer.GetMapVisitFlag：获取玩家是否已访问地图标志\n返回值：如果已访问，返回true，否则返回false\n
-GetFellowshipGroupInfo (无)\nKPlayer.GetFellowshipGroupInfo：获取联系人分组信息\n返回值：如果函数执行成功，返回一个下标从1开始的table，每个项包含： id: 分组id name: 分组名称\n
-GetFellowshipInfo (dwGroupID)\nKPlayer.GetFellowshipInfo：获取某一分组内联系人信息\n返回值：返回一个表\n返回一个表，每一项都是一个表（索引值以1开始），包含以下项："id", "married", "brother","level","name","attraction","mapid","forceid","remark"
-GetKungfuList (dwSchoolID)\nKPlayer.GetKungfuList：获取玩家身上武功的列表\n返回值：如果函数执行成功，返回一个包含玩家身上属于该门派的武功的table。这个table以武功的id为索引，对应武功的等级，即这个表是如下形式的： {[dwKungfuID]=dwKungfuLevel, ...}\n
-GetSkillList (dwKungfuID)\nKPlayer.GetSkillList：获取角色身上属于某种武功的技能列表\n返回值：返回一个table，table的每一项以技能id为索引，对应的值为技能等级，即是这种形式：{[dwSkillId] = skillLevel, ...}\n
-IsPartyMemberInSameScene (dwID)\nKPlayer.IsPartyMemberInSameScene：判断队伍中的另一个玩家与我是否在同一场景(mapid和copyindex都相同)\n返回值：是在同一场景则返回true，其他情况不返回值\n判断队伍中的另一个玩家与我是否在同一场景（mapid和copyindex都相同）
-GetItemPos (dwTabType, dwIndex)\nKPlayer.GetItemPos：获取道具位置\n返回值：dwBox,dwX\n这个函数接收3种参数组合：(建议只使用前两种，3可能是兼容以前老代码的)\n 1) dwItemID 道具id\n2) dwTabType, dwIndex: dwTabType是道具表类型，参见[[ITEM_TABLE_TYPE]]dwIndex是道具在配置表的索引\n3) nVersion, dwTabType, dwIndex: nVersion是版本号，其余与2)中含义相同 返回值是dwBox, dwX，即道具所在背包索引和位置
-CanBreakEquip (dwBox, dwX)\nKPlayer.CanBreakEquip：判断物品能否被分解成五行石\n返回值：能分解，返回true; 否则为false\n
-ActiveSkillRecipe (dwRecipeID, dwRecipeLevel)\nKPlayer.ActiveSkillRecipe：激活武功秘笈\n返回值：如果函数执行成功，返回true；否则返回false\n
-DeactiveSKillRecipe (dwRecipeID, dwRecipeLevel)\nKPlayer.DeactiveSKillRecipe：取消激活武功秘笈\n返回值：如果函数执行成功，返回true；否则返回false\n
+CanAcceptQuest ()\nKPlayer.CanAcceptQuest：未处理\n返回值：\n
+OpenTalent ()\nKPlayer.OpenTalent：未处理\n返回值：\n
+SatisfyRequire ()\nKPlayer.SatisfyRequire：未处理\n返回值：\n
+IsDesignationPrefixAcquired ()\nKPlayer.IsDesignationPrefixAcquired：未处理\n返回值：\n
+IsDesignationPostfixAcquired ()\nKPlayer.IsDesignationPostfixAcquired：未处理\n返回值：\n
+GetProfessionAdjustLevel ()\nKPlayer.GetProfessionAdjustLevel：未处理\n返回值：\n
+IsPartyLeader ()\nKPlayer.IsPartyLeader：未处理\n返回值：\n
+IsPartyFull ()\nKPlayer.IsPartyFull：未处理\n返回值：\n
+CanApplyDuel ()\nKPlayer.CanApplyDuel：未处理\n返回值：\n
+CanAddFoe ()\nKPlayer.CanAddFoe：未处理\n返回值：\n
+GetEquipPos ()\nKPlayer.GetEquipPos：未处理\n返回值：\n
+GetMaxExamPrint ()\nKPlayer.GetMaxExamPrint：未处理\n返回值：\n
+GetExamPrintRemainSpace ()\nKPlayer.GetExamPrintRemainSpace：未处理\n返回值：\n
+IsProfessionLearnedByCraftID ()\nKPlayer.IsProfessionLearnedByCraftID：未处理\n返回值：\n
+GetEquipIDArray ()\nKPlayer.GetEquipIDArray：未处理\n返回值：\n
+ExchangeItem ()\nKPlayer.ExchangeItem：未处理\n返回值：\n
+GetMapVisitFlag ()\nKPlayer.GetMapVisitFlag：未处理\n返回值：\n
+GetFellowshipGroupInfo ()\nKPlayer.GetFellowshipGroupInfo：未处理\n返回值：\n
+GetFellowshipInfo ()\nKPlayer.GetFellowshipInfo：未处理\n返回值：\n
+GetKungfuList ()\nKPlayer.GetKungfuList：未处理\n返回值：\n
+GetSkillList ()\nKPlayer.GetSkillList：未处理\n返回值：\n
+IsPartyMemberInSameScene ()\nKPlayer.IsPartyMemberInSameScene：未处理\n返回值：\n
+GetItemPos ()\nKPlayer.GetItemPos：未处理\n返回值：\n
+CanBreakEquip ()\nKPlayer.CanBreakEquip：未处理\n返回值：\n
+ActiveSkillRecipe ()\nKPlayer.ActiveSkillRecipe：未处理\n返回值：\n
+DeactiveSKillRecipe ()\nKPlayer.DeactiveSKillRecipe：未处理\n返回值：\n
 GetCDInterval (dwCooldownID)\nKPlayer.GetCDInterval：获取某个Cooldown计时器的cd时间\n返回值：nTotalCooldown\n
 GetTotalEquipScore (无)\nKPlayer.GetTotalEquipScore：获取装备总分\n返回值：nScore\n
 GetBaseEquipScore (无)\nKPlayer.GetBaseEquipScore：获取装备基础分数\n返回值：nScore\n
 GetStrengthEquipScore (无)\nKPlayer.GetStrengthEquipScore：获取装备强化分数\n返回值：nScore\n
 GetMountsEquipScore (无)\nKPlayer.GetMountsEquipScore：获取装备镶嵌分数\n返回值：nScore\n
 SetFellowshipRemark (dwAlliedPlayerID, szRemark)\nKPlayer.SetFellowshipRemark：设置联系人备注\n返回值：如果函数执行成功，返回true；否则返回false\n
-GetCDLeft (dwCooldownID)\nKPlayer.GetCDLeft：获取剩余CD时间，单位帧\n返回值：nLeftCooldown\n
+GetCDLeft ()\nKPlayer.GetCDLeft：未处理\n返回值：\n
 GetHortation (无)\nKQuestInfo.GetHortation：获取任务完成后能够得到的结果\n返回值：如果做完任务能够有一些结果，例如获得奖励，影响声望，那么会返回一个table，它可能包含以下内容：{"money", "skill", "prestige", "contribution", "presenttrain", "tongdevelopmentpoint","tongfund", "presentjustice","presentexamprint","reputation" ={{"force", "value"},...} }。\n
 TimeLimitationBindItemGetLeftTime ()\nKScene.TimeLimitationBindItemGetLeftTime：未处理\n返回值：\n
 ChangeMemberGroup ()\nKTeamClient.ChangeMemberGroup(dwTargetMemberID,nTargetGroup)：更改帮会成员玩家的分组\n返回值：无\n\nKTongClient.ChangeMemberGroup(dwMemberID, nDstGroup, [dwDstMemberID])：将队员从一个分组调整到另一个分组\n返回值：无\n
@@ -2283,7 +2283,7 @@ KMailInfo.RequestContent
 
 #$KNpc=GetNpc%s*%b()
 #$KNpc=[%w_]+%.GetPet%s*%b()
-KNpc.CancelBuff
+KNpc.nLunarMagicBlock
 KNpc.nNeutralDamageAbsorb
 KNpc.nPhysicsShield
 KNpc.nLunarMagicResistPercent
@@ -2291,9 +2291,9 @@ KNpc.nSolarDamageManaShield
 KNpc.nFaceDirection
 KNpc.dwScriptID
 KNpc.CanDialog
-KNpc.nSolarDamageAbsorb
+KNpc.dwCharacterAction
 KNpc.nRageReplenish
-KNpc.nNeutralMagicReflectionPercent
+KNpc.bStealthy
 KNpc.Stealth
 KNpc.nMoonEnergyFallOff
 KNpc.nMaxLifePercentAdd
@@ -2365,8 +2365,6 @@ KNpc.nDodge
 KNpc.nNoneWeaponAttackSpeedBase
 KNpc.dwGuardForceID
 KNpc.nSense
-KNpc.GetBuffCount
-KNpc.GetBuff
 KNpc.nPoisonMagicReflectionPercent
 KNpc.nStrain
 KNpc.nPoisonHitValue
@@ -2384,7 +2382,8 @@ KNpc.nTherapyPower
 KNpc.nDestX
 KNpc.nSpiritBase
 KNpc.nLunarHitBaseRate
-KNpc.nPoisonCriticalDamagePower
+KNpc.nParryValue
+KNpc.GetBuff
 KNpc.nLunarCriticalStrike
 KNpc.GetCoordinateSkillTarget
 KNpc.GetMapID
@@ -2395,6 +2394,7 @@ KNpc.nGlobalBlock
 KNpc.nJumpSpeed
 KNpc.nRunSpeedBase
 KNpc.nZ
+KNpc.nPatrolOrderIndex
 KNpc.nMaxEnergy
 KNpc.nPoisonOvercome
 KNpc.SetSheath
@@ -2445,6 +2445,7 @@ KNpc.nY
 KNpc.nPhysicsReflectionPercent
 KNpc.CanSeeName
 KNpc.nMaxJumpCount
+KNpc.nPatrolPathID
 KNpc.nLowerWeakLevel
 KNpc.nManaReplenishPercent
 KNpc.nRangeWeaponAttackSpeedBase
@@ -2462,17 +2463,19 @@ KNpc.dwClassID
 KNpc.nDamageToManaForSelf
 KNpc.nSolarCriticalDamagePowerBaseKiloNumRate
 KNpc.TurnToCharacter
-KNpc.IsSelectable
 KNpc.GetSkillPrepareState
 KNpc.CanSeeLifeBar
-KNpc.nPoisonMagicResistPercent
-KNpc.nLunarMagicBlock
-KNpc.SetAIProtectCampMarkAndForceMark
+KNpc.IsSelectable
 KNpc.GetScene
-KNpc.nVelocityXY
+KNpc.CancelBuff
+KNpc.nPoisonMagicResistPercent
+KNpc.GetBuffCount
+KNpc.SetAIProtectCampMarkAndForceMark
+KNpc.nMaxManaBase
+KNpc.nGender
 KNpc.nGravityBase
-KNpc.OpenAIProcessLog
 KNpc.GetSkillTarget
+KNpc.GetTarget
 KNpc.nSolarAttackPower
 KNpc.nPoisonCriticalStrikeBaseRate
 KNpc.nYCell
@@ -2484,72 +2487,72 @@ KNpc.nManaReplenishCoefficient
 KNpc.nVitalityBasePercentAdd
 KNpc.nMoonEnergyAddPercent
 KNpc.nPoisonMagicBlock
-KNpc.GetTarget
-KNpc.nEnergyReplenish
 KNpc.FireAIEvent
+KNpc.OpenAIProcessLog
+KNpc.nEnergyReplenish
 KNpc.nMaxSunEnergy
-KNpc.nGlobalTherapyAbsorb
-KNpc.nPhysicsAttackPower
 KNpc.SetAIDebug
+KNpc.nPhysicsAttackPower
+KNpc.nNeutralMagicReflectionPercent
 KNpc.nRangeWeaponAttackSpeedPercentAdd
-KNpc.nMaxManaBase
+KNpc.nGlobalTherapyAbsorb
 KNpc.CastSkill
-KNpc.dwCharacterAction
+KNpc.nMaxManaPercentAdd
+KNpc.nLunarHitValue
 KNpc.szName
 KNpc.nSunEnergyReplenish
-KNpc.nLunarHitValue
-KNpc.nCurrentSunEnergy
-KNpc.nGravity
 KNpc.DieByKiller
+KNpc.nCurrentSunEnergy
 KNpc.Patrol
 KNpc.Dash
-KNpc.nReviveTime
 KNpc.SitDown
-KNpc.nPitchDirection
+KNpc.nReviveTime
 KNpc.SwimTo
-KNpc.nSunEnergyFallOff
-KNpc.nCurrentAgility
+KNpc.nPitchDirection
 KNpc.Stand
 KNpc.CastSkillXYZ
-KNpc.bStealthy
+KNpc.nCurrentAgility
+KNpc.nSunEnergyFallOff
+KNpc.nMeleeWeaponAttackSpeedPercentAdd
 KNpc.nGravityPercent
-KNpc.nStrengthBase
-KNpc.dwForceID
+KNpc.nGravity
 KNpc.nAgilityBasePercentAdd
-KNpc.nLunarDamageAbsorb
+KNpc.dwForceID
+KNpc.nStrengthBase
+KNpc.nMoveSpeedPercent
 KNpc.nNeutralAttackPower
 KNpc.nDestY
-KNpc.nCurrentSpirit
-KNpc.nMoveSpeedPercent
 KNpc.nPoisonDamageAbsorb
-KNpc.nMaxManaPercentAdd
+KNpc.nLunarDamageAbsorb
 KNpc.nParry
 KNpc.nRace
+KNpc.nLunarOvercome
+KNpc.nSkillTherapy
 KNpc.nDodgeBaseRate
-KNpc.nMeleeWeaponAttackSpeedPercentAdd
+KNpc.nLifeReplenishPercent
 KNpc.nLifeReplenishCoefficient
 KNpc.nDivingFramePercent
-KNpc.nGender
-KNpc.nLifeReplenishPercent
-KNpc.nSkillTherapy
-KNpc.nSolarCriticalStrike
 KNpc.nPhysicsCriticalDamagePower
-KNpc.dwDropTargetPlayerID
-KNpc.nParryValue
+KNpc.nSolarDamageAbsorb
 KNpc.nCurrentVitality
+KNpc.nSolarCriticalStrike
+KNpc.nPoisonCriticalDamagePower
+KNpc.dwDropTargetPlayerID
+KNpc.dwTongID
 KNpc.nPoisonCriticalDamagePowerBaseKiloNumRate
+KNpc.nNeutralMagicReflection
 KNpc.nMiddleWeakLevel
 KNpc.nSolarHitBaseRate
 KNpc.nLunarAttackPower
 KNpc.nKnockedOffRate
-KNpc.nPhysicsHitValue
-KNpc.nLunarOvercome
-KNpc.nNeutralMagicReflection
-KNpc.GetAbsoluteCoordinate
 KNpc.nNeutralMagicShield
+KNpc.nVelocityXY
 KNpc.nCurrentMana
-KNpc.nJumpSpeedBase
+KNpc.GetAbsoluteCoordinate
+KNpc.nCurrentSpirit
 KNpc.bDisableAutoTurn
+KNpc.nJumpSpeedBase
+KNpc.nPhysicsHitValue
 KNpc.nDivingFrame
 
 
@@ -2573,8 +2576,9 @@ KPlayer.GetBoxItem
 KPlayer.GetProfessionProficiency
 KPlayer.IsInParty
 KPlayer.nCoin
+KPlayer.nArenaLevel2v2
 KPlayer.LossDuel
-KPlayer.nGlobalTherapyAbsorb
+KPlayer.SetRandomDailyQuest
 KPlayer.GetFellowshipData
 KPlayer.ApplySDScoreRankInfo
 KPlayer.IsFollowController
@@ -2593,11 +2597,11 @@ KPlayer.nHasteRateBasePercentAdd
 KPlayer.IsTradingMibaoSwitchOpen
 KPlayer.nMaxManaAdditional
 KPlayer.nMoveState
-KPlayer.LearnSkill
+KPlayer.nNeutralCriticalStrike
 KPlayer.nPhysicsCriticalDamagePowerBaseKiloNumRate
 KPlayer.CloseCubPackage
 KPlayer.nSpiritToManaReplenishCof
-KPlayer.GetBookList
+KPlayer.nMaxLevel
 KPlayer.GetItemByIndex
 KPlayer.IsHaveSecondRepresent
 KPlayer.nExamPrint
@@ -2616,7 +2620,7 @@ KPlayer.GetSkillTrainCost
 KPlayer.IsMyDirectMentor
 KPlayer.RegisterItemStat
 KPlayer.nRangeWeaponAttackSpeed
-KPlayer.GetQuestValue
+KPlayer.nSunPowerValue
 KPlayer.nLunarCriticalDamagePowerBaseKiloNumRate
 KPlayer.nDivingCount
 KPlayer.Sprint
@@ -2634,7 +2638,7 @@ KPlayer.nJustice
 KPlayer.nSolarMagicShieldBase
 KPlayer.nExperience
 KPlayer.nMaxLife
-KPlayer.nNeutralHitBaseRate
+KPlayer.GetFreeRoomSize
 KPlayer.bRedName
 KPlayer.dwFormationEffectID
 KPlayer.GetItem
@@ -2664,7 +2668,7 @@ KPlayer.RunTo
 KPlayer.FireAIEvent
 KPlayer.nVelocityZ
 KPlayer.nTitle
-KPlayer.GetReputeLevel
+KPlayer.dwShapeShiftID
 KPlayer.GetSkillRecipeList
 KPlayer.UmountKungfu
 KPlayer.nMeleeWeaponAttackSpeed
@@ -2680,8 +2684,7 @@ KPlayer.nBeatBackRate
 KPlayer.GetSkillRecipeKey
 KPlayer.SwimTo
 KPlayer.GetQuestIndex
-KPlayer.GetBuffCount
-KPlayer.GetBuff
+KPlayer.RefuseDuel
 KPlayer.GetAcquiredDesignationPostfix
 KPlayer.dwFellowPetID
 KPlayer.nPoisonHitValue
@@ -2694,10 +2697,10 @@ KPlayer.nLastSDEquipScore
 KPlayer.nMaxLifeAdditional
 KPlayer.nSolarOvercomeBase
 KPlayer.nAgilityBase
-KPlayer.dwKillCount
+KPlayer.nAssistVenationCof
 KPlayer.nNeutralMagicBlock
 KPlayer.GetHairFreeCount
-KPlayer.nDirectApprenticeEndTime
+KPlayer.nNeutralMagicReflection
 KPlayer.nTherapyPower
 KPlayer.dwFaceItemIndex
 KPlayer.GetFacePendentCount
@@ -2711,6 +2714,7 @@ KPlayer.Dash
 KPlayer.nGlobalBlock
 KPlayer.DelItem
 KPlayer.SearchForPartyMember
+KPlayer.GetLiftedFaceIndexList
 KPlayer.CanCostThew
 KPlayer.nDecriticalDamagePowerBase
 KPlayer.nNeutralOvercomeBase
@@ -2726,7 +2730,7 @@ KPlayer.GetSkillMaxRadius
 KPlayer.SetSheath
 KPlayer.Open
 KPlayer.CanAddTrainToSkill
-KPlayer.bHaveAdvancedDisplayData
+KPlayer.nSuperVipEndTime
 KPlayer.szName
 KPlayer.nSprintPowerMax
 KPlayer.GetMaxExamPrint
@@ -2749,9 +2753,10 @@ KPlayer.bHuntingFlag
 KPlayer.GetFellowPet
 KPlayer.nSunEnergyFallOff
 KPlayer.LearnRecipe
+KPlayer.GetEmotionByPackage
 KPlayer.nRankPoint
 KPlayer.nNeutralCriticalDamagePower
-KPlayer.nStrengthBase
+KPlayer.nMass
 KPlayer.GetProfessionBranch
 KPlayer.nCurrentRage
 KPlayer.bCanUseBigSword
@@ -2768,14 +2773,16 @@ KPlayer.GetAllHair
 KPlayer.GetArenaAwardRemainSpace
 KPlayer.dwJumpType
 KPlayer.GetPrestigeRemainSpace
+KPlayer.nVipLevel
 KPlayer.nTitlePoint
 KPlayer.nSolarMagicResistPercent
+KPlayer.GetBuffCount
 KPlayer.nCurrentPrestige
 KPlayer.CloseBank
 KPlayer.nLifeReplenishPercent
 KPlayer.GetEquipCanChangeAttribute
 KPlayer.IsMyDirectApprentice
-KPlayer.nUsedTrainValue
+KPlayer.nSkillTherapy
 KPlayer.DoAnimation
 KPlayer.nMentorFormationEffectLevel
 KPlayer.GetSkillRageCost
@@ -2793,6 +2800,7 @@ KPlayer.GetCorpsRoleLevel
 KPlayer.nSunEnergyAddPercent
 KPlayer.nRangeWeaponDamageRand
 KPlayer.bFightState
+KPlayer.GetMaxAcceptDailyQuestCount
 KPlayer.CanCostStamina
 KPlayer.GetLatestBuyExterior
 KPlayer.bHideHat
@@ -2805,13 +2813,13 @@ KPlayer.IsMyApprentice
 KPlayer.GetQuestFailedFlag
 KPlayer.nPoisonMagicResistPercent
 KPlayer.nMibaoMode
-KPlayer.ApplyAdvanceDisplayData
 KPlayer.GetDesignationGeneration
-KPlayer.bWanted
+KPlayer.AutoFly
 KPlayer.bOnPracticeRoom
 KPlayer.nSolarAttackPower
 KPlayer.ApplyDuel
 KPlayer.dwModelID
+KPlayer.nFlyFlag
 KPlayer.nLunarOvercome
 KPlayer.nPhysicsAttackPowerBase
 KPlayer.nVitalityBasePercentAdd
@@ -2822,7 +2830,7 @@ KPlayer.nRangeWeaponAttackSpeedPercentAdd
 KPlayer.nMaxThew
 KPlayer.nMountingRate
 KPlayer.SetMapVisitFlag
-KPlayer.GetBookSegmentList
+KPlayer.GetQuestID
 KPlayer.CanLearnRecipe
 KPlayer.GetDesignationBynameDisplayFlag
 KPlayer.GetQuestExpAttenuation
@@ -2831,34 +2839,54 @@ KPlayer.nCurrentAgility
 KPlayer.dwLastSDTotalScore
 KPlayer.nNeutralAttackPower
 KPlayer.nCloseCampFlagTime
+KPlayer.ShowBreakEquipProduct
 KPlayer.nParryBase
 KPlayer.dwFollowID
+KPlayer.dwKillCount
+KPlayer.GetMaxAcceptQuestCount
+KPlayer.GetAcceptQuestCount
 KPlayer.nMagicVenationCof
+KPlayer.GetLiftedFaceDataByIndex
+KPlayer.GetLiftedFaceCount
 KPlayer.nCurrentStamina
 KPlayer.dwTongID
+KPlayer.GetEquipLiftedFaceData
 KPlayer.bBeDirectMentor
+KPlayer.ApplyEquipLiftedFace
+KPlayer.SetRegisterIPToFellowByLoginFlag
 KPlayer.nLunarAttackPower
 KPlayer.nRoleType
+KPlayer.IsQuestHavePushFellowship
+KPlayer.GetFellowshipPushByIP
+KPlayer.GetEquipChangeTargetAttribute
 KPlayer.GetAbsoluteCoordinate
 KPlayer.DelBlackList
+KPlayer.GetChangeEquipCostItem
+KPlayer.nNeutralHitBaseRate
 KPlayer.GetEMailBindFlag
+KPlayer.GetResetEquipCostTrain
 KPlayer.GetExteriorSet
+KPlayer.GetChangeEquipCostTrain
+KPlayer.ChangeEquipMagic
+KPlayer.IsExistExterior
+KPlayer.GetEmotionPackageList
 KPlayer.nNeutralDamageAbsorb
+KPlayer.GetGas
 KPlayer.bCanBeDirectApprentice
-KPlayer.SetRegisterIPToFellowByLoginFlag
+KPlayer.GetTalkLinkItem
 KPlayer.UnStrengthEquip
 KPlayer.GetHairCount
 KPlayer.GetEquipIDArray
 KPlayer.DelFoe
 KPlayer.CanApplyDuel
-KPlayer.IsQuestHavePushFellowship
-KPlayer.GetFellowshipPushByIP
-KPlayer.GetEquipChangeTargetAttribute
+KPlayer.AddTrainToSkill
+KPlayer.nSprintPowerRevive
+KPlayer.ChangeNewTalentSet
 KPlayer.nSolarDamageManaShield
-KPlayer.GetChangeEquipCostItem
+KPlayer.CanChangeNewTalentSet
 KPlayer.bCampFlag
 KPlayer.GetMountsEquipScore
-KPlayer.nDropDefence
+KPlayer.SelectNewTalentPoint
 KPlayer.GetKungfuList
 KPlayer.nActivityAward
 KPlayer.nUsableMentorValue
@@ -2866,106 +2894,106 @@ KPlayer.GetBackPendentCount
 KPlayer.nSolarDamageAbsorb
 KPlayer.nRageReplenish
 KPlayer.nNeutralMagicReflectionPercent
-KPlayer.GetResetEquipCostTrain
-KPlayer.GetChangeEquipCostTrain
+KPlayer.CanSelectNewTalentPoint
+KPlayer.BuyRoleRenameChance
 KPlayer.DoDeathRespond
 KPlayer.nMoonEnergyFallOff
-KPlayer.ChangeEquipMagic
+KPlayer.RestoreItem
 KPlayer.nMaxLifePercentAdd
-KPlayer.GetSDScoreRankInfo
+KPlayer.GetItemRestoreList
 KPlayer.nCurrentSunEnergy
 KPlayer.GetItemPos
 KPlayer.nApplyExteriorFlag
-KPlayer.SetMiniAvatar
-KPlayer.GetExteriorTimeLimitInfo
-KPlayer.UpdateFoeInfo
+KPlayer.HoldW
+KPlayer.GetAllWaistPendent
+KPlayer.IsRunOnWater
 KPlayer.nNeutralMagicShieldBase
-KPlayer.AddTrainToSkill
+KPlayer.GetSkillMoveRestFrame
 KPlayer.nHorseSprintPowerRevive
 KPlayer.dwLastSDRank
 KPlayer.nDivingFrameBase
 KPlayer.OnCloseLootWindow
 KPlayer.BreakEquip
 KPlayer.nLastResetRestoreCountTime
-KPlayer.nLunarMagicReflection
-KPlayer.ChangeNewTalentSet
-KPlayer.CanChangeNewTalentSet
+KPlayer.GetDesignationPrefixEndTime
+KPlayer.TurnToCharacter
+KPlayer.GetNavPath
 KPlayer.nLunarAttackPowerBase
-KPlayer.SelectNewTalentPoint
+KPlayer.CanUseMibaoPackage
 KPlayer.SetEquipIDArray
 KPlayer.bBankPasswordExist
 KPlayer.nSlayKillCount
-KPlayer.CanSelectNewTalentPoint
-KPlayer.BuyRoleRenameChance
-KPlayer.GetBoxType
-KPlayer.RestoreItem
-KPlayer.GetItemRestoreList
-KPlayer.HoldW
-KPlayer.nKnockedBackRate
-KPlayer.IsRunOnWater
-KPlayer.GetSkillMoveRestFrame
-KPlayer.GetTotalEquipScore
-KPlayer.TurnToCharacter
-KPlayer.nNeutralHitValue
-KPlayer.GetNavPath
-KPlayer.nMaxLifeBase
-KPlayer.CanUseMibaoPackage
 KPlayer.SetContinuousLoginRewardFlag
 KPlayer.IsManualDropInfoExist
+KPlayer.GetBoxType
+KPlayer.IsManualDropInfoEmpty
+KPlayer.GetManualDropInfo
+KPlayer.DelFellowshipGroup
+KPlayer.nKnockedBackRate
+KPlayer.GetStaminRateByProfessionID
+KPlayer.IsSecondRepresent
+KPlayer.SetCurrentSetID
+KPlayer.CreateFellowPetRequest
+KPlayer.nNeutralHitValue
+KPlayer.FeedHorse
+KPlayer.nMaxLifeBase
+KPlayer.GetMiniAvatarMgr
+KPlayer.GetDomesticate
+KPlayer.GetTimeLimitSoldListInfoLeftTime
 KPlayer.GetRecipe
 KPlayer.nTherapyPowerBase
 KPlayer.bCannotDialogWithNPC
-KPlayer.IsManualDropInfoEmpty
+KPlayer.GetTimeLimitReturnItemLeftTime
 KPlayer.nMoveSpeedPercent
 KPlayer.nFacePendentBoxSize
 KPlayer.nCurrentKillPoint
 KPlayer.nPoisonDamageManaShield
-KPlayer.GetManualDropInfo
-KPlayer.OpenCubPackage
-KPlayer.GetFellowshipGroupInfo
-KPlayer.GetStaminRateByProfessionID
-KPlayer.IsSecondRepresent
-KPlayer.GetSkillRecipeKeyCount
 KPlayer.GetTradeItemLeftTime
+KPlayer.OpenCubPackage
+KPlayer.GetSkillPrepare
+KPlayer.SetTargetAStar
+KPlayer.GetSDScoreRankInfo
+KPlayer.GetSkillRecipeKeyCount
+KPlayer.GetSDRankListPos
 KPlayer.RegressionFinished
 KPlayer.nPoisonDamageAbsorb
-KPlayer.CreateFellowPetRequest
+KPlayer.GetFaceCount
 KPlayer.GetItemCDProgress
-KPlayer.FeedHorse
-KPlayer.GetMiniAvatarMgr
+KPlayer.GetTradingItem
+KPlayer.nSolarOvercome
 KPlayer.GetStrengthEquipScore
-KPlayer.GetDomesticate
-KPlayer.GetTimeLimitSoldListInfoLeftTime
-KPlayer.GetTimeLimitReturnItemLeftTime
+KPlayer.Stand
+KPlayer.IsApplyExterior
+KPlayer.nPhysicsReflectionPercent
 KPlayer.GetRepresentID
 KPlayer.IsPlayerInMyParty
 KPlayer.BuyCubPackage
 KPlayer.nImmuneSkillMoveCount
-KPlayer.CanLearnSkillRecipe
+KPlayer.GetExteriorTimeLimitInfo
 KPlayer.ShareQuest
 KPlayer.nDecriticalDamagePower
 KPlayer.GetAcquiredDesignationCount
 KPlayer.AimAtSprintDashTarget
 KPlayer.nRestoreCount
-KPlayer.nLifeReplenishExt
-KPlayer.GetQuestDiffcultyLevel
+KPlayer.nVipEndTime
+KPlayer.IsHaveExterior
 KPlayer.CancelQuest
 KPlayer.IsInRaid
 KPlayer.CanChangeEquipMagic
 KPlayer.bIsBankPasswordVerified
 KPlayer.GetSkillEnergyCost
-KPlayer.GetSDRankListPos
-KPlayer.GetFaceCount
+KPlayer.SetMiniAvatar
+KPlayer.GetRegressionData
 KPlayer.bItemRestoreOperating
 KPlayer.nCurrentVitality
 KPlayer.nLength
-KPlayer.CanMountItem
-KPlayer.GetProfessionLevel
+KPlayer.GetRegressionDailyCount
+KPlayer.GetSafeLockMaskInfo
 KPlayer.dwMiniAvatarID
-KPlayer.GetTripList
-KPlayer.IsApplyExterior
-KPlayer.AutoFly
-KPlayer.SetCurrentSetID
+KPlayer.GetSafeLockBindFlag
+KPlayer.GetMibaoBindFlag
+KPlayer.GetPublicWeChatBindFlag
+KPlayer.GetPhoneBindFlag
 KPlayer.GetAchievementRecord
 KPlayer.nWaistPendentBoxSize
 KPlayer.nSprintPower
@@ -2974,186 +3002,187 @@ KPlayer.CanResetEquipMagic
 KPlayer.nMeleeWeaponAttackSpeedAdditional
 KPlayer.nNeutralMagicResistPercent
 KPlayer.CounterStealth
-KPlayer.IsHaveExterior
-KPlayer.nSprintPowerRevive
-KPlayer.IsExistExterior
+KPlayer.GetBomb
+KPlayer.nSolarMagicBlock
+KPlayer.GetReputation
 KPlayer.nAIEventParam
-KPlayer.GetRegressionDailyCount
-KPlayer.GetRegressionData
+KPlayer.GetQuestDiffcultyLevel
+KPlayer.GetPet
 KPlayer.GetFellowshipGroupName
 KPlayer.SearchForNpc
 KPlayer.dwTeamID
 KPlayer.GetAllExterior
 KPlayer.SetWaistPendentBoxSize
 KPlayer.nWaterFlyAbility
-KPlayer.GetSafeLockMaskInfo
-KPlayer.GetSafeLockBindFlag
-KPlayer.GetMibaoBindFlag
+KPlayer.SetTitle
+KPlayer.SetFacePendentBoxSize
+KPlayer.nAllDamageAddPercent
 KPlayer.Talk
 KPlayer.nSpunkBase
 KPlayer.nFormationEffectLevel
 KPlayer.nSolarCriticalDamagePower
 KPlayer.nPoisonCriticalStrike
 KPlayer.nPoisonMagicShield
-KPlayer.SetTitle
+KPlayer.AddPendentLeftExistTime
 KPlayer.dwMentorFormationEffectID
-KPlayer.GetPublicWeChatBindFlag
+KPlayer.GetAllFacePendent
 KPlayer.SetFellowshipRemark
 KPlayer.nBattleFieldSide
 KPlayer.nParryBaseRate
-KPlayer.GetPhoneBindFlag
+KPlayer.GetAltitude
 KPlayer.GetQuestBitValue
 KPlayer.OpenBank
-KPlayer.GetGas
-KPlayer.GetBomb
+KPlayer.HideHat
+KPlayer.IsPendentTryOn
 KPlayer.ClearCDTime
 KPlayer.nToughnessBaseRate
 KPlayer.nPoisonCriticalDamagePowerBaseKiloNumRate
-KPlayer.AddFellowshipGroup
-KPlayer.GetDesignationPostfixEndTime
-KPlayer.GetPet
-KPlayer.nManaReplenish
+KPlayer.IsPendentOwn
+KPlayer.AddPendent
+KPlayer.GetTotalEquipScore
+KPlayer.GetItemAmount
 KPlayer.nSolarMagicReflectionPercent
 KPlayer.SetQuestBitValue
 KPlayer.ResetEquipMagic
 KPlayer.nGlobalDamageAbsorb
-KPlayer.nAllDamageAddPercent
+KPlayer.CanBreakEquip
 KPlayer.GetCDInterval
-KPlayer.SetFacePendentBoxSize
-KPlayer.GetAllFacePendent
+KPlayer.SyncTongDiplomacyDate
+KPlayer.ClientOpenBox
 KPlayer.nToughness
-KPlayer.GetAllWaistPendent
-KPlayer.nAcquiredMentorValue
-KPlayer.IsApprentice
+KPlayer.CanLootBoxItem
+KPlayer.nCurrentTrack
+KPlayer.IsDirectMentor
 KPlayer.nMaxRage
 KPlayer.nMeleeWeaponDamageBase
-KPlayer.IsPendentTryOn
+KPlayer.IsApprentice
 KPlayer.GetAchievementCount
 KPlayer.nRangeWeaponAttackSpeedAdditional
-KPlayer.IsPendentOwn
+KPlayer.GetChargeFlag
 KPlayer.nMaxMoonEnergy
-KPlayer.AddPendent
+KPlayer.GetDesignationPostfixEndTime
 KPlayer.ClearRandomDailyQuestFinishedCount
-KPlayer.ShowBreakEquipProduct
+KPlayer.GetDesignationByname
 KPlayer.nCurrentThew
-KPlayer.GetStackRoomInBank
-KPlayer.CanBreakEquip
+KPlayer.nArenaLevel3v3
+KPlayer.nSpiritBase
 KPlayer.nDodge
 KPlayer.nMaxStamina
 KPlayer.nSpunkToManaReplenishCof
-KPlayer.SyncTongDiplomacyDate
+KPlayer.CanOpenCampFlag
 KPlayer.GetSkillCDProgress
 KPlayer.nSense
-KPlayer.ClientOpenBox
+KPlayer.IsDesignationPostfixAcquired
 KPlayer.nPoisonMagicReflectionPercent
 KPlayer.ClearQuest
-KPlayer.CanLootBoxItem
+KPlayer.IsDesignationPrefixAcquired
 KPlayer.IsSkillRecipeExist
-KPlayer.IsDirectMentor
+KPlayer.AddFellowship
 KPlayer.GetQuestTraceInfo
 KPlayer.RemovePendent
-KPlayer.GetChargeFlag
+KPlayer.CanCloseCampFlag
 KPlayer.GetCommonSkill
 KPlayer.GetCurrentDesignationPrefix
 KPlayer.nPhysicsDamageManaShield
 KPlayer.GetTrap
-KPlayer.GetDesignationPrefixEndTime
-KPlayer.bOnHorse
+KPlayer.IsBelongForceItem
+KPlayer.bNegativeShield
 KPlayer.GetQuestLastTime
 KPlayer.nRunSpeed
 KPlayer.GetSingleRepresentID
-KPlayer.GetDesignationByname
-KPlayer.GetFreeRoomInPackage
-KPlayer.IsDesignationPostfixAcquired
-KPlayer.IsDesignationPrefixAcquired
-KPlayer.nBankPasswordQuestionID
-KPlayer.GetRewards
-KPlayer.HideHat
-KPlayer.CanCloseCampFlag
-KPlayer.CanAcceptQuest
-KPlayer.CanOpenCampFlag
-KPlayer.nPhysicsReflection
-KPlayer.nPhysicsCriticalStrikeBaseRate
-KPlayer.FollowInviteRespond
-KPlayer.GetSkillExp
-KPlayer.nSpiritBase
 KPlayer.GetMapVisitFlag
 KPlayer.Stealth
 KPlayer.GetDisarm
-KPlayer.nPoisonCriticalDamagePower
 KPlayer.SetDisarm
-KPlayer.TradingInviteRequest
+KPlayer.nBankPasswordQuestionID
+KPlayer.GetRewards
+KPlayer.Follow
+KPlayer.nDropDefence
+KPlayer.CanAcceptQuest
+KPlayer.GetAroundPlayerID
+KPlayer.nPhysicsReflection
+KPlayer.nPhysicsCriticalStrikeBaseRate
+KPlayer.FollowInviteRespond
+KPlayer.GetTripList
+KPlayer.nMaxManaBase
+KPlayer.GetMoneyLimitByGold
+KPlayer.GetTalkData
+KPlayer.CanMountItem
+KPlayer.nPoisonCriticalDamagePower
+KPlayer.GetBuff
+KPlayer.GetPKState
+KPlayer.IsOnSlay
 KPlayer.GetKillNpcCount
 KPlayer.GetMapID
 KPlayer.nSolarCriticalStrikeBaseRate
 KPlayer.GetBlackListInfo
 KPlayer.SetKillNpcCount
-KPlayer.GetTarget
-KPlayer.dwBackItemIndex
-KPlayer.GetAroundPlayerID
-KPlayer.SetTargetAStar
+KPlayer.CanCloseSlay
+KPlayer.CanApplySlay
+KPlayer.AcceptDuel
+KPlayer.GetMiniMapRadar
 KPlayer.nParryValueBase
 KPlayer.AddExteriorSetCount
 KPlayer.GetQuestTree
-KPlayer.GetStackRoomInPackage
-KPlayer.UpdateFellowshipInfo
+KPlayer.SyncMidMapMark
+KPlayer.GetMaxPrestige
 KPlayer.IsHaveHair
 KPlayer.nMaxApprenticeNum
-KPlayer.GetPKState
-KPlayer.IsOnSlay
+KPlayer.CancelBuff
+KPlayer.TradingInviteRequest
 KPlayer.nRunSpeedBase
-KPlayer.CanCloseSlay
-KPlayer.CanApplySlay
+KPlayer.GetFellowshipInfoList
+KPlayer.GetProfession
 KPlayer.nZ
 KPlayer.bContinuousLoginRewardFlag
-KPlayer.AcceptDuel
-KPlayer.RefuseDuel
+KPlayer.GetFellowshipNameList
+KPlayer.GetFellowshipGroupInfo
 KPlayer.nMaxEnergy
-KPlayer.GetMiniMapRadar
+KPlayer.bIgnoreGravity
 KPlayer.nPoisonOvercome
-KPlayer.CanDialog
-KPlayer.SyncMidMapMark
+KPlayer.UpdateFoeInfo
+KPlayer.UpdateFellowshipInfo
 KPlayer.SetAIOriginPos
 KPlayer.nCurrentTrainValue
-KPlayer.GetTradingItem
-KPlayer.SearchForEnemy
+KPlayer.CanAddFoe
+KPlayer.RenameFellowshipGroup
 KPlayer.GetAIOriginPos
 KPlayer.nHeight
-KPlayer.GetFellowshipInfoList
+KPlayer.AddFellowshipGroup
 KPlayer.nNeutralCriticalDamagePowerBaseKiloNumRate
-KPlayer.nNeutralCriticalStrike
-KPlayer.GetFellowshipNameList
+KPlayer.AddBlackList
+KPlayer.DelFellowship
 KPlayer.GetAcquiredDesignationPrefix
-KPlayer.nStrainBase
+KPlayer.IsPartyFull
 KPlayer.RandomByDailyQuest
 KPlayer.CanUnMountItem
 KPlayer.nPhysicsShieldBase
 KPlayer.AcceptEscortQuest
-KPlayer.GetTalkLinkItem
-KPlayer.CanAddFoe
+KPlayer.OpenAIProcessLog
+KPlayer.nManaReplenishExt
 KPlayer.ActiveSkillRecipe
-KPlayer.RenameFellowshipGroup
-KPlayer.DelFellowshipGroup
+KPlayer.GetStackRoomInPackage
+KPlayer.GetFightFlag
 KPlayer.GetBattery
-KPlayer.AddBlackList
+KPlayer.GetReputeLevel
 KPlayer.CanAddMoney
-KPlayer.DelFellowship
-KPlayer.AddFellowship
-KPlayer.IsPartyFull
+KPlayer.SearchForDoodad
+KPlayer.SearchForEnemy
+KPlayer.nLifeReplenishCoefficient
 KPlayer.SetFellowshipGroup
 KPlayer.bBigSwordSelected
-KPlayer.GetTalkData
+KPlayer.StopFollow
 KPlayer.nPoisonMagicReflection
 KPlayer.nCurrentMoonEnergy
 KPlayer.CanLearnSkill
-KPlayer.OpenAIProcessLog
-KPlayer.GetSkillTarget
-KPlayer.StopFollow
+KPlayer.nSolarHitValue
+KPlayer.CanDialog
+KPlayer.DeactiveSKillRecipe
 KPlayer.GetMaxActivityAward
 KPlayer.nCurrentHasteRate
-KPlayer.GetFightFlag
-KPlayer.GetReputation
-KPlayer.SearchForDoodad
+KPlayer.CanLearnSkillRecipe
+KPlayer.GetOTActionState
+KPlayer.nCurrentMana
 KPlayer.IsMoneyEnough
 KPlayer.TradingInviteRespond
 KPlayer.nPhysicsDamageAbsorb
@@ -3164,85 +3193,85 @@ KPlayer.nPhysicsHitBaseRate
 KPlayer.nMaxManaPercentAdd
 KPlayer.dwAIEventSrc
 KPlayer.SetAIType
-KPlayer.nTouchRange
+KPlayer.nAgilityBasePercentAdd
 KPlayer.nEvokeMentorCount
-KPlayer.Follow
+KPlayer.nYearVipEndTime
 KPlayer.GetAIType
-KPlayer.GetMaxPrestige
+KPlayer.GetSkillExp
 KPlayer.bOnlyReviveInSitu
 KPlayer.nX
 KPlayer.SetMinimapRadar
 KPlayer.nPhysicsOvercomeBase
-KPlayer.DeactiveSKillRecipe
+KPlayer.GetSkillChannel
 KPlayer.IsFollower
 KPlayer.nMoonPowerValue
-KPlayer.GetOTActionState
-KPlayer.bRefuseTeamInvite
-KPlayer.CancelBuff
-KPlayer.nPoisonOvercomeBase
-KPlayer.nSolarAttackPowerBase
+KPlayer.GetSkillStaminaCost
+KPlayer.nYearSuperVipEndTime
+KPlayer.GetSkillManaCost
+KPlayer.GetSkillLifeCost
+KPlayer.GetCDLeft
 KPlayer.IsPartyMemberInSameScene
 KPlayer.nLunarDamageManaShield
 KPlayer.OpenBook
 KPlayer.GetTalentInfo
 KPlayer.CanLearnBranch
-KPlayer.GetSkillChannel
+KPlayer.nPhysicsShield
 KPlayer.WalkTo
 KPlayer.nBaseVenationCof
 KPlayer.nJumpSpeedPercent
-KPlayer.GetSkillPrepare
+KPlayer.GetBookSegmentList
 KPlayer.nRace
-KPlayer.GetSkillStaminaCost
-KPlayer.nPhysicsShield
-KPlayer.nNeutralOvercome
-KPlayer.IsProfessionLearnedByCraftID
-KPlayer.GetSkillManaCost
-KPlayer.GetSkillLifeCost
-KPlayer.nJumpCount
-KPlayer.nLunarMagicResistPercent
-KPlayer.nPhysicsCriticalStrike
-KPlayer.GetQuestPhase
-KPlayer.AcceptQuest
-KPlayer.nY
-KPlayer.GetJusticeRemainSpace
-KPlayer.nCamp
-KPlayer.nFaceDirection
-KPlayer.GetCDLeft
-KPlayer.GetQuestID
-KPlayer.dwCharacterAction
-KPlayer.IsBelongForceItem
-KPlayer.GetSkillList
-KPlayer.GetFreeRoomSize
-KPlayer.nMaxJumpCount
-KPlayer.GetItemAmount
 KPlayer.WindowSelect
 KPlayer.IsProfessionExpertised
+KPlayer.nNeutralOvercome
+KPlayer.IsProfessionLearnedByCraftID
+KPlayer.nJumpCount
 KPlayer.IsRecipeLearned
-KPlayer.nToughnessBase
+KPlayer.nLunarMagicResistPercent
+KPlayer.nCamp
+KPlayer.nPhysicsCriticalStrike
+KPlayer.GetQuestPhase
+KPlayer.nFaceDirection
+KPlayer.nY
+KPlayer.GetJusticeRemainSpace
+KPlayer.nStrengthBasePercentAdd
+KPlayer.nGlobalTherapyAbsorb
+KPlayer.dwCharacterAction
+KPlayer.CanLearnProfession
+KPlayer.LearnSkill
+KPlayer.nMaxRestoreCount
+KPlayer.GetSkillList
+KPlayer.GetBookList
+KPlayer.nMaxJumpCount
+KPlayer.nSuperVipLevel
+KPlayer.GetProfessionMaxLevel
+KPlayer.GetProfessionAdjustLevel
+KPlayer.GetProfessionLevel
+KPlayer.FlyJump
 KPlayer.IsExistFellowshipList
 KPlayer.nLowerWeakLevel
-KPlayer.nMaxLevel
-KPlayer.CanFinishQuest
-KPlayer.CanLearnProfession
-KPlayer.GetCurrentSetID
 KPlayer.nGravity
-KPlayer.SitDown
+KPlayer.CanFinishQuest
+KPlayer.bOnHorse
+KPlayer.GetCurrentSetID
 KPlayer.nBackPendentBoxSize
 KPlayer.nMaxTrainValue
-KPlayer.GetProfessionMaxLevel
+KPlayer.GetQuestValue
+KPlayer.IsFellowPetAcquired
+KPlayer.GetFellowPetCount
 KPlayer.nPoisonHitBaseRate
 KPlayer.nAccContinuousLoginCount
 KPlayer.GetMaxArenaAward
-KPlayer.GetProfessionAdjustLevel
+KPlayer.GetFellowPetTimeLimit
 KPlayer.FinishQuest
-KPlayer.nSunPowerValue
+KPlayer.GetDynamicSkillGroup
 KPlayer.nLunarMagicReflectionPercent
 KPlayer.IsExistHair
 KPlayer.dwCubPackageSize
-KPlayer.nSolarOvercome
-KPlayer.GetProfession
+KPlayer.nTouchRange
+KPlayer.GetRandomDailyQuestFinishedCount
 KPlayer.nLunarMagicShieldBase
-KPlayer.nNeutralMagicReflection
+KPlayer.nLifeReplenishExt
 KPlayer.nGlobalDamageAbsorbLeft
 KPlayer.GetSkillPrepareState
 KPlayer.GetQuestList
@@ -3251,26 +3280,26 @@ KPlayer.nLifeReplenish
 KPlayer.GetResetEquipCostItem
 KPlayer.nLunarMagicShield
 KPlayer.nCurrentEnergy
-KPlayer.nStrengthBasePercentAdd
+KPlayer.AcceptQuest
 KPlayer.nKind
 KPlayer.dwClassID
 KPlayer.nDamageToManaForSelf
 KPlayer.nSolarCriticalDamagePowerBaseKiloNumRate
-KPlayer.nSolarMagicBlock
-KPlayer.GetFellowPetCount
+KPlayer.GetQuestAssistDailyCount
+KPlayer.nGravityPercent
 KPlayer.GetContributionRemainSpace
-KPlayer.GetFellowPetTimeLimit
-KPlayer.IsFellowPetAcquired
-KPlayer.GetDynamicSkillGroup
-KPlayer.nGender
-KPlayer.GetEffectForceID
-KPlayer.GetRandomDailyQuestFinishedCount
+KPlayer.GetBoxFreeRoomSize
+KPlayer.dwBackItemIndex
+KPlayer.GetFreeRoomInPackage
+KPlayer.nStunStrikeRate
+KPlayer.bRefuseTeamInvite
+KPlayer.nManaReplenish
 KPlayer.GetSkillMinRadius
 KPlayer.nVelocityXY
 KPlayer.nGravityBase
-KPlayer.nLastEvokeMentorTime
-KPlayer.nStunStrikeRate
-KPlayer.GetQuestAssistDailyCount
+KPlayer.GetExamPrintRemainSpace
+KPlayer.GetSkillTarget
+KPlayer.GetTarget
 KPlayer.nPoisonCriticalStrikeBaseRate
 KPlayer.nYCell
 KPlayer.GetScene
@@ -3279,75 +3308,75 @@ KPlayer.Die
 KPlayer.nNeutralCriticalStrikeBaseRate
 KPlayer.nManaReplenishCoefficient
 KPlayer.bFreeLimitFlag
-KPlayer.dwCurrentSDMaxLevel
-KPlayer.nCurrentTrack
-KPlayer.nCurrentMana
 KPlayer.szTitle
+KPlayer.nArenaLevel5v5
+KPlayer.SatisfyRequire
+KPlayer.GetStackRoomInBank
 KPlayer.GetAllMountKungfu
 KPlayer.nNoneWeaponAttackSpeedBase
 KPlayer.nStrain
 KPlayer.nPhysicsAttackPower
 KPlayer.SearchForAllies
 KPlayer.GetTradingMoney
-KPlayer.bRegisterIPToFellowshipByLogin
-KPlayer.SatisfyRequire
+KPlayer.nVitalityBase
+KPlayer.nPoisonMagicShieldBase
 KPlayer.GetEquipPos
 KPlayer.CanExchange
 KPlayer.nPoisonAttackPowerBase
-KPlayer.bNegativeShield
-KPlayer.GetCurrentDesignationPostfix
-KPlayer.GetBoxFreeRoomSize
-KPlayer.nVitalityBase
-KPlayer.nPhysicsVenationCof
-KPlayer.nPoisonMagicShieldBase
-KPlayer.nAssistVenationCof
 KPlayer.nDestX
-KPlayer.nMaxManaBase
-KPlayer.nHasteBase
-KPlayer.dwSchoolID
-KPlayer.nCurrentSpirit
+KPlayer.GetCurrentDesignationPostfix
+KPlayer.nStrainBase
+KPlayer.nLunarMagicReflection
+KPlayer.nPhysicsVenationCof
 KPlayer.nNeutralDamageManaShield
-KPlayer.IsBankPackageEnabled
-KPlayer.nGravityPercent
-KPlayer.dwBatteryID
 KPlayer.nBankPasswordResetEndTime
-KPlayer.dwForceID
+KPlayer.dwBankNpcID
+KPlayer.dwCurrentSDMaxLevel
 KPlayer.nMeleeWeaponDamageRand
-KPlayer.GetExamPrintRemainSpace
-KPlayer.Stand
+KPlayer.bWanted
+KPlayer.nCurrentSpirit
+KPlayer.GetEffectForceID
+KPlayer.IsBankPackageEnabled
+KPlayer.nHasteBase
+KPlayer.dwBatteryID
+KPlayer.SitDown
+KPlayer.dwForceID
+KPlayer.nVipType
+KPlayer.nAcquiredMentorValue
+KPlayer.bRegisterIPToFellowshipByLogin
 KPlayer.nDestY
 KPlayer.FollowSelectTarget
-KPlayer.dwBankNpcID
-KPlayer.nSolarHitValue
-KPlayer.SetDynamicSkillGroup
+KPlayer.nPoisonOvercomeBase
 KPlayer.nLunarCriticalDamagePower
-KPlayer.nMass
+KPlayer.SetDynamicSkillGroup
+KPlayer.nUsedTrainValue
+KPlayer.nToughnessBase
 KPlayer.nDodgeBaseRate
-KPlayer.nAgilityBasePercentAdd
+KPlayer.nSolarAttackPowerBase
 KPlayer.nNeutralMagicShield
 KPlayer.nDivingFramePercent
-KPlayer.nMaxRestoreCount
+KPlayer.nParry
 KPlayer.nNextJumpCount
 KPlayer.GetKungfuMount
 KPlayer.nSolarCriticalStrike
 KPlayer.UpdateBlackListInfo
 KPlayer.nDivingFrame
 KPlayer.GetPendentLeftExistTime
-KPlayer.nManaReplenishExt
-KPlayer.bIgnoreGravity
+KPlayer.nPhysicsCriticalDamagePower
+KPlayer.bEquipLiftedFace
 KPlayer.nMiddleWeakLevel
 KPlayer.nSolarHitBaseRate
-KPlayer.nPhysicsCriticalDamagePower
-KPlayer.nKnockedOffRate
 KPlayer.dwAccumulativeTAES
+KPlayer.nKnockedOffRate
+KPlayer.nDirectApprenticeEndTime
 KPlayer.nDecriticalDamagePowerBaseKiloNumRate
-KPlayer.nPhysicsReflectionPercent
+KPlayer.nLastEvokeMentorTime
 KPlayer.Stop
-KPlayer.nPitchDirection
-KPlayer.nSkillTherapy
+KPlayer.nGender
+KPlayer.dwSchoolID
 KPlayer.nJumpSpeedBase
-KPlayer.nParry
-KPlayer.nLifeReplenishCoefficient
+KPlayer.nPitchDirection
+KPlayer.nStrengthBase
 
 
 #$KProfession=GetProfession%s*%b()
@@ -3377,6 +3406,7 @@ KQuestInfo.dwEndRequireItemType8
 KQuestInfo.dwEndRequireItemAmount7
 KQuestInfo.dwPrequestID3
 KQuestInfo.nQuestValue4
+KQuestInfo.nAddTongResource
 KQuestInfo.nReputeLevelMax2
 KQuestInfo.dwPresentItemIndex12
 KQuestInfo.dwEndRequireItemIndex6
@@ -3571,23 +3601,27 @@ KQuestInfo.dwStartRequireItemIndex3
 
 
 #$KScene=[%w_]+%.GetScene%s*%b()
+KScene.GetArenaPlayerCount
 KScene.TimeLimitationBindItemGetAllPlayer
 KScene.TimeLimitationBindItemAddItem
+KScene.GetArenaPlayer
 KScene.TimeLimitationBindItemRemovePlayer
 KScene.nMapLevel
+KScene.GetInterceptPoint
 KScene.TimeLimitationBindItemGetItemOwnerID
 KScene.bCanPK
 KScene.dwID
 KScene.bCanTongWar
 KScene.szDisplayName
+KScene.CheckPlayerInKillersSet
 KScene.nCampType
 KScene.AddPlayerToKillersSet
 KScene.TimeLimitationBindItemDelItem
 KScene.bCanDuel
-KScene.CheckPlayerInKillersSet
 KScene.bReviveInSitu
 KScene.TimeLimitationBindItemGetLeftTime
 KScene.nSceneState
+KScene.nHeightAvg
 KScene.bIsArenaMap
 KScene.nType
 KScene.nInFightPlayerCount
@@ -3777,7 +3811,7 @@ KTongClient.StackRepertoryItem
 KTongClient.ApplyModifyRules
 KTongClient.InvitePlayerJoinTong
 KTongClient.dwMaster
-KTongClient.ChangeMemberRemark
+KTongClient.Quit
 KTongClient.nCampReverseTime
 KTongClient.nCamp
 KTongClient.szTongName
@@ -3787,13 +3821,13 @@ KTongClient.dwNextMaster
 KTongClient.GetGroupID
 KTongClient.GetRepertoryItem
 KTongClient.nTotalWageRate
-KTongClient.nRepairDailyLimit
+KTongClient.ApplyKickOutMember
 KTongClient.nRenameChanceCount
 KTongClient.szAnnouncement
 KTongClient.SaveMoney
 KTongClient.GetMemberList
 KTongClient.bCanModifyGroupWage
-KTongClient.nNextDiplomacyWarTime
+KTongClient.nGroup
 KTongClient.GetGroupMemberCount
 KTongClient.CheckBaseOperationGroup
 KTongClient.PutItemToRepertory
@@ -3813,49 +3847,52 @@ KTongClient.GetHistoryRecord
 KTongClient.nReputation
 KTongClient.GetDefaultGroupID
 KTongClient.nMaxMemberCount
-KTongClient.nRepairDailyConsume
+KTongClient.GetFundDailyUseLimit
+KTongClient.GetFundTodayRemainCanUse
+KTongClient.GetUnknownMembersNameCacheTable
+KTongClient.GetGroupRepairLimit
 KTongClient.GetMemberCount
 KTongClient.dwAllianceTongID
 KTongClient.nLevel
 KTongClient.nChangeMasterTime
 KTongClient.CanBaseOperate
-KTongClient.GetUnknownMembersNameCacheTable
-KTongClient.GetGroupRepairLimit
-KTongClient.CancelChangeMaster
+KTongClient.BuyRenameChance
 KTongClient.IsTongNewMemberLimited
-KTongClient.ApplyModifyOnlineMessage
 KTongClient.GetRepairDiscountRate
-KTongClient.ExchangeRepertoryItemPos
+KTongClient.ApplyOpenRepertory
+KTongClient.ApplyModifyOnlineMessage
 KTongClient.SyncHistory
 KTongClient.ApplyGetTongName
+KTongClient.CancelChangeMaster
+KTongClient.ExchangeRepertoryItemPos
 KTongClient.ApplyTongInfo
 KTongClient.GetGroupWageRate
-KTongClient.ChangeMemberGroup
+KTongClient.szOnlineMessage
 KTongClient.GetHistoryRecordCount
-KTongClient.ApplyRepertoryPage
-KTongClient.ApplyOpenRepertory
 KTongClient.GetTechNodeLevel
+KTongClient.CanBaseGrant
+KTongClient.ChangeMemberRemark
 KTongClient.GetGroupInfo
 KTongClient.szIntroduction
 KTongClient.ApplyAddMemorabilia
-KTongClient.CanBaseGrant
+KTongClient.nFundTodayUsed
 KTongClient.ModifyGroupName
 KTongClient.dwTongID
-KTongClient.Quit
+KTongClient.ChangeMemberGroup
 KTongClient.ApplyModifyAnnouncement
 KTongClient.StackItemInRepertory
-KTongClient.BuyRenameChance
+KTongClient.nJoinTime
 KTongClient.ChangeMaster
 KTongClient.ModifyAdvanceOperationMask
 KTongClient.GetMemberName
 KTongClient.GetMemorabilia
-KTongClient.ApplyKickOutMember
 KTongClient.RespondInviteJoinTong
+KTongClient.ApplyRepertoryPage
 KTongClient.FindRepertoryEmptyGrid
 KTongClient.ApplyModifyMemorabilia
 KTongClient.CanAdvanceOperate
 KTongClient.GetMemberInfo
-KTongClient.szOnlineMessage
+KTongClient.nNextDiplomacyWarTime
 
 
 #$WndWindow=Wnd%.OpenWindow%s*%b()
@@ -3941,6 +3978,46 @@ Hotkey.AddBinding
 Hotkey.Enable
 Hotkey.IsEnable
 Hotkey.GetCaptureKey
+
+
+KGItem.dwID
+KGItem.szName
+KGItem.nLevel
+KGItem.nGenre
+KGItem.nSub
+KGItem.nDetail
+KGItem.nBindType
+KGItem.bCanTrade
+KGItem.bCanDestroy
+KGItem.nVersion
+KGItem.dwTabType
+KGItem.dwIndex
+KGItem.nQuality
+KGItem.nCurrentDurability
+KGItem.nStackNum
+KGItem.nMaxStackNum
+KGItem.nMaxDurability
+KGItem.nBookID
+KGItem.bBind
+KGItem.bCanStack
+KGItem.bCanConsume
+KGItem.dwSetID
+KGItem.nMaxExistAmount
+KGItem.nMaxExistTime
+KGItem.nUiId
+KGItem.GetMagicAttrib
+KGItem.IsRepairable
+KGItem.GetRequireAttrib
+KGItem.GetMountIndex
+KGItem.GetBaseAttrib
+KGItem.IsDiamondSlotAttributeActive
+KGItem.GetSlotAttrib
+KGItem.CanMountColorDiamond
+KGItem.GetMountFEAEnchantID
+KGItem.GetTemporaryEnchantLeftSeconds
+KGItem.GetLeftExistTime
+KGItem.GetMagicAttribByStrengthLevel
+KGItem.GetMountDiamondEnchantID
 
 
 KG_Table.Load
@@ -4309,6 +4386,40 @@ AuctionPanel.OnSortStateUpdate
 AuctionPanel.AuctionBid
 AuctionPanel.OnCheckBoxCheck
 AuctionPanel.OnItemLButtonUp
+CraftReadComparePanel.UpdateList
+CraftReadComparePanel.OnSetFocus
+CraftReadComparePanel.OnItemMouseLeave
+CraftReadComparePanel.OnLButtonDown
+CraftReadComparePanel.OnItemMouseEnter
+CraftReadComparePanel.UpdateBgStatus
+CraftReadComparePanel.ChangeCheckBox
+CraftReadComparePanel.OnFrameBreathe
+CraftReadComparePanel.UpdateFilterValue
+CraftReadComparePanel.UpdateCondition
+CraftReadComparePanel.OnScrollBarPosChanged
+CraftReadComparePanel.OnFrameCreate
+CraftReadComparePanel.nSortID
+CraftReadComparePanel.nPlayerID
+CraftReadComparePanel.OnItemLButtonDown
+CraftReadComparePanel.UpdateExperience
+CraftReadComparePanel.Selected
+CraftReadComparePanel.OnLButtonHold
+CraftReadComparePanel.bIsSearch
+CraftReadComparePanel.bCoolDown
+CraftReadComparePanel.OnKillFocus
+CraftReadComparePanel.tSelectBook
+CraftReadComparePanel.OnEditChanged
+CraftReadComparePanel.OnSearch
+CraftReadComparePanel.OnLButtonClick
+CraftReadComparePanel.OnEvent
+CraftReadComparePanel.tExpand
+CraftReadComparePanel.OnItemMouseWheel
+CraftReadComparePanel.OnUpdateScorllList
+CraftReadComparePanel.PopupMenu
+CraftReadComparePanel.tFilter
+CraftReadComparePanel.OnCheckBoxCheck
+CraftReadComparePanel.Init
+CraftReadComparePanel.GetFilterValue
 CraftReadManagePanel.UpdateList
 CraftReadManagePanel.OnSetFocus
 CraftReadManagePanel.RequireReadAll
@@ -4354,37 +4465,16 @@ CraftReadManagePanel.tFilter
 CraftReadManagePanel.OnCheckBoxCheck
 CraftReadManagePanel.RequireItems
 CraftReadManagePanel.tExpand
-CraftReadComparePanel.UpdateList
-CraftReadComparePanel.OnSetFocus
-CraftReadComparePanel.OnItemMouseLeave
-CraftReadComparePanel.OnLButtonDown
-CraftReadComparePanel.OnItemMouseEnter
-CraftReadComparePanel.UpdateBgStatus
-CraftReadComparePanel.ChangeCheckBox
-CraftReadComparePanel.OnFrameBreathe
-CraftReadComparePanel.UpdateFilterValue
-CraftReadComparePanel.UpdateCondition
-CraftReadComparePanel.OnScrollBarPosChanged
-CraftReadComparePanel.OnFrameCreate
-CraftReadComparePanel.nSortID
-CraftReadComparePanel.nPlayerID
-CraftReadComparePanel.OnItemLButtonDown
-CraftReadComparePanel.UpdateExperience
-CraftReadComparePanel.Selected
-CraftReadComparePanel.OnLButtonHold
-CraftReadComparePanel.bIsSearch
-CraftReadComparePanel.bCoolDown
-CraftReadComparePanel.OnKillFocus
-CraftReadComparePanel.tSelectBook
-CraftReadComparePanel.OnEditChanged
-CraftReadComparePanel.OnSearch
-CraftReadComparePanel.OnLButtonClick
-CraftReadComparePanel.OnEvent
-CraftReadComparePanel.tExpand
-CraftReadComparePanel.OnItemMouseWheel
-CraftReadComparePanel.OnUpdateScorllList
-CraftReadComparePanel.PopupMenu
-CraftReadComparePanel.tFilter
-CraftReadComparePanel.OnCheckBoxCheck
-CraftReadComparePanel.Init
-CraftReadComparePanel.GetFilterValue
+
+SendGMCommand ()\n未处理\n
+Table_GetSkillPracticeID ()\n未处理\n
+LoadLUAData ()\n未处理\n
+StringFindW ()\n未处理\n
+Player_GetFrame ()\n未处理\n
+GetUserSetPrice ()\n未处理\n
+k3dcmd ()\n未处理\n
+GetUserServer ()\n未处理\n
+GetPureText ()\n未处理\n
+GetVersion ()\n未处理\n
+ccmd ()\n未处理\n
+SaveLUAData ()\n未处理\n
